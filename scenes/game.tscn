@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bulteshkhc6xv"]
 
+[ext_resource type="Script" uid="uid://cwfwxa0gra1kx" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://ba34ukm6xop0s" path="res://assets/rect.png" id="1_lbhrr"]
 [ext_resource type="PackedScene" path="res://scenes/temp_player.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" path="res://scenes/mobile.tscn" id="2_lnu2h"]
@@ -49,9 +50,10 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 gradient = SubResource("Gradient_lnu2h")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.83189654, 0.7844828)
+fill_to = Vector2(0.92672414, 0.89224136)
 
 [node name="game" type="Node2D" unique_id=1974179384]
+script = ExtResource("1_iywne")
 
 [node name="map" type="Node2D" parent="." unique_id=1248484278]
 
@@ -69,11 +71,11 @@ layout_direction = 2
 offset_left = -558.0
 offset_top = 43.0
 offset_right = 604.0
-offset_bottom = 157.0
+offset_bottom = 193.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gee14")
 
-[node name="PointLight2D" type="PointLight2D" parent="map" unique_id=1412170633]
+[node name="black" type="PointLight2D" parent="map" unique_id=1412170633]
 visible = false
 position = Vector2(15.000015, -256.5)
 scale = Vector2(1.6226417, 2.4725492)
@@ -191,18 +193,45 @@ position = Vector2(0, 31)
 position = Vector2(16, 40)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
+[node name="Polygon2D" type="Polygon2D" parent="map" unique_id=1612115464]
+visible = false
+z_index = 1
+position = Vector2(-460.27417, 0)
+scale = Vector2(2.3983414, 1)
+color = Color(0.28515625, 0.11038304, 0, 1)
+polygon = PackedVector2Array(315.33215, -350, 316.16608, 46, 364.11584, 184, 363.6989, -354)
+
+[node name="Polygon2D2" type="Polygon2D" parent="map" unique_id=1404951443]
+visible = false
+z_index = 1
+position = Vector2(-469, 62)
+scale = Vector2(2.3983414, 0.4891945)
+color = Color(0.13671875, 0.052440073, 0, 1)
+polygon = PackedVector2Array(322.72302, -392.4819, 321.8891, -20.441765, 345.2386, 116.518074, 347.32336, -298.44977)
+
+[node name="Polygon2D3" type="Polygon2D" parent="map" unique_id=1625638645]
+position = Vector2(-460.27417, 0)
+scale = Vector2(2.3983414, 1)
+color = Color(0.28235295, 0.10980392, 0, 1)
+polygon = PackedVector2Array(318.25085, 51, 315.7491, 46, 315.33215, -320, 319.08475, -317, 319.08475, -130)
+
+[node name="Polygon2D4" type="Polygon2D" parent="map" unique_id=795406669]
+z_index = 1
+position = Vector2(296.14243, -350.20773)
+color = Color(0.28235295, 0.10980392, 0, 1)
+polygon = PackedVector2Array(0.85757446, -0.79226685, 195.85757, 2.2077332, 193.85757, 525.20776, 76.857574, 448.20773, 72.857574, 247.20773, 8.857574, 219.20773, 8.857574, 5.207733)
+
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(425, -7)
+position = Vector2(78, 31)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1751583136]
-visible = false
 position = Vector2(0, -95)
 zoom = Vector2(1.4, 1.4)
 
-[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1827854566]
+[node name="flash" type="PointLight2D" parent="player" unique_id=1827854566]
 visible = false
-position = Vector2(16, -71)
-scale = Vector2(6.531249, 5.8425794)
+position = Vector2(16, -123)
+scale = Vector2(8.437501, 7.1874995)
 energy = 1.24
 texture = SubResource("GradientTexture2D_lbhrr")
 
