@@ -338,6 +338,10 @@ border_color = Color(0, 0, 0, 1)
 a = Vector2(-16, -22)
 b = Vector2(118, -21)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p57ef"]
+a = Vector2(-22, -319)
+b = Vector2(-18, 396)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf7vy"]
 bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
 border_width_left = 1
@@ -406,6 +410,22 @@ gradient = SubResource("Gradient_u5sy4")
 fill_from = Vector2(0.5086207, 0)
 fill_to = Vector2(0.51724136, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bk1p3"]
+bg_color = Color(0.22265625, 0.22265625, 0.22265625, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8ral"]
+bg_color = Color(0.22265625, 0.22265625, 0.22265625, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ool0"]
 bg_color = Color(0.07992554, 0.3508768, 0.37890625, 1)
 skew = Vector2(0.805, 0)
@@ -468,6 +488,13 @@ b = Vector2(86, 34)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kvpfn"]
 a = Vector2(70, 34)
 b = Vector2(86, 34)
+
+[sub_resource type="Gradient" id="Gradient_0tnpc"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vtaks"]
+gradient = SubResource("Gradient_0tnpc")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05nbr"]
 bg_color = Color(0.20703125, 0.0921936, 0, 1)
@@ -546,17 +573,6 @@ height = 98.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(270.57434, 197.22278)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_p57ef"]
-a = Vector2(-22, -319)
-b = Vector2(-16, 405)
-
-[sub_resource type="Gradient" id="Gradient_0tnpc"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_vtaks"]
-gradient = SubResource("Gradient_0tnpc")
-
 [sub_resource type="Gradient" id="Gradient_lnu2h"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
@@ -582,8 +598,9 @@ texture = ExtResource("1_lbhrr")
 [node name="hallway" type="Node2D" parent="map" unique_id=417335065]
 
 [node name="Panel4" type="Panel" parent="map/hallway" unique_id=1452539178]
+z_index = 2
 layout_direction = 2
-offset_left = -2893.0
+offset_left = -3246.0
 offset_top = -887.0
 offset_right = 3433.0
 offset_bottom = -354.0
@@ -602,13 +619,12 @@ metadata/_edit_lock_ = true
 
 [node name="Panel2" type="Panel" parent="map/hallway" unique_id=59788556]
 layout_direction = 2
-offset_left = -2893.0
+offset_left = -3105.0
 offset_top = 43.0
 offset_right = 2877.0
 offset_bottom = 225.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gee14")
-metadata/_edit_lock_ = true
 
 [node name="elevator" type="Node2D" parent="map/hallway" unique_id=890801445]
 
@@ -1689,6 +1705,30 @@ position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_ssvqc")
 one_way_collision = true
 
+[node name="doorway_right4" type="Node2D" parent="map" unique_id=108628876]
+position = Vector2(-5272, 0)
+
+[node name="Polygon2D4" type="Polygon2D" parent="map/doorway_right4" unique_id=1386368646]
+position = Vector2(2412, -488.99838)
+scale = Vector2(-1, 1.264)
+color = Color(0.0703125, 0, 0, 1)
+polygon = PackedVector2Array(26, 0.78970337, 206.85757, -0.79226685, 733, 8.699463, 733, 564.7566, 209, 556.8468, 29, 420.7987)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="map/doorway_right4" unique_id=1845779751]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/doorway_right4/StaticBody2D" unique_id=698394229]
+position = Vector2(2387, -95)
+shape = SubResource("SegmentShape2D_p57ef")
+
+[node name="Panel4" type="Panel" parent="map/doorway_right4" unique_id=933811463]
+layout_direction = 2
+offset_left = 1735.0
+offset_top = -490.0
+offset_right = 2200.0
+offset_bottom = 227.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
+
 [node name="part1" type="Node2D" parent="map" unique_id=332386088]
 
 [node name="shelf" type="Node2D" parent="map/part1" unique_id=206924238]
@@ -2177,14 +2217,164 @@ position = Vector2(0.8319738, -0.8297498)
 scale = Vector2(7.371238, 5.29482)
 texture = SubResource("GradientTexture2D_gee14")
 
-[node name="Panel7" type="Panel" parent="map/part1" unique_id=1965653686]
+[node name="pipe2" type="Node2D" parent="map/part1" unique_id=212057350]
+position = Vector2(-111, 25)
+
+[node name="Panel8" type="Panel" parent="map/part1/pipe2" unique_id=1897686475]
+layout_direction = 2
+offset_left = -2808.1482
+offset_top = -128.0
+offset_right = -2793.4907
+offset_bottom = -94.75513
+rotation = 4.712389
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bk1p3")
+
+[node name="Panel7" type="Panel" parent="map/part1/pipe2" unique_id=39101509]
 layout_direction = 2
 offset_left = -2791.0
-offset_top = -143.0
+offset_top = -130.0
 offset_right = -2775.0
-offset_bottom = 108.0
+offset_bottom = 43.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
+theme_override_styles/panel = SubResource("StyleBoxFlat_n8ral")
+
+[node name="pipe" type="Node2D" parent="map/part1" unique_id=813759118]
+position = Vector2(-128, 40)
+
+[node name="Panel8" type="Panel" parent="map/part1/pipe" unique_id=261434839]
+layout_direction = 2
+offset_left = -2810.711
+offset_top = -128.0
+offset_right = -2796.0535
+offset_bottom = -92.28906
+rotation = 4.712389
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bk1p3")
+
+[node name="Panel7" type="Panel" parent="map/part1/pipe" unique_id=1965653686]
+layout_direction = 2
+offset_left = -2791.0
+offset_top = -130.0
+offset_right = -2775.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n8ral")
+
+[node name="box" type="Node2D" parent="map/part1" unique_id=1618831907]
+position = Vector2(-3499, 36)
+
+[node name="Panel4" type="Panel" parent="map/part1/box" unique_id=1400380138]
+z_index = 1
+layout_direction = 2
+offset_left = 555.0
+offset_top = 73.0
+offset_right = 636.0
+offset_bottom = 137.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
+
+[node name="Panel5" type="Panel" parent="map/part1/box" unique_id=1323977212]
+z_index = 1
+layout_direction = 2
+offset_left = 566.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
+
+[node name="Panel6" type="Panel" parent="map/part1/box" unique_id=1981980894]
+z_index = 1
+layout_direction = 2
+offset_left = 635.0
+offset_top = 60.0
+offset_right = 659.0
+offset_bottom = 122.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="map/part1/box" unique_id=2091590846]
+position = Vector2(-299, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part1/box/StaticBody2D" unique_id=1490174322]
+position = Vector2(885, -10)
+shape = SubResource("SegmentShape2D_ssvqc")
+one_way_collision = true
+
+[node name="box2" type="Node2D" parent="map/part1" unique_id=1623437353]
+position = Vector2(-3411, 36)
+
+[node name="Panel4" type="Panel" parent="map/part1/box2" unique_id=947804182]
+z_index = 1
+layout_direction = 2
+offset_left = 555.0
+offset_top = 73.0
+offset_right = 636.0
+offset_bottom = 137.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
+
+[node name="Panel5" type="Panel" parent="map/part1/box2" unique_id=2087286285]
+z_index = 1
+layout_direction = 2
+offset_left = 566.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
+
+[node name="Panel6" type="Panel" parent="map/part1/box2" unique_id=1274589196]
+z_index = 1
+layout_direction = 2
+offset_left = 635.0
+offset_top = 60.0
+offset_right = 659.0
+offset_bottom = 122.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="map/part1/box2" unique_id=703653524]
+position = Vector2(-299, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part1/box2/StaticBody2D" unique_id=1076565701]
+position = Vector2(885, -10)
+shape = SubResource("SegmentShape2D_ssvqc")
+one_way_collision = true
+
+[node name="box3" type="Node2D" parent="map/part1" unique_id=1408213983]
+position = Vector2(-3456, -28)
+
+[node name="Panel4" type="Panel" parent="map/part1/box3" unique_id=1573403969]
+z_index = 1
+layout_direction = 2
+offset_left = 555.0
+offset_top = 73.0
+offset_right = 636.0
+offset_bottom = 137.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
+
+[node name="Panel5" type="Panel" parent="map/part1/box3" unique_id=2085382808]
+z_index = 1
+layout_direction = 2
+offset_left = 566.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
+
+[node name="Panel6" type="Panel" parent="map/part1/box3" unique_id=250655867]
+z_index = 1
+layout_direction = 2
+offset_left = 635.0
+offset_top = 60.0
+offset_right = 659.0
+offset_bottom = 122.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
 [node name="part2" type="Node2D" parent="map" unique_id=1365047033]
 
@@ -2319,6 +2509,31 @@ one_way_collision = true
 position = Vector2(-335, -12)
 shape = SubResource("SegmentShape2D_kvpfn")
 one_way_collision = true
+
+[node name="pillow" type="Sprite2D" parent="map/part2/sofa" unique_id=788602899]
+clip_children = 2
+position = Vector2(-231, 20)
+scale = Vector2(0.15550011, 0.15550011)
+texture = ExtResource("3_iywne")
+
+[node name="black" type="Sprite2D" parent="map/part2/sofa/pillow" unique_id=253232465]
+modulate = Color(1, 1, 1, 0.47058824)
+position = Vector2(25.723452, -45.016037)
+scale = Vector2(1.6579552, 515.50397)
+texture = SubResource("GradientTexture1D_vtaks")
+
+[node name="pillow2" type="Sprite2D" parent="map/part2/sofa" unique_id=228082760]
+clip_children = 2
+position = Vector2(78, 18)
+rotation = 3.1415927
+scale = Vector2(0.156, -0.156)
+texture = ExtResource("3_iywne")
+
+[node name="black" type="Sprite2D" parent="map/part2/sofa/pillow2" unique_id=1227205470]
+modulate = Color(1, 1, 1, 0.47058824)
+position = Vector2(25.723452, -45.016037)
+scale = Vector2(1.6579552, 515.50397)
+texture = SubResource("GradientTexture1D_vtaks")
 
 [node name="tv" type="Node2D" parent="map/part2" unique_id=526527308]
 z_index = 1
@@ -2571,6 +2786,30 @@ position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_ssvqc")
 one_way_collision = true
 
+[node name="plant" type="Sprite2D" parent="map/part2" unique_id=512255724]
+clip_children = 2
+position = Vector2(-1442.0001, -24.064623)
+scale = Vector2(0.26118553, 0.2793383)
+texture = ExtResource("4_p57ef")
+
+[node name="black" type="Sprite2D" parent="map/part2/plant" unique_id=1016151810]
+modulate = Color(1, 1, 1, 0.47058824)
+position = Vector2(0, 3.8112183)
+scale = Vector2(1, 515.50397)
+texture = SubResource("GradientTexture1D_vtaks")
+
+[node name="plant2" type="Sprite2D" parent="map/part2" unique_id=199641806]
+clip_children = 2
+position = Vector2(-1227.0001, -24.064623)
+scale = Vector2(0.26118553, 0.2793383)
+texture = ExtResource("4_p57ef")
+
+[node name="black" type="Sprite2D" parent="map/part2/plant2" unique_id=699192203]
+modulate = Color(1, 1, 1, 0.47058824)
+position = Vector2(0, 3.8112183)
+scale = Vector2(1, 515.50397)
+texture = SubResource("GradientTexture1D_vtaks")
+
 [node name="doorway_right" type="Node2D" parent="map" unique_id=244984317]
 
 [node name="Polygon2D3" type="Polygon2D" parent="map/doorway_right" unique_id=1625638645]
@@ -2636,7 +2875,7 @@ position = Vector2(1142, 0)
 position = Vector2(1528, -488.99838)
 scale = Vector2(1, 1.2642586)
 color = Color(0.0703125, 0, 0, 1)
-polygon = PackedVector2Array(26, 0.78970337, 206.85757, -0.79226685, 733, 8.699463, 733, 564.7566, 209, 556.8468, 29, 420.7987)
+polygon = PackedVector2Array(28, 106.78067, 212, 105.19873, 733, 8.699463, 733, 564.7566, 209, 556.8468, 29, 420.7987)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="map/doorway_right3" unique_id=631714401]
 
@@ -2709,63 +2948,14 @@ shape = SubResource("CapsuleShape2D_lbhrr")
 position = Vector2(286.3908, -143.69785)
 shape = SubResource("CapsuleShape2D_lbhrr")
 
-[node name="pillow" type="Sprite2D" parent="map" unique_id=2026719902]
-clip_children = 2
-position = Vector2(-1012, -11)
-scale = Vector2(0.15550011, 0.15550011)
-texture = ExtResource("3_iywne")
-
-[node name="black" type="Sprite2D" parent="map/pillow" unique_id=1378884235]
-modulate = Color(1, 1, 1, 0.47058824)
-position = Vector2(25.723452, -45.016037)
-scale = Vector2(1.6579552, 515.50397)
-texture = SubResource("GradientTexture1D_vtaks")
-
-[node name="pillow2" type="Sprite2D" parent="map" unique_id=168791250]
-clip_children = 2
-position = Vector2(-703, -13.000001)
-scale = Vector2(-0.156, 0.156)
-texture = ExtResource("3_iywne")
-
-[node name="black" type="Sprite2D" parent="map/pillow2" unique_id=526290589]
-modulate = Color(1, 1, 1, 0.47058824)
-position = Vector2(25.723452, -45.016037)
-scale = Vector2(1.6579552, 515.50397)
-texture = SubResource("GradientTexture1D_vtaks")
-
-[node name="plant" type="Sprite2D" parent="map" unique_id=649627895]
-clip_children = 2
-position = Vector2(-1442.0001, -24.064623)
-scale = Vector2(0.26118553, 0.2793383)
-texture = ExtResource("4_p57ef")
-
-[node name="black" type="Sprite2D" parent="map/plant" unique_id=1439305119]
-modulate = Color(1, 1, 1, 0.47058824)
-position = Vector2(0, 3.8112183)
-scale = Vector2(1, 515.50397)
-texture = SubResource("GradientTexture1D_vtaks")
-
-[node name="plant2" type="Sprite2D" parent="map" unique_id=1822867132]
-clip_children = 2
-position = Vector2(-1227.0001, -24.064623)
-scale = Vector2(0.26118553, 0.2793383)
-texture = ExtResource("4_p57ef")
-
-[node name="black" type="Sprite2D" parent="map/plant2" unique_id=719291999]
-modulate = Color(1, 1, 1, 0.47058824)
-position = Vector2(0, 3.8112183)
-scale = Vector2(1, 515.50397)
-texture = SubResource("GradientTexture1D_vtaks")
-
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(-1765, 31)
+position = Vector2(-2333, 31)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1751583136]
 position = Vector2(0, -95)
 zoom = Vector2(2, 2)
 
 [node name="flash" type="PointLight2D" parent="player" unique_id=1827854566]
-visible = false
 position = Vector2(16, -123)
 scale = Vector2(8.437501, 7.1874995)
 energy = 1.24
