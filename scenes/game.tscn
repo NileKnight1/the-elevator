@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bulteshkhc6xv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cj0n"]
+bg_color = Color(0.409996, 0.6555309, 0.60957927, 1)
+
+[node name="game" type="Node2D" unique_id=1974179384]
+
+[node name="map" type="Node2D" parent="." unique_id=1248484278]
+
+[node name="elevator" type="Node2D" parent="map" unique_id=890801445]
+
+[node name="Panel" type="Panel" parent="map/elevator" unique_id=693369947]
+layout_direction = 2
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8cj0n")
