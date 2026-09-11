@@ -96,6 +96,40 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lbhrr"]
+a = Vector2(-29, -16)
+b = Vector2(273, -16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
+bg_color = Color(0.21484375, 0.12502292, 0.052871704, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca42v"]
+bg_color = Color(0.2890625, 0.16946498, 0.073394775, 1)
+skew = Vector2(0.78, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rysoc"]
+bg_color = Color(0.35546875, 0.19453588, 0.06526184, 1)
+skew = Vector2(0, 1.28)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ssvqc"]
+a = Vector2(-16, -22)
+b = Vector2(65, -22)
+
 [sub_resource type="Gradient" id="Gradient_lnu2h"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
@@ -318,7 +352,7 @@ position = Vector2(286.3908, -143.69785)
 shape = SubResource("CapsuleShape2D_lbhrr")
 
 [node name="wardrobe" type="Node2D" parent="map" unique_id=338952384]
-position = Vector2(0, 15)
+position = Vector2(-46, 15)
 
 [node name="Panel" type="Panel" parent="map/wardrobe" unique_id=1027395689]
 layout_direction = 2
@@ -445,8 +479,130 @@ position = Vector2(0, 3)
 color = Color(0.07421875, 0.029687503, 0, 1)
 polygon = PackedVector2Array(846, -27, 876, -59, 1143, -59, 1172, -28)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="map/table" unique_id=101780245]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/table/StaticBody2D" unique_id=1140859644]
+position = Vector2(885, -10)
+shape = SubResource("SegmentShape2D_lbhrr")
+one_way_collision = true
+
+[node name="box" type="Node2D" parent="map" unique_id=1062280731]
+position = Vector2(-15, 15)
+
+[node name="Panel4" type="Panel" parent="map/box" unique_id=542784933]
+z_index = 1
+layout_direction = 2
+offset_left = 555.0
+offset_top = 73.0
+offset_right = 636.0
+offset_bottom = 137.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
+
+[node name="Panel5" type="Panel" parent="map/box" unique_id=128016101]
+z_index = 1
+layout_direction = 2
+offset_left = 566.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
+
+[node name="Panel6" type="Panel" parent="map/box" unique_id=63753264]
+z_index = 1
+layout_direction = 2
+offset_left = 635.0
+offset_top = 60.0
+offset_right = 659.0
+offset_bottom = 122.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="map/box" unique_id=1832665923]
+position = Vector2(-299, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/box/StaticBody2D" unique_id=475083617]
+position = Vector2(885, -10)
+shape = SubResource("SegmentShape2D_ssvqc")
+one_way_collision = true
+
+[node name="box2" type="Node2D" parent="map" unique_id=1675596431]
+position = Vector2(73, 15)
+
+[node name="Panel4" type="Panel" parent="map/box2" unique_id=725562866]
+z_index = 1
+layout_direction = 2
+offset_left = 555.0
+offset_top = 73.0
+offset_right = 636.0
+offset_bottom = 137.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
+
+[node name="Panel5" type="Panel" parent="map/box2" unique_id=1108591449]
+z_index = 1
+layout_direction = 2
+offset_left = 566.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
+
+[node name="Panel6" type="Panel" parent="map/box2" unique_id=1445971455]
+z_index = 1
+layout_direction = 2
+offset_left = 635.0
+offset_top = 60.0
+offset_right = 659.0
+offset_bottom = 122.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="map/box2" unique_id=639287299]
+position = Vector2(-299, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/box2/StaticBody2D" unique_id=989222044]
+position = Vector2(885, -10)
+shape = SubResource("SegmentShape2D_ssvqc")
+one_way_collision = true
+
+[node name="box3" type="Node2D" parent="map" unique_id=1957927084]
+position = Vector2(28, -49)
+
+[node name="Panel4" type="Panel" parent="map/box3" unique_id=1212990578]
+z_index = 1
+layout_direction = 2
+offset_left = 555.0
+offset_top = 73.0
+offset_right = 636.0
+offset_bottom = 137.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
+
+[node name="Panel5" type="Panel" parent="map/box3" unique_id=1983958793]
+z_index = 1
+layout_direction = 2
+offset_left = 566.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
+
+[node name="Panel6" type="Panel" parent="map/box3" unique_id=1514628378]
+z_index = 1
+layout_direction = 2
+offset_left = 635.0
+offset_top = 60.0
+offset_right = 659.0
+offset_bottom = 122.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
+
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(492, 31)
+position = Vector2(457, 31)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1751583136]
 visible = false

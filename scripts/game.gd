@@ -7,7 +7,10 @@ func init_lights():
 	$player/flash.visible = 1
 
 func _ready() -> void:
-	init_game()
+	#init_game()
+	
+	
+	pass
 
 func _process(delta: float) -> void:
 	pass
