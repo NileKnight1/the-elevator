@@ -267,6 +267,67 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suyxu"]
+bg_color = Color(0.4392157, 0.4392157, 0.4392157, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgl2t"]
+bg_color = Color(0.75390625, 0.75390625, 0.75390625, 1)
+skew = Vector2(1.28, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
+bg_color = Color(0.62109375, 0.62109375, 0.62109375, 1)
+skew = Vector2(0, 0.775)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
+bg_color = Color(0.5, 0.5, 0.5, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxtfn"]
+bg_color = Color(0.5, 0.5, 0.5, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2yb1"]
+bg_color = Color(0.5, 0.5, 0.5, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljb1"]
+bg_color = Color(0.5, 0.5, 0.5, 1)
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Gradient" id="Gradient_lnu2h"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
@@ -285,7 +346,7 @@ script = ExtResource("1_iywne")
 layout_direction = 2
 offset_left = -1796.0
 offset_top = -490.0
-offset_right = 1842.0
+offset_right = 2649.0
 offset_bottom = 43.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
@@ -295,7 +356,7 @@ metadata/_edit_lock_ = true
 layout_direction = 2
 offset_left = -1796.0
 offset_top = 43.0
-offset_right = 1842.0
+offset_right = 2649.0
 offset_bottom = 193.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gee14")
@@ -820,6 +881,39 @@ position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_ssvqc")
 one_way_collision = true
 
+[node name="box3" type="Node2D" parent="map" unique_id=1957927084]
+position = Vector2(28, -49)
+
+[node name="Panel4" type="Panel" parent="map/box3" unique_id=1212990578]
+z_index = 1
+layout_direction = 2
+offset_left = 555.0
+offset_top = 73.0
+offset_right = 636.0
+offset_bottom = 137.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
+
+[node name="Panel5" type="Panel" parent="map/box3" unique_id=1983958793]
+z_index = 1
+layout_direction = 2
+offset_left = 566.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
+
+[node name="Panel6" type="Panel" parent="map/box3" unique_id=1514628378]
+z_index = 1
+layout_direction = 2
+offset_left = 635.0
+offset_top = 60.0
+offset_right = 659.0
+offset_bottom = 122.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
+
 [node name="box4" type="Node2D" parent="map" unique_id=884858013]
 position = Vector2(503, 15)
 
@@ -861,10 +955,10 @@ position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_ssvqc")
 one_way_collision = true
 
-[node name="box3" type="Node2D" parent="map" unique_id=1957927084]
-position = Vector2(28, -49)
+[node name="box5" type="Node2D" parent="map" unique_id=1386917096]
+position = Vector2(589, 15)
 
-[node name="Panel4" type="Panel" parent="map/box3" unique_id=1212990578]
+[node name="Panel4" type="Panel" parent="map/box5" unique_id=27297662]
 z_index = 1
 layout_direction = 2
 offset_left = 555.0
@@ -874,7 +968,7 @@ offset_bottom = 137.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
-[node name="Panel5" type="Panel" parent="map/box3" unique_id=1983958793]
+[node name="Panel5" type="Panel" parent="map/box5" unique_id=1385115091]
 z_index = 1
 layout_direction = 2
 offset_left = 566.0
@@ -884,7 +978,7 @@ offset_bottom = 74.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
-[node name="Panel6" type="Panel" parent="map/box3" unique_id=1514628378]
+[node name="Panel6" type="Panel" parent="map/box5" unique_id=1733963660]
 z_index = 1
 layout_direction = 2
 offset_left = 635.0
@@ -893,6 +987,14 @@ offset_right = 659.0
 offset_bottom = 122.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="map/box5" unique_id=692208712]
+position = Vector2(-299, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/box5/StaticBody2D" unique_id=1941077690]
+position = Vector2(885, -10)
+shape = SubResource("SegmentShape2D_ssvqc")
+one_way_collision = true
 
 [node name="clock" type="Node2D" parent="map" unique_id=1960188774]
 position = Vector2(-411, 0)
@@ -1097,8 +1199,77 @@ offset_bottom = -122.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pl11u")
 
+[node name="fridge" type="Node2D" parent="map" unique_id=2062208405]
+position = Vector2(684, 40)
+
+[node name="Panel4" type="Panel" parent="map/fridge" unique_id=733484840]
+layout_direction = 2
+offset_left = 1119.0
+offset_top = -162.0
+offset_right = 1247.0
+offset_bottom = 30.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_suyxu")
+
+[node name="Panel5" type="Panel" parent="map/fridge" unique_id=522632155]
+layout_direction = 2
+offset_left = 1136.0
+offset_top = -187.0
+offset_right = 1264.0
+offset_bottom = -162.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sgl2t")
+
+[node name="Panel6" type="Panel" parent="map/fridge" unique_id=1384471098]
+layout_direction = 2
+offset_left = 1247.0
+offset_top = -174.0
+offset_right = 1280.0
+offset_bottom = 17.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qouja")
+
+[node name="sink" type="Node2D" parent="map" unique_id=1768935199]
+position = Vector2(925, 29)
+
+[node name="Panel7" type="Panel" parent="map/sink" unique_id=287682323]
+layout_direction = 2
+offset_left = 1264.0
+offset_top = -119.0
+offset_right = 1283.0
+offset_bottom = -112.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_js0lu")
+
+[node name="Panel6" type="Panel" parent="map/sink" unique_id=403571568]
+layout_direction = 2
+offset_left = 1264.0
+offset_top = -114.0
+offset_right = 1271.0
+offset_bottom = -77.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gxtfn")
+
+[node name="Panel5" type="Panel" parent="map/sink" unique_id=1869565972]
+layout_direction = 2
+offset_left = 1198.0
+offset_top = -88.0
+offset_right = 1337.0
+offset_bottom = -53.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v2yb1")
+
+[node name="Panel4" type="Panel" parent="map/sink" unique_id=301066952]
+layout_direction = 2
+offset_left = 1255.0
+offset_top = -56.0
+offset_right = 1280.0
+offset_bottom = 26.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wljb1")
+
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(1102, 31)
+position = Vector2(1915, 31)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1751583136]
 visible = false
