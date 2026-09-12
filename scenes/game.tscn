@@ -49,6 +49,12 @@ corner_radius_bottom_left = 60
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd4ix"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
+size = Vector2(818, 577)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhx41"]
 bg_color = Color(0.05859375, 0.05859375, 0.05859375, 1)
 border_color = Color(0, 0, 0, 1)
@@ -269,6 +275,9 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tnpc"]
+size = Vector2(1120, 577)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suyxu"]
 bg_color = Color(0.4392157, 0.4392157, 0.4392157, 1)
 border_width_left = 2
@@ -337,6 +346,9 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gee14"]
 a = Vector2(-16, -22)
 b = Vector2(118, -21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtaks"]
+size = Vector2(1298, 577)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_p57ef"]
 a = Vector2(-22, -319)
@@ -425,6 +437,9 @@ border_width_left = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
+size = Vector2(1437.5, 577)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ool0"]
 bg_color = Color(0.07992554, 0.3508768, 0.37890625, 1)
@@ -566,6 +581,9 @@ border_color = Color(0, 0, 0, 1)
 a = Vector2(-2, 2)
 b = Vector2(153, 2)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
+size = Vector2(1103, 577)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lbhrr"]
 radius = 12.626389
 height = 98.0
@@ -586,14 +604,6 @@ fill_to = Vector2(0.92672414, 0.89224136)
 script = ExtResource("1_iywne")
 
 [node name="map" type="Node2D" parent="." unique_id=1248484278]
-
-[node name="black" type="PointLight2D" parent="map" unique_id=1412170633]
-visible = false
-position = Vector2(15.000015, -256.5)
-scale = Vector2(7.0139456, 2.4725492)
-energy = 0.98
-blend_mode = 1
-texture = ExtResource("1_lbhrr")
 
 [node name="hallway" type="Node2D" parent="map" unique_id=417335065]
 
@@ -735,6 +745,33 @@ position = Vector2(0, 31)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/hallway/boundaries/StaticBody2D" unique_id=405012030]
 position = Vector2(16, 40)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
+
+[node name="black" type="PointLight2D" parent="map/hallway" unique_id=1605875113]
+visible = false
+position = Vector2(23.505157, -65.25)
+scale = Vector2(0.78670186, 1.1382353)
+energy = 0.98
+blend_mode = 1
+texture = ExtResource("1_lbhrr")
+
+[node name="dark" type="Panel" parent="map/hallway" unique_id=2067292760]
+visible = false
+z_index = 2
+layout_direction = 2
+offset_left = -457.78415
+offset_top = 224.97491
+offset_right = 124.20706
+offset_bottom = 1187.8105
+rotation = 4.712389
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
+
+[node name="Area2D" type="Area2D" parent="map/hallway" unique_id=730403157]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/hallway/Area2D" unique_id=1390764421]
+position = Vector2(-40, -65.5)
+shape = SubResource("RectangleShape2D_u5sy4")
 
 [node name="part3" type="Node2D" parent="map" unique_id=1120939309]
 
@@ -1360,6 +1397,34 @@ offset_bottom = 24.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e1j6l")
 
+[node name="black" type="PointLight2D" parent="map/part3" unique_id=1864580284]
+visible = false
+position = Vector2(1073.3933, -65.25)
+scale = Vector2(0.93454736, 1.1382353)
+energy = 0.98
+blend_mode = 1
+texture = ExtResource("1_lbhrr")
+
+[node name="dark" type="Panel" parent="map/part3" unique_id=979717919]
+visible = false
+z_index = 2
+layout_direction = 2
+offset_left = 503.00003
+offset_top = 224.97491
+offset_right = 1084.9912
+offset_bottom = 1368.9749
+rotation = 4.712389
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
+
+[node name="Area2D" type="Area2D" parent="map/part3" unique_id=738555414]
+visible = false
+position = Vector2(958, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part3/Area2D" unique_id=841922934]
+position = Vector2(21, -65.5)
+shape = SubResource("RectangleShape2D_0tnpc")
+
 [node name="part4" type="Node2D" parent="map" unique_id=575319501]
 
 [node name="fridge" type="Node2D" parent="map/part4" unique_id=2062208405]
@@ -1705,6 +1770,34 @@ position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_ssvqc")
 one_way_collision = true
 
+[node name="black" type="PointLight2D" parent="map/part4" unique_id=1175106793]
+visible = false
+position = Vector2(2260.4673, -65.25)
+scale = Vector2(1.0115386, 1.1382353)
+energy = 0.98
+blend_mode = 1
+texture = ExtResource("1_lbhrr")
+
+[node name="dark" type="Panel" parent="map/part4" unique_id=808715295]
+visible = false
+z_index = 2
+layout_direction = 2
+offset_left = 1647.0
+offset_top = 224.97491
+offset_right = 2228.9912
+offset_bottom = 1458.112
+rotation = 4.712389
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
+
+[node name="Area2D" type="Area2D" parent="map/part4" unique_id=1470651449]
+visible = false
+position = Vector2(958, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/Area2D" unique_id=20575447]
+position = Vector2(1276, -65.5)
+shape = SubResource("RectangleShape2D_vtaks")
+
 [node name="doorway_right4" type="Node2D" parent="map" unique_id=108628876]
 position = Vector2(-5272, 0)
 
@@ -1730,6 +1823,14 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
 
 [node name="part1" type="Node2D" parent="map" unique_id=332386088]
+
+[node name="black" type="PointLight2D" parent="map/part1" unique_id=1412170633]
+visible = false
+position = Vector2(-2376.625, -65.25)
+scale = Vector2(1.1413044, 1.1382353)
+energy = 0.98
+blend_mode = 1
+texture = ExtResource("1_lbhrr")
 
 [node name="shelf" type="Node2D" parent="map/part1" unique_id=206924238]
 z_index = 1
@@ -2376,6 +2477,25 @@ offset_bottom = 122.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
+[node name="dark" type="Panel" parent="map/part1" unique_id=2132444594]
+visible = false
+z_index = 1
+layout_direction = 2
+offset_left = -3073.1738
+offset_top = 224.97491
+offset_right = -2491.1826
+offset_bottom = 1613.2471
+rotation = 4.712389
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
+
+[node name="Area2D" type="Area2D" parent="map/part1" unique_id=36883239]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part1/Area2D" unique_id=1603414031]
+position = Vector2(-2351.75, -66.5)
+shape = SubResource("RectangleShape2D_p57ef")
+
 [node name="part2" type="Node2D" parent="map" unique_id=1365047033]
 
 [node name="sofa" type="Node2D" parent="map/part2" unique_id=1869477951]
@@ -2810,6 +2930,33 @@ position = Vector2(0, 3.8112183)
 scale = Vector2(1, 515.50397)
 texture = SubResource("GradientTexture1D_vtaks")
 
+[node name="black" type="PointLight2D" parent="map/part2" unique_id=1429338716]
+visible = false
+position = Vector2(-1072.3125, -65.25)
+scale = Vector2(1.0111773, 1.1382353)
+energy = 0.98
+blend_mode = 1
+texture = ExtResource("1_lbhrr")
+
+[node name="dark" type="Panel" parent="map/part2" unique_id=1545309189]
+visible = false
+z_index = 2
+layout_direction = 2
+offset_left = -1684.9016
+offset_top = 224.97491
+offset_right = -1102.9104
+offset_bottom = 1452.0923
+rotation = 4.712389
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
+
+[node name="Area2D" type="Area2D" parent="map/part2" unique_id=2130085401]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/Area2D" unique_id=1557957512]
+position = Vector2(-1041.5, -65.5)
+shape = SubResource("RectangleShape2D_gee14")
+
 [node name="doorway_right" type="Node2D" parent="map" unique_id=244984317]
 
 [node name="Polygon2D3" type="Polygon2D" parent="map/doorway_right" unique_id=1625638645]
@@ -2949,13 +3096,14 @@ position = Vector2(286.3908, -143.69785)
 shape = SubResource("CapsuleShape2D_lbhrr")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(-2333, 31)
+position = Vector2(-1629, 68)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1751583136]
 position = Vector2(0, -95)
 zoom = Vector2(2, 2)
 
 [node name="flash" type="PointLight2D" parent="player" unique_id=1827854566]
+visible = false
 position = Vector2(16, -123)
 scale = Vector2(8.437501, 7.1874995)
 energy = 1.24
@@ -2965,3 +3113,14 @@ texture = SubResource("GradientTexture2D_lbhrr")
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("2_lnu2h")]
 visible = false
+
+[connection signal="body_entered" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_entered"]
+[connection signal="body_exited" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_exited"]
+[connection signal="body_entered" from="map/part3/Area2D" to="." method="_on_area_part3_body_entered"]
+[connection signal="body_exited" from="map/part3/Area2D" to="." method="_on_area_part3_body_exited"]
+[connection signal="body_entered" from="map/part4/Area2D" to="." method="_on_area_part4_body_entered"]
+[connection signal="body_exited" from="map/part4/Area2D" to="." method="_on_area_part4_body_exited"]
+[connection signal="body_entered" from="map/part1/Area2D" to="." method="_on_area_part1_body_entered"]
+[connection signal="body_exited" from="map/part1/Area2D" to="." method="_on_area_part1_body_exited"]
+[connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
+[connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
