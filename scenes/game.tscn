@@ -94,6 +94,17 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvuet"]
+size = Vector2(86, 75)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbak0"]
+bg_color = Color(0.25882354, 0.28627452, 0.30980393, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvuet"]
 bg_color = Color(0.09803922, 0.039215688, 0, 1)
 border_width_left = 2
@@ -836,12 +847,12 @@ visible = false
 position = Vector2(21.5, -93.5)
 shape = SubResource("RectangleShape2D_kvpfn")
 
-[node name="part3" type="Node2D" parent="map" unique_id=1120939309]
+[node name="collectables" type="Node2D" parent="map" unique_id=1223619649]
 
-[node name="tire" type="Node2D" parent="map/part3" unique_id=53241303]
-position = Vector2(-722, 8)
+[node name="part4_tire" type="Node2D" parent="map/collectables" unique_id=1498722287]
+position = Vector2(925, 4)
 
-[node name="Panel6" type="Panel" parent="map/part3/tire" unique_id=302515159]
+[node name="Panel6" type="Panel" parent="map/collectables/part4_tire" unique_id=387814457]
 layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
@@ -850,7 +861,7 @@ offset_bottom = 43.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
-[node name="Panel7" type="Panel" parent="map/part3/tire" unique_id=1508237566]
+[node name="Panel7" type="Panel" parent="map/collectables/part4_tire" unique_id=2145643550]
 layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
@@ -859,7 +870,7 @@ offset_bottom = 44.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
-[node name="Panel4" type="Panel" parent="map/part3/tire" unique_id=1040412957]
+[node name="Panel4" type="Panel" parent="map/collectables/part4_tire" unique_id=1839988879]
 layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
@@ -867,6 +878,48 @@ offset_right = 1465.0
 offset_bottom = 28.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sww3w")
+
+[node name="tire1_area" type="Area2D" parent="map/collectables/part4_tire" unique_id=1130760735]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/collectables/part4_tire/tire1_area" unique_id=2069585981]
+position = Vector2(1446, 6.5)
+shape = SubResource("RectangleShape2D_kvuet")
+
+[node name="elevator_items" type="Node2D" parent="map" unique_id=1979539055]
+
+[node name="tire" type="Node2D" parent="map/elevator_items" unique_id=890168736]
+visible = false
+position = Vector2(-1180, -36)
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel6" type="Panel" parent="map/elevator_items/tire" unique_id=432257674]
+layout_direction = 2
+offset_left = 1412.0
+offset_top = -32.0
+offset_right = 1487.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
+
+[node name="Panel7" type="Panel" parent="map/elevator_items/tire" unique_id=1192270591]
+layout_direction = 2
+offset_left = 1406.0
+offset_top = -31.0
+offset_right = 1481.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Panel4" type="Panel" parent="map/elevator_items/tire" unique_id=954436077]
+layout_direction = 2
+offset_left = 1422.0
+offset_top = -15.0
+offset_right = 1465.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+
+[node name="part3" type="Node2D" parent="map" unique_id=1120939309]
 
 [node name="table" type="Node2D" parent="map/part3" unique_id=1614125924]
 position = Vector2(-291, 15)
@@ -1409,7 +1462,7 @@ offset_left = 0.9050293
 offset_top = 0.48000336
 offset_right = 13.905029
 offset_bottom = 7.4800034
-text = "Hello"
+text = "He's watching."
 label_settings = SubResource("LabelSettings_xbak0")
 
 [node name="cam" type="Camera2D" parent="map/part3/pc" unique_id=18536405]
@@ -1602,36 +1655,6 @@ position = Vector2(-299, 89)
 position = Vector2(1443, -231)
 shape = SubResource("SegmentShape2D_u5sy4")
 one_way_collision = true
-
-[node name="tire2" type="Node2D" parent="map/part4" unique_id=2007669978]
-position = Vector2(925, 4)
-
-[node name="Panel6" type="Panel" parent="map/part4/tire2" unique_id=1762780735]
-layout_direction = 2
-offset_left = 1412.0
-offset_top = -32.0
-offset_right = 1487.0
-offset_bottom = 43.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
-
-[node name="Panel7" type="Panel" parent="map/part4/tire2" unique_id=1554211523]
-layout_direction = 2
-offset_left = 1406.0
-offset_top = -31.0
-offset_right = 1481.0
-offset_bottom = 44.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
-
-[node name="Panel4" type="Panel" parent="map/part4/tire2" unique_id=1829760323]
-layout_direction = 2
-offset_left = 1422.0
-offset_top = -15.0
-offset_right = 1465.0
-offset_bottom = 28.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_sww3w")
 
 [node name="sink" type="Node2D" parent="map/part4" unique_id=1768935199]
 position = Vector2(1102, 29)
@@ -3263,6 +3286,7 @@ text = "Go on"
 [connection signal="body_exited" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_exited"]
 [connection signal="body_entered" from="map/hallway/elevator_area" to="." method="_on_elevator_area_body_entered"]
 [connection signal="body_exited" from="map/hallway/elevator_area" to="." method="_on_elevator_area_body_exited"]
+[connection signal="input_event" from="map/collectables/part4_tire/tire1_area" to="." method="_on_tire_1_area_input_event"]
 [connection signal="body_entered" from="map/part3/pc/pc_area" to="." method="_on_pc_area_body_entered"]
 [connection signal="body_exited" from="map/part3/pc/pc_area" to="." method="_on_pc_area_body_exited"]
 [connection signal="pressed" from="map/part3/pc/desktop/mypc" to="." method="_on_mypc_pressed"]

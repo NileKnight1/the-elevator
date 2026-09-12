@@ -18,6 +18,10 @@ func disable_move():
 func allow_move():
 	$player.move = 1
 
+func check_click(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		return 1
+
 func _ready() -> void:
 	#init_game()
 	
@@ -126,3 +130,9 @@ func _on_mypc_pressed() -> void:
 	print("my_pc")
 func _on_note_pressed() -> void:
 	$map/part3/pc/desktop/note_panel2.visible = !$map/part3/pc/desktop/note_panel2.visible 
+
+func _on_tire_1_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		print("tire taken")
+		$map/collectables/part4_tire.visible = 0
+		$map/elevator_items/tire.visible = 1
