@@ -47,13 +47,24 @@ corner_radius_top_right = 60
 corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66xif"]
+bg_color = Color(0.11764706, 0.13725491, 0.14509805, 1)
+border_color = Color(0.22265625, 0.22265625, 0.22265625, 1)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kvuet"]
+a = Vector2(-90, 8)
+b = Vector2(99, 8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd4ix"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
 size = Vector2(818, 577)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpfn"]
+size = Vector2(193, 275)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhx41"]
 bg_color = Color(0.05859375, 0.05859375, 0.05859375, 1)
@@ -705,7 +716,7 @@ position = Vector2(65.89934, -200)
 rotation = 3.1415927
 scale = Vector2(0.70167744, 1)
 color = Color(0.22425842, 0.24972439, 0.26953125, 1)
-polygon = PackedVector2Array(-61.425194, -229.99998, -61.42517, -35.073204, -61.425163, 30.000015, -32.92205, -11.999985, -32.922073, -187)
+polygon = PackedVector2Array(-61.425194, -229.99998, -61.42517, -35.073204, -61.42517, 5.8132324, -61.425163, 30.000015, -32.92205, -11.999985, -32.922073, -187)
 
 [node name="Polygon2D3" type="Polygon2D" parent="map/hallway/elevator" unique_id=1448355195]
 position = Vector2(111.78397, -62.669266)
@@ -737,6 +748,26 @@ scale = Vector2(0.97881144, 0.88261527)
 color = Color(0.1953125, 0.1953125, 0.1953125, 1)
 polygon = PackedVector2Array(-102.16472, -253.7912, -103.18637, 50.984848, -70, 6, -71, -208)
 
+[node name="close1" type="Panel" parent="map/hallway/elevator" unique_id=1018981276]
+z_index = 1
+layout_direction = 2
+offset_left = -78.0
+offset_top = -230.0
+offset_right = -78.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
+
+[node name="close2" type="Panel" parent="map/hallway/elevator" unique_id=1925000049]
+layout_direction = 2
+offset_left = 119.0
+offset_top = 43.0
+offset_right = 119.0
+offset_bottom = 316.0
+rotation = -3.1415927
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
+
 [node name="boundaries" type="Node2D" parent="map/hallway" unique_id=373826329]
 position = Vector2(0, 31)
 
@@ -745,6 +776,11 @@ position = Vector2(0, 31)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/hallway/boundaries/StaticBody2D" unique_id=405012030]
 position = Vector2(16, 40)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
+
+[node name="elevator" type="CollisionShape2D" parent="map/hallway/boundaries/StaticBody2D" unique_id=1862121145]
+position = Vector2(16, -17)
+shape = SubResource("SegmentShape2D_kvuet")
+disabled = true
 
 [node name="black" type="PointLight2D" parent="map/hallway" unique_id=1605875113]
 visible = false
@@ -772,6 +808,13 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/hallway/Area2D" unique_id=1390764421]
 position = Vector2(-40, -65.5)
 shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="elevator_area" type="Area2D" parent="map/hallway" unique_id=2016380563]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/hallway/elevator_area" unique_id=628266570]
+position = Vector2(21.5, -93.5)
+shape = SubResource("RectangleShape2D_kvpfn")
 
 [node name="part3" type="Node2D" parent="map" unique_id=1120939309]
 
@@ -3096,7 +3139,7 @@ position = Vector2(286.3908, -143.69785)
 shape = SubResource("CapsuleShape2D_lbhrr")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(-1629, 68)
+position = Vector2(0, -23)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1751583136]
 position = Vector2(0, -95)
@@ -3114,8 +3157,17 @@ texture = SubResource("GradientTexture2D_lbhrr")
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("2_lnu2h")]
 visible = false
 
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=99227585]
+offset_left = 286.0
+offset_top = 297.0
+offset_right = 340.0
+offset_bottom = 328.0
+text = "Go on"
+
 [connection signal="body_entered" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_entered"]
 [connection signal="body_exited" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_exited"]
+[connection signal="body_entered" from="map/hallway/elevator_area" to="." method="_on_elevator_area_body_entered"]
+[connection signal="body_exited" from="map/hallway/elevator_area" to="." method="_on_elevator_area_body_exited"]
 [connection signal="body_entered" from="map/part3/Area2D" to="." method="_on_area_part3_body_entered"]
 [connection signal="body_exited" from="map/part3/Area2D" to="." method="_on_area_part3_body_exited"]
 [connection signal="body_entered" from="map/part4/Area2D" to="." method="_on_area_part4_body_entered"]
@@ -3124,3 +3176,4 @@ visible = false
 [connection signal="body_exited" from="map/part1/Area2D" to="." method="_on_area_part1_body_exited"]
 [connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
 [connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_elevator_go_pressed"]

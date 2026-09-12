@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	if !move: 
+		$sprite.play("idle")
 		velocity.x = 0
 		move_and_slide()
 		return
