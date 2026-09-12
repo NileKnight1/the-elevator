@@ -5,7 +5,11 @@
 [ext_resource type="PackedScene" path="res://scenes/temp_player.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" path="res://scenes/mobile.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://dk7huthrytou3" path="res://assets/blue-cartoon-pillow-soft-comfortable-cushion-with-simple-design-vector-removebg-preview.png" id="3_iywne"]
+[ext_resource type="Texture2D" uid="uid://ttd1w5yseklv" path="res://assets/minimal-windows-xp-wallpaper-throughout-a-day-v0-u8eezfv5nshf1.png" id="3_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://cj8qm4ugj6u55" path="res://assets/26791-48x48x32.png" id="4_gee14"]
 [ext_resource type="Texture2D" uid="uid://dcsko86n167r5" path="res://assets/tall-houseplant-pot-nature-icon_18591-82627-removebg-preview.png" id="4_p57ef"]
+[ext_resource type="Texture2D" uid="uid://dpnqsk1jp5hak" path="res://assets/sticky_note-removebg-preview.png" id="5_0tnpc"]
+[ext_resource type="FontFile" uid="uid://bh1b7j3xgpota" path="res://assets/windows-bold[1].ttf" id="6_vtaks"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twgab"]
 bg_color = Color(0, 0, 0, 1)
@@ -225,6 +229,22 @@ border_width_left = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dinhu"]
+size = Vector2(139, 156)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnuda"]
+bg_color = Color(0.2421875, 0.2421875, 0.2421875, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rmfi"]
+bg_color = Color(0.9375, 0.9375, 0.9375, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xbak0"]
+font = ExtResource("6_vtaks")
+font_size = 4
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pl11u"]
 bg_color = Color(0.453125, 0.28342438, 0.08496094, 1)
@@ -1304,10 +1324,10 @@ position = Vector2(0, 4)
 
 [node name="Panel4" type="Panel" parent="map/part3/pc" unique_id=564712127]
 layout_direction = 2
-offset_left = 1261.9999
-offset_top = -82.0
-offset_right = 1354.0
-offset_bottom = -35.0
+offset_left = 1266.0
+offset_top = -85.0
+offset_right = 1352.3
+offset_bottom = -34.865
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5newe")
 metadata/_edit_use_anchors_ = true
@@ -1321,6 +1341,81 @@ offset_bottom = -19.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_37s47")
 metadata/_edit_use_anchors_ = true
+
+[node name="pc_area" type="Area2D" parent="map/part3/pc" unique_id=149695216]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part3/pc/pc_area" unique_id=830330818]
+position = Vector2(1306.5, -21)
+shape = SubResource("RectangleShape2D_dinhu")
+
+[node name="desktop" type="Node2D" parent="map/part3/pc" unique_id=1010309209]
+position = Vector2(1280, -69)
+
+[node name="Panel6" type="Panel" parent="map/part3/pc/desktop" unique_id=1572308830]
+layout_direction = 2
+offset_left = -10.0
+offset_top = -11.0
+offset_right = 68.0
+offset_bottom = 29.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
+
+[node name="bg" type="Sprite2D" parent="map/part3/pc/desktop" unique_id=289882621]
+position = Vector2(29, 9)
+scale = Vector2(0.019499997, 0.01777778)
+texture = ExtResource("3_u5sy4")
+
+[node name="mypc" type="TextureButton" parent="map/part3/pc/desktop" unique_id=1959625693]
+offset_left = -7.0
+offset_top = -9.0
+offset_right = -2.0
+offset_bottom = -3.2424245
+texture_normal = ExtResource("4_gee14")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="mypc2" type="TextureButton" parent="map/part3/pc/desktop" unique_id=263569685]
+offset_left = -7.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = 3.7575755
+texture_normal = ExtResource("5_0tnpc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="pc_panel" type="Panel" parent="map/part3/pc/desktop" unique_id=938227010]
+visible = false
+layout_direction = 2
+offset_left = 6.0
+offset_top = -6.0
+offset_right = 50.0
+offset_bottom = 21.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
+
+[node name="note_panel2" type="Panel" parent="map/part3/pc/desktop" unique_id=1126567007]
+layout_direction = 2
+offset_left = 9.094971
+offset_top = -1.4800034
+offset_right = 47.0
+offset_bottom = 20.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0rmfi")
+
+[node name="Label" type="Label" parent="map/part3/pc/desktop/note_panel2" unique_id=251730994]
+layout_mode = 0
+offset_left = 0.9050293
+offset_top = 0.48000336
+offset_right = 13.905029
+offset_bottom = 7.4800034
+text = "Hello"
+label_settings = SubResource("LabelSettings_xbak0")
+
+[node name="cam" type="Camera2D" parent="map/part3/pc" unique_id=18536405]
+position = Vector2(1307, -57)
+enabled = false
+zoom = Vector2(6.905, 6.905)
 
 [node name="paint" type="Node2D" parent="map/part3" unique_id=222961494]
 
@@ -3139,9 +3234,9 @@ position = Vector2(286.3908, -143.69785)
 shape = SubResource("CapsuleShape2D_lbhrr")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(0, -23)
+position = Vector2(867, 54)
 
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=1751583136]
+[node name="cam" type="Camera2D" parent="player" unique_id=1751583136]
 position = Vector2(0, -95)
 zoom = Vector2(2, 2)
 
@@ -3168,6 +3263,10 @@ text = "Go on"
 [connection signal="body_exited" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_exited"]
 [connection signal="body_entered" from="map/hallway/elevator_area" to="." method="_on_elevator_area_body_entered"]
 [connection signal="body_exited" from="map/hallway/elevator_area" to="." method="_on_elevator_area_body_exited"]
+[connection signal="body_entered" from="map/part3/pc/pc_area" to="." method="_on_pc_area_body_entered"]
+[connection signal="body_exited" from="map/part3/pc/pc_area" to="." method="_on_pc_area_body_exited"]
+[connection signal="pressed" from="map/part3/pc/desktop/mypc" to="." method="_on_mypc_pressed"]
+[connection signal="pressed" from="map/part3/pc/desktop/mypc2" to="." method="_on_note_pressed"]
 [connection signal="body_entered" from="map/part3/Area2D" to="." method="_on_area_part3_body_entered"]
 [connection signal="body_exited" from="map/part3/Area2D" to="." method="_on_area_part3_body_exited"]
 [connection signal="body_entered" from="map/part4/Area2D" to="." method="_on_area_part4_body_entered"]

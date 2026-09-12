@@ -24,22 +24,40 @@ func _ready() -> void:
 	pass
 
 var elevator_area = 0
+var pc_area = 0
+var elevator_in = 0
+var pc_on = 0
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		if elevator_area:
-			if $player.scale == Vector2(1, 1):
+			if !elevator_in:
+				elevator_in = 1 
 				disable_move()
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
 				$player.scale = Vector2(0.8, 0.8)
 				$player.position = Vector2(0, -25)
 			else:
+				elevator_in = 0
 				allow_move()
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
 				$player.position = Vector2(0, -11)
-				
-
+		
+		if pc_area:
+			if !pc_on:
+				pc_on = 1
+				$player/cam.enabled = 0
+				$map/part3/pc/cam.enabled = 1
+				$player.visible = 0
+				disable_move()
+			else:
+				pc_on = 0
+				$player/cam.enabled = 1
+				$map/part3/pc/cam.enabled = 0
+				$player.visible = 1
+				allow_move()
+			
 func _on_area_part1_body_entered(body: Node2D) -> void:
 	if body == $player:
 		var tween = create_tween()
@@ -96,3 +114,15 @@ func _on_elevator_go_pressed() -> void:
 	tween.set_parallel(1)
 	tween.tween_property($map/hallway/elevator/close1, "size:x", 100, 1.0)
 	tween.tween_property($map/hallway/elevator/close2, "size:x", 100, 1.0)
+
+
+func _on_pc_area_body_entered(body: Node2D) -> void:
+	if body == $player:
+		pc_area = 1
+func _on_pc_area_body_exited(body: Node2D) -> void:
+	if body == $player:
+		pc_area = 0
+func _on_mypc_pressed() -> void:
+	print("my_pc")
+func _on_note_pressed() -> void:
+	$map/part3/pc/desktop/note_panel2.visible = !$map/part3/pc/desktop/note_panel2.visible 
