@@ -4,8 +4,10 @@ func init_game():
 	init_lights()
 func init_lights():
 	#$map/black.visible = 1
-	#$player/flash.visible = 1
 	
+	
+	$player/flash.visible = 1
+	$map/part3/black.visible = 1
 	$map/hallway/dark.visible = 1
 	$map/part1/dark.visible = 1
 	$map/part2/dark.visible = 1
@@ -23,7 +25,7 @@ func check_click(event):
 		return 1
 
 func _ready() -> void:
-	#init_game()
+	init_game()
 	
 	pass
 
@@ -41,12 +43,14 @@ func _process(delta: float) -> void:
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
 				$player.scale = Vector2(0.8, 0.8)
 				$player.position = Vector2(0, -25)
+				$CanvasLayer/elevator/close.visible = 1
 			else:
 				elevator_in = 0
 				allow_move()
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
 				$player.position = Vector2(0, -11)
+				$CanvasLayer/elevator/close.visible = 0
 		
 		if pc_area:
 			if !pc_on:

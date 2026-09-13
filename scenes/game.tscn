@@ -5,11 +5,14 @@
 [ext_resource type="PackedScene" path="res://scenes/temp_player.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" path="res://scenes/mobile.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://dk7huthrytou3" path="res://assets/blue-cartoon-pillow-soft-comfortable-cushion-with-simple-design-vector-removebg-preview.png" id="3_iywne"]
+[ext_resource type="Texture2D" uid="uid://det4y0g3g3wfv" path="res://assets/hand-crowbar-icon-cartoon-design-metal-vector-removebg-preview.png" id="3_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://ttd1w5yseklv" path="res://assets/minimal-windows-xp-wallpaper-throughout-a-day-v0-u8eezfv5nshf1.png" id="3_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://cj8qm4ugj6u55" path="res://assets/26791-48x48x32.png" id="4_gee14"]
 [ext_resource type="Texture2D" uid="uid://dcsko86n167r5" path="res://assets/tall-houseplant-pot-nature-icon_18591-82627-removebg-preview.png" id="4_p57ef"]
 [ext_resource type="Texture2D" uid="uid://dpnqsk1jp5hak" path="res://assets/sticky_note-removebg-preview.png" id="5_0tnpc"]
 [ext_resource type="FontFile" uid="uid://bh1b7j3xgpota" path="res://assets/windows-bold[1].ttf" id="6_vtaks"]
+[ext_resource type="Script" uid="uid://crja2kdww5kxa" path="res://scripts/him.gd" id="11_dinhu"]
+[ext_resource type="PackedScene" uid="uid://br1rj58wbo5fn" path="res://scenes/him.tscn" id="11_kvuet"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twgab"]
 bg_color = Color(0, 0, 0, 1)
@@ -844,6 +847,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
 
 [node name="close2" type="Panel" parent="map/hallway/elevator" unique_id=1925000049]
+z_index = 1
 layout_direction = 2
 offset_left = 119.0
 offset_top = 43.0
@@ -857,6 +861,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
 position = Vector2(0, 31)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="map/hallway/boundaries" unique_id=288302227]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/hallway/boundaries/StaticBody2D" unique_id=405012030]
 position = Vector2(16, 40)
@@ -940,6 +946,7 @@ position = Vector2(1446, 6.5)
 shape = SubResource("RectangleShape2D_kvuet")
 
 [node name="part3_tire" type="Node2D" parent="map/collectables" unique_id=2060047915]
+visible = false
 position = Vector2(-748, 4)
 
 [node name="Panel6" type="Panel" parent="map/collectables/part3_tire" unique_id=527298467]
@@ -976,6 +983,7 @@ position = Vector2(1446, 6.5)
 shape = SubResource("RectangleShape2D_kvuet")
 
 [node name="part1_tire" type="Node2D" parent="map/collectables" unique_id=1091096004]
+visible = false
 position = Vector2(-4251, 97)
 
 [node name="Panel6" type="Panel" parent="map/collectables/part1_tire" unique_id=1460370509]
@@ -1012,6 +1020,7 @@ position = Vector2(1446, 6.5)
 shape = SubResource("RectangleShape2D_kvuet")
 
 [node name="part1_fuel" type="Node2D" parent="map/collectables" unique_id=1667789076]
+visible = false
 
 [node name="Panel6" type="Panel" parent="map/collectables/part1_fuel" unique_id=1455580122]
 layout_direction = 2
@@ -1041,6 +1050,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mmvbu")
 
 [node name="part1_battery" type="Node2D" parent="map/collectables" unique_id=1697673300]
+visible = false
 position = Vector2(52, 0)
 
 [node name="Panel8" type="Panel" parent="map/collectables/part1_battery" unique_id=1786646700]
@@ -1082,6 +1092,15 @@ polygon = PackedVector2Array(-2755.75, 60.999996, -2752, 61, -2754.25, 66.07692,
 position = Vector2(1, 0)
 color = Color(0.17254902, 0.20784314, 0.5686275, 1)
 polygon = PackedVector2Array(-2756, 61, -2752, 61, -2755, 66, -2752, 66, -2757, 72, -2756, 67, -2758, 66)
+
+[node name="part1_crawbar" type="Node2D" parent="map/collectables" unique_id=374343512]
+visible = false
+position = Vector2(52, 0)
+
+[node name="HandCrowbarIconCartoonDesignMetalVectorRemovebgPreview" type="Sprite2D" parent="map/collectables/part1_crawbar" unique_id=600309045]
+position = Vector2(-2744.75, -20.25005)
+scale = Vector2(0.07900008, 0.07900008)
+texture = ExtResource("3_kvpfn")
 
 [node name="elevator_items" type="Node2D" parent="map" unique_id=1979539055]
 
@@ -1788,9 +1807,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_e1j6l")
 
 [node name="black" type="PointLight2D" parent="map/part3" unique_id=1864580284]
 visible = false
-position = Vector2(1073.3933, -65.25)
-scale = Vector2(0.93454736, 1.1382353)
-energy = 0.98
+position = Vector2(-41.499878, -65.25)
+scale = Vector2(5.0262513, 1.1382353)
+energy = 0.9
 blend_mode = 1
 texture = ExtResource("1_lbhrr")
 
@@ -3455,25 +3474,31 @@ position = Vector2(286.3908, -143.69785)
 shape = SubResource("CapsuleShape2D_lbhrr")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(-947, 54)
+position = Vector2(251, -28)
 
 [node name="cam" type="Camera2D" parent="player" unique_id=1751583136]
 position = Vector2(0, -95)
 zoom = Vector2(2, 2)
 
 [node name="flash" type="PointLight2D" parent="player" unique_id=1827854566]
-visible = false
 position = Vector2(16, -123)
 scale = Vector2(8.437501, 7.1874995)
 energy = 1.24
 texture = SubResource("GradientTexture2D_lbhrr")
+
+[node name="him" parent="." unique_id=1160840441 instance=ExtResource("11_kvuet")]
+position = Vector2(-2885, 15)
+script = ExtResource("11_dinhu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1460517878]
 
 [node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("2_lnu2h")]
 visible = false
 
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=99227585]
+[node name="elevator" type="Node2D" parent="CanvasLayer" unique_id=1326820988]
+
+[node name="close" type="Button" parent="CanvasLayer/elevator" unique_id=99227585]
+visible = false
 offset_left = 286.0
 offset_top = 297.0
 offset_right = 340.0
@@ -3499,4 +3524,4 @@ text = "Go on"
 [connection signal="body_exited" from="map/part1/Area2D" to="." method="_on_area_part1_body_exited"]
 [connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
 [connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_elevator_go_pressed"]
+[connection signal="pressed" from="CanvasLayer/elevator/close" to="." method="_on_elevator_go_pressed"]
