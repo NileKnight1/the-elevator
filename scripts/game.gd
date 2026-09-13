@@ -136,3 +136,13 @@ func _on_tire_1_area_input_event(viewport: Node, event: InputEvent, shape_idx: i
 		print("tire taken")
 		$map/collectables/part4_tire.visible = 0
 		$map/elevator_items/tire.visible = 1
+func _on_part1_tire_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		print("tire taken")
+		$map/collectables/part1_tire.visible = 0
+		$map/elevator_items/tire.visible = 1
+func _on_part3_tire_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		print("tire taken")
+		$map/collectables/part3_tire.visible = 0
+		$map/elevator_items/tire.visible = 1
