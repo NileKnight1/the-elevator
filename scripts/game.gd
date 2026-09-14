@@ -7,11 +7,13 @@ func init_game():
 	init_collect()
 
 func init_collect():
+	
+	$garage/garage/mob.visible = 0
 	$map/collectables/part1_tire.visible = 1
 	$map/collectables/part3_tire.visible = 1
 	$map/collectables/part4_tire.visible = 1
 	$map/collectables/part1_battery.visible = 1
-	$map/collectables2/part3_keys.visible = 1
+	$map/collectables2/part3_keys.visible = 0
 	
 	$garage/elevator_items/tire1.visible = 0
 	$garage/elevator_items/tire2.visible = 0
@@ -149,9 +151,27 @@ func _process(delta: float) -> void:
 				print("no tires")
 			elif back_tires_exist == 2:
 				print("fullD")
+		
+		if car_ride_area:
+			#print("trying to ride")
+			if back_tires_exist != 2:
+				print(back_tires_exist," back tires is missing")
+			if front_tires_exist != 2:
+				print(front_tires_exist," front tires is missing")
+			if !car_battery_exist:
+				print("car_battery_missing")
+			if back_tires_exist == 2 && front_tires_exist == 2 && car_battery_exist:
+				if car_keys_taken:
+					print("car on")
+				else:
+					all_collected_except_keys = 1
+					print("keys missing")
 
+var car_keys_taken = 0
+var car_battery_exist = 0
 var back_tires_exist = 0
 var front_tires_exist = 1
+var all_collected_except_keys = 0
 
 func _on_area_part1_body_entered(body: Node2D) -> void:
 	if body == $player:
@@ -214,7 +234,7 @@ func _on_garage_pressed() -> void:
 		tween.set_parallel(1)
 		tween.tween_property($map/hallway/elevator/close1, "size:x", 100, 1.0)
 		tween.tween_property($map/hallway/elevator/close2, "size:x", 100, 1.0)
-		await get_tree().create_timer(1.0).timeout
+		#await get_tree().create_timer(1.0).timeout #edit
 		
 		#var tween2 d= create_tween()
 		#tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
@@ -227,6 +247,10 @@ func _on_garage_pressed() -> void:
 		$map/hallway/elevator/close2.size.x = 0
 		$garage/garage/elevator/close1.size.x = 0
 		$garage/garage/elevator/close2.size.x = 0
+		if all_collected_except_keys:
+			all_collected_except_keys = 0
+			
+			
 		allow_move()
 		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
@@ -249,7 +273,7 @@ func _on_apartment_pressed() -> void:
 		tween.set_parallel(1)
 		tween.tween_property($garage/garage/elevator/close1, "size:x", 100, 1.0)
 		tween.tween_property($garage/garage/elevator/close2, "size:x", 100, 1.0)
-		await get_tree().create_timer(1.0).timeout
+		#await get_tree().create_timer(1.0).timeout #edit
 		
 		#var tween2 = create_tween()
 		#tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
@@ -262,6 +286,18 @@ func _on_apartment_pressed() -> void:
 		$garage/garage/elevator/close1.size.x = 0
 		$garage/garage/elevator/close2.size.x = 0
 		allow_move()
+		if all_collected_except_keys:
+			#$map/collectables2/part3_keys.visible = 1
+			back_tires_exist = 0
+			front_tires_exist = 0
+			car_battery_exist = 0
+			#all_collected_except_keys = 0
+			$garage/garage/car/front_tires/tire1.visible = 0
+			$garage/garage/car/front_tires/tire2.visible = 0
+			$garage/garage/car/back_tires/tire1.visible = 0
+			$garage/garage/car/back_tires/tire2.visible = 0
+			
+			
 		$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
@@ -382,10 +418,34 @@ func _on_front_tires_area_body_exited(body: Node2D) -> void:
 	if body == $player: 
 		front_tires_area = 0
 
-
+var car_ride_area = 0
 func _on_car_ride_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
-
-
+	if body == $player: 
+		car_ride_area = 1
 func _on_car_ride_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body == $player: 
+		car_ride_area = 0
+
+var sofa_blood_discovered = 0
+var sofa_blood_area = 0
+func _on_sofa_blood_area_body_entered(body: Node2D) -> void:
+	if body == $player: 
+		sofa_blood_area = 1
+		print("blood to be cleaned")
+		if !sofa_blood_discovered:
+			sofa_blood_discovered = 1
+			print("mob is in the garage")
+			$garage/garage/mob.visible = 1
+			
+			
+var mob_taken = 0
+func _on_sofa_blood_area_body_exited(body: Node2D) -> void:
+	if body == $player: 
+		sofa_blood_area = 0
+func _on_mob_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		print('mob taken')
+		$garage/garage/mob.visible = 0
+		mob_taken = 1
+		
+	

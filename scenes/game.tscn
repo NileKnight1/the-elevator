@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dcsko86n167r5" path="res://assets/tall-houseplant-pot-nature-icon_18591-82627-removebg-preview.png" id="4_p57ef"]
 [ext_resource type="Texture2D" uid="uid://dpnqsk1jp5hak" path="res://assets/sticky_note-removebg-preview.png" id="5_0tnpc"]
 [ext_resource type="FontFile" uid="uid://bh1b7j3xgpota" path="res://assets/windows-bold[1].ttf" id="6_vtaks"]
+[ext_resource type="Texture2D" uid="uid://b6e6ij63kwgtu" path="res://assets/pngtree-halloween-horror-red-bloodstain-png-image_6174065.png" id="10_ca42v"]
 [ext_resource type="Texture2D" uid="uid://c42rqq7uclg7v" path="res://assets/key_PNG1177.png" id="10_trtic"]
 [ext_resource type="Script" uid="uid://crja2kdww5kxa" path="res://scripts/him.gd" id="11_dinhu"]
 [ext_resource type="PackedScene" uid="uid://br1rj58wbo5fn" path="res://scenes/him.tscn" id="11_kvuet"]
@@ -620,6 +621,9 @@ colors = PackedColorArray(0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vtaks"]
 gradient = SubResource("Gradient_0tnpc")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_264po"]
+size = Vector2(314, 178)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05nbr"]
 bg_color = Color(0.20703125, 0.0921936, 0, 1)
 skew = Vector2(0.825, 0)
@@ -716,7 +720,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rysoc"]
-size = Vector2(176, 164)
+size = Vector2(150, 164)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxt1d"]
 bg_color = Color(0.12156863, 0, 0, 1)
@@ -725,6 +729,24 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
+size = Vector2(119, 225)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gkqi"]
+bg_color = Color(0.39453125, 0.1387024, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_753oq"]
+size = Vector2(69, 196)
 
 [sub_resource type="Gradient" id="Gradient_lnu2h"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
@@ -3255,6 +3277,19 @@ position = Vector2(25.723452, -45.016037)
 scale = Vector2(1.6579552, 515.50397)
 texture = SubResource("GradientTexture1D_vtaks")
 
+[node name="blood" type="Sprite2D" parent="map/part2/sofa" unique_id=1485032591]
+position = Vector2(-184.00003, 19.999996)
+rotation = -0.4100507
+scale = Vector2(0.26388907, 0.26388907)
+skew = -0.43109632
+texture = ExtResource("10_ca42v")
+
+[node name="sofa_blood_area" type="Area2D" parent="map/part2/sofa" unique_id=1437584210]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/sofa_blood_area" unique_id=884469186]
+position = Vector2(-184, 4)
+shape = SubResource("RectangleShape2D_264po")
+
 [node name="tv" type="Node2D" parent="map/part2" unique_id=526527308]
 z_index = 1
 position = Vector2(0, -25)
@@ -4035,7 +4070,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_sxt1d")
 [node name="back_tires_area" type="Area2D" parent="garage/garage/car/back_tires" unique_id=1949996826]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/back_tires/back_tires_area" unique_id=1008004491]
-position = Vector2(2201, -7)
+position = Vector2(2195, -7)
 shape = SubResource("RectangleShape2D_rysoc")
 
 [node name="Polygon2D4" type="Polygon2D" parent="garage/garage/car" unique_id=1777501850]
@@ -4087,6 +4122,12 @@ position = Vector2(-2, 0)
 color = Color(0.13333334, 0.09803922, 0.12156863, 1)
 polygon = PackedVector2Array(2459, -64, 2420, -103, 2426, -103, 2470, -64)
 
+[node name="car_ride" type="Area2D" parent="garage/garage/car" unique_id=1307881613]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/car_ride" unique_id=1139123847]
+position = Vector2(2383.5, -35)
+shape = SubResource("RectangleShape2D_ssvqc")
+
 [node name="dark" type="Panel" parent="garage/garage" unique_id=1329959056]
 visible = false
 z_index = 2
@@ -4105,6 +4146,32 @@ position = Vector2(1668, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/elevator_area" unique_id=2033604840]
 position = Vector2(21.5, -93.5)
 shape = SubResource("RectangleShape2D_kvpfn")
+
+[node name="mob" type="Node2D" parent="garage/garage" unique_id=732078621]
+
+[node name="Panel8" type="Panel" parent="garage/garage/mob" unique_id=656342005]
+layout_direction = 2
+offset_left = 1498.0
+offset_top = 47.0
+offset_right = 1559.0
+offset_bottom = 62.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7gkqi")
+
+[node name="Panel9" type="Panel" parent="garage/garage/mob" unique_id=1156088920]
+layout_direction = 2
+offset_left = 1521.0
+offset_top = -109.0
+offset_right = 1536.0
+offset_bottom = 50.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7gkqi")
+
+[node name="mob_area" type="Area2D" parent="garage/garage/mob" unique_id=2059098937]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/mob/mob_area" unique_id=926100033]
+position = Vector2(1529.5, -30)
+shape = SubResource("RectangleShape2D_753oq")
 
 [node name="doorway_right4" type="Node2D" parent="garage" unique_id=2092527384]
 position = Vector2(-876, 1569)
@@ -4365,13 +4432,14 @@ scale = Vector2(0.008189653, 0.008189654)
 texture = ExtResource("10_trtic")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(-135, -143)
+position = Vector2(1886, 1586)
 
 [node name="cam" type="Camera2D" parent="player" unique_id=1751583136]
 position = Vector2(0, -95)
 zoom = Vector2(2, 2)
 
 [node name="flash" type="PointLight2D" parent="player" unique_id=1827854566]
+visible = false
 position = Vector2(16, -123)
 scale = Vector2(8.437501, 7.1874995)
 energy = 1.24
@@ -4445,6 +4513,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 [connection signal="body_exited" from="map/part4/Area2D" to="." method="_on_area_part4_body_exited"]
 [connection signal="body_entered" from="map/part1/Area2D" to="." method="_on_area_part1_body_entered"]
 [connection signal="body_exited" from="map/part1/Area2D" to="." method="_on_area_part1_body_exited"]
+[connection signal="body_entered" from="map/part2/sofa/sofa_blood_area" to="." method="_on_sofa_blood_area_body_entered"]
+[connection signal="body_exited" from="map/part2/sofa/sofa_blood_area" to="." method="_on_sofa_blood_area_body_exited"]
 [connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
 [connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
 [connection signal="input_event" from="map/collectables2/part3_keys/key_area" to="." method="_on_key_area_input_event"]
@@ -4452,8 +4522,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 [connection signal="body_exited" from="garage/garage/car/front_tires/front_tires_area" to="." method="_on_front_tires_area_body_exited"]
 [connection signal="body_entered" from="garage/garage/car/back_tires/back_tires_area" to="." method="_on_back_tires_area_body_entered"]
 [connection signal="body_exited" from="garage/garage/car/back_tires/back_tires_area" to="." method="_on_back_tires_area_body_exited"]
+[connection signal="body_entered" from="garage/garage/car/car_ride" to="." method="_on_car_ride_body_entered"]
+[connection signal="body_exited" from="garage/garage/car/car_ride" to="." method="_on_car_ride_body_exited"]
 [connection signal="body_entered" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_entered"]
 [connection signal="body_exited" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_exited"]
+[connection signal="input_event" from="garage/garage/mob/mob_area" to="." method="_on_mob_area_input_event"]
 [connection signal="pressed" from="CanvasLayer/elevator/close" to="." method="_on_elevator_go_pressed"]
 [connection signal="pressed" from="CanvasLayer/elevator/garage" to="." method="_on_garage_pressed"]
 [connection signal="pressed" from="CanvasLayer/elevator/apartment" to="." method="_on_apartment_pressed"]
