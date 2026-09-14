@@ -30,6 +30,12 @@ func _ready() -> void:
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
 	
+	$map/collectables/part4_tire.visible = 1
+	$map/collectables/part1_tire.visible = 1
+	$map/collectables/part1_battery.visible = 1
+	$map/collectables2/part3_keys.visible = 1
+	$map/collectables/part3_tire.visible = 1
+	
 	init_game()
 	pass
 
@@ -71,9 +77,6 @@ func _process(delta: float) -> void:
 				$player.scale = Vector2(1, 1)
 				$player.position = Vector2(1672.0, 1606.0)
 				$CanvasLayer/elevator.visible = 0
-		
-		
-		
 		if pc_area:
 			if !pc_on:
 				pc_on = 1
@@ -129,7 +132,6 @@ func _on_area_part4_body_exited(body: Node2D) -> void:
 		var tween = create_tween()
 		tween.tween_property($map/part4/dark, "modulate:a", 1.0, 0.5)
 		
-
 func _on_elevator_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		elevator_area = 1
@@ -137,22 +139,8 @@ func _on_elevator_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		elevator_area = 0
 
-func _on_elevator_go_pressed() -> void:
-	print("goon")
-	print($map/hallway/elevator/close1.size.x)
-	global.try += 1
-	var tween = create_tween()
-	tween.set_parallel(1)
-	tween.tween_property($map/hallway/elevator/close1, "size:x", 100, 1.0)
-	tween.tween_property($map/hallway/elevator/close2, "size:x", 100, 1.0)
-	await get_tree().create_timer(1.0).timeout
-	
-	var tween2 = create_tween()
-	tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
-	
-	await get_tree().create_timer(1.0).timeout
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
+	
 var apartment_area = 1
 
 func _on_garage_pressed() -> void:
@@ -166,21 +154,26 @@ func _on_garage_pressed() -> void:
 		tween.tween_property($map/hallway/elevator/close2, "size:x", 100, 1.0)
 		await get_tree().create_timer(1.0).timeout
 		
-		var tween2 = create_tween()
-		tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
-		
-		await get_tree().create_timer(1.0).timeout
-		
+		#var tween2 d= create_tween()
+		#tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+		#
+		#await get_tree().create_timer(1.0).timeout
+		#
 		elevator_in = 0
+		
+		$map/hallway/elevator/close1.size.x = 0
+		$map/hallway/elevator/close2.size.x = 0
+		$garage/garage/elevator/close1.size.x = 0
+		$garage/garage/elevator/close2.size.x = 0
 		allow_move()
 		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
 		$player.position = Vector2(1672.0, 1606.0)
 		$CanvasLayer/elevator.visible = 0
 		
-		var tween3 = create_tween()
-		tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
-	
+		#var tween3 = create_tween()
+		#tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+	#
 		
 		apartment_area = 0
 		
@@ -195,11 +188,25 @@ func _on_apartment_pressed() -> void:
 		tween.tween_property($garage/garage/elevator/close2, "size:x", 100, 1.0)
 		await get_tree().create_timer(1.0).timeout
 		
-		var tween2 = create_tween()
-		tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
-		
-		await get_tree().create_timer(1.0).timeout
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		#var tween2 = create_tween()
+		#tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+		#
+		#await get_tree().create_timer(1.0).timeout
+		#
+		elevator_in = 0
+		$map/hallway/elevator/close1.size.x = 0
+		$map/hallway/elevator/close2.size.x = 0
+		$garage/garage/elevator/close1.size.x = 0
+		$garage/garage/elevator/close2.size.x = 0
+		allow_move()
+		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
+		$player.scale = Vector2(1, 1)
+		$player.position = Vector2(0, -11)
+		$CanvasLayer/elevator.visible = 0
+		#var tween3 = create_tween()
+		#tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+		#
+		apartment_area = 1
 		
 
 
