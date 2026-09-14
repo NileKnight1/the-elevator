@@ -47,14 +47,32 @@ func _process(delta: float) -> void:
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
 				$player.scale = Vector2(0.8, 0.8)
 				$player.position = Vector2(0, -25)
-				$CanvasLayer/elevator/close.visible = 1
+				$CanvasLayer/elevator.visible = 1
 			else:
 				elevator_in = 0
 				allow_move()
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
 				$player.position = Vector2(0, -11)
-				$CanvasLayer/elevator/close.visible = 0
+				$CanvasLayer/elevator.visible = 0
+		
+		if garage_elevator_area:
+			if !elevator_in:
+				elevator_in = 1 
+				disable_move()
+				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
+				$player.scale = Vector2(0.8, 0.8)
+				$player.position = Vector2(1672.0, 1552.0)
+				$CanvasLayer/elevator.visible = 1
+			else:
+				elevator_in = 0
+				allow_move()
+				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
+				$player.scale = Vector2(1, 1)
+				$player.position = Vector2(1672.0, 1606.0)
+				$CanvasLayer/elevator.visible = 0
+		
+		
 		
 		if pc_area:
 			if !pc_on:
@@ -135,6 +153,55 @@ func _on_elevator_go_pressed() -> void:
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
+var apartment_area = 1
+
+func _on_garage_pressed() -> void:
+	if apartment_area:
+		print("goon")
+		#print($amp/hallway/elevator/close1.size.x)
+		global.try += 1
+		var tween = create_tween()
+		tween.set_parallel(1)
+		tween.tween_property($map/hallway/elevator/close1, "size:x", 100, 1.0)
+		tween.tween_property($map/hallway/elevator/close2, "size:x", 100, 1.0)
+		await get_tree().create_timer(1.0).timeout
+		
+		var tween2 = create_tween()
+		tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+		
+		await get_tree().create_timer(1.0).timeout
+		
+		elevator_in = 0
+		allow_move()
+		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
+		$player.scale = Vector2(1, 1)
+		$player.position = Vector2(1672.0, 1606.0)
+		$CanvasLayer/elevator.visible = 0
+		
+		var tween3 = create_tween()
+		tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+	
+		
+		apartment_area = 0
+		
+func _on_apartment_pressed() -> void:
+	if !apartment_area:
+		print("goon")
+		print($garage/garage/elevator/close1.size.x)
+		global.try += 1
+		var tween = create_tween()
+		tween.set_parallel(1)
+		tween.tween_property($garage/garage/elevator/close1, "size:x", 100, 1.0)
+		tween.tween_property($garage/garage/elevator/close2, "size:x", 100, 1.0)
+		await get_tree().create_timer(1.0).timeout
+		
+		var tween2 = create_tween()
+		tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+		
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		
+
 
 func _on_pc_area_body_entered(body: Node2D) -> void:
 	if body == $player:
@@ -168,8 +235,15 @@ func match_try():
 		1:
 			$map/collectables/part4_tire.visible = 1
 		2:
-			
-			pass
+			$map/collectables/part1_tire.visible = 1
+		3:
+			$map/collectables/part1_battery.visible = 1
+		4:
+			$map/collectables2/part3_keys.visible = 1
+		5:
+			$map/collectables/part3_tire.visible = 1
+		
+
 var note_area = 0
 
 func _on_note_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -183,3 +257,24 @@ func _on_note_big_body_exited(body: Node2D) -> void:
 	if body == $player:
 		$CanvasLayer/note.visible = 0
 		note_area = 0
+
+func _on_part_1_battery_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		print("battery taken")
+		$map/collectables/part1_battery.visible = 0
+		$map/elevator_items/battery.visible = 1
+
+func _on_key_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		print("battery taken")
+		$map/collectables2/part3_keys.visible = 0
+		$map/elevator_items/keys.visible = 1
+
+var garage_elevator_area = 0
+
+func _on_garage_elevator_area_body_entered(body: Node2D) -> void:
+	if body == $player:
+		garage_elevator_area = 1
+func _on_garage_elevator_area_body_exited(body: Node2D) -> void:
+	if body == $player:
+		garage_elevator_area = 0

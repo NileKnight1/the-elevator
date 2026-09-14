@@ -11,8 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://dcsko86n167r5" path="res://assets/tall-houseplant-pot-nature-icon_18591-82627-removebg-preview.png" id="4_p57ef"]
 [ext_resource type="Texture2D" uid="uid://dpnqsk1jp5hak" path="res://assets/sticky_note-removebg-preview.png" id="5_0tnpc"]
 [ext_resource type="FontFile" uid="uid://bh1b7j3xgpota" path="res://assets/windows-bold[1].ttf" id="6_vtaks"]
+[ext_resource type="Texture2D" uid="uid://c42rqq7uclg7v" path="res://assets/key_PNG1177.png" id="10_trtic"]
 [ext_resource type="Script" uid="uid://crja2kdww5kxa" path="res://scripts/him.gd" id="11_dinhu"]
 [ext_resource type="PackedScene" uid="uid://br1rj58wbo5fn" path="res://scenes/him.tscn" id="11_kvuet"]
+[ext_resource type="Texture2D" uid="uid://dmdarp3agtoxf" path="res://assets/hand-drawn-muscle-car-illustration_23-2149432255-removebg-preview.png" id="15_ir15t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twgab"]
 bg_color = Color(0, 0, 0, 1)
@@ -152,6 +154,9 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca42v"]
+size = Vector2(53, 34)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbak0"]
 bg_color = Color(0.25882354, 0.28627452, 0.30980393, 1)
@@ -695,6 +700,13 @@ height = 98.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(270.57434, 197.22278)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ir15t"]
+radius = 13.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8oq8"]
+bg_color = Color(0, 0.12156863, 0.10162377, 1)
+border_color = Color(0.22265625, 0.22265625, 0.22265625, 1)
+
 [sub_resource type="Gradient" id="Gradient_lnu2h"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
@@ -882,6 +894,7 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/hallway/boundaries/StaticBody2D" unique_id=405012030]
 position = Vector2(16, 40)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
+one_way_collision = true
 
 [node name="elevator" type="CollisionShape2D" parent="map/hallway/boundaries/StaticBody2D" unique_id=1862121145]
 position = Vector2(16, -17)
@@ -1067,7 +1080,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mmvbu")
 
 [node name="part1_battery" type="Node2D" parent="map/collectables" unique_id=1697673300]
 visible = false
-position = Vector2(52, 0)
+z_index = 2
+position = Vector2(579, 41)
 
 [node name="Panel8" type="Panel" parent="map/collectables/part1_battery" unique_id=1786646700]
 layout_direction = 2
@@ -1108,6 +1122,12 @@ polygon = PackedVector2Array(-2755.75, 60.999996, -2752, 61, -2754.25, 66.07692,
 position = Vector2(1, 0)
 color = Color(0.17254902, 0.20784314, 0.5686275, 1)
 polygon = PackedVector2Array(-2756, 61, -2752, 61, -2755, 66, -2752, 66, -2757, 72, -2756, 67, -2758, 66)
+
+[node name="part1_battery_area" type="Area2D" parent="map/collectables/part1_battery" unique_id=2145557153]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/collectables/part1_battery/part1_battery_area" unique_id=1546260443]
+position = Vector2(-2752.5, 65)
+shape = SubResource("RectangleShape2D_ca42v")
 
 [node name="part1_crawbar" type="Node2D" parent="map/collectables" unique_id=374343512]
 visible = false
@@ -1151,6 +1171,59 @@ offset_right = 1465.0
 offset_bottom = 28.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+
+[node name="battery" type="Node2D" parent="map/elevator_items" unique_id=667328132]
+visible = false
+position = Vector2(2821, -86)
+
+[node name="Panel8" type="Panel" parent="map/elevator_items/battery" unique_id=1501070054]
+layout_direction = 2
+offset_left = -2772.0
+offset_top = 55.0
+offset_right = -2735.0
+offset_bottom = 77.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_weeiq")
+
+[node name="Panel9" type="Panel" parent="map/elevator_items/battery" unique_id=1241547127]
+layout_direction = 2
+offset_left = -2772.0
+offset_top = 74.0
+offset_right = -2698.0
+offset_bottom = 80.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uxocx")
+
+[node name="Panel10" type="Panel" parent="map/elevator_items/battery" unique_id=690366914]
+layout_direction = 2
+offset_left = -2772.0
+offset_top = 55.0
+offset_right = -2698.0
+offset_bottom = 61.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uxocx")
+
+[node name="Polygon2D3" type="Polygon2D" parent="map/elevator_items/battery" unique_id=743646729]
+position = Vector2(919.3516, -12.090939)
+scale = Vector2(1.33334, 1.1818187)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-2755.75, 60.999996, -2752, 61, -2754.25, 66.07692, -2752, 66, -2757, 72, -2756, 67, -2758, 66)
+
+[node name="Polygon2D2" type="Polygon2D" parent="map/elevator_items/battery" unique_id=94801728]
+position = Vector2(1, 0)
+color = Color(0.17254902, 0.20784314, 0.5686275, 1)
+polygon = PackedVector2Array(-2756, 61, -2752, 61, -2755, 66, -2752, 66, -2757, 72, -2756, 67, -2758, 66)
+
+[node name="keys" type="Node2D" parent="map/elevator_items" unique_id=735024977]
+visible = false
+position = Vector2(-809, 23)
+
+[node name="KeyPng1177" type="Sprite2D" parent="map/elevator_items/keys" unique_id=335074140]
+position = Vector2(843, -33.999996)
+scale = Vector2(0.008189653, 0.008189654)
+texture = ExtResource("10_trtic")
 
 [node name="part3" type="Node2D" parent="map" unique_id=1120939309]
 
@@ -3507,8 +3580,313 @@ shape = SubResource("CapsuleShape2D_lbhrr")
 position = Vector2(286.3908, -143.69785)
 shape = SubResource("CapsuleShape2D_lbhrr")
 
+[node name="collectables2" type="Node2D" parent="map" unique_id=1797672999]
+
+[node name="part3_keys" type="Node2D" parent="map/collectables2" unique_id=1526022194]
+visible = false
+
+[node name="KeyPng1177" type="Sprite2D" parent="map/collectables2/part3_keys" unique_id=1693014616]
+position = Vector2(843, -33.999996)
+scale = Vector2(0.008189653, 0.008189654)
+texture = ExtResource("10_trtic")
+
+[node name="key_area" type="Area2D" parent="map/collectables2/part3_keys" unique_id=310123237]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/collectables2/part3_keys/key_area" unique_id=1101267296]
+position = Vector2(844, -36)
+shape = SubResource("CircleShape2D_ir15t")
+
+[node name="garage" type="Node2D" parent="." unique_id=1635056332]
+
+[node name="garage" type="Node2D" parent="garage" unique_id=505882924]
+position = Vector2(0, 1569)
+
+[node name="Panel4" type="Panel" parent="garage/garage" unique_id=1111274275]
+z_index = 2
+layout_direction = 2
+offset_left = 827.0
+offset_top = -887.0
+offset_right = 3433.0
+offset_bottom = -354.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
+
+[node name="Panel" type="Panel" parent="garage/garage" unique_id=363999398]
+layout_direction = 2
+offset_left = 1496.0
+offset_top = -354.0
+offset_right = 2715.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
+
+[node name="Panel2" type="Panel" parent="garage/garage" unique_id=1478876312]
+layout_direction = 2
+offset_left = 1157.0
+offset_top = 43.0
+offset_right = 2877.0
+offset_bottom = 225.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o8oq8")
+
+[node name="elevator" type="Node2D" parent="garage/garage" unique_id=1337658038]
+position = Vector2(1668, 0)
+
+[node name="Panel2" type="Panel" parent="garage/garage/elevator" unique_id=1330172071]
+layout_direction = 2
+offset_left = -111.0
+offset_top = -270.0
+offset_right = 155.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="garage/garage/elevator" unique_id=1736438053]
+layout_direction = 2
+offset_left = -48.0
+offset_top = -188.0
+offset_right = 89.0
+offset_bottom = -13.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8cj0n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel4" type="Panel" parent="garage/garage/elevator" unique_id=1611497559]
+visible = false
+layout_direction = 2
+offset_left = -244.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lbhrr")
+
+[node name="Panel3" type="Panel" parent="garage/garage/elevator" unique_id=1021094485]
+visible = false
+layout_direction = 2
+offset_left = -51.0
+offset_top = -135.0
+offset_right = -15.0
+offset_bottom = -56.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
+
+[node name="Polygon2D" type="Polygon2D" parent="garage/garage/elevator" unique_id=1229660518]
+position = Vector2(-16.196075, 0)
+scale = Vector2(0.7254902, 1)
+color = Color(0.22425842, 0.24972439, 0.26953125, 1)
+polygon = PackedVector2Array(-70.02703, -232, -70.02703, 29, -42.459465, -12, -41.081085, -188)
+
+[node name="Polygon2D6" type="Polygon2D" parent="garage/garage/elevator" unique_id=1817605048]
+position = Vector2(-20.799992, 0)
+scale = Vector2(0.7980393, 1)
+color = Color(0.11856079, 0.13587444, 0.14453125, 1)
+polygon = PackedVector2Array(-71.675674, -231, -71.675674, 42, -57.89189, 29, -57.89189, -231)
+
+[node name="Polygon2D8" type="Polygon2D" parent="garage/garage/elevator" unique_id=1120316680]
+position = Vector2(22, 119)
+scale = Vector2(0.7254902, 1)
+color = Color(0.15719604, 0.1880127, 0.19921875, 1)
+polygon = PackedVector2Array(-137.83783, -77, 133.7027, -78, 119.918915, -90, -124.054054, -90)
+
+[node name="Polygon2D7" type="Polygon2D" parent="garage/garage/elevator" unique_id=122023390]
+position = Vector2(161, 0)
+scale = Vector2(0.7254902, 1)
+color = Color(0.11856079, 0.13587444, 0.14453125, 1)
+polygon = PackedVector2Array(-71.675674, -230, -71.675674, 29, -57.89189, 42, -57.89189, -230)
+
+[node name="Polygon2D2" type="Polygon2D" parent="garage/garage/elevator" unique_id=204793536]
+position = Vector2(65.89934, -200)
+rotation = 3.1415927
+scale = Vector2(0.70167744, 1)
+color = Color(0.22425842, 0.24972439, 0.26953125, 1)
+polygon = PackedVector2Array(-61.425194, -229.99998, -61.42517, -35.073204, -61.42517, 5.8132324, -61.425163, 30.000015, -32.92205, -11.999985, -32.922073, -187)
+
+[node name="Polygon2D3" type="Polygon2D" parent="garage/garage/elevator" unique_id=1832020622]
+position = Vector2(111.78397, -62.669266)
+rotation = 4.712389
+scale = Vector2(0.97881144, 0.88085043)
+color = Color(0.14916992, 0.17107597, 0.18359375, 1)
+polygon = PackedVector2Array(-93.65365, -204.10272, -93.65365, -3.1605453, -50.744465, -25.865883, -50.744465, -180.26213)
+
+[node name="Polygon2D5" type="Polygon2D" parent="garage/garage/elevator" unique_id=1770794300]
+position = Vector2(-51.61073, -135.38812)
+rotation = 7.853982
+scale = Vector2(0.9889625, 0.83608365)
+color = Color(0.14916992, 0.17107597, 0.18359375, 1)
+polygon = PackedVector2Array(-95.66786, -192.09883, -96.678955, 19.602467, -52.187897, -5.5146523, -52.187943, -168.1778)
+
+[node name="Panel5" type="Panel" parent="garage/garage/elevator" unique_id=725255094]
+layout_direction = 2
+offset_top = -214.0
+offset_right = 39.0
+offset_bottom = -203.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
+metadata/_edit_use_anchors_ = true
+
+[node name="Polygon2D4" type="Polygon2D" parent="garage/garage/elevator" unique_id=2032604602]
+visible = false
+position = Vector2(-65, -137)
+rotation = 1.5707964
+scale = Vector2(0.97881144, 0.88261527)
+color = Color(0.1953125, 0.1953125, 0.1953125, 1)
+polygon = PackedVector2Array(-102.16472, -253.7912, -103.18637, 50.984848, -70, 6, -71, -208)
+
+[node name="close1" type="Panel" parent="garage/garage/elevator" unique_id=682725347]
+z_index = 1
+layout_direction = 2
+offset_left = -78.0
+offset_top = -230.0
+offset_right = -78.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
+metadata/_edit_use_anchors_ = true
+
+[node name="close2" type="Panel" parent="garage/garage/elevator" unique_id=1287108385]
+z_index = 1
+layout_direction = 2
+offset_left = 119.0
+offset_top = 43.0
+offset_right = 119.0
+offset_bottom = 316.0
+rotation = -3.1415927
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
+metadata/_edit_use_anchors_ = true
+
+[node name="boundaries" type="Node2D" parent="garage/garage" unique_id=688729081]
+position = Vector2(0, 31)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="garage/garage/boundaries" unique_id=613819682]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/boundaries/StaticBody2D" unique_id=1464684111]
+position = Vector2(1888, 40)
+shape = SubResource("WorldBoundaryShape2D_lnu2h")
+
+[node name="elevator" type="CollisionShape2D" parent="garage/garage/boundaries/StaticBody2D" unique_id=1914961395]
+position = Vector2(1681, -17)
+shape = SubResource("SegmentShape2D_kvuet")
+disabled = true
+
+[node name="black" type="PointLight2D" parent="garage/garage" unique_id=816245293]
+visible = false
+position = Vector2(23.505157, -65.25)
+scale = Vector2(0.78670186, 1.1382353)
+energy = 0.98
+blend_mode = 1
+texture = ExtResource("1_lbhrr")
+
+[node name="dark" type="Panel" parent="garage/garage" unique_id=1329959056]
+visible = false
+z_index = 2
+layout_direction = 2
+offset_left = -457.78415
+offset_top = 224.97491
+offset_right = 124.20706
+offset_bottom = 1187.8105
+rotation = 4.712389
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
+
+[node name="elevator_area" type="Area2D" parent="garage/garage" unique_id=1524804259]
+position = Vector2(1668, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/elevator_area" unique_id=2033604840]
+position = Vector2(21.5, -93.5)
+shape = SubResource("RectangleShape2D_kvpfn")
+
+[node name="car" type="Sprite2D" parent="garage/garage" unique_id=1188668645]
+position = Vector2(2349, -28)
+scale = Vector2(1.1997551, 1.1997551)
+texture = ExtResource("15_ir15t")
+
+[node name="doorway_right4" type="Node2D" parent="garage" unique_id=2092527384]
+position = Vector2(-876, 1569)
+
+[node name="Polygon2D4" type="Polygon2D" parent="garage/doorway_right4" unique_id=2025156399]
+position = Vector2(2412, -488.99838)
+scale = Vector2(-1, 1.264)
+color = Color(0.0703125, 0, 0, 1)
+polygon = PackedVector2Array(26, 0.78970337, 206.85757, -0.79226685, 733, 8.699463, 733, 564.7566, 209, 556.8468, 29, 420.7987, 28.012573, 282.5548)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="garage/doorway_right4" unique_id=2067209253]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/doorway_right4/StaticBody2D" unique_id=1747465583]
+position = Vector2(2387, -95)
+shape = SubResource("SegmentShape2D_p57ef")
+
+[node name="Panel4" type="Panel" parent="garage/doorway_right4" unique_id=943420811]
+layout_direction = 2
+offset_left = 1735.0
+offset_top = -490.0
+offset_right = 2200.0
+offset_bottom = 227.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
+
+[node name="doorway_right3" type="Node2D" parent="garage" unique_id=372203508]
+position = Vector2(1142, 1569)
+
+[node name="Polygon2D4" type="Polygon2D" parent="garage/doorway_right3" unique_id=1254323804]
+position = Vector2(1528, -488.99838)
+scale = Vector2(1, 1.2642586)
+color = Color(0.0703125, 0, 0, 1)
+polygon = PackedVector2Array(28, 106.78067, 212, 105.19873, 733, 8.699463, 733, 564.7566, 209, 556.8468, 29, 420.7987)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="garage/doorway_right3" unique_id=866884507]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/doorway_right3/StaticBody2D" unique_id=1947704894]
+position = Vector2(1603, -170)
+shape = SubResource("SegmentShape2D_p57ef")
+
+[node name="Panel4" type="Panel" parent="garage/doorway_right3" unique_id=108011965]
+layout_direction = 2
+offset_left = 1735.0
+offset_top = -490.0
+offset_right = 2291.0
+offset_bottom = 227.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
+
+[node name="doorway_right2" type="Node2D" parent="garage" unique_id=568973551]
+position = Vector2(2383, 1604)
+
+[node name="Polygon2D3" type="Polygon2D" parent="garage/doorway_right2" unique_id=1589343242]
+position = Vector2(-441, -17.53239)
+scale = Vector2(2.3983414, 0.62552243)
+color = Color(0.28235295, 0.10980392, 0, 1)
+polygon = PackedVector2Array(318.25085, 51, 312.71613, 37.62036, 311.46527, -312.48706, 317.71954, -298.09912)
+
+[node name="Polygon2D4" type="Polygon2D" parent="garage/doorway_right2" unique_id=1350351054]
+z_index = 1
+position = Vector2(296.14243, -488.99838)
+scale = Vector2(1, 1.2642586)
+color = Color(0.28235295, 0.10980392, 0, 1)
+polygon = PackedVector2Array(0.85757446, -0.79226685, 206.85757, -0.79226685, 205.84753, 270.84674, 204.85757, 537.0724, 76.857574, 448.20773, 72.857574, 247.20773, 8.857574, 219.20773, 8.857574, 5.207733)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="garage/doorway_right2" unique_id=753597441]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/doorway_right2/StaticBody2D" unique_id=1680853438]
+position = Vector2(338, -111.99999)
+rotation = -1.3089969
+shape = SubResource("CapsuleShape2D_lbhrr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="garage/doorway_right2/StaticBody2D" unique_id=2136224746]
+position = Vector2(402.61133, -318.2871)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="garage/doorway_right2/StaticBody2D" unique_id=529643833]
+position = Vector2(303, -151)
+shape = SubResource("CapsuleShape2D_lbhrr")
+
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(251, -28)
+position = Vector2(-135, -143)
 
 [node name="cam" type="Camera2D" parent="player" unique_id=1751583136]
 position = Vector2(0, -95)
@@ -3531,14 +3909,29 @@ script = ExtResource("11_dinhu")
 visible = false
 
 [node name="elevator" type="Node2D" parent="CanvasLayer" unique_id=1326820988]
+visible = false
 
 [node name="close" type="Button" parent="CanvasLayer/elevator" unique_id=99227585]
 visible = false
 offset_left = 286.0
 offset_top = 297.0
-offset_right = 340.0
+offset_right = 377.0
 offset_bottom = 328.0
 text = "Go on"
+
+[node name="garage" type="Button" parent="CanvasLayer/elevator" unique_id=167256657]
+offset_left = 286.0
+offset_top = 333.0
+offset_right = 379.0
+offset_bottom = 364.0
+text = "Garage"
+
+[node name="apartment" type="Button" parent="CanvasLayer/elevator" unique_id=1161895197]
+offset_left = 286.0
+offset_top = 371.0
+offset_right = 350.0
+offset_bottom = 402.0
+text = "Apartment"
 
 [node name="note" type="Node2D" parent="CanvasLayer" unique_id=845036410]
 visible = false
@@ -3559,6 +3952,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 [connection signal="input_event" from="map/collectables/part4_tire/tire1_area" to="." method="_on_tire_1_area_input_event"]
 [connection signal="input_event" from="map/collectables/part3_tire/part3_tire_area" to="." method="_on_part3_tire_area_input_event"]
 [connection signal="input_event" from="map/collectables/part1_tire/part1_tire_area" to="." method="_on_part1_tire_area_input_event"]
+[connection signal="input_event" from="map/collectables/part1_battery/part1_battery_area" to="." method="_on_part_1_battery_area_input_event"]
 [connection signal="input_event" from="map/part3/table/note" to="." method="_on_note_area_input_event"]
 [connection signal="body_entered" from="map/part3/table/note_big" to="." method="_on_note_big_body_entered"]
 [connection signal="body_exited" from="map/part3/table/note_big" to="." method="_on_note_big_body_exited"]
@@ -3574,4 +3968,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 [connection signal="body_exited" from="map/part1/Area2D" to="." method="_on_area_part1_body_exited"]
 [connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
 [connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
+[connection signal="input_event" from="map/collectables2/part3_keys/key_area" to="." method="_on_key_area_input_event"]
+[connection signal="body_entered" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_entered"]
+[connection signal="body_exited" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_exited"]
 [connection signal="pressed" from="CanvasLayer/elevator/close" to="." method="_on_elevator_go_pressed"]
+[connection signal="pressed" from="CanvasLayer/elevator/garage" to="." method="_on_garage_pressed"]
+[connection signal="pressed" from="CanvasLayer/elevator/apartment" to="." method="_on_apartment_pressed"]
