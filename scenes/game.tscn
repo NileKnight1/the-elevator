@@ -707,7 +707,7 @@ radius = 13.0
 bg_color = Color(0, 0.12156863, 0.10162377, 1)
 border_color = Color(0.22265625, 0.22265625, 0.22265625, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxt1d"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iuns"]
 bg_color = Color(0.12156863, 0, 0, 1)
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 50
@@ -715,7 +715,10 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iuns"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rysoc"]
+size = Vector2(176, 164)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxt1d"]
 bg_color = Color(0.12156863, 0, 0, 1)
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 50
@@ -1156,12 +1159,12 @@ texture = ExtResource("3_kvpfn")
 
 [node name="elevator_items" type="Node2D" parent="map" unique_id=1979539055]
 
-[node name="tire" type="Node2D" parent="map/elevator_items" unique_id=890168736]
+[node name="tire1" type="Node2D" parent="map/elevator_items" unique_id=890168736]
 visible = false
 position = Vector2(-1180, -36)
 scale = Vector2(0.8, 0.8)
 
-[node name="Panel6" type="Panel" parent="map/elevator_items/tire" unique_id=432257674]
+[node name="Panel6" type="Panel" parent="map/elevator_items/tire1" unique_id=432257674]
 layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
@@ -1170,7 +1173,7 @@ offset_bottom = 43.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
-[node name="Panel7" type="Panel" parent="map/elevator_items/tire" unique_id=1192270591]
+[node name="Panel7" type="Panel" parent="map/elevator_items/tire1" unique_id=1192270591]
 layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
@@ -1179,7 +1182,103 @@ offset_bottom = 44.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
-[node name="Panel4" type="Panel" parent="map/elevator_items/tire" unique_id=954436077]
+[node name="Panel4" type="Panel" parent="map/elevator_items/tire1" unique_id=954436077]
+layout_direction = 2
+offset_left = 1422.0
+offset_top = -15.0
+offset_right = 1465.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+
+[node name="tire2" type="Node2D" parent="map/elevator_items" unique_id=1670002167]
+visible = false
+position = Vector2(-1117, -37)
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel6" type="Panel" parent="map/elevator_items/tire2" unique_id=297815363]
+layout_direction = 2
+offset_left = 1412.0
+offset_top = -32.0
+offset_right = 1487.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
+
+[node name="Panel7" type="Panel" parent="map/elevator_items/tire2" unique_id=338991842]
+layout_direction = 2
+offset_left = 1406.0
+offset_top = -31.0
+offset_right = 1481.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Panel4" type="Panel" parent="map/elevator_items/tire2" unique_id=1263942164]
+layout_direction = 2
+offset_left = 1422.0
+offset_top = -15.0
+offset_right = 1465.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+
+[node name="tire3" type="Node2D" parent="map/elevator_items" unique_id=1818443592]
+visible = false
+position = Vector2(-1159, -30.000004)
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel6" type="Panel" parent="map/elevator_items/tire3" unique_id=314668396]
+layout_direction = 2
+offset_left = 1412.0
+offset_top = -32.0
+offset_right = 1487.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
+
+[node name="Panel7" type="Panel" parent="map/elevator_items/tire3" unique_id=1869292938]
+layout_direction = 2
+offset_left = 1406.0
+offset_top = -31.0
+offset_right = 1481.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Panel4" type="Panel" parent="map/elevator_items/tire3" unique_id=2122716574]
+layout_direction = 2
+offset_left = 1422.0
+offset_top = -15.0
+offset_right = 1465.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+
+[node name="tire4" type="Node2D" parent="map/elevator_items" unique_id=1627877258]
+visible = false
+position = Vector2(-1096, -30.999998)
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel6" type="Panel" parent="map/elevator_items/tire4" unique_id=1384011545]
+layout_direction = 2
+offset_left = 1412.0
+offset_top = -32.0
+offset_right = 1487.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
+
+[node name="Panel7" type="Panel" parent="map/elevator_items/tire4" unique_id=2011484859]
+layout_direction = 2
+offset_left = 1406.0
+offset_top = -31.0
+offset_right = 1481.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Panel4" type="Panel" parent="map/elevator_items/tire4" unique_id=1177023403]
 layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
@@ -1190,7 +1289,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
 
 [node name="battery" type="Node2D" parent="map/elevator_items" unique_id=667328132]
 visible = false
-position = Vector2(2821, -86)
+position = Vector2(2713, -60)
 
 [node name="Panel8" type="Panel" parent="map/elevator_items/battery" unique_id=1501070054]
 layout_direction = 2
@@ -1234,7 +1333,7 @@ polygon = PackedVector2Array(-2756, 61, -2752, 61, -2755, 66, -2752, 66, -2757, 
 
 [node name="keys" type="Node2D" parent="map/elevator_items" unique_id=735024977]
 visible = false
-position = Vector2(-809, 23)
+position = Vector2(-757, 44)
 
 [node name="KeyPng1177" type="Sprite2D" parent="map/elevator_items/keys" unique_id=335074140]
 position = Vector2(843, -33.999996)
@@ -3799,10 +3898,12 @@ texture = ExtResource("1_lbhrr")
 
 [node name="car" type="Node2D" parent="garage/garage" unique_id=160379240]
 
-[node name="tire3" type="Node2D" parent="garage/garage/car" unique_id=580386446]
-position = Vector2(808, 6)
+[node name="front_tires" type="Node2D" parent="garage/garage/car" unique_id=889692845]
 
-[node name="Panel6" type="Panel" parent="garage/garage/car/tire3" unique_id=556809015]
+[node name="tire1" type="Node2D" parent="garage/garage/car/front_tires" unique_id=112665736]
+position = Vector2(1135, 9)
+
+[node name="Panel6" type="Panel" parent="garage/garage/car/front_tires/tire1" unique_id=222894472]
 layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
@@ -3811,7 +3912,7 @@ offset_bottom = 43.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
-[node name="Panel7" type="Panel" parent="garage/garage/car/tire3" unique_id=1244976937]
+[node name="Panel7" type="Panel" parent="garage/garage/car/front_tires/tire1" unique_id=654705965]
 layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
@@ -3820,7 +3921,78 @@ offset_bottom = 44.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
-[node name="Panel4" type="Panel" parent="garage/garage/car/tire3" unique_id=1379672441]
+[node name="Panel4" type="Panel" parent="garage/garage/car/front_tires/tire1" unique_id=1449668770]
+layout_direction = 2
+offset_left = 1422.0
+offset_top = -15.0
+offset_right = 1465.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
+
+[node name="tire2" type="Node2D" parent="garage/garage/car/front_tires" unique_id=216529429]
+visible = false
+position = Vector2(1115, 17)
+
+[node name="Panel6" type="Panel" parent="garage/garage/car/front_tires/tire2" unique_id=1643409544]
+layout_direction = 2
+offset_left = 1412.0
+offset_top = -32.0
+offset_right = 1487.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
+
+[node name="Panel7" type="Panel" parent="garage/garage/car/front_tires/tire2" unique_id=1768362090]
+layout_direction = 2
+offset_left = 1406.0
+offset_top = -31.0
+offset_right = 1481.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Panel4" type="Panel" parent="garage/garage/car/front_tires/tire2" unique_id=186195478]
+layout_direction = 2
+offset_left = 1422.0
+offset_top = -15.0
+offset_right = 1465.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
+
+[node name="front_tires_area" type="Area2D" parent="garage/garage/car/front_tires" unique_id=768884408]
+position = Vector2(369, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/front_tires/front_tires_area" unique_id=1739976705]
+position = Vector2(2201, -7)
+shape = SubResource("RectangleShape2D_rysoc")
+
+[node name="back_tires" type="Node2D" parent="garage/garage/car" unique_id=648747747]
+
+[node name="tire1" type="Node2D" parent="garage/garage/car/back_tires" unique_id=580386446]
+visible = false
+position = Vector2(808, 6)
+
+[node name="Panel6" type="Panel" parent="garage/garage/car/back_tires/tire1" unique_id=556809015]
+layout_direction = 2
+offset_left = 1412.0
+offset_top = -32.0
+offset_right = 1487.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
+
+[node name="Panel7" type="Panel" parent="garage/garage/car/back_tires/tire1" unique_id=1244976937]
+layout_direction = 2
+offset_left = 1406.0
+offset_top = -31.0
+offset_right = 1481.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Panel4" type="Panel" parent="garage/garage/car/back_tires/tire1" unique_id=1379672441]
 layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
@@ -3829,10 +4001,11 @@ offset_bottom = 28.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sww3w")
 
-[node name="tire" type="Node2D" parent="garage/garage/car" unique_id=2123904186]
+[node name="tire2" type="Node2D" parent="garage/garage/car/back_tires" unique_id=2123904186]
+visible = false
 position = Vector2(764, 17)
 
-[node name="Panel6" type="Panel" parent="garage/garage/car/tire" unique_id=1334648677]
+[node name="Panel6" type="Panel" parent="garage/garage/car/back_tires/tire2" unique_id=1334648677]
 layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
@@ -3841,7 +4014,7 @@ offset_bottom = 43.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
-[node name="Panel7" type="Panel" parent="garage/garage/car/tire" unique_id=1645789116]
+[node name="Panel7" type="Panel" parent="garage/garage/car/back_tires/tire2" unique_id=1645789116]
 layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
@@ -3850,7 +4023,7 @@ offset_bottom = 44.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
-[node name="Panel4" type="Panel" parent="garage/garage/car/tire" unique_id=1678318108]
+[node name="Panel4" type="Panel" parent="garage/garage/car/back_tires/tire2" unique_id=1678318108]
 layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
@@ -3859,65 +4032,11 @@ offset_bottom = 28.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sxt1d")
 
-[node name="tire4" type="Node2D" parent="garage/garage/car" unique_id=112665736]
-position = Vector2(1135, 9)
+[node name="back_tires_area" type="Area2D" parent="garage/garage/car/back_tires" unique_id=1949996826]
 
-[node name="Panel6" type="Panel" parent="garage/garage/car/tire4" unique_id=222894472]
-layout_direction = 2
-offset_left = 1412.0
-offset_top = -32.0
-offset_right = 1487.0
-offset_bottom = 43.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
-
-[node name="Panel7" type="Panel" parent="garage/garage/car/tire4" unique_id=654705965]
-layout_direction = 2
-offset_left = 1406.0
-offset_top = -31.0
-offset_right = 1481.0
-offset_bottom = 44.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
-
-[node name="Panel4" type="Panel" parent="garage/garage/car/tire4" unique_id=1449668770]
-layout_direction = 2
-offset_left = 1422.0
-offset_top = -15.0
-offset_right = 1465.0
-offset_bottom = 28.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
-
-[node name="tire2" type="Node2D" parent="garage/garage/car" unique_id=216529429]
-position = Vector2(1115, 17)
-
-[node name="Panel6" type="Panel" parent="garage/garage/car/tire2" unique_id=1643409544]
-layout_direction = 2
-offset_left = 1412.0
-offset_top = -32.0
-offset_right = 1487.0
-offset_bottom = 43.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
-
-[node name="Panel7" type="Panel" parent="garage/garage/car/tire2" unique_id=1768362090]
-layout_direction = 2
-offset_left = 1406.0
-offset_top = -31.0
-offset_right = 1481.0
-offset_bottom = 44.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
-
-[node name="Panel4" type="Panel" parent="garage/garage/car/tire2" unique_id=186195478]
-layout_direction = 2
-offset_left = 1422.0
-offset_top = -15.0
-offset_right = 1465.0
-offset_bottom = 28.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/back_tires/back_tires_area" unique_id=1008004491]
+position = Vector2(2201, -7)
+shape = SubResource("RectangleShape2D_rysoc")
 
 [node name="Polygon2D4" type="Polygon2D" parent="garage/garage/car" unique_id=1777501850]
 color = Color(0, 0, 0, 1)
@@ -4067,6 +4186,184 @@ shape = SubResource("RectangleShape2D_lbhrr")
 position = Vector2(303, -151)
 shape = SubResource("CapsuleShape2D_lbhrr")
 
+[node name="elevator_items" type="Node2D" parent="garage" unique_id=619903820]
+position = Vector2(1670, 1566)
+
+[node name="tire1" type="Node2D" parent="garage/elevator_items" unique_id=1311389141]
+position = Vector2(-1180, -36)
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel6" type="Panel" parent="garage/elevator_items/tire1" unique_id=740293031]
+layout_direction = 2
+offset_left = 1412.0
+offset_top = -32.0
+offset_right = 1487.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
+
+[node name="Panel7" type="Panel" parent="garage/elevator_items/tire1" unique_id=1047521714]
+layout_direction = 2
+offset_left = 1406.0
+offset_top = -31.0
+offset_right = 1481.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Panel4" type="Panel" parent="garage/elevator_items/tire1" unique_id=8082519]
+layout_direction = 2
+offset_left = 1422.0
+offset_top = -15.0
+offset_right = 1465.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+
+[node name="tire2" type="Node2D" parent="garage/elevator_items" unique_id=928773583]
+position = Vector2(-1117, -37)
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel6" type="Panel" parent="garage/elevator_items/tire2" unique_id=1203298383]
+layout_direction = 2
+offset_left = 1412.0
+offset_top = -32.0
+offset_right = 1487.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
+
+[node name="Panel7" type="Panel" parent="garage/elevator_items/tire2" unique_id=2142423979]
+layout_direction = 2
+offset_left = 1406.0
+offset_top = -31.0
+offset_right = 1481.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Panel4" type="Panel" parent="garage/elevator_items/tire2" unique_id=1938110406]
+layout_direction = 2
+offset_left = 1422.0
+offset_top = -15.0
+offset_right = 1465.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+
+[node name="tire3" type="Node2D" parent="garage/elevator_items" unique_id=1515653107]
+position = Vector2(-1159, -30.000004)
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel6" type="Panel" parent="garage/elevator_items/tire3" unique_id=984764607]
+layout_direction = 2
+offset_left = 1412.0
+offset_top = -32.0
+offset_right = 1487.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
+
+[node name="Panel7" type="Panel" parent="garage/elevator_items/tire3" unique_id=1796741625]
+layout_direction = 2
+offset_left = 1406.0
+offset_top = -31.0
+offset_right = 1481.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Panel4" type="Panel" parent="garage/elevator_items/tire3" unique_id=1912262323]
+layout_direction = 2
+offset_left = 1422.0
+offset_top = -15.0
+offset_right = 1465.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+
+[node name="tire4" type="Node2D" parent="garage/elevator_items" unique_id=849344206]
+position = Vector2(-1096, -30.999998)
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel6" type="Panel" parent="garage/elevator_items/tire4" unique_id=542261475]
+layout_direction = 2
+offset_left = 1412.0
+offset_top = -32.0
+offset_right = 1487.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
+
+[node name="Panel7" type="Panel" parent="garage/elevator_items/tire4" unique_id=391772954]
+layout_direction = 2
+offset_left = 1406.0
+offset_top = -31.0
+offset_right = 1481.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Panel4" type="Panel" parent="garage/elevator_items/tire4" unique_id=365573923]
+layout_direction = 2
+offset_left = 1422.0
+offset_top = -15.0
+offset_right = 1465.0
+offset_bottom = 28.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
+
+[node name="battery" type="Node2D" parent="garage/elevator_items" unique_id=49383916]
+position = Vector2(2713, -60)
+
+[node name="Panel8" type="Panel" parent="garage/elevator_items/battery" unique_id=453550741]
+layout_direction = 2
+offset_left = -2772.0
+offset_top = 55.0
+offset_right = -2735.0
+offset_bottom = 77.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_weeiq")
+
+[node name="Panel9" type="Panel" parent="garage/elevator_items/battery" unique_id=809884530]
+layout_direction = 2
+offset_left = -2772.0
+offset_top = 74.0
+offset_right = -2698.0
+offset_bottom = 80.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uxocx")
+
+[node name="Panel10" type="Panel" parent="garage/elevator_items/battery" unique_id=1153706781]
+layout_direction = 2
+offset_left = -2772.0
+offset_top = 55.0
+offset_right = -2698.0
+offset_bottom = 61.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uxocx")
+
+[node name="Polygon2D3" type="Polygon2D" parent="garage/elevator_items/battery" unique_id=586206291]
+position = Vector2(919.3516, -12.090939)
+scale = Vector2(1.33334, 1.1818187)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-2755.75, 60.999996, -2752, 61, -2754.25, 66.07692, -2752, 66, -2757, 72, -2756, 67, -2758, 66)
+
+[node name="Polygon2D2" type="Polygon2D" parent="garage/elevator_items/battery" unique_id=573676236]
+position = Vector2(1, 0)
+color = Color(0.17254902, 0.20784314, 0.5686275, 1)
+polygon = PackedVector2Array(-2756, 61, -2752, 61, -2755, 66, -2752, 66, -2757, 72, -2756, 67, -2758, 66)
+
+[node name="keys" type="Node2D" parent="garage/elevator_items" unique_id=1473203216]
+position = Vector2(-757, 44)
+
+[node name="KeyPng1177" type="Sprite2D" parent="garage/elevator_items/keys" unique_id=1873151751]
+position = Vector2(843, -33.999996)
+scale = Vector2(0.008189653, 0.008189654)
+texture = ExtResource("10_trtic")
+
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
 position = Vector2(-135, -143)
 
@@ -4151,6 +4448,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 [connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
 [connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
 [connection signal="input_event" from="map/collectables2/part3_keys/key_area" to="." method="_on_key_area_input_event"]
+[connection signal="body_entered" from="garage/garage/car/front_tires/front_tires_area" to="." method="_on_front_tires_area_body_entered"]
+[connection signal="body_exited" from="garage/garage/car/front_tires/front_tires_area" to="." method="_on_front_tires_area_body_exited"]
+[connection signal="body_entered" from="garage/garage/car/back_tires/back_tires_area" to="." method="_on_back_tires_area_body_entered"]
+[connection signal="body_exited" from="garage/garage/car/back_tires/back_tires_area" to="." method="_on_back_tires_area_body_exited"]
 [connection signal="body_entered" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_entered"]
 [connection signal="body_exited" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_exited"]
 [connection signal="pressed" from="CanvasLayer/elevator/close" to="." method="_on_elevator_go_pressed"]

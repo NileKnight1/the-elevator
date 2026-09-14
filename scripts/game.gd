@@ -4,6 +4,30 @@ var try = global.try
 
 func init_game():
 	init_lights()
+	init_collect()
+
+func init_collect():
+	$map/collectables/part1_tire.visible = 1
+	$map/collectables/part3_tire.visible = 1
+	$map/collectables/part4_tire.visible = 1
+	$map/collectables/part1_battery.visible = 1
+	$map/collectables2/part3_keys.visible = 1
+	
+	$garage/elevator_items/tire1.visible = 0
+	$garage/elevator_items/tire2.visible = 0
+	$garage/elevator_items/tire3.visible = 0
+	$garage/elevator_items/tire4.visible = 0
+	$garage/elevator_items/keys.visible = 0
+	$garage/elevator_items/battery.visible = 0
+	
+	$map/elevator_items/tire1.visible = 0
+	$map/elevator_items/tire2.visible = 0
+	$map/elevator_items/tire3.visible = 0
+	$map/elevator_items/tire4.visible = 0
+	$map/elevator_items/keys.visible = 0
+	$map/elevator_items/battery.visible = 0
+	
+
 func init_lights():
 	#$map/black.visible = 1
 	
@@ -29,12 +53,6 @@ func check_click(event):
 func _ready() -> void:
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
-	
-	$map/collectables/part4_tire.visible = 1
-	$map/collectables/part1_tire.visible = 1
-	$map/collectables/part1_battery.visible = 1
-	$map/collectables2/part3_keys.visible = 1
-	$map/collectables/part3_tire.visible = 1
 	
 	init_game()
 	pass
@@ -90,7 +108,51 @@ func _process(delta: float) -> void:
 				$map/part3/pc/cam.enabled = 0
 				$player.visible = 1
 				allow_move()
-			
+		
+		if back_tires_area:
+			if equipped_tires && back_tires_exist < 2:
+				print("back tire put", back_tires_exist)
+				equipped_tires -= 1
+				$garage/garage/car/back_tires.get_child(back_tires_exist).visible = 1
+				back_tires_exist += 1
+				for i in $map/elevator_items.get_children():
+					if i.visible:
+						i.visible = 0
+						break
+				for i in $garage/elevator_items.get_children():
+					if i.visible:
+						i.visible = 0
+						break
+				
+				
+			elif !equipped_tires:
+				print("no tires")
+			elif back_tires_exist == 2:
+				print("fullD")
+		if front_tires_area:
+			if equipped_tires && front_tires_exist < 2:
+				print("front tire put", front_tires_exist)
+				equipped_tires -= 1
+				$garage/garage/car/front_tires.get_child(front_tires_exist).visible = 1
+				front_tires_exist += 1
+				for i in $map/elevator_items.get_children():
+					if i.visible:
+						i.visible = 0
+						break
+				for i in $garage/elevator_items.get_children():
+					if i.visible:
+						i.visible = 0
+						break
+				
+				
+			elif !equipped_tires:
+				print("no tires")
+			elif back_tires_exist == 2:
+				print("fullD")
+
+var back_tires_exist = 0
+var front_tires_exist = 1
+
 func _on_area_part1_body_entered(body: Node2D) -> void:
 	if body == $player:
 		var tween = create_tween()
@@ -167,6 +229,7 @@ func _on_garage_pressed() -> void:
 		$garage/garage/elevator/close2.size.x = 0
 		allow_move()
 		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
+		$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
 		$player.position = Vector2(1672.0, 1606.0)
 		$CanvasLayer/elevator.visible = 0
@@ -199,6 +262,7 @@ func _on_apartment_pressed() -> void:
 		$garage/garage/elevator/close1.size.x = 0
 		$garage/garage/elevator/close2.size.x = 0
 		allow_move()
+		$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
 		$player.position = Vector2(0, -11)
@@ -224,18 +288,27 @@ func _on_note_pressed() -> void:
 func _on_tire_1_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		print("tire taken")
+		equipped_tires += 1
 		$map/collectables/part4_tire.visible = 0
-		$map/elevator_items/tire.visible = 1
+		$map/elevator_items/tire1.visible = 1
+		$garage/elevator_items/tire1.visible = 1
+		
 func _on_part1_tire_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		print("tire taken")
+		equipped_tires += 1
 		$map/collectables/part1_tire.visible = 0
-		$map/elevator_items/tire.visible = 1
+		$map/elevator_items/tire2.visible = 1
+		$garage/elevator_items/tire2.visible = 1
+		
 func _on_part3_tire_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		print("tire taken")
+		equipped_tires += 1
 		$map/collectables/part3_tire.visible = 0
-		$map/elevator_items/tire.visible = 1
+		$map/elevator_items/tire3.visible = 1
+		$garage/elevator_items/tire3.visible = 1
+		
 
 func match_try():
 	match try:
@@ -270,14 +343,20 @@ func _on_part_1_battery_area_input_event(viewport: Node, event: InputEvent, shap
 		print("battery taken")
 		$map/collectables/part1_battery.visible = 0
 		$map/elevator_items/battery.visible = 1
+		$garage/elevator_items/battery.visible = 1
+		
 
 func _on_key_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		print("battery taken")
 		$map/collectables2/part3_keys.visible = 0
 		$map/elevator_items/keys.visible = 1
+		$garage/elevator_items/keys.visible = 1
+		
 
+var equipped_tires = 0
 var garage_elevator_area = 0
+
 
 func _on_garage_elevator_area_body_entered(body: Node2D) -> void:
 	if body == $player:
@@ -285,3 +364,28 @@ func _on_garage_elevator_area_body_entered(body: Node2D) -> void:
 func _on_garage_elevator_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		garage_elevator_area = 0
+
+var back_tires_area = 0
+var front_tires_area = 0
+
+func _on_back_tires_area_body_entered(body: Node2D) -> void:
+	if body == $player: 
+		back_tires_area = 1
+func _on_back_tires_area_body_exited(body: Node2D) -> void:
+	if body == $player: 
+		back_tires_area = 0
+
+func _on_front_tires_area_body_entered(body: Node2D) -> void:
+	if body == $player: 
+		front_tires_area = 1
+func _on_front_tires_area_body_exited(body: Node2D) -> void:
+	if body == $player: 
+		front_tires_area = 0
+
+
+func _on_car_ride_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_car_ride_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
