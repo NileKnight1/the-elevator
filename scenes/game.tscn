@@ -180,6 +180,12 @@ border_color = Color(0, 0, 0, 1)
 a = Vector2(-29, -16)
 b = Vector2(273, -16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trtic"]
+size = Vector2(48, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir15t"]
+size = Vector2(216, 216)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
 bg_color = Color(0.21484375, 0.12502292, 0.052871704, 1)
 border_width_left = 2
@@ -698,7 +704,16 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.92672414, 0.89224136)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nv0b"]
+bg_color = Color(0.71484375, 0.5838969, 0.48866272, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
 [node name="game" type="Node2D" unique_id=1974179384]
+position = Vector2(-3, 0)
 script = ExtResource("1_iywne")
 
 [node name="map" type="Node2D" parent="." unique_id=1248484278]
@@ -910,6 +925,7 @@ shape = SubResource("RectangleShape2D_kvpfn")
 [node name="collectables" type="Node2D" parent="map" unique_id=1223619649]
 
 [node name="part4_tire" type="Node2D" parent="map/collectables" unique_id=1498722287]
+visible = false
 position = Vector2(925, 4)
 
 [node name="Panel6" type="Panel" parent="map/collectables/part4_tire" unique_id=387814457]
@@ -1216,12 +1232,30 @@ position = Vector2(0, 3)
 color = Color(0.07421875, 0.029687503, 0, 1)
 polygon = PackedVector2Array(846, -27, 876, -59, 1143, -59, 1172, -28)
 
+[node name="Polygon2D3" type="Polygon2D" parent="map/part3/table" unique_id=1640280603]
+position = Vector2(833.00006, -12)
+scale = Vector2(0.05828236, 0.59375)
+color = Color(0.71484375, 0.5838969, 0.48866272, 1)
+polygon = PackedVector2Array(846, -27, 1029.4697, -55.578945, 1321.1533, -55.578945, 1166.7324, -26.947367)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="map/part3/table" unique_id=101780245]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/part3/table/StaticBody2D" unique_id=1140859644]
 position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_lbhrr")
 one_way_collision = true
+
+[node name="note" type="Area2D" parent="map/part3/table" unique_id=516731010]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part3/table/note" unique_id=208375478]
+position = Vector2(896, -41)
+shape = SubResource("RectangleShape2D_trtic")
+
+[node name="note_big" type="Area2D" parent="map/part3/table" unique_id=1696153208]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part3/table/note_big" unique_id=1944869623]
+position = Vector2(912, -35)
+shape = SubResource("RectangleShape2D_ir15t")
 
 [node name="box" type="Node2D" parent="map/part3" unique_id=1062280731]
 position = Vector2(-15, 15)
@@ -3487,7 +3521,8 @@ energy = 1.24
 texture = SubResource("GradientTexture2D_lbhrr")
 
 [node name="him" parent="." unique_id=1160840441 instance=ExtResource("11_kvuet")]
-position = Vector2(-2885, 15)
+visible = false
+position = Vector2(52, 15)
 script = ExtResource("11_dinhu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1460517878]
@@ -3505,6 +3540,18 @@ offset_right = 340.0
 offset_bottom = 328.0
 text = "Go on"
 
+[node name="note" type="Node2D" parent="CanvasLayer" unique_id=845036410]
+visible = false
+
+[node name="Panel" type="Panel" parent="CanvasLayer/note" unique_id=363142699]
+layout_direction = 2
+offset_left = 487.0
+offset_top = 196.0
+offset_right = 764.0
+offset_bottom = 535.47235
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
+
 [connection signal="body_entered" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_entered"]
 [connection signal="body_exited" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_exited"]
 [connection signal="body_entered" from="map/hallway/elevator_area" to="." method="_on_elevator_area_body_entered"]
@@ -3512,6 +3559,9 @@ text = "Go on"
 [connection signal="input_event" from="map/collectables/part4_tire/tire1_area" to="." method="_on_tire_1_area_input_event"]
 [connection signal="input_event" from="map/collectables/part3_tire/part3_tire_area" to="." method="_on_part3_tire_area_input_event"]
 [connection signal="input_event" from="map/collectables/part1_tire/part1_tire_area" to="." method="_on_part1_tire_area_input_event"]
+[connection signal="input_event" from="map/part3/table/note" to="." method="_on_note_area_input_event"]
+[connection signal="body_entered" from="map/part3/table/note_big" to="." method="_on_note_big_body_entered"]
+[connection signal="body_exited" from="map/part3/table/note_big" to="." method="_on_note_big_body_exited"]
 [connection signal="body_entered" from="map/part3/pc/pc_area" to="." method="_on_pc_area_body_entered"]
 [connection signal="body_exited" from="map/part3/pc/pc_area" to="." method="_on_pc_area_body_exited"]
 [connection signal="pressed" from="map/part3/pc/desktop/mypc" to="." method="_on_mypc_pressed"]

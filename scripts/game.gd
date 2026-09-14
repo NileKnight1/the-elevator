@@ -1,5 +1,7 @@
 extends Node2D
 
+var try = global.try
+
 func init_game():
 	init_lights()
 func init_lights():
@@ -25,8 +27,10 @@ func check_click(event):
 		return 1
 
 func _ready() -> void:
-	init_game()
+	var tween = create_tween()
+	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
 	
+	init_game()
 	pass
 
 var elevator_area = 0
@@ -118,10 +122,18 @@ func _on_elevator_area_body_exited(body: Node2D) -> void:
 func _on_elevator_go_pressed() -> void:
 	print("goon")
 	print($map/hallway/elevator/close1.size.x)
+	global.try += 1
 	var tween = create_tween()
 	tween.set_parallel(1)
 	tween.tween_property($map/hallway/elevator/close1, "size:x", 100, 1.0)
 	tween.tween_property($map/hallway/elevator/close2, "size:x", 100, 1.0)
+	await get_tree().create_timer(1.0).timeout
+	
+	var tween2 = create_tween()
+	tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+	
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 func _on_pc_area_body_entered(body: Node2D) -> void:
@@ -150,3 +162,24 @@ func _on_part3_tire_area_input_event(viewport: Node, event: InputEvent, shape_id
 		print("tire taken")
 		$map/collectables/part3_tire.visible = 0
 		$map/elevator_items/tire.visible = 1
+
+func match_try():
+	match try:
+		1:
+			$map/collectables/part4_tire.visible = 1
+		2:
+			
+			pass
+var note_area = 0
+
+func _on_note_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event) && note_area:
+		$CanvasLayer/note.visible = !$CanvasLayer/note.visible 
+
+func _on_note_big_body_entered(body: Node2D) -> void:
+	if body == $player:
+		note_area = 1
+func _on_note_big_body_exited(body: Node2D) -> void:
+	if body == $player:
+		$CanvasLayer/note.visible = 0
+		note_area = 0
