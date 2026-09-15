@@ -4,9 +4,10 @@ var def_speed = 300
 
 var SPEED = 250.0
 var sprint = 0
-var move = 1
+var move = 0
 var walk = 0 
 
+var awake = 1
 var left = -2885.0
 var right = 2600.0
 var cur = 2600.0

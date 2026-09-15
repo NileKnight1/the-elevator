@@ -14,6 +14,8 @@ func init_collect():
 	$map/collectables/part4_tire.visible = 1
 	$map/collectables/part1_battery.visible = 1
 	$map/collectables2/part3_keys.visible = 0
+	$map/collectables2/part2_keys.visible = 0
+	
 	
 	$garage/elevator_items/tire1.visible = 0
 	$garage/elevator_items/tire2.visible = 0
@@ -56,9 +58,16 @@ func _ready() -> void:
 	$him.player = $player
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+	$him.position = Vector2(-1190.0, -414.0)
+	$him.rotation = 0
 	$him.move = 0
+	#$player.position = Vector2(0, -11)
 	$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
 	init_game()
+	#$him.position = Vector2(-771, -22)
+	#$him.rotation = 90
+	#$him.move = 0
+	
 	#
 	#await get_tree().create_timer(2.0).timeout
 	#$player.hide = 1
@@ -72,9 +81,10 @@ var pc_on = 0
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
-		if elevator_area:
+		if elevator_area && abs($him.position.x-$player.position.x) > 350:
 			if !elevator_in:
 				elevator_in = 1 
+				$player.hide = 1
 				disable_move()
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
 				$player.scale = Vector2(0.8, 0.8)
@@ -82,6 +92,7 @@ func _process(delta: float) -> void:
 				$CanvasLayer/elevator.visible = 1
 			else:
 				elevator_in = 0
+				$player.hide = 0
 				allow_move()
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
@@ -91,6 +102,7 @@ func _process(delta: float) -> void:
 		if garage_elevator_area:
 			if !elevator_in:
 				elevator_in = 1 
+				$player.hide = 1
 				disable_move()
 				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
 				$player.scale = Vector2(0.8, 0.8)
@@ -98,12 +110,14 @@ func _process(delta: float) -> void:
 				$CanvasLayer/elevator.visible = 1
 			else:
 				elevator_in = 0
+				$player.hide = 0
 				allow_move()
 				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
 				$player.position = Vector2(1672.0, 1606.0)
 				$CanvasLayer/elevator.visible = 0
 		if pc_area:
+			return
 			if !pc_on:
 				pc_on = 1
 				$player/cam.enabled = 0
@@ -169,9 +183,15 @@ func _process(delta: float) -> void:
 			if back_tires_exist == 2 && front_tires_exist == 2 && car_battery_exist:
 				if car_keys_taken:
 					print("car on")
-				else:
+				elif !can_escape:
 					all_collected_except_keys = 1
 					print("keys missing")
+				elif can_escape && !car_keys_taken:
+					print('get_keys')
+					can_kill = 1
+					$map/collectables2/part1_crawbar.visible = 1
+				elif can_escape && car_keys_taken:
+					print("WIN")
 		
 		if car_battery_area:
 			if car_battery_taken:
@@ -187,6 +207,13 @@ func _process(delta: float) -> void:
 			
 		if wardrobe_area:
 			if wardrobe_hide:
+				if crowbar_equipped && wardrobe_area_him:
+					print("killed him")
+					$him.awake = 0
+					$him.move = 0
+					$map/collectables2/part3_keys.visible = 1
+					$him.position = Vector2(-771, 21)
+					$him.rotation = 90
 				$player.hide = 0
 				wardrobe_hide = 0
 				$map/part3/wardrobe/wardrone_hide_collisoin/CollisionShape2D.set_deferred("disabled", 1)
@@ -206,6 +233,16 @@ func _process(delta: float) -> void:
 				
 		if sofa_area:
 			if sofa_hide:
+				print(crowbar_equipped, " crowbar_equipped")
+				print(sofa_area_him, " sofa_area_him")
+				
+				if crowbar_equipped && sofa_area_him:
+					print("him_killed")
+					$him.awake = 0
+					$him.move = 0
+					$map/collectables2/part2_keys.visible = 1
+					$him.position = Vector2(-771, 21)
+					$him.rotation = 90
 				$player.hide = 0
 				sofa_hide = 0
 				$map/part2/sofa.z_index = 0
@@ -220,6 +257,9 @@ func _process(delta: float) -> void:
 				disable_move()
 				
 
+
+
+var can_kill = 0
 var sofa_hide = 0
 var wardrobe_area =0
 var wardrobe_hide = 0
@@ -300,6 +340,7 @@ func _on_garage_pressed() -> void:
 		#await get_tree().create_timer(1.0).timeout
 		#
 		elevator_in = 0
+		$player.hide = 0
 		
 		$map/hallway/elevator/close1.size.x = 0
 		$map/hallway/elevator/close2.size.x = 0
@@ -339,6 +380,7 @@ func _on_apartment_pressed() -> void:
 		#await get_tree().create_timer(1.0).timeout
 		#
 		elevator_in = 0
+		$player.hide = 0
 		$map/hallway/elevator/close1.size.x = 0
 		$map/hallway/elevator/close2.size.x = 0
 		$garage/garage/elevator/close1.size.x = 0
@@ -347,11 +389,11 @@ func _on_apartment_pressed() -> void:
 		if all_collected_except_keys:
 			#$map/collectables2/part3_keys.visible = 1
 			back_tires_exist = 0
-			front_tires_exist = 0
+			front_tires_exist = 1
 			car_battery_exist = 0
 			#all_collected_except_keys = 0
 			$map/part2/sofa/blood.visible = 1
-			$garage/garage/car/front_tires/tire1.visible = 0
+			#$garage/garage/car/front_tires/tire1.visible = 0
 			$garage/garage/car/front_tires/tire2.visible = 0
 			$garage/garage/car/back_tires/tire1.visible = 0
 			$garage/garage/car/back_tires/tire2.visible = 0
@@ -404,20 +446,20 @@ func _on_part3_tire_area_input_event(viewport: Node, event: InputEvent, shape_id
 		$map/elevator_items/tire3.visible = 1
 		$garage/elevator_items/tire3.visible = 1
 		
-
-func match_try():
-	match try:
-		1:
-			$map/collectables/part4_tire.visible = 1
-		2:
-			$map/collectables/part1_tire.visible = 1
-		3:
-			$map/collectables/part1_battery.visible = 1
-		4:
-			$map/collectables2/part3_keys.visible = 1
-		5:
-			$map/collectables/part3_tire.visible = 1
-		
+#
+#func match_try():
+	#match try:
+		#1:
+			#$map/collectables/part4_tire.visible = 1
+		#2:
+			#$map/collectables/part1_tire.visible = 1
+		#3:
+			#$map/collectables/part1_battery.visible = 1
+		#4:
+			#$map/collectables2/part3_keys.visible = 1
+		#5:
+			#$map/collectables/part3_tire.visible = 1
+		#
 
 var note_area = 0
 
@@ -446,6 +488,7 @@ func _on_key_area_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 	if check_click(event):
 		print("battery taken")
 		$map/collectables2/part3_keys.visible = 0
+		$map/collectables2/part2_keys.visible = 0	
 		$map/elevator_items/keys.visible = 1
 		$garage/elevator_items/keys.visible = 1
 		
@@ -485,7 +528,7 @@ func _on_car_ride_body_entered(body: Node2D) -> void:
 func _on_car_ride_body_exited(body: Node2D) -> void:
 	if body == $player: 
 		car_ride_area = 0
-
+var can_escape = 0
 var sofa_blood_discovered = 0
 var sofa_blood_area = 0
 func _on_sofa_blood_area_body_entered(body: Node2D) -> void:
@@ -499,10 +542,22 @@ func _on_sofa_blood_area_body_entered(body: Node2D) -> void:
 				$garage/garage/mob.visible = 1
 		elif him_spawn_ready:
 			#disable_move()
+			print("spawwned")
+			can_escape = 1
+			if !can_kill && !first_spawn:
+				$map/collectables/part1_battery.visible = 1
+				#$map/collectables2/part3_keys.visible = 1
+				$map/collectables/part4_tire.visible = 1
+				$map/collectables/part3_tire.visible = 1
+				$map/collectables/part1_tire.visible = 1
+			elif can_kill:
+				$map/collectables2/part1_crawbar.visible = 1
 			$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 1)
+			first_spawn = 1
 			await get_tree().create_timer(1.0).timeout
+			$him.move = 1
 			
-			
+var first_spawn = 0
 var him_spawn_ready = 0
 var mob_taken = 0
 func _on_sofa_blood_area_body_exited(body: Node2D) -> void:
@@ -529,16 +584,83 @@ func _on_car_battery_area_body_exited(body: Node2D) -> void:
 func _on_wardrobe_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		wardrobe_area = 1
+	if body == $him:
+		wardrobe_area_him = 1
 func _on_wardrobe_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		wardrobe_area = 0
-		
+	if body == $him:
+		wardrobe_area_him = 0
 
 var sofa_area = 0
+var wardrobe_area_him = 0
+var sofa_area_him
 
 func _on_sofa_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		sofa_area = 1
+	if body == $him:
+		sofa_area_him = 1
 func _on_sofa_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		sofa_area = 0
+	if body == $him:
+		sofa_area_him = 0
+func _on_him_kill_body_entered(body: Node2D) -> void:
+	if body == $player && !$player.hide && $him.awake:
+		print("dead")
+		$him.move = 0
+		$him.position = Vector2(-1157.0, -417.0)
+		$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 1)
+		
+		modulate = Color(0.0, 0.0, 0.0, 1.0)
+		disable_move()
+		$player.position = Vector2(0, 28)
+		
+		await get_tree().create_timer(1.0).timeout
+		var tween = create_tween()
+		tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+		allow_move()
+		$him.move = 1
+		$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
+			
+		if !can_kill:
+			$map/elevator_items/tire1.visible = 0
+			$map/elevator_items/tire2.visible = 0
+			$map/elevator_items/tire3.visible = 0
+			$map/elevator_items/battery.visible = 0
+			$map/elevator_items/keys.visible = 0
+			
+			$garage/elevator_items/tire1.visible = 0
+			$garage/elevator_items/tire2.visible = 0
+			$garage/elevator_items/tire3.visible = 0
+			$garage/elevator_items/battery.visible = 0
+			$garage/elevator_items/keys.visible = 0
+			
+			if !car_battery_exist:
+				$map/collectables/part1_battery.visible = 1
+			print(equipped_tires, " equipped_tires")
+			if equipped_tires:
+				$map/collectables/part4_tire.visible = 1
+				equipped_tires -= 1
+			if equipped_tires:
+				$map/collectables/part3_tire.visible = 1
+				equipped_tires -= 1
+			if equipped_tires:
+				$map/collectables/part1_tire.visible = 1
+				equipped_tires -= 1
+				
+			equipped_tires = 0
+			car_battery_taken = 0
+		if can_kill: 
+			$map/collectables2/part1_crawbar.visible = 1
+			$player/crowbad.visible = 0
+			crowbar_equipped = 0
+
+var crowbar_equipped = 0
+
+func _on_crowbar_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		$map/collectables2/part1_crawbar.visible = 0
+		$player/crowbad.visible = 1
+		crowbar_equipped = 1

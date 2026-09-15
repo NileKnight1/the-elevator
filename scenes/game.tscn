@@ -61,11 +61,11 @@ corner_radius_bottom_left = 60
 bg_color = Color(0.11764706, 0.13725491, 0.14509805, 1)
 border_color = Color(0.22265625, 0.22265625, 0.22265625, 1)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kvuet"]
 a = Vector2(-90, 8)
 b = Vector2(99, 8)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd4ix"]
 bg_color = Color(0, 0, 0, 1)
@@ -719,6 +719,9 @@ size = Vector2(270.57434, 197.22278)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ir15t"]
 radius = 13.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1j6l"]
+size = Vector2(67, 20)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8oq8"]
 bg_color = Color(0, 0.12156863, 0.10162377, 1)
 border_color = Color(0.22265625, 0.22265625, 0.22265625, 1)
@@ -774,6 +777,10 @@ gradient = SubResource("Gradient_lnu2h")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.92672414, 0.89224136)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ca42v"]
+radius = 76.0
+height = 188.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nv0b"]
 bg_color = Color(0.71484375, 0.5838969, 0.48866272, 1)
@@ -947,18 +954,20 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
 position = Vector2(0, 31)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="map/hallway/boundaries" unique_id=288302227]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="map/hallway/boundaries/StaticBody2D" unique_id=405012030]
-position = Vector2(16, 40)
-shape = SubResource("WorldBoundaryShape2D_lnu2h")
-one_way_collision = true
 
 [node name="elevator" type="CollisionShape2D" parent="map/hallway/boundaries/StaticBody2D" unique_id=1862121145]
 position = Vector2(16, -17)
 shape = SubResource("SegmentShape2D_kvuet")
 disabled = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="map/hallway/boundaries" unique_id=1223006157]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/hallway/boundaries/StaticBody2D2" unique_id=188317746]
+position = Vector2(16, 40)
+shape = SubResource("WorldBoundaryShape2D_lnu2h")
+one_way_collision = true
 
 [node name="black" type="PointLight2D" parent="map/hallway" unique_id=1605875113]
 visible = false
@@ -1187,15 +1196,6 @@ polygon = PackedVector2Array(-2756, 61, -2752, 61, -2755, 66, -2752, 66, -2757, 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/collectables/part1_battery/part1_battery_area" unique_id=1546260443]
 position = Vector2(-2752.5, 65)
 shape = SubResource("RectangleShape2D_ca42v")
-
-[node name="part1_crawbar" type="Node2D" parent="map/collectables" unique_id=374343512]
-visible = false
-position = Vector2(52, 0)
-
-[node name="HandCrowbarIconCartoonDesignMetalVectorRemovebgPreview" type="Sprite2D" parent="map/collectables/part1_crawbar" unique_id=600309045]
-position = Vector2(-2744.75, -20.25005)
-scale = Vector2(0.07900008, 0.07900008)
-texture = ExtResource("3_kvpfn")
 
 [node name="elevator_items" type="Node2D" parent="map" unique_id=1979539055]
 
@@ -3801,7 +3801,8 @@ shape = SubResource("CapsuleShape2D_lbhrr")
 [node name="collectables2" type="Node2D" parent="map" unique_id=1797672999]
 
 [node name="part3_keys" type="Node2D" parent="map/collectables2" unique_id=1526022194]
-visible = false
+z_index = 1
+position = Vector2(97, 100)
 
 [node name="KeyPng1177" type="Sprite2D" parent="map/collectables2/part3_keys" unique_id=1693014616]
 position = Vector2(843, -33.999996)
@@ -3813,6 +3814,37 @@ texture = ExtResource("10_trtic")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/collectables2/part3_keys/key_area" unique_id=1101267296]
 position = Vector2(844, -36)
 shape = SubResource("CircleShape2D_ir15t")
+
+[node name="part2_keys" type="Node2D" parent="map/collectables2" unique_id=1840188224]
+z_index = 1
+position = Vector2(-1537, 100)
+
+[node name="KeyPng1177" type="Sprite2D" parent="map/collectables2/part2_keys" unique_id=1792923360]
+position = Vector2(843, -33.999996)
+scale = Vector2(0.008189653, 0.008189654)
+texture = ExtResource("10_trtic")
+
+[node name="key_area" type="Area2D" parent="map/collectables2/part2_keys" unique_id=1131587072]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/collectables2/part2_keys/key_area" unique_id=714175770]
+position = Vector2(844, -36)
+shape = SubResource("CircleShape2D_ir15t")
+
+[node name="part1_crawbar" type="Node2D" parent="map/collectables2" unique_id=1244436371]
+visible = false
+position = Vector2(181, -6)
+
+[node name="crowbad" type="Sprite2D" parent="map/collectables2/part1_crawbar" unique_id=1994820632]
+position = Vector2(-2783, -6)
+rotation = -1.5707964
+scale = Vector2(0.10700005, 0.13699993)
+texture = ExtResource("3_kvpfn")
+
+[node name="crowbar_area" type="Area2D" parent="map/collectables2/part1_crawbar" unique_id=966966244]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/collectables2/part1_crawbar/crowbar_area" unique_id=589979742]
+position = Vector2(-2782.5, -6)
+shape = SubResource("RectangleShape2D_e1j6l")
 
 [node name="garage" type="Node2D" parent="." unique_id=1635056332]
 
@@ -4507,7 +4539,14 @@ scale = Vector2(0.008189653, 0.008189654)
 texture = ExtResource("10_trtic")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(-878, 28)
+position = Vector2(-641, 28)
+
+[node name="crowbad" type="Sprite2D" parent="player" unique_id=1896290467]
+visible = false
+position = Vector2(34, -62.999996)
+rotation = 0.3093108
+scale = Vector2(0.10700005, 0.13699993)
+texture = ExtResource("3_kvpfn")
 
 [node name="cam" type="Camera2D" parent="player" unique_id=1751583136]
 position = Vector2(0, -95)
@@ -4521,8 +4560,14 @@ energy = 1.24
 texture = SubResource("GradientTexture2D_lbhrr")
 
 [node name="him" parent="." unique_id=1160840441 instance=ExtResource("11_kvuet")]
-position = Vector2(-1158, -412)
+position = Vector2(-1190, -414)
 script = ExtResource("11_dinhu")
+
+[node name="him_kill" type="Area2D" parent="him" unique_id=1696286182]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="him/him_kill" unique_id=1467305812]
+position = Vector2(21, -51)
+shape = SubResource("CapsuleShape2D_ca42v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1460517878]
 
@@ -4596,6 +4641,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 [connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
 [connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
 [connection signal="input_event" from="map/collectables2/part3_keys/key_area" to="." method="_on_key_area_input_event"]
+[connection signal="input_event" from="map/collectables2/part2_keys/key_area" to="." method="_on_key_area_input_event"]
+[connection signal="input_event" from="map/collectables2/part1_crawbar/crowbar_area" to="." method="_on_crowbar_area_input_event"]
 [connection signal="body_entered" from="garage/garage/car/front_tires/front_tires_area" to="." method="_on_front_tires_area_body_entered"]
 [connection signal="body_exited" from="garage/garage/car/front_tires/front_tires_area" to="." method="_on_front_tires_area_body_exited"]
 [connection signal="body_entered" from="garage/garage/car/back_tires/back_tires_area" to="." method="_on_back_tires_area_body_entered"]
@@ -4607,6 +4654,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 [connection signal="body_entered" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_entered"]
 [connection signal="body_exited" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_exited"]
 [connection signal="input_event" from="garage/garage/mob/mob_area" to="." method="_on_mob_area_input_event"]
+[connection signal="body_entered" from="him/him_kill" to="." method="_on_him_kill_body_entered"]
 [connection signal="pressed" from="CanvasLayer/elevator/close" to="." method="_on_elevator_go_pressed"]
 [connection signal="pressed" from="CanvasLayer/elevator/garage" to="." method="_on_garage_pressed"]
 [connection signal="pressed" from="CanvasLayer/elevator/apartment" to="." method="_on_apartment_pressed"]
