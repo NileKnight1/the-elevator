@@ -486,12 +486,12 @@ func _on_part_1_battery_area_input_event(viewport: Node, event: InputEvent, shap
 
 func _on_key_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
-		print("battery taken")
+		print("keys taken")
 		$map/collectables2/part3_keys.visible = 0
 		$map/collectables2/part2_keys.visible = 0	
 		$map/elevator_items/keys.visible = 1
 		$garage/elevator_items/keys.visible = 1
-		
+		car_keys_taken = 1
 
 var equipped_tires = 0
 var garage_elevator_area = 0
@@ -540,7 +540,8 @@ func _on_sofa_blood_area_body_entered(body: Node2D) -> void:
 				sofa_blood_discovered = 1
 				print("mob is in the garage")
 				$garage/garage/mob.visible = 1
-		elif him_spawn_ready:
+		elif him_spawn_ready && !spawned:
+			spawned = 1
 			#disable_move()
 			print("spawwned")
 			can_escape = 1
@@ -594,11 +595,12 @@ func _on_wardrobe_area_body_exited(body: Node2D) -> void:
 
 var sofa_area = 0
 var wardrobe_area_him = 0
-var sofa_area_him
+var sofa_area_him = 0
 
 func _on_sofa_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		sofa_area = 1
+	print(body)
 	if body == $him:
 		sofa_area_him = 1
 func _on_sofa_area_body_exited(body: Node2D) -> void:
@@ -606,8 +608,10 @@ func _on_sofa_area_body_exited(body: Node2D) -> void:
 		sofa_area = 0
 	if body == $him:
 		sofa_area_him = 0
+var spawned = 0
 func _on_him_kill_body_entered(body: Node2D) -> void:
 	if body == $player && !$player.hide && $him.awake:
+		spawned = 0
 		print("dead")
 		$him.move = 0
 		$him.position = Vector2(-1157.0, -417.0)

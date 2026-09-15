@@ -2032,6 +2032,8 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
 
 [node name="wardrobe_area" type="Area2D" parent="map/part3/wardrobe" unique_id=2029480214]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/part3/wardrobe/wardrobe_area" unique_id=593823271]
 position = Vector2(1052.5, -76.5)
@@ -3344,6 +3346,8 @@ position = Vector2(-184, 4)
 shape = SubResource("RectangleShape2D_264po")
 
 [node name="sofa_area" type="Area2D" parent="map/part2/sofa" unique_id=1665947916]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/sofa_area" unique_id=1358388773]
 position = Vector2(-76.5, 12)
