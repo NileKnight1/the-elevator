@@ -333,16 +333,16 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dinhu"]
-bg_color = Color(0.0234375, 0.0234375, 0.0234375, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
+bg_color = Color(0.09765625, 0.037802413, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
-bg_color = Color(0.09765625, 0.037802413, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dinhu"]
+bg_color = Color(0.0234375, 0.0234375, 0.0234375, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -366,6 +366,12 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37s47"]
+size = Vector2(131, 243)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rysoc"]
+b = Vector2(77, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt5mj"]
 bg_color = Color(0.09765625, 0.037802413, 0, 1)
@@ -623,6 +629,9 @@ gradient = SubResource("Gradient_0tnpc")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_264po"]
 size = Vector2(314, 178)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt5mj"]
+size = Vector2(407, 168)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05nbr"]
 bg_color = Color(0.20703125, 0.0921936, 0, 1)
@@ -1954,16 +1963,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pl11u")
 [node name="wardrobe" type="Node2D" parent="map/part3" unique_id=338952384]
 position = Vector2(-46, 15)
 
-[node name="Panel" type="Panel" parent="map/part3/wardrobe" unique_id=1027395689]
-layout_direction = 2
-offset_left = 1004.0
-offset_top = -177.0
-offset_right = 1084.0
-offset_bottom = 43.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dinhu")
+[node name="hide" type="Node2D" parent="map/part3/wardrobe" unique_id=1543919979]
+visible = false
 
-[node name="Panel4" type="Panel" parent="map/part3/wardrobe" unique_id=574523953]
+[node name="Panel4" type="Panel" parent="map/part3/wardrobe/hide" unique_id=574523953]
 z_index = 1
 layout_direction = 2
 offset_left = 1004.0
@@ -1973,7 +1976,7 @@ offset_bottom = 43.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
 
-[node name="Panel5" type="Panel" parent="map/part3/wardrobe" unique_id=324922480]
+[node name="Panel5" type="Panel" parent="map/part3/wardrobe/hide" unique_id=324922480]
 z_index = 1
 layout_direction = 2
 offset_left = 1004.0
@@ -1982,6 +1985,15 @@ offset_right = 1084.0
 offset_bottom = -129.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="Panel" type="Panel" parent="map/part3/wardrobe" unique_id=1027395689]
+layout_direction = 2
+offset_left = 1004.0
+offset_top = -177.0
+offset_right = 1084.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dinhu")
 
 [node name="Panel3" type="Panel" parent="map/part3/wardrobe" unique_id=68228321]
 layout_direction = 2
@@ -2000,6 +2012,37 @@ offset_right = 1094.0
 offset_bottom = -176.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvpfn")
+
+[node name="Panel4" type="Panel" parent="map/part3/wardrobe" unique_id=2056372765]
+layout_direction = 2
+offset_left = 1004.0
+offset_top = -117.0
+offset_right = 1084.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="Panel5" type="Panel" parent="map/part3/wardrobe" unique_id=2012497185]
+layout_direction = 2
+offset_left = 1004.0
+offset_top = -177.0
+offset_right = 1084.0
+offset_bottom = -129.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="wardrobe_area" type="Area2D" parent="map/part3/wardrobe" unique_id=2029480214]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part3/wardrobe/wardrobe_area" unique_id=593823271]
+position = Vector2(1052.5, -76.5)
+shape = SubResource("RectangleShape2D_37s47")
+
+[node name="wardrone_hide_collisoin" type="StaticBody2D" parent="map/part3/wardrobe" unique_id=1792128728]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part3/wardrobe/wardrone_hide_collisoin" unique_id=58873096]
+position = Vector2(1006, 35)
+shape = SubResource("SegmentShape2D_rysoc")
+disabled = true
 
 [node name="chair" type="Node2D" parent="map/part3" unique_id=1930310476]
 position = Vector2(-41, 0)
@@ -3300,6 +3343,12 @@ texture = ExtResource("10_ca42v")
 position = Vector2(-184, 4)
 shape = SubResource("RectangleShape2D_264po")
 
+[node name="sofa_area" type="Area2D" parent="map/part2/sofa" unique_id=1665947916]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/sofa_area" unique_id=1358388773]
+position = Vector2(-76.5, 12)
+shape = SubResource("RectangleShape2D_bt5mj")
+
 [node name="tv" type="Node2D" parent="map/part2" unique_id=526527308]
 z_index = 1
 position = Vector2(0, -25)
@@ -4458,7 +4507,7 @@ scale = Vector2(0.008189653, 0.008189654)
 texture = ExtResource("10_trtic")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(-1073, 23)
+position = Vector2(-878, 28)
 
 [node name="cam" type="Camera2D" parent="player" unique_id=1751583136]
 position = Vector2(0, -95)
@@ -4532,6 +4581,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 [connection signal="body_exited" from="map/part3/pc/pc_area" to="." method="_on_pc_area_body_exited"]
 [connection signal="pressed" from="map/part3/pc/desktop/mypc" to="." method="_on_mypc_pressed"]
 [connection signal="pressed" from="map/part3/pc/desktop/mypc2" to="." method="_on_note_pressed"]
+[connection signal="body_entered" from="map/part3/wardrobe/wardrobe_area" to="." method="_on_wardrobe_area_body_entered"]
+[connection signal="body_exited" from="map/part3/wardrobe/wardrobe_area" to="." method="_on_wardrobe_area_body_exited"]
 [connection signal="body_entered" from="map/part3/Area2D" to="." method="_on_area_part3_body_entered"]
 [connection signal="body_exited" from="map/part3/Area2D" to="." method="_on_area_part3_body_exited"]
 [connection signal="body_entered" from="map/part4/Area2D" to="." method="_on_area_part4_body_entered"]
@@ -4540,6 +4591,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 [connection signal="body_exited" from="map/part1/Area2D" to="." method="_on_area_part1_body_exited"]
 [connection signal="body_entered" from="map/part2/sofa/sofa_blood_area" to="." method="_on_sofa_blood_area_body_entered"]
 [connection signal="body_exited" from="map/part2/sofa/sofa_blood_area" to="." method="_on_sofa_blood_area_body_exited"]
+[connection signal="body_entered" from="map/part2/sofa/sofa_area" to="." method="_on_sofa_area_body_entered"]
+[connection signal="body_exited" from="map/part2/sofa/sofa_area" to="." method="_on_sofa_area_body_exited"]
 [connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
 [connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
 [connection signal="input_event" from="map/collectables2/part3_keys/key_area" to="." method="_on_key_area_input_event"]

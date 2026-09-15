@@ -56,13 +56,14 @@ func _ready() -> void:
 	$him.player = $player
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
-	$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 1)	
+	$him.move = 0
+	$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
 	init_game()
-	
-	await get_tree().create_timer(2.0).timeout
-	$player.hide = 1
-	await get_tree().create_timer(2.0).timeout
-	$player.hide = 0
+	#
+	#await get_tree().create_timer(2.0).timeout
+	#$player.hide = 1
+	#await get_tree().create_timer(2.0).timeout
+	#$player.hide = 0
 
 var elevator_area = 0
 var pc_area = 0
@@ -183,6 +184,45 @@ func _process(delta: float) -> void:
 				print('alr put')
 			else:
 				print("no batt")
+			
+		if wardrobe_area:
+			if wardrobe_hide:
+				$player.hide = 0
+				wardrobe_hide = 0
+				$map/part3/wardrobe/wardrone_hide_collisoin/CollisionShape2D.set_deferred("disabled", 1)
+				allow_move()
+				$map/part3/wardrobe/hide.visible = 0
+				$player.position = Vector2(1004, 33)
+				
+				
+			elif abs($him.position.x-$player.position.x) > 350:
+				wardrobe_hide = 1
+				$player.hide = 1
+				
+				disable_move()
+				$map/part3/wardrobe/hide.visible = 1
+				$map/part3/wardrobe/wardrone_hide_collisoin/CollisionShape2D.set_deferred("disabled", 0)
+				$player.position = Vector2(982.0, 4.0)
+				
+		if sofa_area:
+			if sofa_hide:
+				$player.hide = 0
+				sofa_hide = 0
+				$map/part2/sofa.z_index = 0
+				allow_move()
+				
+				
+			elif abs($him.position.x-$player.position.x) > 350:
+				$player.hide = 1
+				$player.position.x = -878.0
+				$map/part2/sofa.z_index = 1
+				sofa_hide = 1
+				disable_move()
+				
+
+var sofa_hide = 0
+var wardrobe_area =0
+var wardrobe_hide = 0
 
 var car_battery_taken = 0
 var car_keys_taken = 0
@@ -484,3 +524,21 @@ func _on_car_battery_area_body_entered(body: Node2D) -> void:
 func _on_car_battery_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		car_battery_area = 0
+
+
+func _on_wardrobe_area_body_entered(body: Node2D) -> void:
+	if body == $player:
+		wardrobe_area = 1
+func _on_wardrobe_area_body_exited(body: Node2D) -> void:
+	if body == $player:
+		wardrobe_area = 0
+		
+
+var sofa_area = 0
+
+func _on_sofa_area_body_entered(body: Node2D) -> void:
+	if body == $player:
+		sofa_area = 1
+func _on_sofa_area_body_exited(body: Node2D) -> void:
+	if body == $player:
+		sofa_area = 0
