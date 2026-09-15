@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://crja2kdww5kxa" path="res://scripts/him.gd" id="11_dinhu"]
 [ext_resource type="PackedScene" uid="uid://br1rj58wbo5fn" path="res://scenes/him.tscn" id="11_kvuet"]
 [ext_resource type="Texture2D" uid="uid://dmdarp3agtoxf" path="res://assets/hand-drawn-muscle-car-illustration_23-2149432255-removebg-preview.png" id="15_ir15t"]
+[ext_resource type="FontFile" uid="uid://byodsk2s4dhng" path="res://assets/HoldMoney-Regular.ttf" id="17_rysoc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twgab"]
 bg_color = Color(0, 0, 0, 1)
@@ -789,6 +790,10 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ssvqc"]
+font = ExtResource("17_rysoc")
+font_size = 24
 
 [node name="game" type="Node2D" unique_id=1974179384]
 position = Vector2(-3, 0)
@@ -4614,6 +4619,15 @@ offset_right = 764.0
 offset_bottom = 535.47235
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
+
+[node name="subtitles" type="Label" parent="CanvasLayer" unique_id=1006783097]
+offset_left = 8.0
+offset_top = 621.0
+offset_right = 1275.0
+offset_bottom = 708.0
+text = "The brief is here"
+label_settings = SubResource("LabelSettings_ssvqc")
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_entered"]
 [connection signal="body_exited" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_exited"]

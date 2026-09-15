@@ -54,7 +54,12 @@ func check_click(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		return 1
 
+func subtitles(msg, time = 1):
+	$CanvasLayer/subtitles.text = msg
+	
+
 func _ready() -> void:
+	subtitles("", 0)
 	$him.player = $player
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
@@ -80,7 +85,10 @@ var elevator_in = 0
 var pc_on = 0
 
 func _process(delta: float) -> void:
+	
 	if Input.is_action_just_pressed("interact"):
+		if dead: return
+		
 		if elevator_area && abs($him.position.x-$player.position.x) > 350:
 			if !elevator_in:
 				elevator_in = 1 
@@ -149,11 +157,14 @@ func _process(delta: float) -> void:
 				
 			elif !equipped_tires:
 				print("no tires")
+				subtitles("You have no tires", 1)
 			elif back_tires_exist == 2:
 				print("fullD")
+				subtitles("back tires are full", 1)
 		if front_tires_area:
 			if equipped_tires && front_tires_exist < 2:
 				print("front tire put", front_tires_exist)
+				
 				equipped_tires -= 1
 				$garage/garage/car/front_tires.get_child(front_tires_exist).visible = 1
 				front_tires_exist += 1
@@ -169,29 +180,43 @@ func _process(delta: float) -> void:
 				
 			elif !equipped_tires:
 				print("no tires")
+				subtitles("You have no tires", 1)
+				
 			elif back_tires_exist == 2:
 				print("fullD")
+				subtitles("front tires are full", )
+				
 		
 		if car_ride_area:
 			#print("trying to ride")
-			if back_tires_exist != 2:
-				print(back_tires_exist," back tires is missing")
-			if front_tires_exist != 2:
-				print(front_tires_exist," front tires is missing")
-			if !car_battery_exist:
-				print("car_battery_missing")
+			if back_tires_exist + front_tires_exist != 4 && !car_battery_exist:
+				subtitles(str(4-(back_tires_exist + front_tires_exist))+" tires and battery are missing.")
+			else:
+				if back_tires_exist + front_tires_exist != 4:
+					#print(back_tires_exist," back tires is missing")
+					subtitles(str(4-(back_tires_exist + front_tires_exist))+" tires missing.")
+				#if front_tires_exist != 2:
+					#print(front_tires_exist," front tires is missing")
+				if !car_battery_exist:
+					print("car_battery_missing")
+					subtitles("Battery is missing")
+					
 			if back_tires_exist == 2 && front_tires_exist == 2 && car_battery_exist:
-				if car_keys_taken:
-					print("car on")
-				elif !can_escape:
+				if !can_escape:
 					all_collected_except_keys = 1
 					print("keys missing")
+					subtitles("I forgot the keys.", )
 				elif can_escape && !car_keys_taken:
-					print('get_keys')
+					print('The keys are with him')
+					subtitles("The keys are with him", )
+					
 					can_kill = 1
 					$map/collectables2/part1_crawbar.visible = 1
 				elif can_escape && car_keys_taken:
 					print("WIN")
+					subtitles("I'm safe now", )
+					
+					
 		
 		if car_battery_area:
 			if car_battery_taken:
@@ -202,13 +227,19 @@ func _process(delta: float) -> void:
 				$garage/elevator_items/battery.visible = 0
 			elif car_battery_exist:
 				print('alr put')
+				subtitles("Battery is alright.", )
+				
 			else:
 				print("no batt")
+				subtitles("You don't have battery", )
+				
 			
 		if wardrobe_area:
 			if wardrobe_hide:
+				subtitles("He can't see me now.", )
 				if crowbar_equipped && wardrobe_area_him:
 					print("killed him")
+					subtitles("I think he's dead.", )
 					$him.awake = 0
 					$him.move = 0
 					$map/collectables2/part3_keys.visible = 1
@@ -233,11 +264,13 @@ func _process(delta: float) -> void:
 				
 		if sofa_area:
 			if sofa_hide:
-				print(crowbar_equipped, " crowbar_equipped")
-				print(sofa_area_him, " sofa_area_him")
+				#print(crowbar_equipped, " crowbar_equipped")
+				#print(sofa_area_him, " sofa_area_him")
 				
 				if crowbar_equipped && sofa_area_him:
 					print("him_killed")
+					subtitles("I think he's dead.", )
+					
 					$him.awake = 0
 					$him.move = 0
 					$map/collectables2/part2_keys.visible = 1
@@ -325,7 +358,7 @@ var apartment_area = 1
 
 func _on_garage_pressed() -> void:
 	if apartment_area:
-		print("goon")
+		#print("goon")
 		#print($amp/hallway/elevator/close1.size.x)
 		global.try += 1
 		var tween = create_tween()
@@ -365,7 +398,7 @@ func _on_garage_pressed() -> void:
 		
 func _on_apartment_pressed() -> void:
 	if !apartment_area:
-		print("goon")
+		#print("goon")
 		print($garage/garage/elevator/close1.size.x)
 		global.try += 1
 		var tween = create_tween()
@@ -536,14 +569,16 @@ func _on_sofa_blood_area_body_entered(body: Node2D) -> void:
 		if $map/part2/sofa/blood.visible:
 			sofa_blood_area = 1
 			print("blood to be cleaned")
+			subtitles("I should clean this blood.", )
 			if !sofa_blood_discovered:
 				sofa_blood_discovered = 1
-				print("mob is in the garage")
+				print("Ther's a mob in the garage")
 				$garage/garage/mob.visible = 1
 		elif him_spawn_ready && !spawned:
 			spawned = 1
 			#disable_move()
 			print("spawwned")
+			subtitles("!!!", )
 			can_escape = 1
 			if !can_kill && !first_spawn:
 				$map/collectables/part1_battery.visible = 1
@@ -600,7 +635,7 @@ var sofa_area_him = 0
 func _on_sofa_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		sofa_area = 1
-	print(body)
+	#print(body)
 	if body == $him:
 		sofa_area_him = 1
 func _on_sofa_area_body_exited(body: Node2D) -> void:
@@ -609,8 +644,10 @@ func _on_sofa_area_body_exited(body: Node2D) -> void:
 	if body == $him:
 		sofa_area_him = 0
 var spawned = 0
+var dead = 0
 func _on_him_kill_body_entered(body: Node2D) -> void:
 	if body == $player && !$player.hide && $him.awake:
+		dead = 1
 		spawned = 0
 		print("dead")
 		$him.move = 0
@@ -643,7 +680,7 @@ func _on_him_kill_body_entered(body: Node2D) -> void:
 			
 			if !car_battery_exist:
 				$map/collectables/part1_battery.visible = 1
-			print(equipped_tires, " equipped_tires")
+			#print(equipped_tires, " equipped_tires")
 			if equipped_tires:
 				$map/collectables/part4_tire.visible = 1
 				equipped_tires -= 1
@@ -660,6 +697,7 @@ func _on_him_kill_body_entered(body: Node2D) -> void:
 			$map/collectables2/part1_crawbar.visible = 1
 			$player/crowbad.visible = 0
 			crowbar_equipped = 0
+	dead = 0
 
 var crowbar_equipped = 0
 
