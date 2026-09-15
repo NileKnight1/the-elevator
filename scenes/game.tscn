@@ -697,6 +697,9 @@ b = Vector2(153, 2)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
 size = Vector2(1103, 577)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ca42v"]
+b = Vector2(101, -1)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lbhrr"]
 radius = 12.626389
 height = 98.0
@@ -719,8 +722,8 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rysoc"]
-size = Vector2(150, 164)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kice"]
+size = Vector2(95, 164)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxt1d"]
 bg_color = Color(0.12156863, 0, 0, 1)
@@ -730,8 +733,14 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rysoc"]
+size = Vector2(150, 164)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
 size = Vector2(119, 225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5newe"]
+size = Vector2(41, 164)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gkqi"]
 bg_color = Color(0.39453125, 0.1387024, 0, 1)
@@ -3278,6 +3287,7 @@ scale = Vector2(1.6579552, 515.50397)
 texture = SubResource("GradientTexture1D_vtaks")
 
 [node name="blood" type="Sprite2D" parent="map/part2/sofa" unique_id=1485032591]
+visible = false
 position = Vector2(-184.00003, 19.999996)
 rotation = -0.4100507
 scale = Vector2(0.26388907, 0.26388907)
@@ -3591,6 +3601,15 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/Area2D" unique_id=1557957512]
 position = Vector2(-1041.5, -65.5)
 shape = SubResource("RectangleShape2D_gee14")
+
+[node name="him_spawn_col" type="StaticBody2D" parent="map/part2" unique_id=1268282642]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/him_spawn_col" unique_id=76741730]
+position = Vector2(-1201, -359)
+shape = SubResource("SegmentShape2D_ca42v")
+disabled = true
 
 [node name="doorway_right" type="Node2D" parent="map" unique_id=244984317]
 
@@ -4000,8 +4019,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
 position = Vector2(369, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/front_tires/front_tires_area" unique_id=1739976705]
-position = Vector2(2201, -7)
-shape = SubResource("RectangleShape2D_rysoc")
+position = Vector2(2173.5, -7)
+shape = SubResource("RectangleShape2D_1kice")
 
 [node name="back_tires" type="Node2D" parent="garage/garage/car" unique_id=648747747]
 
@@ -4127,6 +4146,13 @@ polygon = PackedVector2Array(2459, -64, 2420, -103, 2426, -103, 2470, -64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/car_ride" unique_id=1139123847]
 position = Vector2(2383.5, -35)
 shape = SubResource("RectangleShape2D_ssvqc")
+
+[node name="car_battery_area" type="Area2D" parent="garage/garage/car" unique_id=720614770]
+position = Vector2(490, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/car_battery_area" unique_id=506247012]
+position = Vector2(2157.5, -7)
+shape = SubResource("RectangleShape2D_5newe")
 
 [node name="dark" type="Panel" parent="garage/garage" unique_id=1329959056]
 visible = false
@@ -4432,7 +4458,7 @@ scale = Vector2(0.008189653, 0.008189654)
 texture = ExtResource("10_trtic")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(1886, 1586)
+position = Vector2(-1073, 23)
 
 [node name="cam" type="Camera2D" parent="player" unique_id=1751583136]
 position = Vector2(0, -95)
@@ -4446,8 +4472,7 @@ energy = 1.24
 texture = SubResource("GradientTexture2D_lbhrr")
 
 [node name="him" parent="." unique_id=1160840441 instance=ExtResource("11_kvuet")]
-visible = false
-position = Vector2(52, 15)
+position = Vector2(-1158, -412)
 script = ExtResource("11_dinhu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1460517878]
@@ -4524,6 +4549,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 [connection signal="body_exited" from="garage/garage/car/back_tires/back_tires_area" to="." method="_on_back_tires_area_body_exited"]
 [connection signal="body_entered" from="garage/garage/car/car_ride" to="." method="_on_car_ride_body_entered"]
 [connection signal="body_exited" from="garage/garage/car/car_ride" to="." method="_on_car_ride_body_exited"]
+[connection signal="body_entered" from="garage/garage/car/car_battery_area" to="." method="_on_car_battery_area_body_entered"]
+[connection signal="body_exited" from="garage/garage/car/car_battery_area" to="." method="_on_car_battery_area_body_exited"]
 [connection signal="body_entered" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_entered"]
 [connection signal="body_exited" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_exited"]
 [connection signal="input_event" from="garage/garage/mob/mob_area" to="." method="_on_mob_area_input_event"]

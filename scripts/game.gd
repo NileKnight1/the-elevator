@@ -53,11 +53,16 @@ func check_click(event):
 		return 1
 
 func _ready() -> void:
+	$him.player = $player
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
-	
+	$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 1)	
 	init_game()
-	pass
+	
+	await get_tree().create_timer(2.0).timeout
+	$player.hide = 1
+	await get_tree().create_timer(2.0).timeout
+	$player.hide = 0
 
 var elevator_area = 0
 var pc_area = 0
@@ -166,7 +171,20 @@ func _process(delta: float) -> void:
 				else:
 					all_collected_except_keys = 1
 					print("keys missing")
+		
+		if car_battery_area:
+			if car_battery_taken:
+				print('battery put')
+				car_battery_taken = 0
+				car_battery_exist = 1
+				$map/elevator_items/battery.visible = 0
+				$garage/elevator_items/battery.visible = 0
+			elif car_battery_exist:
+				print('alr put')
+			else:
+				print("no batt")
 
+var car_battery_taken = 0
 var car_keys_taken = 0
 var car_battery_exist = 0
 var back_tires_exist = 0
@@ -292,6 +310,7 @@ func _on_apartment_pressed() -> void:
 			front_tires_exist = 0
 			car_battery_exist = 0
 			#all_collected_except_keys = 0
+			$map/part2/sofa/blood.visible = 1
 			$garage/garage/car/front_tires/tire1.visible = 0
 			$garage/garage/car/front_tires/tire2.visible = 0
 			$garage/garage/car/back_tires/tire1.visible = 0
@@ -377,6 +396,7 @@ func _on_note_big_body_exited(body: Node2D) -> void:
 func _on_part_1_battery_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		print("battery taken")
+		car_battery_taken = 1
 		$map/collectables/part1_battery.visible = 0
 		$map/elevator_items/battery.visible = 1
 		$garage/elevator_items/battery.visible = 1
@@ -430,14 +450,20 @@ var sofa_blood_discovered = 0
 var sofa_blood_area = 0
 func _on_sofa_blood_area_body_entered(body: Node2D) -> void:
 	if body == $player: 
-		sofa_blood_area = 1
-		print("blood to be cleaned")
-		if !sofa_blood_discovered:
-			sofa_blood_discovered = 1
-			print("mob is in the garage")
-			$garage/garage/mob.visible = 1
+		if $map/part2/sofa/blood.visible:
+			sofa_blood_area = 1
+			print("blood to be cleaned")
+			if !sofa_blood_discovered:
+				sofa_blood_discovered = 1
+				print("mob is in the garage")
+				$garage/garage/mob.visible = 1
+		elif him_spawn_ready:
+			#disable_move()
+			$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 1)
+			await get_tree().create_timer(1.0).timeout
 			
 			
+var him_spawn_ready = 0
 var mob_taken = 0
 func _on_sofa_blood_area_body_exited(body: Node2D) -> void:
 	if body == $player: 
@@ -447,5 +473,14 @@ func _on_mob_area_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 		print('mob taken')
 		$garage/garage/mob.visible = 0
 		mob_taken = 1
+		$map/part2/sofa/blood.visible = 0
+		him_spawn_ready = 1
 		
-	
+var car_battery_area = 0
+
+func _on_car_battery_area_body_entered(body: Node2D) -> void:
+	if body == $player:
+		car_battery_area = 1
+func _on_car_battery_area_body_exited(body: Node2D) -> void:
+	if body == $player:
+		car_battery_area = 0

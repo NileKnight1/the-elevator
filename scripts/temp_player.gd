@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var sound_jump = preload("res://audio/dragon-studio-simple-whoosh-382724.mp3")
 
-var def_speed = 300
+var def_speed = 2000
 var def_sprint = 400.0
 var def_jump = -350.0
 var def_sprint_jump = -400
@@ -12,6 +12,7 @@ var JUMP_VELOCITY = -250.0
 var sprint = 0
 var move = 1
 var walk = 0 
+var hide = 0
 
 func play_sound(sound, vol = 0.0):
 	var temp = AudioStreamPlayer.new()
