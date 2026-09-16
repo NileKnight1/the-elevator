@@ -7,7 +7,7 @@ var sprint = 0
 var move = 0
 var walk = 0 
 
-var awake = 1
+var awake = 0 
 var left = -2885.0
 var right = 2600.0
 var cur = 2600.0

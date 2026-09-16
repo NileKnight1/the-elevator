@@ -2,6 +2,32 @@ extends Node2D
 
 var try = global.try
 
+var sound_subtitle = preload("res://audio/subtitle.wav")
+var sound_collect = preload("res://audio/collect.mp3")
+var sound_spawn = preload("res://audio/dragon-studio-monster-growl-390285.mp3")
+var sound_bite = preload("res://audio/bite.mp3")
+var sound_blood = preload("res://audio/blood.mp3")
+var sound_elevator = preload("res://audio/elevator.mp3")
+var sound_error = preload("res://audio/error.wav")
+var sound_tire_put = preload("res://audio/dragon-studio-impact-thud-372473.mp3")
+var sound_spark = preload("res://audio/freesound_community-jump-and-spark-6136.mp3")
+
+
+# mob taken
+
+var sound_hit = preload("res://audio/hit.mp3")
+
+
+func play_sound(sound, vol = 0.0):
+	var temp = AudioStreamPlayer.new()
+	temp.stream = sound
+	temp.volume_db = vol
+	add_child(temp)
+	
+	temp.finished.connect(temp.queue_free)
+	temp.play()
+
+
 func init_game():
 	init_lights()
 	init_collect()
@@ -55,6 +81,7 @@ func check_click(event):
 		return 1
 
 func subtitles(msg, time = 1):
+	play_sound(sound_subtitle)
 	$CanvasLayer/subtitles.text = msg
 	
 
@@ -66,6 +93,7 @@ func _ready() -> void:
 	$him.position = Vector2(-1190.0, -414.0)
 	$him.rotation = 0
 	$him.move = 0
+	#$him.awake = 1
 	#$player.position = Vector2(0, -11)
 	$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
 	init_game()
@@ -84,7 +112,30 @@ var pc_area = 0
 var elevator_in = 0
 var pc_on = 0
 
+@onready var walking_sound = $sfx/walking_sound
+@onready var walking_sound_him = $him/walking_sound_him
+
 func _process(delta: float) -> void:
+	if $player.walk && $player.move:
+		if !walking_sound.playing:
+			walking_sound.play()
+		if $player.sprint:
+			walking_sound.pitch_scale = 2.0
+		else:
+			walking_sound.pitch_scale = 1
+	else:
+		walking_sound.stop()
+	
+	if $him.walk && $him.move:
+		if !walking_sound_him.playing:
+			walking_sound_him.play()
+		if $him.sprint:
+			walking_sound_him.pitch_scale = 2.0
+		else:
+			walking_sound_him.pitch_scale = 1
+	else:
+		walking_sound_him.stop()
+	
 	
 	if Input.is_action_just_pressed("interact"):
 		if dead: return
@@ -143,6 +194,7 @@ func _process(delta: float) -> void:
 			if equipped_tires && back_tires_exist < 2:
 				print("back tire put", back_tires_exist)
 				equipped_tires -= 1
+				play_sound(sound_tire_put)
 				$garage/garage/car/back_tires.get_child(back_tires_exist).visible = 1
 				back_tires_exist += 1
 				for i in $map/elevator_items.get_children():
@@ -157,14 +209,14 @@ func _process(delta: float) -> void:
 				
 			elif !equipped_tires:
 				print("no tires")
-				subtitles("You have no tires", 1)
+				subtitles("I have no tires", 1)
 			elif back_tires_exist == 2:
 				print("fullD")
 				subtitles("back tires are full", 1)
 		if front_tires_area:
 			if equipped_tires && front_tires_exist < 2:
 				print("front tire put", front_tires_exist)
-				
+				play_sound(sound_tire_put)
 				equipped_tires -= 1
 				$garage/garage/car/front_tires.get_child(front_tires_exist).visible = 1
 				front_tires_exist += 1
@@ -180,7 +232,7 @@ func _process(delta: float) -> void:
 				
 			elif !equipped_tires:
 				print("no tires")
-				subtitles("You have no tires", 1)
+				subtitles("I have no tires", 1)
 				
 			elif back_tires_exist == 2:
 				print("fullD")
@@ -191,24 +243,29 @@ func _process(delta: float) -> void:
 			#print("trying to ride")
 			if back_tires_exist + front_tires_exist != 4 && !car_battery_exist:
 				subtitles(str(4-(back_tires_exist + front_tires_exist))+" tires and battery are missing.")
+				play_sound(sound_error)
 			else:
 				if back_tires_exist + front_tires_exist != 4:
 					#print(back_tires_exist," back tires is missing")
 					subtitles(str(4-(back_tires_exist + front_tires_exist))+" tires missing.")
+					play_sound(sound_error)
 				#if front_tires_exist != 2:
 					#print(front_tires_exist," front tires is missing")
 				if !car_battery_exist:
 					print("car_battery_missing")
 					subtitles("Battery is missing")
-					
+					play_sound(sound_error)
 			if back_tires_exist == 2 && front_tires_exist == 2 && car_battery_exist:
 				if !can_escape:
 					all_collected_except_keys = 1
 					print("keys missing")
 					subtitles("I forgot the keys.", )
+					play_sound(sound_error)
 				elif can_escape && !car_keys_taken:
 					print('The keys are with him')
 					subtitles("The keys are with him", )
+					play_sound(sound_error)
+					
 					
 					can_kill = 1
 					$map/collectables2/part1_crawbar.visible = 1
@@ -221,6 +278,7 @@ func _process(delta: float) -> void:
 		if car_battery_area:
 			if car_battery_taken:
 				print('battery put')
+				play_sound(sound_spark)
 				car_battery_taken = 0
 				car_battery_exist = 1
 				$map/elevator_items/battery.visible = 0
@@ -229,11 +287,12 @@ func _process(delta: float) -> void:
 				print('alr put')
 				subtitles("Battery is alright.", )
 				
+				
 			else:
 				print("no batt")
-				subtitles("You don't have battery", )
+				subtitles("I don't have battery", )
+				play_sound(sound_error)
 				
-			
 		if wardrobe_area:
 			if wardrobe_hide:
 				subtitles("He can't see me now.", )
@@ -359,6 +418,7 @@ var apartment_area = 1
 func _on_garage_pressed() -> void:
 	if apartment_area:
 		#print("goon")
+		play_sound(sound_elevator)
 		#print($amp/hallway/elevator/close1.size.x)
 		global.try += 1
 		var tween = create_tween()
@@ -399,6 +459,8 @@ func _on_garage_pressed() -> void:
 func _on_apartment_pressed() -> void:
 	if !apartment_area:
 		#print("goon")
+		play_sound(sound_elevator)
+		
 		print($garage/garage/elevator/close1.size.x)
 		global.try += 1
 		var tween = create_tween()
@@ -455,9 +517,11 @@ func _on_mypc_pressed() -> void:
 func _on_note_pressed() -> void:
 	$map/part3/pc/desktop/note_panel2.visible = !$map/part3/pc/desktop/note_panel2.visible 
 
+@warning_ignore("unused_parameter")
 func _on_tire_1_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		print("tire taken")
+		play_sound(sound_collect)
 		equipped_tires += 1
 		$map/collectables/part4_tire.visible = 0
 		$map/elevator_items/tire1.visible = 1
@@ -466,6 +530,7 @@ func _on_tire_1_area_input_event(viewport: Node, event: InputEvent, shape_idx: i
 func _on_part1_tire_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		print("tire taken")
+		play_sound(sound_collect)
 		equipped_tires += 1
 		$map/collectables/part1_tire.visible = 0
 		$map/elevator_items/tire2.visible = 1
@@ -474,6 +539,7 @@ func _on_part1_tire_area_input_event(viewport: Node, event: InputEvent, shape_id
 func _on_part3_tire_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		print("tire taken")
+		play_sound(sound_collect)
 		equipped_tires += 1
 		$map/collectables/part3_tire.visible = 0
 		$map/elevator_items/tire3.visible = 1
@@ -511,6 +577,7 @@ func _on_note_big_body_exited(body: Node2D) -> void:
 func _on_part_1_battery_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		print("battery taken")
+		play_sound(sound_collect)
 		car_battery_taken = 1
 		$map/collectables/part1_battery.visible = 0
 		$map/elevator_items/battery.visible = 1
@@ -571,6 +638,7 @@ func _on_sofa_blood_area_body_entered(body: Node2D) -> void:
 			print("blood to be cleaned")
 			subtitles("I should clean this blood.", )
 			if !sofa_blood_discovered:
+				play_sound(sound_blood)
 				sofa_blood_discovered = 1
 				print("Ther's a mob in the garage")
 				$garage/garage/mob.visible = 1
@@ -590,6 +658,7 @@ func _on_sofa_blood_area_body_entered(body: Node2D) -> void:
 				$map/collectables2/part1_crawbar.visible = 1
 			$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 1)
 			first_spawn = 1
+			play_sound(sound_spawn)
 			await get_tree().create_timer(1.0).timeout
 			$him.move = 1
 			
@@ -647,6 +716,8 @@ var spawned = 0
 var dead = 0
 func _on_him_kill_body_entered(body: Node2D) -> void:
 	if body == $player && !$player.hide && $him.awake:
+		
+		play_sound(sound_bite)
 		dead = 1
 		spawned = 0
 		print("dead")
@@ -659,10 +730,12 @@ func _on_him_kill_body_entered(body: Node2D) -> void:
 		$player.position = Vector2(0, 28)
 		
 		await get_tree().create_timer(1.0).timeout
+		
 		var tween = create_tween()
 		tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
 		allow_move()
 		$him.move = 1
+		play_sound(sound_spawn)
 		$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
 			
 		if !can_kill:

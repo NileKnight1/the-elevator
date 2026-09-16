@@ -4570,12 +4570,8 @@ energy = 1.24
 texture = SubResource("GradientTexture2D_lbhrr")
 
 [node name="him" parent="." unique_id=1160840441 instance=ExtResource("11_kvuet")]
-position = Vector2(-648, -123)
+position = Vector2(-1190, -414)
 script = ExtResource("11_dinhu")
-
-[node name="walking_sound_him" type="AudioStreamPlayer2D" parent="him" unique_id=1337664947]
-position = Vector2(21, 28)
-stream = ExtResource("18_ssvqc")
 
 [node name="him_kill" type="Area2D" parent="him" unique_id=1696286182]
 
