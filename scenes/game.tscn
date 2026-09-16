@@ -4775,7 +4775,7 @@ light_mask = 0
 layout_direction = 2
 offset_left = 22.0
 offset_top = 166.0
-offset_right = 188.0
+offset_right = 231.0
 offset_bottom = 396.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_s0g06")
@@ -4785,7 +4785,7 @@ light_mask = 0
 layout_direction = 2
 offset_left = 54.0
 offset_top = 198.0
-offset_right = 155.0
+offset_right = 203.0
 offset_bottom = 342.0
 alignment = 1
 

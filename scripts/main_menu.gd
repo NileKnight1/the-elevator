@@ -14,6 +14,8 @@ func play_sound(sound, vol = 0.0):
 func translation():
 	$buttons/buttons/play.text = tr("play")
 	$buttons/buttons/settings.text = tr("settings")
+	$settings/language.text = tr("language")
+	$settings/mobile.text = tr("touch")
 
 func _ready() -> void:
 	translation()

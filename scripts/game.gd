@@ -916,9 +916,10 @@ func _on_crowbar_area_input_event(viewport: Node, event: InputEvent, shape_idx: 
 # E -> interact
 # 
 # Devices:
-# Work for all devices in browsers on itch.io!
+# Work for all devices (windows/linux/mac/android/iOS mouse+keyboard/touch in browsers on itch.io!
 # Languages:
 # English and Arabic (and has a special Egyptian translation)
+
 
 
 func _on_continue_pressed() -> void:
@@ -927,6 +928,7 @@ func _on_settings_pressed() -> void:
 	$CanvasLayer/pause/settings.visible = !$CanvasLayer/pause/settings.visible
 func _on_main_menu_pressed() -> void:
 	#$CanvasLayer/pause.visible = 0
+	disable_move()
 	$CanvasLayer.visible = 0
 	await get_tree().create_timer(1.0).timeout
 	var tween = create_tween()
@@ -957,6 +959,9 @@ func translation():
 	$CanvasLayer/pause/settings/mobile.text = tr("touch")
 	$CanvasLayer/elevator/apartment.text = tr("apartment")
 	$CanvasLayer/elevator/garage.text = tr("garage")
+	$CanvasLayer/pause/buttons/buttons/continue.text = tr("continue")
+	$CanvasLayer/pause/buttons/buttons/settings.text = tr("settings")
+	$CanvasLayer/pause/buttons/buttons/main_menu.text = tr("main_menu")
 
 func _on_touch_check_toggled(toggled_on: bool) -> void:
 	global.touch = toggled_on
