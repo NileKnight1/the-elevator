@@ -3857,6 +3857,7 @@ position = Vector2(-2782.5, -6)
 shape = SubResource("RectangleShape2D_e1j6l")
 
 [node name="garage" type="Node2D" parent="." unique_id=1635056332]
+position = Vector2(0, 2616)
 
 [node name="garage" type="Node2D" parent="garage" unique_id=505882924]
 position = Vector2(0, 1569)
@@ -4549,7 +4550,7 @@ scale = Vector2(0.008189653, 0.008189654)
 texture = ExtResource("10_trtic")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(-641, 28)
+position = Vector2(42, -9)
 
 [node name="crowbad" type="Sprite2D" parent="player" unique_id=1896290467]
 visible = false

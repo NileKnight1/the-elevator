@@ -11,6 +11,10 @@ var sound_elevator = preload("res://audio/elevator.mp3")
 var sound_error = preload("res://audio/error.wav")
 var sound_tire_put = preload("res://audio/dragon-studio-impact-thud-372473.mp3")
 var sound_spark = preload("res://audio/freesound_community-jump-and-spark-6136.mp3")
+var sound_keys = preload("res://audio/ellvdr-llaves-3keys-3-338165_qoALM9z0.mp3")
+var sound_wardrobe = preload("res://audio/freesound_community-lock-a-door-43194.mp3")
+var sound_sofa = preload("res://audio/tanweraman-wave-cape-cloth-in-wind-350430_3Ji9NeqF.mp3")
+
 
 
 # mob taken
@@ -92,8 +96,11 @@ func _ready() -> void:
 	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
 	$him.position = Vector2(-1190.0, -414.0)
 	$him.rotation = 0
+	#$him.position = Vector2(-771, -25)
+	#$him.rotation = 90
 	$him.move = 0
-	#$him.awake = 1
+	#$him.awake = 0
+	$him.awake = 1
 	#$player.position = Vector2(0, -11)
 	$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
 	init_game()
@@ -129,7 +136,7 @@ func _process(delta: float) -> void:
 	if $him.walk && $him.move:
 		if !walking_sound_him.playing:
 			walking_sound_him.play()
-		if $him.sprint:
+		if $him.targeting:
 			walking_sound_him.pitch_scale = 2.0
 		else:
 			walking_sound_him.pitch_scale = 1
@@ -165,7 +172,7 @@ func _process(delta: float) -> void:
 				disable_move()
 				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
 				$player.scale = Vector2(0.8, 0.8)
-				$player.position = Vector2(1672.0, 1552.0)
+				$player.position = Vector2(1672.0, 4163.0)
 				$CanvasLayer/elevator.visible = 1
 			else:
 				elevator_in = 0
@@ -173,7 +180,7 @@ func _process(delta: float) -> void:
 				allow_move()
 				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
-				$player.position = Vector2(1672.0, 1606.0)
+				$player.position = Vector2(1672.0, 4217.0)
 				$CanvasLayer/elevator.visible = 0
 		if pc_area:
 			return
@@ -295,15 +302,17 @@ func _process(delta: float) -> void:
 				
 		if wardrobe_area:
 			if wardrobe_hide:
-				subtitles("He can't see me now.", )
+
+				play_sound(sound_wardrobe)
 				if crowbar_equipped && wardrobe_area_him:
 					print("killed him")
 					subtitles("I think he's dead.", )
 					$him.awake = 0
 					$him.move = 0
 					$map/collectables2/part3_keys.visible = 1
-					$him.position = Vector2(-771, 21)
+					$him.position = Vector2(-771, -25)
 					$him.rotation = 90
+					play_sound(sound_hit)
 				$player.hide = 0
 				wardrobe_hide = 0
 				$map/part3/wardrobe/wardrone_hide_collisoin/CollisionShape2D.set_deferred("disabled", 1)
@@ -313,6 +322,10 @@ func _process(delta: float) -> void:
 				
 				
 			elif abs($him.position.x-$player.position.x) > 350:
+				
+				if $him.move:
+					subtitles("He can't see me now.", )
+				play_sound(sound_wardrobe)
 				wardrobe_hide = 1
 				$player.hide = 1
 				
@@ -323,6 +336,7 @@ func _process(delta: float) -> void:
 				
 		if sofa_area:
 			if sofa_hide:
+				play_sound(sound_sofa)
 				#print(crowbar_equipped, " crowbar_equipped")
 				#print(sofa_area_him, " sofa_area_him")
 				
@@ -333,8 +347,9 @@ func _process(delta: float) -> void:
 					$him.awake = 0
 					$him.move = 0
 					$map/collectables2/part2_keys.visible = 1
-					$him.position = Vector2(-771, 21)
+					$him.position = Vector2(-771, -25)
 					$him.rotation = 90
+					play_sound(sound_hit)
 				$player.hide = 0
 				sofa_hide = 0
 				$map/part2/sofa.z_index = 0
@@ -342,6 +357,9 @@ func _process(delta: float) -> void:
 				
 				
 			elif abs($him.position.x-$player.position.x) > 350:
+				if $him.move:
+					subtitles("He can't see me now.", )
+				play_sound(sound_wardrobe)
 				$player.hide = 1
 				$player.position.x = -878.0
 				$map/part2/sofa.z_index = 1
@@ -447,7 +465,7 @@ func _on_garage_pressed() -> void:
 		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
-		$player.position = Vector2(1672.0, 1606.0)
+		$player.position = Vector2(1672.0, 4217.0)
 		$CanvasLayer/elevator.visible = 0
 		
 		#var tween3 = create_tween()
