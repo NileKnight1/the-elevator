@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://1k4410dvk381" path="res://assets/image.png" id="2_ekxnf"]
 [ext_resource type="FontFile" uid="uid://byodsk2s4dhng" path="res://assets/HoldMoney-Regular.ttf" id="4_wu84c"]
 [ext_resource type="AudioStream" uid="uid://ddalq4i6cl1sq" path="res://audio/freesound_community-wind-ambience-14720.mp3" id="5_8ln24"]
+[ext_resource type="Texture2D" uid="uid://c35ibvlwccoqt" path="res://assets/Flag_of_the_United_Kingdom_(3-5).svg.webp" id="6_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://j115spebn42o" path="res://assets/Flag_of_the_Arab_League.svg" id="7_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://cryfsjhvqsolb" path="res://assets/images.png" id="8_5dd4i"]
 
 [sub_resource type="Gradient" id="Gradient_wu84c"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
@@ -26,17 +29,39 @@ draw_center = false
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_8ln24"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.109375, 0.053914387, 0.029052734, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
+font = ExtResource("4_wu84c")
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+bg_color = Color(0, 0, 0, 0.675)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
+bg_color = Color(0, 0, 0, 0.84705883)
+
 [node name="main_menu" type="Node2D" unique_id=298264226]
+position = Vector2(1846, 305)
 script = ExtResource("1_l6cm7")
 
 [node name="black" type="PointLight2D" parent="." unique_id=1860733546]
 position = Vector2(645.75, 382.5)
-scale = Vector2(1.0635767, 1.5431373)
+scale = Vector2(1.2392626, 1.7980391)
 energy = 0.98
 blend_mode = 1
 texture = ExtResource("2_bqqt6")
 
 [node name="lights" type="Node2D" parent="." unique_id=1082679547]
+visible = false
 
 [node name="light" type="PointLight2D" parent="lights" unique_id=9550275]
 position = Vector2(366.00003, 551.99994)
@@ -103,6 +128,7 @@ light_mask = 0
 
 [node name="buttons" type="VBoxContainer" parent="buttons" unique_id=339270696]
 light_mask = 0
+layout_direction = 2
 offset_left = 54.0
 offset_top = 162.0
 offset_right = 131.0
@@ -111,6 +137,7 @@ alignment = 1
 
 [node name="play" type="Button" parent="buttons/buttons" unique_id=39714774]
 light_mask = 0
+layout_direction = 2
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
 theme_override_fonts/font = ExtResource("4_wu84c")
@@ -121,6 +148,19 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/disabled = SubResource("StyleBoxLine_8ln24")
 text = "Play"
 
+[node name="settings" type="Button" parent="buttons/buttons" unique_id=1776063244]
+light_mask = 0
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/disabled = SubResource("StyleBoxLine_8ln24")
+text = "Settings"
+
 [node name="bg_sound" type="AudioStreamPlayer" parent="." unique_id=234291586]
 stream = ExtResource("5_8ln24")
 autoplay = true
@@ -129,4 +169,94 @@ parameters/looping = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1997299479]
 position = Vector2(636, 361)
 
+[node name="settings" type="Node2D" parent="." unique_id=642161172]
+visible = false
+
+[node name="bg" type="Panel" parent="settings" unique_id=1678193934]
+light_mask = 0
+layout_direction = 2
+offset_left = 490.0
+offset_top = 166.0
+offset_right = 787.0
+offset_bottom = 396.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ln24")
+
+[node name="Label" type="Label" parent="settings" unique_id=863439465]
+light_mask = 0
+layout_direction = 2
+offset_left = 507.0
+offset_top = 183.0
+offset_right = 575.0
+offset_bottom = 215.0
+text = "Language"
+label_settings = SubResource("LabelSettings_8ln24")
+
+[node name="en" type="TextureButton" parent="settings" unique_id=2142044095]
+light_mask = 0
+layout_direction = 2
+offset_left = 520.0
+offset_top = 223.0
+offset_right = 576.6667
+offset_bottom = 257.0
+texture_normal = ExtResource("6_tbmy8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ar" type="TextureButton" parent="settings" unique_id=1306906626]
+light_mask = 0
+layout_direction = 2
+offset_left = 612.0
+offset_top = 223.0
+offset_right = 668.6667
+offset_bottom = 257.0
+texture_normal = ExtResource("7_jk1qb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="eg" type="TextureButton" parent="settings" unique_id=1778582388]
+light_mask = 0
+layout_direction = 2
+offset_left = 703.0
+offset_top = 223.0
+offset_right = 759.6667
+offset_bottom = 257.0
+texture_normal = ExtResource("8_5dd4i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="en2" type="Button" parent="settings" unique_id=649623419]
+layout_direction = 2
+offset_left = 520.0
+offset_top = 223.0
+offset_right = 577.0
+offset_bottom = 257.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dd4i")
+
+[node name="ar2" type="Button" parent="settings" unique_id=687389956]
+layout_direction = 2
+offset_left = 612.0
+offset_top = 223.0
+offset_right = 669.0
+offset_bottom = 257.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dd4i")
+
+[node name="eg2" type="Button" parent="settings" unique_id=493503579]
+layout_direction = 2
+offset_left = 703.0
+offset_top = 223.0
+offset_right = 760.0
+offset_bottom = 257.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dd4i")
+
 [connection signal="pressed" from="buttons/buttons/play" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="buttons/buttons/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="settings/en2" to="." method="_on_en_pressed"]
+[connection signal="pressed" from="settings/ar2" to="." method="_on_ar_pressed"]
+[connection signal="pressed" from="settings/eg2" to="." method="_on_eg_pressed"]

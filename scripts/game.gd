@@ -95,12 +95,13 @@ func subtitles(msg, time = 3):
 		$CanvasLayer/subtitles.text = ""
 
 func guide(msg):
-	$CanvasLayer/press_e.text = "Press 'E' " + tr(str(msg))
+	print(tr(msg))
+	$CanvasLayer/press_e.text = tr("press") + tr(str(msg))
 	if msg == "": $CanvasLayer/press_e.text = ""
 	
 	
 func guide2(msg):
-	$CanvasLayer/press_e.text = "Click " + tr(str(msg))
+	$CanvasLayer/press_e.text = tr("click") + tr(str(msg))
 	if msg == "": $CanvasLayer/press_e.text = ""
 	
 func guide3(msg):
@@ -108,6 +109,8 @@ func guide3(msg):
 
 
 func _ready() -> void:
+	$CanvasLayer/elevator/apartment.text = tr("apartment")
+	$CanvasLayer/elevator/garage.text = tr("garage")
 	
 	$sfx/bg.volume_db = -25
 	var tween2 = create_tween()
@@ -181,7 +184,8 @@ func _process(delta: float) -> void:
 				$player.scale = Vector2(0.8, 0.8)
 				$player.position = Vector2(0, -66)
 				
-				$CanvasLayer/elevator.visible = 1
+				#$CanvasLayer/elevator.visible = 1
+				$CanvasLayer/elevator/garage.visible = 1
 			else:
 				elevator_in = 0
 				$player.hide = 0
@@ -189,7 +193,8 @@ func _process(delta: float) -> void:
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
 				$player.position = Vector2(0, -52)
-				$CanvasLayer/elevator.visible = 0
+				#$CanvasLayer/elevator.visible = 0
+				$CanvasLayer/elevator/garage.visible = 0
 		
 		if garage_elevator_area:
 			if !elevator_in:
@@ -199,7 +204,8 @@ func _process(delta: float) -> void:
 				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
 				$player.scale = Vector2(0.8, 0.8)
 				$player.position = Vector2(1672.0, 4122.0)
-				$CanvasLayer/elevator.visible = 1
+				#$CanvasLayer/elevator.visible = 1
+				$CanvasLayer/elevator/apartment.visible = 1
 			else:
 				elevator_in = 0
 				$player.hide = 0
@@ -208,6 +214,7 @@ func _process(delta: float) -> void:
 				$player.scale = Vector2(1, 1)
 				$player.position = Vector2(1672.0, 4176.0)
 				$CanvasLayer/elevator.visible = 0
+				$CanvasLayer/elevator/apartment.visible = 0
 		if pc_area:
 			return
 			if !pc_on:
@@ -491,6 +498,8 @@ var apartment_area = 1
 
 func _on_garage_pressed() -> void:
 	if apartment_area:
+		$CanvasLayer/elevator/garage.visible = 0
+		guide("")
 		#print("goon")
 		play_sound(sound_elevator)
 		#print($amp/hallway/elevator/close1.size.x)
@@ -499,12 +508,12 @@ func _on_garage_pressed() -> void:
 		tween.set_parallel(1)
 		tween.tween_property($map/hallway/elevator/close1, "size:x", 100, 1.0)
 		tween.tween_property($map/hallway/elevator/close2, "size:x", 100, 1.0)
-		#await get_tree().create_timer(1.0).timeout #edit
+		await get_tree().create_timer(1.0).timeout #edit
 		
-		#var tween2 d= create_tween()
-		#tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
-		#
-		#await get_tree().create_timer(1.0).timeout
+		var tween2 = create_tween()
+		tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+		
+		await get_tree().create_timer(1.0).timeout
 		#
 		elevator_in = 0
 		$player.hide = 0
@@ -522,16 +531,19 @@ func _on_garage_pressed() -> void:
 		$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
 		$player.position = Vector2(1672.0, 4176)
-		$CanvasLayer/elevator.visible = 0
+		#$CanvasLayer/elevator.visible = 0
+		$CanvasLayer/elevator/garage.visible = 0
 		
-		#var tween3 = create_tween()
-		#tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
-	#
+		var tween3 = create_tween()
+		tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+	
 		
 		apartment_area = 0
 		
 func _on_apartment_pressed() -> void:
 	if !apartment_area:
+		$CanvasLayer/elevator/apartment.visible = 0
+		guide("")
 		#print("goon")
 		play_sound(sound_elevator)
 		
@@ -541,13 +553,13 @@ func _on_apartment_pressed() -> void:
 		tween.set_parallel(1)
 		tween.tween_property($garage/garage/elevator/close1, "size:x", 100, 1.0)
 		tween.tween_property($garage/garage/elevator/close2, "size:x", 100, 1.0)
-		#await get_tree().create_timer(1.0).timeout #edit
+		await get_tree().create_timer(1.0).timeout #edit
 		
-		#var tween2 = create_tween()
-		#tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
-		#
-		#await get_tree().create_timer(1.0).timeout
-		#
+		var tween2 = create_tween()
+		tween2.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+		
+		await get_tree().create_timer(1.0).timeout
+		
 		elevator_in = 0
 		$player.hide = 0
 		$map/hallway/elevator/close1.size.x = 0
@@ -572,10 +584,11 @@ func _on_apartment_pressed() -> void:
 		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
 		$player.position = Vector2(0, -52)
-		$CanvasLayer/elevator.visible = 0
-		#var tween3 = create_tween()
-		#tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
-		#
+		#$CanvasLayer/elevator.visible = 0
+		$CanvasLayer/elevator/apartment.visible = 0
+		var tween3 = create_tween()
+		tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+		
 		apartment_area = 1
 		
 
@@ -782,7 +795,7 @@ func _on_car_battery_area_body_exited(body: Node2D) -> void:
 func _on_wardrobe_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		wardrobe_area = 1
-		guide("to hide.")
+		guide("to hide")
 	if body == $him:
 		wardrobe_area_him = 1
 		if crowbar_equipped && sofa_hide:

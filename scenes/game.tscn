@@ -794,6 +794,42 @@ size = Vector2(69, 196)
 radius = 76.0
 height = 188.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_753oq"]
+bg_color = Color(0.20703125, 0.05256653, 0.05256653, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x338"]
+bg_color = Color(0.11328125, 0.024337769, 0.024337769, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yg85"]
+bg_color = Color(0.44140625, 0.106903076, 0.106903076, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nv0b"]
 bg_color = Color(0.71484375, 0.5838969, 0.48866272, 1)
 border_width_left = 1
@@ -4090,6 +4126,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
 
 [node name="tire2" type="Node2D" parent="garage/garage/car/front_tires" unique_id=216529429]
+visible = false
 position = Vector2(1115, 17)
 
 [node name="Panel6" type="Panel" parent="garage/garage/car/front_tires/tire2" unique_id=1643409544]
@@ -4130,6 +4167,7 @@ shape = SubResource("RectangleShape2D_1kice")
 [node name="back_tires" type="Node2D" parent="garage/garage/car" unique_id=648747747]
 
 [node name="tire1" type="Node2D" parent="garage/garage/car/back_tires" unique_id=580386446]
+visible = false
 position = Vector2(808, 6)
 
 [node name="Panel6" type="Panel" parent="garage/garage/car/back_tires/tire1" unique_id=556809015]
@@ -4160,6 +4198,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sww3w")
 
 [node name="tire2" type="Node2D" parent="garage/garage/car/back_tires" unique_id=2123904186]
+visible = false
 position = Vector2(764, 17)
 
 [node name="Panel6" type="Panel" parent="garage/garage/car/back_tires/tire2" unique_id=1334648677]
@@ -4607,29 +4646,34 @@ shape = SubResource("CapsuleShape2D_ca42v")
 visible = false
 
 [node name="elevator" type="Node2D" parent="CanvasLayer" unique_id=1326820988]
-visible = false
-
-[node name="close" type="Button" parent="CanvasLayer/elevator" unique_id=99227585]
-visible = false
-offset_left = 286.0
-offset_top = 297.0
-offset_right = 377.0
-offset_bottom = 328.0
-text = "Go on"
 
 [node name="garage" type="Button" parent="CanvasLayer/elevator" unique_id=167256657]
-offset_left = 286.0
+visible = false
+offset_left = 690.0
 offset_top = 333.0
-offset_right = 379.0
-offset_bottom = 364.0
+offset_right = 806.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
+theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1yg85")
 text = "Garage"
 
-[node name="apartment" type="Button" parent="CanvasLayer/elevator" unique_id=1161895197]
-offset_left = 286.0
-offset_top = 371.0
-offset_right = 350.0
-offset_bottom = 402.0
-text = "Apartment"
+[node name="apartment" type="Button" parent="CanvasLayer/elevator" unique_id=1620841190]
+visible = false
+offset_left = 690.0
+offset_top = 333.0
+offset_right = 806.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
+theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1yg85")
+text = "Garage"
 
 [node name="note" type="Node2D" parent="CanvasLayer" unique_id=845036410]
 visible = false
@@ -4644,6 +4688,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 
 [node name="subtitles" type="Label" parent="CanvasLayer" unique_id=1006783097]
+layout_direction = 2
 offset_left = 8.0
 offset_top = 621.0
 offset_right = 1275.0
@@ -4652,7 +4697,7 @@ label_settings = SubResource("LabelSettings_ssvqc")
 horizontal_alignment = 1
 
 [node name="press_e" type="Label" parent="CanvasLayer" unique_id=383386170]
-visible = false
+layout_direction = 2
 offset_left = 485.0
 offset_top = 184.0
 offset_right = 798.0
@@ -4715,6 +4760,5 @@ parameters/looping = true
 [connection signal="body_exited" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_exited"]
 [connection signal="input_event" from="garage/garage/mob/mob_area" to="." method="_on_mob_area_input_event"]
 [connection signal="body_entered" from="him/him_kill" to="." method="_on_him_kill_body_entered"]
-[connection signal="pressed" from="CanvasLayer/elevator/close" to="." method="_on_elevator_go_pressed"]
 [connection signal="pressed" from="CanvasLayer/elevator/garage" to="." method="_on_garage_pressed"]
 [connection signal="pressed" from="CanvasLayer/elevator/apartment" to="." method="_on_apartment_pressed"]

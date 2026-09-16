@@ -11,8 +11,12 @@ func play_sound(sound, vol = 0.0):
 	temp.finished.connect(temp.queue_free)
 	temp.play()
 
-func _ready() -> void:
+func translation():
 	$buttons/buttons/play.text = tr("play")
+	$buttons/buttons/settings.text = tr("settings")
+
+func _ready() -> void:
+	translation()
 	for i in $lights.get_children():
 		i.visible = 1
 		i.energy = 0
@@ -45,3 +49,20 @@ func rand_light(n):
 	tween2.tween_property($lights.get_child(temp), "energy", 0, 1.0)
 	
 	rand_light(temp)
+
+
+func _on_en_pressed() -> void:
+	lang("en")
+func _on_ar_pressed() -> void:
+	lang("ar")
+func _on_eg_pressed() -> void:
+	lang("eg")
+
+func lang(ln):
+	play_sound(sound_click)
+	print(ln)
+	TranslationServer.set_locale(ln)
+	translation()
+
+func _on_settings_pressed() -> void:
+	$settings.visible = !$settings.visible
