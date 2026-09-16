@@ -64,10 +64,13 @@ interact={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [internationalization]
 
 locale/translations=PackedStringArray("res://translation.ar.translation", "res://translation.eg.translation", "res://translation.en.translation")
-locale/test="eg"
 
 [physics]
 

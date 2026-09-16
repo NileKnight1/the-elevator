@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6nryrysik2gm" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://ba34ukm6xop0s" path="res://assets/rect.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://1k4410dvk381" path="res://assets/image.png" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://bvfnhg4sbuojw" path="res://scenes/mobile.tscn" id="2_jk1qb"]
 [ext_resource type="FontFile" uid="uid://byodsk2s4dhng" path="res://assets/HoldMoney-Regular.ttf" id="4_wu84c"]
 [ext_resource type="AudioStream" uid="uid://ddalq4i6cl1sq" path="res://audio/freesound_community-wind-ambience-14720.mp3" id="5_8ln24"]
 [ext_resource type="Texture2D" uid="uid://c35ibvlwccoqt" path="res://assets/Flag_of_the_United_Kingdom_(3-5).svg.webp" id="6_tbmy8"]
@@ -53,7 +54,11 @@ bg_color = Color(0, 0, 0, 0.84705883)
 position = Vector2(1846, 305)
 script = ExtResource("1_l6cm7")
 
+[node name="mobile" parent="." unique_id=2043303018 instance=ExtResource("2_jk1qb")]
+visible = false
+
 [node name="black" type="PointLight2D" parent="." unique_id=1860733546]
+visible = false
 position = Vector2(645.75, 382.5)
 scale = Vector2(1.2392626, 1.7980391)
 energy = 0.98
@@ -182,7 +187,7 @@ offset_bottom = 396.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ln24")
 
-[node name="Label" type="Label" parent="settings" unique_id=863439465]
+[node name="language" type="Label" parent="settings" unique_id=863439465]
 light_mask = 0
 layout_direction = 2
 offset_left = 507.0
@@ -190,6 +195,16 @@ offset_top = 183.0
 offset_right = 575.0
 offset_bottom = 215.0
 text = "Language"
+label_settings = SubResource("LabelSettings_8ln24")
+
+[node name="mobile" type="Label" parent="settings" unique_id=1388441951]
+light_mask = 0
+layout_direction = 2
+offset_left = 507.0
+offset_top = 273.0
+offset_right = 575.0
+offset_bottom = 305.0
+text = "Touch?"
 label_settings = SubResource("LabelSettings_8ln24")
 
 [node name="en" type="TextureButton" parent="settings" unique_id=2142044095]
@@ -255,8 +270,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jk1qb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5dd4i")
 
+[node name="touch_check" type="CheckButton" parent="settings" unique_id=1620368740]
+light_mask = 0
+layout_direction = 2
+offset_left = 562.0
+offset_top = 277.0
+offset_right = 606.0
+offset_bottom = 301.0
+
 [connection signal="pressed" from="buttons/buttons/play" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="buttons/buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="settings/en2" to="." method="_on_en_pressed"]
 [connection signal="pressed" from="settings/ar2" to="." method="_on_ar_pressed"]
 [connection signal="pressed" from="settings/eg2" to="." method="_on_eg_pressed"]
+[connection signal="toggled" from="settings/touch_check" to="." method="_on_touch_check_toggled"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cwfwxa0gra1kx" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://ba34ukm6xop0s" path="res://assets/rect.png" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cidxmrrgsula0" path="res://scenes/temp_player.tscn" id="1_yqjtg"]
-[ext_resource type="PackedScene" path="res://scenes/mobile.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bvfnhg4sbuojw" path="res://scenes/mobile.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://dk7huthrytou3" path="res://assets/blue-cartoon-pillow-soft-comfortable-cushion-with-simple-design-vector-removebg-preview.png" id="3_iywne"]
 [ext_resource type="Texture2D" uid="uid://det4y0g3g3wfv" path="res://assets/hand-crowbar-icon-cartoon-design-metal-vector-removebg-preview.png" id="3_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://ttd1w5yseklv" path="res://assets/minimal-windows-xp-wallpaper-throughout-a-day-v0-u8eezfv5nshf1.png" id="3_u5sy4"]
@@ -18,7 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://dmdarp3agtoxf" path="res://assets/hand-drawn-muscle-car-illustration_23-2149432255-removebg-preview.png" id="15_ir15t"]
 [ext_resource type="FontFile" uid="uid://byodsk2s4dhng" path="res://assets/HoldMoney-Regular.ttf" id="17_rysoc"]
 [ext_resource type="AudioStream" uid="uid://blo05k1tmsvus" path="res://audio/soundreality-footsteps-walking-boots-parquet-1-420135.mp3" id="18_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://c35ibvlwccoqt" path="res://assets/Flag_of_the_United_Kingdom_(3-5).svg.webp" id="19_37s47"]
 [ext_resource type="AudioStream" uid="uid://dobkacg1eaak0" path="res://audio/PM_FSSF_AMBIENCE_SOUNDSCAPE_LOOP_3.mp3" id="19_264po"]
+[ext_resource type="Texture2D" uid="uid://j115spebn42o" path="res://assets/Flag_of_the_Arab_League.svg" id="20_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://cryfsjhvqsolb" path="res://assets/images.png" id="21_e1j6l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twgab"]
 bg_color = Color(0, 0, 0, 1)
@@ -843,6 +846,62 @@ font = ExtResource("17_rysoc")
 font_size = 24
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0g06"]
+bg_color = Color(0.109375, 0.053914387, 0.029052734, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gnni"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgxg3"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nbsr"]
+draw_center = false
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fkywm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dku7i"]
+font = ExtResource("17_rysoc")
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_veaf0"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flw08"]
+bg_color = Color(0, 0, 0, 0.675)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84hbc"]
+bg_color = Color(0, 0, 0, 0.84705883)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15b3c"]
+bg_color = Color(0.10980392, 0.05490196, 0.02745098, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkywm"]
+bg_color = Color(0.36328125, 0.18258664, 0.09223938, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dku7i"]
+bg_color = Color(0.07421875, 0.036529534, 0.017684937, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_37s47"]
+font = ExtResource("17_rysoc")
+font_size = 98
 
 [node name="game" type="Node2D" unique_id=1974179384]
 position = Vector2(-3, 0)
@@ -4705,6 +4764,199 @@ offset_bottom = 240.0
 label_settings = SubResource("LabelSettings_ssvqc")
 horizontal_alignment = 1
 
+[node name="pause" type="Node2D" parent="CanvasLayer" unique_id=146734283]
+visible = false
+
+[node name="buttons" type="Node2D" parent="CanvasLayer/pause" unique_id=864677010]
+light_mask = 0
+
+[node name="bg2" type="Panel" parent="CanvasLayer/pause/buttons" unique_id=467001571]
+light_mask = 0
+layout_direction = 2
+offset_left = 22.0
+offset_top = 166.0
+offset_right = 188.0
+offset_bottom = 396.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s0g06")
+
+[node name="buttons" type="VBoxContainer" parent="CanvasLayer/pause/buttons" unique_id=1044266537]
+light_mask = 0
+layout_direction = 2
+offset_left = 54.0
+offset_top = 198.0
+offset_right = 155.0
+offset_bottom = 342.0
+alignment = 1
+
+[node name="continue" type="Button" parent="CanvasLayer/pause/buttons/buttons" unique_id=1291050488]
+light_mask = 0
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_2gnni")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vgxg3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4nbsr")
+theme_override_styles/disabled = SubResource("StyleBoxLine_fkywm")
+text = "Continue"
+
+[node name="settings" type="Button" parent="CanvasLayer/pause/buttons/buttons" unique_id=1141980558]
+light_mask = 0
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_2gnni")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vgxg3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4nbsr")
+theme_override_styles/disabled = SubResource("StyleBoxLine_fkywm")
+text = "Settings"
+
+[node name="main_menu" type="Button" parent="CanvasLayer/pause/buttons/buttons" unique_id=1152853913]
+light_mask = 0
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_2gnni")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vgxg3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4nbsr")
+theme_override_styles/disabled = SubResource("StyleBoxLine_fkywm")
+text = "Main Menu"
+
+[node name="settings" type="Node2D" parent="CanvasLayer/pause" unique_id=242908146]
+visible = false
+
+[node name="bg" type="Panel" parent="CanvasLayer/pause/settings" unique_id=1784253889]
+light_mask = 0
+layout_direction = 2
+offset_left = 490.0
+offset_top = 166.0
+offset_right = 787.0
+offset_bottom = 396.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s0g06")
+
+[node name="language" type="Label" parent="CanvasLayer/pause/settings" unique_id=282242203]
+light_mask = 0
+layout_direction = 2
+offset_left = 507.0
+offset_top = 183.0
+offset_right = 575.0
+offset_bottom = 215.0
+text = "Language"
+label_settings = SubResource("LabelSettings_dku7i")
+
+[node name="mobile" type="Label" parent="CanvasLayer/pause/settings" unique_id=1049624904]
+light_mask = 0
+layout_direction = 2
+offset_left = 507.0
+offset_top = 273.0
+offset_right = 575.0
+offset_bottom = 305.0
+text = "Touch?"
+label_settings = SubResource("LabelSettings_dku7i")
+
+[node name="en" type="TextureButton" parent="CanvasLayer/pause/settings" unique_id=950812535]
+light_mask = 0
+layout_direction = 2
+offset_left = 520.0
+offset_top = 223.0
+offset_right = 576.6667
+offset_bottom = 257.0
+texture_normal = ExtResource("19_37s47")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ar" type="TextureButton" parent="CanvasLayer/pause/settings" unique_id=232138896]
+light_mask = 0
+layout_direction = 2
+offset_left = 612.0
+offset_top = 223.0
+offset_right = 668.6667
+offset_bottom = 257.0
+texture_normal = ExtResource("20_bt5mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="eg" type="TextureButton" parent="CanvasLayer/pause/settings" unique_id=715581435]
+light_mask = 0
+layout_direction = 2
+offset_left = 703.0
+offset_top = 223.0
+offset_right = 759.6667
+offset_bottom = 257.0
+texture_normal = ExtResource("21_e1j6l")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="en2" type="Button" parent="CanvasLayer/pause/settings" unique_id=1702749081]
+layout_direction = 2
+offset_left = 520.0
+offset_top = 223.0
+offset_right = 577.0
+offset_bottom = 257.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_veaf0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_flw08")
+theme_override_styles/hover = SubResource("StyleBoxFlat_84hbc")
+
+[node name="ar2" type="Button" parent="CanvasLayer/pause/settings" unique_id=696767134]
+layout_direction = 2
+offset_left = 612.0
+offset_top = 223.0
+offset_right = 669.0
+offset_bottom = 257.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_veaf0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_flw08")
+theme_override_styles/hover = SubResource("StyleBoxFlat_84hbc")
+
+[node name="eg2" type="Button" parent="CanvasLayer/pause/settings" unique_id=1957854458]
+layout_direction = 2
+offset_left = 703.0
+offset_top = 223.0
+offset_right = 760.0
+offset_bottom = 257.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_veaf0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_flw08")
+theme_override_styles/hover = SubResource("StyleBoxFlat_84hbc")
+
+[node name="touch_check" type="CheckButton" parent="CanvasLayer/pause/settings" unique_id=1230252721]
+light_mask = 0
+layout_direction = 2
+offset_left = 562.0
+offset_top = 277.0
+offset_right = 606.0
+offset_bottom = 301.0
+
+[node name="pause_button" type="Button" parent="CanvasLayer" unique_id=1965858828]
+layout_direction = 2
+offset_left = 61.0
+offset_top = 102.0
+offset_right = 125.0
+offset_bottom = 166.0
+rotation = -1.5707964
+theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_font_sizes/font_size = 98
+theme_override_styles/normal = SubResource("StyleBoxFlat_15b3c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fkywm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dku7i")
+
+[node name="Label" type="Label" parent="CanvasLayer/pause_button" unique_id=1487586054]
+layout_direction = 2
+layout_mode = 0
+offset_left = 14.000002
+offset_top = -45.0
+offset_right = 49.0
+offset_bottom = 109.0
+text = "="
+label_settings = SubResource("LabelSettings_37s47")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="sfx" type="Node" parent="." unique_id=1704511315]
 
 [node name="walking_sound" type="AudioStreamPlayer" parent="sfx" unique_id=380903614]
@@ -4762,3 +5014,11 @@ parameters/looping = true
 [connection signal="body_entered" from="him/him_kill" to="." method="_on_him_kill_body_entered"]
 [connection signal="pressed" from="CanvasLayer/elevator/garage" to="." method="_on_garage_pressed"]
 [connection signal="pressed" from="CanvasLayer/elevator/apartment" to="." method="_on_apartment_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/buttons/buttons/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/buttons/buttons/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/buttons/buttons/main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/settings/en2" to="." method="_on_en_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/settings/ar2" to="." method="_on_ar_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/settings/eg2" to="." method="_on_eg_pressed"]
+[connection signal="toggled" from="CanvasLayer/pause/settings/touch_check" to="." method="_on_touch_check_toggled"]
+[connection signal="pressed" from="CanvasLayer/pause_button" to="." method="_on_pause_button_pressed"]

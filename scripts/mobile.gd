@@ -28,7 +28,6 @@ func _on_jump_pressed() -> void:
 	Input.action_press("jump")
 	Input.action_release("jump")
 
-
 func _on_interact_pressed() -> void:
 	Input.action_press("interact")
 	Input.action_release("interact")

@@ -66,3 +66,7 @@ func lang(ln):
 
 func _on_settings_pressed() -> void:
 	$settings.visible = !$settings.visible
+
+
+func _on_touch_check_toggled(toggled_on: bool) -> void:
+	global.touch = toggled_on

@@ -1,7 +1,9 @@
 extends Node2D
 
 var try = global.try
+var touch = global.touch
 
+var sound_click = preload("res://audio/buttonpress.mp3")
 var sound_subtitle = preload("res://audio/subtitle.wav")
 var sound_collect = preload("res://audio/collect.mp3")
 var sound_spawn = preload("res://audio/dragon-studio-monster-growl-390285.mp3")
@@ -109,8 +111,9 @@ func guide3(msg):
 
 
 func _ready() -> void:
-	$CanvasLayer/elevator/apartment.text = tr("apartment")
-	$CanvasLayer/elevator/garage.text = tr("garage")
+	$CanvasLayer/mobile.visible = touch
+	translation()
+
 	
 	$sfx/bg.volume_db = -25
 	var tween2 = create_tween()
@@ -193,7 +196,6 @@ func _process(delta: float) -> void:
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
 				$player.position = Vector2(0, -52)
-				#$CanvasLayer/elevator.visible = 0
 				$CanvasLayer/elevator/garage.visible = 0
 		
 		if garage_elevator_area:
@@ -205,6 +207,7 @@ func _process(delta: float) -> void:
 				$player.scale = Vector2(0.8, 0.8)
 				$player.position = Vector2(1672.0, 4122.0)
 				#$CanvasLayer/elevator.visible = 1
+				
 				$CanvasLayer/elevator/apartment.visible = 1
 			else:
 				elevator_in = 0
@@ -213,7 +216,8 @@ func _process(delta: float) -> void:
 				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
 				$player.position = Vector2(1672.0, 4176.0)
-				$CanvasLayer/elevator.visible = 0
+				
+				print("button hide 2")
 				$CanvasLayer/elevator/apartment.visible = 0
 		if pc_area:
 			return
@@ -317,6 +321,7 @@ func _process(delta: float) -> void:
 				elif can_escape && car_keys_taken:
 					dead = 1
 					print("WIN")
+					$CanvasLayer.visible = 0
 					guide2("")
 					disable_move()
 					$player.visible = 0
@@ -498,6 +503,7 @@ var apartment_area = 1
 
 func _on_garage_pressed() -> void:
 	if apartment_area:
+		dead = 1
 		$CanvasLayer/elevator/garage.visible = 0
 		guide("")
 		#print("goon")
@@ -531,17 +537,18 @@ func _on_garage_pressed() -> void:
 		$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
 		$player.position = Vector2(1672.0, 4176)
-		#$CanvasLayer/elevator.visible = 0
 		$CanvasLayer/elevator/garage.visible = 0
 		
 		var tween3 = create_tween()
 		tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
 	
-		
+		dead = 0
 		apartment_area = 0
 		
 func _on_apartment_pressed() -> void:
 	if !apartment_area:
+		dead = 0
+		print("button hide 3")
 		$CanvasLayer/elevator/apartment.visible = 0
 		guide("")
 		#print("goon")
@@ -584,13 +591,13 @@ func _on_apartment_pressed() -> void:
 		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
 		$player.position = Vector2(0, -52)
-		#$CanvasLayer/elevator.visible = 0
+		print("button hide 4")
 		$CanvasLayer/elevator/apartment.visible = 0
 		var tween3 = create_tween()
 		tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
 		
 		apartment_area = 1
-		
+		dead = 1
 
 
 func _on_pc_area_body_entered(body: Node2D) -> void:
@@ -895,3 +902,63 @@ func _on_crowbar_area_input_event(viewport: Node, event: InputEvent, shape_idx: 
 		$map/collectables2/part1_crawbar.visible = 0
 		$player/crowbad.visible = 1
 		crowbar_equipped = 1
+
+# Readme
+# The Elevator
+# A 2d game made with godot.
+# 
+# You spawn in front of an elevator in a weird apartment, you have access to the garage using the elevator, but you can't escape unless you use the car and destroy the wall
+# but is it that simple? are you alone? 
+# Controls:
+# A/D -> moving
+# space -> jump
+# shift -> sprint
+# E -> interact
+# 
+# Devices:
+# Work for all devices in browsers on itch.io!
+# Languages:
+# English and Arabic (and has a special Egyptian translation)
+
+
+func _on_continue_pressed() -> void:
+	$CanvasLayer/pause.visible = !$CanvasLayer/pause.visible
+func _on_settings_pressed() -> void:
+	$CanvasLayer/pause/settings.visible = !$CanvasLayer/pause/settings.visible
+func _on_main_menu_pressed() -> void:
+	#$CanvasLayer/pause.visible = 0
+	$CanvasLayer.visible = 0
+	await get_tree().create_timer(1.0).timeout
+	var tween = create_tween()
+	tween.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+	await get_tree().create_timer(2.0).timeout
+	var tween2 = create_tween()
+	tween2.tween_property($sfx/bg, "volume_db", -25, 3)
+	await get_tree().create_timer(3.0).timeout
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+func _on_pause_button_pressed() -> void:
+	$CanvasLayer/pause.visible = !$CanvasLayer/pause.visible
+
+func _on_en_pressed() -> void:
+	lang("en")
+func _on_ar_pressed() -> void:
+	lang("ar")
+func _on_eg_pressed() -> void:
+	lang("eg")
+
+func lang(ln):
+	play_sound(sound_click)
+	print(ln)
+	TranslationServer.set_locale(ln)
+	translation()
+
+func translation():
+	$CanvasLayer/pause/settings/language.text = tr("language")
+	$CanvasLayer/pause/settings/mobile.text = tr("touch")
+	$CanvasLayer/elevator/apartment.text = tr("apartment")
+	$CanvasLayer/elevator/garage.text = tr("garage")
+
+func _on_touch_check_toggled(toggled_on: bool) -> void:
+	global.touch = toggled_on
+	touch = toggled_on
+	$CanvasLayer/mobile.visible = toggled_on
