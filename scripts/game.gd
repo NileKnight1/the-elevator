@@ -14,7 +14,9 @@ var sound_spark = preload("res://audio/freesound_community-jump-and-spark-6136.m
 var sound_keys = preload("res://audio/ellvdr-llaves-3keys-3-338165_qoALM9z0.mp3")
 var sound_wardrobe = preload("res://audio/freesound_community-lock-a-door-43194.mp3")
 var sound_sofa = preload("res://audio/tanweraman-wave-cape-cloth-in-wind-350430_3Ji9NeqF.mp3")
-
+var sound_car_engine = preload("res://audio/dragon-studio-car-engine-roaring-376881.mp3")
+var sound_wall_break = preload("res://audio/freesound_community-rock-destroy-6409.mp3")
+var sound_car_move = preload("res://audio/spinopel-car-driving-away-345709.mp3")
 
 
 # mob taken
@@ -65,7 +67,7 @@ func init_collect():
 func init_lights():
 	#$map/black.visible = 1
 	
-	
+	$garage/black.visible = 1
 	$player/flash.visible = 1
 	$map/part3/black.visible = 1
 	$map/hallway/dark.visible = 1
@@ -268,6 +270,11 @@ func _process(delta: float) -> void:
 		
 		if car_ride_area:
 			#print("trying to ride")
+			if 1:
+				pass
+			
+				
+			
 			if back_tires_exist + front_tires_exist != 4 && !car_battery_exist:
 				subtitles(str(4-(back_tires_exist + front_tires_exist))+" tires and battery are missing.")
 				play_sound(sound_error)
@@ -297,9 +304,25 @@ func _process(delta: float) -> void:
 					can_kill = 1
 					$map/collectables2/part1_crawbar.visible = 1
 				elif can_escape && car_keys_taken:
+					dead = 1
 					print("WIN")
-					subtitles("I'm safe now", )
+					guide2("")
+					disable_move()
+					$player.visible = 0
+					play_sound(sound_car_engine)
+					$garage/garage/car/flash.visible = 1
+					$garage/garage/car/front_light.visible = 1
+					$garage/garage/car/back_light.visible = 1
 					
+					await get_tree().create_timer(1.0).timeout
+					var tween = create_tween()
+					tween.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+					await get_tree().create_timer(2.0).timeout
+					play_sound(sound_car_move)
+					await get_tree().create_timer(1.0).timeout
+					play_sound(sound_wall_break)
+					await get_tree().create_timer(2.0).timeout
+					play_sound(sound_car_move)
 					
 		
 		if car_battery_area:
