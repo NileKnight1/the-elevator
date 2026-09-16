@@ -108,6 +108,10 @@ func guide3(msg):
 
 
 func _ready() -> void:
+	
+	$sfx/bg.volume_db = -25
+	var tween2 = create_tween()
+	tween2.tween_property($sfx/bg, "volume_db", 0, 3.0)
 	#subtitles("", 0)
 	$him.player = $player
 	var tween = create_tween()
@@ -323,6 +327,11 @@ func _process(delta: float) -> void:
 					play_sound(sound_wall_break)
 					await get_tree().create_timer(2.0).timeout
 					play_sound(sound_car_move)
+					var tween2 = create_tween()
+					tween2.tween_property($sfx/bg, "volume_db", -25, 3)
+					await get_tree().create_timer(3.0).timeout
+					get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+					
 					
 		
 		if car_battery_area:

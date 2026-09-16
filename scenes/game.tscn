@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dmdarp3agtoxf" path="res://assets/hand-drawn-muscle-car-illustration_23-2149432255-removebg-preview.png" id="15_ir15t"]
 [ext_resource type="FontFile" uid="uid://byodsk2s4dhng" path="res://assets/HoldMoney-Regular.ttf" id="17_rysoc"]
 [ext_resource type="AudioStream" uid="uid://blo05k1tmsvus" path="res://audio/soundreality-footsteps-walking-boots-parquet-1-420135.mp3" id="18_ssvqc"]
+[ext_resource type="AudioStream" uid="uid://dobkacg1eaak0" path="res://audio/PM_FSSF_AMBIENCE_SOUNDSCAPE_LOOP_3.mp3" id="19_264po"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twgab"]
 bg_color = Color(0, 0, 0, 1)
@@ -4033,6 +4034,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(0, 31)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="garage/garage/boundaries" unique_id=613819682]
+visible = false
 collision_layer = 3
 collision_mask = 3
 
@@ -4088,7 +4090,6 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
 
 [node name="tire2" type="Node2D" parent="garage/garage/car/front_tires" unique_id=216529429]
-visible = false
 position = Vector2(1115, 17)
 
 [node name="Panel6" type="Panel" parent="garage/garage/car/front_tires/tire2" unique_id=1643409544]
@@ -4119,6 +4120,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
 
 [node name="front_tires_area" type="Area2D" parent="garage/garage/car/front_tires" unique_id=768884408]
+visible = false
 position = Vector2(369, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/front_tires/front_tires_area" unique_id=1739976705]
@@ -4128,7 +4130,6 @@ shape = SubResource("RectangleShape2D_1kice")
 [node name="back_tires" type="Node2D" parent="garage/garage/car" unique_id=648747747]
 
 [node name="tire1" type="Node2D" parent="garage/garage/car/back_tires" unique_id=580386446]
-visible = false
 position = Vector2(808, 6)
 
 [node name="Panel6" type="Panel" parent="garage/garage/car/back_tires/tire1" unique_id=556809015]
@@ -4159,7 +4160,6 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sww3w")
 
 [node name="tire2" type="Node2D" parent="garage/garage/car/back_tires" unique_id=2123904186]
-visible = false
 position = Vector2(764, 17)
 
 [node name="Panel6" type="Panel" parent="garage/garage/car/back_tires/tire2" unique_id=1334648677]
@@ -4190,6 +4190,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sxt1d")
 
 [node name="back_tires_area" type="Area2D" parent="garage/garage/car/back_tires" unique_id=1949996826]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/back_tires/back_tires_area" unique_id=1008004491]
 position = Vector2(2195, -7)
@@ -4245,12 +4246,14 @@ color = Color(0.13333334, 0.09803922, 0.12156863, 1)
 polygon = PackedVector2Array(2459, -64, 2420, -103, 2426, -103, 2470, -64)
 
 [node name="car_ride" type="Area2D" parent="garage/garage/car" unique_id=1307881613]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/car_ride" unique_id=1139123847]
 position = Vector2(2383.5, -35)
 shape = SubResource("RectangleShape2D_ssvqc")
 
 [node name="car_battery_area" type="Area2D" parent="garage/garage/car" unique_id=720614770]
+visible = false
 position = Vector2(490, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/car_battery_area" unique_id=506247012]
@@ -4331,6 +4334,7 @@ color = Color(0.0703125, 0, 0, 1)
 polygon = PackedVector2Array(26, 0.78970337, 206.85757, -0.79226685, 733, 8.699463, 733, 564.7566, 209, 556.8468, 29, 420.7987, 28.012573, 282.5548)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="garage/doorway_right4" unique_id=2067209253]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/doorway_right4/StaticBody2D" unique_id=1747465583]
 position = Vector2(2387, -95)
@@ -4351,10 +4355,11 @@ position = Vector2(1142, 1569)
 [node name="Polygon2D4" type="Polygon2D" parent="garage/doorway_right3" unique_id=1254323804]
 position = Vector2(1528, -488.99838)
 scale = Vector2(1, 1.2642586)
-color = Color(0.0703125, 0, 0, 1)
+color = Color(0.05859375, 0.05859375, 0.05859375, 1)
 polygon = PackedVector2Array(28, 106.78067, 212, 105.19873, 733, 8.699463, 733, 564.7566, 209, 556.8468, 29, 420.7987)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="garage/doorway_right3" unique_id=866884507]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/doorway_right3/StaticBody2D" unique_id=1947704894]
 position = Vector2(1603, -170)
@@ -4370,36 +4375,10 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
 
 [node name="doorway_right2" type="Node2D" parent="garage" unique_id=568973551]
+visible = false
 position = Vector2(2383, 1604)
 
-[node name="Polygon2D3" type="Polygon2D" parent="garage/doorway_right2" unique_id=1589343242]
-position = Vector2(-441, -17.53239)
-scale = Vector2(2.3983414, 0.62552243)
-color = Color(0.28235295, 0.10980392, 0, 1)
-polygon = PackedVector2Array(318.25085, 51, 312.71613, 37.62036, 311.46527, -312.48706, 317.71954, -298.09912)
-
-[node name="Polygon2D4" type="Polygon2D" parent="garage/doorway_right2" unique_id=1350351054]
-z_index = 1
-position = Vector2(296.14243, -488.99838)
-scale = Vector2(1, 1.2642586)
-color = Color(0.28235295, 0.10980392, 0, 1)
-polygon = PackedVector2Array(0.85757446, -0.79226685, 206.85757, -0.79226685, 205.84753, 270.84674, 204.85757, 537.0724, 76.857574, 448.20773, 72.857574, 247.20773, 8.857574, 219.20773, 8.857574, 5.207733)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="garage/doorway_right2" unique_id=753597441]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="garage/doorway_right2/StaticBody2D" unique_id=1680853438]
-position = Vector2(338, -111.99999)
-rotation = -1.3089969
-shape = SubResource("CapsuleShape2D_lbhrr")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="garage/doorway_right2/StaticBody2D" unique_id=2136224746]
-position = Vector2(402.61133, -318.2871)
-rotation = -1.5707964
-shape = SubResource("RectangleShape2D_lbhrr")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="garage/doorway_right2/StaticBody2D" unique_id=529643833]
-position = Vector2(303, -151)
-shape = SubResource("CapsuleShape2D_lbhrr")
 
 [node name="elevator_items" type="Node2D" parent="garage" unique_id=619903820]
 position = Vector2(1670, 1566)
@@ -4586,7 +4565,6 @@ scale = Vector2(1.3560295, 1.2196076)
 energy = 0.98
 blend_mode = 1
 texture = ExtResource("1_lbhrr")
-metadata/_edit_lock_ = true
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
 position = Vector2(12, -52)
@@ -4674,6 +4652,7 @@ label_settings = SubResource("LabelSettings_ssvqc")
 horizontal_alignment = 1
 
 [node name="press_e" type="Label" parent="CanvasLayer" unique_id=383386170]
+visible = false
 offset_left = 485.0
 offset_top = 184.0
 offset_right = 798.0
@@ -4685,6 +4664,12 @@ horizontal_alignment = 1
 
 [node name="walking_sound" type="AudioStreamPlayer" parent="sfx" unique_id=380903614]
 stream = ExtResource("18_ssvqc")
+
+[node name="bg" type="AudioStreamPlayer" parent="sfx" unique_id=1964108206]
+stream = ExtResource("19_264po")
+volume_db = -25.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_entered"]
 [connection signal="body_exited" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_exited"]
