@@ -84,13 +84,29 @@ func check_click(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		return 1
 
-func subtitles(msg, time = 1):
+func subtitles(msg, time = 3):
 	play_sound(sound_subtitle)
 	$CanvasLayer/subtitles.text = msg
 	
+	await get_tree().create_timer(time).timeout
+	if $CanvasLayer/subtitles.text == msg:
+		$CanvasLayer/subtitles.text = ""
+
+func guide(msg):
+	$CanvasLayer/press_e.text = "Press 'E' " + str(msg)
+	if msg == "": $CanvasLayer/press_e.text = ""
+	
+	
+func guide2(msg):
+	$CanvasLayer/press_e.text = "Click " + str(msg)
+	if msg == "": $CanvasLayer/press_e.text = ""
+	
+func guide3(msg):
+	$CanvasLayer/press_e.text = str(msg)
+
 
 func _ready() -> void:
-	subtitles("", 0)
+	#subtitles("", 0)
 	$him.player = $player
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
@@ -101,7 +117,7 @@ func _ready() -> void:
 	$him.move = 0
 	#$him.awake = 0
 	$him.awake = 1
-	#$player.position = Vector2(0, -11)
+	#$player.position = Vector2(0, -52.0)
 	$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
 	init_game()
 	#$him.position = Vector2(-771, -22)
@@ -123,6 +139,9 @@ var pc_on = 0
 @onready var walking_sound_him = $him/walking_sound_him
 
 func _process(delta: float) -> void:
+	$him.apartment_area = apartment_area
+	#print(car_battery_area)
+	
 	if $player.walk && $player.move:
 		if !walking_sound.playing:
 			walking_sound.play()
@@ -154,7 +173,8 @@ func _process(delta: float) -> void:
 				disable_move()
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
 				$player.scale = Vector2(0.8, 0.8)
-				$player.position = Vector2(0, -25)
+				$player.position = Vector2(0, -66)
+				
 				$CanvasLayer/elevator.visible = 1
 			else:
 				elevator_in = 0
@@ -162,7 +182,7 @@ func _process(delta: float) -> void:
 				allow_move()
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
-				$player.position = Vector2(0, -11)
+				$player.position = Vector2(0, -52)
 				$CanvasLayer/elevator.visible = 0
 		
 		if garage_elevator_area:
@@ -172,7 +192,7 @@ func _process(delta: float) -> void:
 				disable_move()
 				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
 				$player.scale = Vector2(0.8, 0.8)
-				$player.position = Vector2(1672.0, 4163.0)
+				$player.position = Vector2(1672.0, 4122.0)
 				$CanvasLayer/elevator.visible = 1
 			else:
 				elevator_in = 0
@@ -180,7 +200,7 @@ func _process(delta: float) -> void:
 				allow_move()
 				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
-				$player.position = Vector2(1672.0, 4217.0)
+				$player.position = Vector2(1672.0, 4176.0)
 				$CanvasLayer/elevator.visible = 0
 		if pc_area:
 			return
@@ -302,7 +322,7 @@ func _process(delta: float) -> void:
 				
 		if wardrobe_area:
 			if wardrobe_hide:
-
+				
 				play_sound(sound_wardrobe)
 				if crowbar_equipped && wardrobe_area_him:
 					print("killed him")
@@ -318,11 +338,11 @@ func _process(delta: float) -> void:
 				$map/part3/wardrobe/wardrone_hide_collisoin/CollisionShape2D.set_deferred("disabled", 1)
 				allow_move()
 				$map/part3/wardrobe/hide.visible = 0
-				$player.position = Vector2(1004, 33)
+				$player.position = Vector2(1004, -49)
 				
 				
 			elif abs($him.position.x-$player.position.x) > 350:
-				
+				guide("")
 				if $him.move:
 					subtitles("He can't see me now.", )
 				play_sound(sound_wardrobe)
@@ -332,7 +352,7 @@ func _process(delta: float) -> void:
 				disable_move()
 				$map/part3/wardrobe/hide.visible = 1
 				$map/part3/wardrobe/wardrone_hide_collisoin/CollisionShape2D.set_deferred("disabled", 0)
-				$player.position = Vector2(982.0, 4.0)
+				$player.position = Vector2(1000, -37)
 				
 		if sofa_area:
 			if sofa_hide:
@@ -357,9 +377,10 @@ func _process(delta: float) -> void:
 				
 				
 			elif abs($him.position.x-$player.position.x) > 350:
+				guide("")
 				if $him.move:
 					subtitles("He can't see me now.", )
-				play_sound(sound_wardrobe)
+				play_sound(sound_sofa)
 				$player.hide = 1
 				$player.position.x = -878.0
 				$map/part2/sofa.z_index = 1
@@ -425,9 +446,12 @@ func _on_area_part4_body_exited(body: Node2D) -> void:
 func _on_elevator_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		elevator_area = 1
+		guide("to ride the elevator.")
 func _on_elevator_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		elevator_area = 0
+		guide("")
+		
 
 
 	
@@ -465,7 +489,7 @@ func _on_garage_pressed() -> void:
 		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
-		$player.position = Vector2(1672.0, 4217.0)
+		$player.position = Vector2(1672.0, 4176)
 		$CanvasLayer/elevator.visible = 0
 		
 		#var tween3 = create_tween()
@@ -515,7 +539,7 @@ func _on_apartment_pressed() -> void:
 		$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 		$player.scale = Vector2(1, 1)
-		$player.position = Vector2(0, -11)
+		$player.position = Vector2(0, -52)
 		$CanvasLayer/elevator.visible = 0
 		#var tween3 = create_tween()
 		#tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
@@ -527,9 +551,11 @@ func _on_apartment_pressed() -> void:
 func _on_pc_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		pc_area = 1
+		guide("to open the computer.")
 func _on_pc_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		pc_area = 0
+		guide("")
 func _on_mypc_pressed() -> void:
 	print("my_pc")
 func _on_note_pressed() -> void:
@@ -587,11 +613,13 @@ func _on_note_area_input_event(viewport: Node, event: InputEvent, shape_idx: int
 func _on_note_big_body_entered(body: Node2D) -> void:
 	if body == $player:
 		note_area = 1
+		guide2("to open the note")
 func _on_note_big_body_exited(body: Node2D) -> void:
 	if body == $player:
 		$CanvasLayer/note.visible = 0
 		note_area = 0
-
+		guide2("")
+		
 func _on_part_1_battery_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		print("battery taken")
@@ -618,9 +646,11 @@ var garage_elevator_area = 0
 func _on_garage_elevator_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		garage_elevator_area = 1
+		guide("to ride the elevator.")
 func _on_garage_elevator_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		garage_elevator_area = 0
+		guide("")
 
 var back_tires_area = 0
 var front_tires_area = 0
@@ -628,24 +658,35 @@ var front_tires_area = 0
 func _on_back_tires_area_body_entered(body: Node2D) -> void:
 	if body == $player: 
 		back_tires_area = 1
+		guide("to put tires.")
+
 func _on_back_tires_area_body_exited(body: Node2D) -> void:
 	if body == $player: 
 		back_tires_area = 0
+		guide("")
 
 func _on_front_tires_area_body_entered(body: Node2D) -> void:
 	if body == $player: 
 		front_tires_area = 1
+		guide("to put tires.")
+		
 func _on_front_tires_area_body_exited(body: Node2D) -> void:
 	if body == $player: 
 		front_tires_area = 0
+		guide("")
+		
 
 var car_ride_area = 0
 func _on_car_ride_body_entered(body: Node2D) -> void:
 	if body == $player: 
 		car_ride_area = 1
+		guide("to ride the car.")
+		
 func _on_car_ride_body_exited(body: Node2D) -> void:
 	if body == $player: 
 		car_ride_area = 0
+		guide("")
+
 var can_escape = 0
 var sofa_blood_discovered = 0
 var sofa_blood_area = 0
@@ -699,21 +740,28 @@ var car_battery_area = 0
 func _on_car_battery_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		car_battery_area = 1
+		guide("to put the battery.")
 func _on_car_battery_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		car_battery_area = 0
+		guide("")
 
 
 func _on_wardrobe_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		wardrobe_area = 1
+		guide("to hide.")
 	if body == $him:
 		wardrobe_area_him = 1
+		if crowbar_equipped && sofa_hide:
+			guide3("Unhide to hit him.")
 func _on_wardrobe_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		wardrobe_area = 0
+		guide("")
 	if body == $him:
 		wardrobe_area_him = 0
+		guide3("")
 
 var sofa_area = 0
 var wardrobe_area_him = 0
@@ -722,19 +770,24 @@ var sofa_area_him = 0
 func _on_sofa_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		sofa_area = 1
+		guide("to hide.")
+		
 	#print(body)
 	if body == $him:
 		sofa_area_him = 1
+		if crowbar_equipped && sofa_hide:
+			guide3("Unhide to hit him.")
 func _on_sofa_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		sofa_area = 0
+		guide("")
 	if body == $him:
 		sofa_area_him = 0
+		guide3("")
 var spawned = 0
 var dead = 0
 func _on_him_kill_body_entered(body: Node2D) -> void:
 	if body == $player && !$player.hide && $him.awake:
-		
 		play_sound(sound_bite)
 		dead = 1
 		spawned = 0
@@ -745,7 +798,7 @@ func _on_him_kill_body_entered(body: Node2D) -> void:
 		
 		modulate = Color(0.0, 0.0, 0.0, 1.0)
 		disable_move()
-		$player.position = Vector2(0, 28)
+		$player.position = Vector2(0, -13)
 		
 		await get_tree().create_timer(1.0).timeout
 		

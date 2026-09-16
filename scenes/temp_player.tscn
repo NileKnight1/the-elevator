@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://d1y64i6s8acij"]
+[gd_scene format=3 uid="uid://cidxmrrgsula0"]
 
-[ext_resource type="Script" uid="uid://ct7w58spyank7" path="res://scripts/temp_player.gd" id="1_qc3fp"]
+[ext_resource type="Script" uid="uid://b5ailoaj60qdx" path="res://scripts/temp_player.gd" id="1_qc3fp"]
 [ext_resource type="Texture2D" uid="uid://vrvesx3meffb" path="res://assets/player/walk/frame_00013.png" id="7_3fv0j"]
 [ext_resource type="Texture2D" uid="uid://dayivaano3frf" path="res://assets/player/walk/frame_00008.png" id="8_7kblh"]
 [ext_resource type="Texture2D" uid="uid://dc8a8le85l7e2" path="res://assets/player/walk/frame_00009.png" id="9_86l30"]
@@ -156,10 +156,11 @@ radius = 22.0
 height = 140.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=312059141]
+position = Vector2(-1, -92)
 script = ExtResource("1_qc3fp")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=805986178]
-position = Vector2(19, -50.000004)
+position = Vector2(1.6666794, 34.200024)
 scale = Vector2(0.38833338, 0.3883334)
 sprite_frames = SubResource("SpriteFrames_h0i82")
 animation = &"idle"
@@ -175,5 +176,5 @@ scale = Vector2(1, -2.7148278)
 theme_override_styles/panel = SubResource("StyleBoxFlat_v6iek")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=814663373]
-position = Vector2(16, -34)
+position = Vector2(-1.3333206, 50.200027)
 shape = SubResource("CapsuleShape2D_3fv0j")

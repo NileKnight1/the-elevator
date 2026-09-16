@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var sound_jump = preload("res://audio/dragon-studio-simple-whoosh-382724.mp3")
 
-var def_speed = 2000
+var def_speed = 300
 var def_sprint = 400.0
 var def_jump = -350.0
 var def_sprint_jump = -400

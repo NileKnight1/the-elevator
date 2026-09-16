@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwfwxa0gra1kx" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://ba34ukm6xop0s" path="res://assets/rect.png" id="1_lbhrr"]
-[ext_resource type="PackedScene" path="res://scenes/temp_player.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cidxmrrgsula0" path="res://scenes/temp_player.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" path="res://scenes/mobile.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://dk7huthrytou3" path="res://assets/blue-cartoon-pillow-soft-comfortable-cushion-with-simple-design-vector-removebg-preview.png" id="3_iywne"]
 [ext_resource type="Texture2D" uid="uid://det4y0g3g3wfv" path="res://assets/hand-crowbar-icon-cartoon-design-metal-vector-removebg-preview.png" id="3_kvpfn"]
@@ -737,7 +737,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kice"]
-size = Vector2(95, 164)
+size = Vector2(82, 164)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxt1d"]
 bg_color = Color(0.12156863, 0, 0, 1)
@@ -754,7 +754,7 @@ size = Vector2(150, 164)
 size = Vector2(119, 225)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5newe"]
-size = Vector2(41, 164)
+size = Vector2(48, 164)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gkqi"]
 bg_color = Color(0.39453125, 0.1387024, 0, 1)
@@ -795,6 +795,8 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_ssvqc"]
 font = ExtResource("17_rysoc")
 font_size = 24
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
 
 [node name="game" type="Node2D" unique_id=1974179384]
 position = Vector2(-3, 0)
@@ -4111,7 +4113,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
 position = Vector2(369, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/front_tires/front_tires_area" unique_id=1739976705]
-position = Vector2(2173.5, -7)
+position = Vector2(2167, -7)
 shape = SubResource("RectangleShape2D_1kice")
 
 [node name="back_tires" type="Node2D" parent="garage/garage/car" unique_id=648747747]
@@ -4243,7 +4245,7 @@ shape = SubResource("RectangleShape2D_ssvqc")
 position = Vector2(490, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="garage/garage/car/car_battery_area" unique_id=506247012]
-position = Vector2(2157.5, -7)
+position = Vector2(2161, -7)
 shape = SubResource("RectangleShape2D_5newe")
 
 [node name="dark" type="Panel" parent="garage/garage" unique_id=1329959056]
@@ -4550,7 +4552,7 @@ scale = Vector2(0.008189653, 0.008189654)
 texture = ExtResource("10_trtic")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(42, -9)
+position = Vector2(999, -52)
 
 [node name="crowbad" type="Sprite2D" parent="player" unique_id=1896290467]
 visible = false
@@ -4559,16 +4561,16 @@ rotation = 0.3093108
 scale = Vector2(0.10700005, 0.13699993)
 texture = ExtResource("3_kvpfn")
 
-[node name="cam" type="Camera2D" parent="player" unique_id=1751583136]
-position = Vector2(0, -95)
-zoom = Vector2(2, 2)
-
 [node name="flash" type="PointLight2D" parent="player" unique_id=1827854566]
 visible = false
-position = Vector2(16, -123)
+position = Vector2(1.000001, -27)
 scale = Vector2(8.437501, 7.1874995)
 energy = 1.24
 texture = SubResource("GradientTexture2D_lbhrr")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1693436471]
+position = Vector2(0, -17)
+zoom = Vector2(2, 2)
 
 [node name="him" parent="." unique_id=1160840441 instance=ExtResource("11_kvuet")]
 position = Vector2(-648, -123)
@@ -4631,7 +4633,14 @@ offset_left = 8.0
 offset_top = 621.0
 offset_right = 1275.0
 offset_bottom = 708.0
-text = "The brief is here"
+label_settings = SubResource("LabelSettings_ssvqc")
+horizontal_alignment = 1
+
+[node name="press_e" type="Label" parent="CanvasLayer" unique_id=383386170]
+offset_left = 485.0
+offset_top = 184.0
+offset_right = 798.0
+offset_bottom = 240.0
 label_settings = SubResource("LabelSettings_ssvqc")
 horizontal_alignment = 1
 

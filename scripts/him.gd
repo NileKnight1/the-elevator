@@ -16,6 +16,7 @@ var left = -2885.0
 var right = 2600.0
 var cur = 2600.0
 var targeting_time = 0
+var apartment_area
 
 var player
 
@@ -42,10 +43,13 @@ func _physics_process(delta: float) -> void:
 		return
 
 	var direction = 0.0
-	if abs(player.position.x - position.x) < 350 && !player.hide: 
+	if apartment_area && abs(player.position.x - position.x) < 350 && !player.hide: 
 		cur = player.position.x
 		targeting = 1
 		targeting_time += 1
+		#print(player.position.x, " player.position.x")
+		#print(position.x, " him.position.x")
+		#
 		SPEED = 350
 		if targeting_time == 1:
 			play_sound(sound_iseeyou)
