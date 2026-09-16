@@ -12,6 +12,7 @@ func play_sound(sound, vol = 0.0):
 	temp.play()
 
 func _ready() -> void:
+	$buttons/buttons/play.text = tr("play")
 	for i in $lights.get_children():
 		i.visible = 1
 		i.energy = 0

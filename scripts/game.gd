@@ -88,23 +88,23 @@ func check_click(event):
 
 func subtitles(msg, time = 3):
 	play_sound(sound_subtitle)
-	$CanvasLayer/subtitles.text = msg
+	$CanvasLayer/subtitles.text = tr(msg)
 	
 	await get_tree().create_timer(time).timeout
 	if $CanvasLayer/subtitles.text == msg:
 		$CanvasLayer/subtitles.text = ""
 
 func guide(msg):
-	$CanvasLayer/press_e.text = "Press 'E' " + str(msg)
+	$CanvasLayer/press_e.text = "Press 'E' " + tr(str(msg))
 	if msg == "": $CanvasLayer/press_e.text = ""
 	
 	
 func guide2(msg):
-	$CanvasLayer/press_e.text = "Click " + str(msg)
+	$CanvasLayer/press_e.text = "Click " + tr(str(msg))
 	if msg == "": $CanvasLayer/press_e.text = ""
 	
 func guide3(msg):
-	$CanvasLayer/press_e.text = str(msg)
+	$CanvasLayer/press_e.text = tr(str(msg))
 
 
 func _ready() -> void:
@@ -280,12 +280,12 @@ func _process(delta: float) -> void:
 				
 			
 			if back_tires_exist + front_tires_exist != 4 && !car_battery_exist:
-				subtitles(str(4-(back_tires_exist + front_tires_exist))+" tires and battery are missing.")
+				subtitles(str(4-(back_tires_exist + front_tires_exist))+ tr("tires and battery are missing"))
 				play_sound(sound_error)
 			else:
 				if back_tires_exist + front_tires_exist != 4:
 					#print(back_tires_exist," back tires is missing")
-					subtitles(str(4-(back_tires_exist + front_tires_exist))+" tires missing.")
+					subtitles(str(4-(back_tires_exist + front_tires_exist))+ tr("tires missing"))
 					play_sound(sound_error)
 				#if front_tires_exist != 2:
 					#print(front_tires_exist," front tires is missing")
@@ -297,7 +297,7 @@ func _process(delta: float) -> void:
 				if !can_escape:
 					all_collected_except_keys = 1
 					print("keys missing")
-					subtitles("I forgot the keys.", )
+					subtitles("I forgot the keys", )
 					play_sound(sound_error)
 				elif can_escape && !car_keys_taken:
 					print('The keys are with him')
@@ -344,7 +344,7 @@ func _process(delta: float) -> void:
 				$garage/elevator_items/battery.visible = 0
 			elif car_battery_exist:
 				print('alr put')
-				subtitles("Battery is alright.", )
+				subtitles("Battery is alright", )
 				
 				
 			else:
@@ -358,7 +358,7 @@ func _process(delta: float) -> void:
 				play_sound(sound_wardrobe)
 				if crowbar_equipped && wardrobe_area_him:
 					print("killed him")
-					subtitles("I think he's dead.", )
+					subtitles("I think he's dead", )
 					$him.awake = 0
 					$him.move = 0
 					$map/collectables2/part3_keys.visible = 1
@@ -376,7 +376,7 @@ func _process(delta: float) -> void:
 			elif abs($him.position.x-$player.position.x) > 350:
 				guide("")
 				if $him.move:
-					subtitles("He can't see me now.", )
+					subtitles("He can't see me now", )
 				play_sound(sound_wardrobe)
 				wardrobe_hide = 1
 				$player.hide = 1
@@ -394,7 +394,7 @@ func _process(delta: float) -> void:
 				
 				if crowbar_equipped && sofa_area_him:
 					print("him_killed")
-					subtitles("I think he's dead.", )
+					subtitles("I think he's dead", )
 					
 					$him.awake = 0
 					$him.move = 0
@@ -411,7 +411,7 @@ func _process(delta: float) -> void:
 			elif abs($him.position.x-$player.position.x) > 350:
 				guide("")
 				if $him.move:
-					subtitles("He can't see me now.", )
+					subtitles("He can't see me now", )
 				play_sound(sound_sofa)
 				$player.hide = 1
 				$player.position.x = -878.0
@@ -478,7 +478,7 @@ func _on_area_part4_body_exited(body: Node2D) -> void:
 func _on_elevator_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		elevator_area = 1
-		guide("to ride the elevator.")
+		guide("to ride the elevator")
 func _on_elevator_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		elevator_area = 0
@@ -583,7 +583,7 @@ func _on_apartment_pressed() -> void:
 func _on_pc_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		pc_area = 1
-		guide("to open the computer.")
+		guide("to open the computer")
 func _on_pc_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		pc_area = 0
@@ -678,7 +678,7 @@ var garage_elevator_area = 0
 func _on_garage_elevator_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		garage_elevator_area = 1
-		guide("to ride the elevator.")
+		guide("to ride the elevator")
 func _on_garage_elevator_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		garage_elevator_area = 0
@@ -690,7 +690,7 @@ var front_tires_area = 0
 func _on_back_tires_area_body_entered(body: Node2D) -> void:
 	if body == $player: 
 		back_tires_area = 1
-		guide("to put tires.")
+		guide("to put tires")
 
 func _on_back_tires_area_body_exited(body: Node2D) -> void:
 	if body == $player: 
@@ -700,7 +700,7 @@ func _on_back_tires_area_body_exited(body: Node2D) -> void:
 func _on_front_tires_area_body_entered(body: Node2D) -> void:
 	if body == $player: 
 		front_tires_area = 1
-		guide("to put tires.")
+		guide("to put tires")
 		
 func _on_front_tires_area_body_exited(body: Node2D) -> void:
 	if body == $player: 
@@ -712,7 +712,7 @@ var car_ride_area = 0
 func _on_car_ride_body_entered(body: Node2D) -> void:
 	if body == $player: 
 		car_ride_area = 1
-		guide("to ride the car.")
+		guide("to ride the car")
 		
 func _on_car_ride_body_exited(body: Node2D) -> void:
 	if body == $player: 
@@ -727,11 +727,11 @@ func _on_sofa_blood_area_body_entered(body: Node2D) -> void:
 		if $map/part2/sofa/blood.visible:
 			sofa_blood_area = 1
 			print("blood to be cleaned")
-			subtitles("I should clean this blood.", )
+			subtitles("I should clean this blood", )
 			if !sofa_blood_discovered:
 				play_sound(sound_blood)
 				sofa_blood_discovered = 1
-				print("Ther's a mob in the garage")
+				print("There's a mob in the garage")
 				$garage/garage/mob.visible = 1
 		elif him_spawn_ready && !spawned:
 			spawned = 1
@@ -772,7 +772,7 @@ var car_battery_area = 0
 func _on_car_battery_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		car_battery_area = 1
-		guide("to put the battery.")
+		guide("to put the battery")
 func _on_car_battery_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		car_battery_area = 0
@@ -786,7 +786,7 @@ func _on_wardrobe_area_body_entered(body: Node2D) -> void:
 	if body == $him:
 		wardrobe_area_him = 1
 		if crowbar_equipped && sofa_hide:
-			guide3("Unhide to hit him.")
+			guide3("Unhide to hit him")
 func _on_wardrobe_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		wardrobe_area = 0
@@ -802,13 +802,13 @@ var sofa_area_him = 0
 func _on_sofa_area_body_entered(body: Node2D) -> void:
 	if body == $player:
 		sofa_area = 1
-		guide("to hide.")
+		guide("to hide")
 		
 	#print(body)
 	if body == $him:
 		sofa_area_him = 1
 		if crowbar_equipped && sofa_hide:
-			guide3("Unhide to hit him.")
+			guide3("Unhide to hit him")
 func _on_sofa_area_body_exited(body: Node2D) -> void:
 	if body == $player:
 		sofa_area = 0
