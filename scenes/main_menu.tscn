@@ -149,6 +149,16 @@ corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 corner_detail = 20
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlew8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bekt7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8jhjc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ncv88"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdxto"]
+
 [node name="main_menu" type="Node2D" unique_id=298264226]
 position = Vector2(1846, 305)
 script = ExtResource("1_l6cm7")
@@ -235,7 +245,7 @@ offset_bottom = 306.0
 layout_direction = 2
 alignment = 1
 
-[node name="play" type="Button" parent="buttons/buttons" unique_id=39714774]
+[node name="story" type="Button" parent="buttons/buttons" unique_id=39714774]
 light_mask = 0
 layout_mode = 2
 layout_direction = 2
@@ -387,8 +397,6 @@ offset_bottom = 301.0
 layout_direction = 2
 
 [node name="tutorial_story" type="Node2D" parent="." unique_id=1462619576]
-visible = false
-modulate = Color(0, 0, 0, 1)
 
 [node name="bg" type="Panel" parent="tutorial_story" unique_id=237824677]
 offset_left = -4.0
@@ -448,6 +456,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
 text = "Start"
+
+[node name="exp" type="Label" parent="tutorial_story" unique_id=898234025]
+offset_left = 230.0
+offset_top = 638.0
+offset_right = 481.0
+offset_bottom = 696.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "Play with checkpoints?"
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="boxes" type="HBoxContainer" parent="tutorial_story" unique_id=2043408391]
 offset_top = 180.0
@@ -685,7 +704,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="checkpoints" type="CheckBox" parent="tutorial_story" unique_id=194279012]
+offset_left = 402.0
+offset_top = 654.0
+offset_right = 426.0
+offset_bottom = 678.0
+button_pressed = true
+
+[node name="button" type="Button" parent="tutorial_story" unique_id=580304754]
+offset_left = 225.0
+offset_top = 651.0
+offset_right = 430.0
+offset_bottom = 680.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vlew8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bekt7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8jhjc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ncv88")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdxto")
+toggle_mode = true
+button_pressed = true
+
 [node name="tutorial_floors" type="Node2D" parent="." unique_id=1401806524]
+visible = false
 
 [node name="bg" type="Panel" parent="tutorial_floors" unique_id=1420525944]
 offset_left = -4.0
@@ -1010,7 +1050,7 @@ text = "Don't make mistakes."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="buttons/buttons/play" to="." method="_on_story_pressed"]
+[connection signal="pressed" from="buttons/buttons/story" to="." method="_on_story_pressed"]
 [connection signal="pressed" from="buttons/buttons/floors" to="." method="_on_floors_pressed"]
 [connection signal="pressed" from="buttons/buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="settings/en2" to="." method="_on_en_pressed"]
@@ -1020,6 +1060,9 @@ autowrap_mode = 2
 [connection signal="pressed" from="tutorial_story/left" to="." method="_on_left_tutorial_story_pressed"]
 [connection signal="pressed" from="tutorial_story/right" to="." method="_on_right_tutorial_story_pressed"]
 [connection signal="pressed" from="tutorial_story/start" to="." method="run_game"]
+[connection signal="toggled" from="tutorial_story/checkpoints" to="." method="_on_checkpoints_toggled"]
+[connection signal="pressed" from="tutorial_story/button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="tutorial_story/button" to="." method="_on_checkpoints_toggled"]
 [connection signal="pressed" from="tutorial_floors/left" to="." method="_on_left_tutorial_story_pressed"]
 [connection signal="pressed" from="tutorial_floors/right" to="." method="_on_right_tutorial_story_pressed"]
 [connection signal="pressed" from="tutorial_floors/start" to="." method="run_game"]

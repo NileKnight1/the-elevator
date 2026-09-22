@@ -12,7 +12,8 @@ func play_sound(sound, vol = 0.0):
 	temp.play()
 
 func translation():
-	$buttons/buttons/play.text = tr("play")
+	$buttons/buttons/story.text = tr("story")
+	$buttons/buttons/floors.text = tr("floors")
 	$buttons/buttons/settings.text = tr("settings")
 	$settings/language.text = tr("language")
 	$settings/mobile.text = tr("touch")
@@ -135,3 +136,9 @@ func switch_boxes():
 	if active_boxes[2] == 4:
 		tutorial.get_node("right").disabled = 1
 	else: tutorial.get_node("right").disabled = 0
+
+
+func _on_checkpoints_toggled(toggled_on: bool) -> void:
+	$tutorial_story/checkpoints.button_pressed = toggled_on
+	$tutorial_story/button.button_pressed = toggled_on
+	global.story_checkpoints = toggled_on

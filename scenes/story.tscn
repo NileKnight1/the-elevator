@@ -877,6 +877,24 @@ bg_color = Color(0, 0, 0, 0.675)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84hbc"]
 bg_color = Color(0, 0, 0, 0.84705883)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkjpi"]
+bg_color = Color(0.109375, 0.053914387, 0.029052734, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfho1"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjfsy"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1b2ao"]
+draw_center = false
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_b1hqr"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15b3c"]
 bg_color = Color(0.10980392, 0.05490196, 0.02745098, 1)
 corner_radius_top_left = 50
@@ -4930,6 +4948,58 @@ offset_right = 606.0
 offset_bottom = 301.0
 layout_direction = 2
 
+[node name="restart" type="Node2D" parent="CanvasLayer" unique_id=586799120]
+visible = false
+
+[node name="buttons" type="Node2D" parent="CanvasLayer/restart" unique_id=95104186]
+light_mask = 0
+position = Vector2(510, 0)
+
+[node name="bg2" type="Panel" parent="CanvasLayer/restart/buttons" unique_id=1009508393]
+light_mask = 0
+offset_left = 22.0
+offset_top = 178.0
+offset_right = 231.0
+offset_bottom = 384.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bkjpi")
+
+[node name="buttons" type="VBoxContainer" parent="CanvasLayer/restart/buttons" unique_id=106791027]
+light_mask = 0
+offset_left = 54.0
+offset_top = 198.0
+offset_right = 203.0
+offset_bottom = 342.0
+layout_direction = 2
+alignment = 1
+
+[node name="restart" type="Button" parent="CanvasLayer/restart/buttons/buttons" unique_id=715749028]
+light_mask = 0
+layout_mode = 2
+layout_direction = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_kfho1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qjfsy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1b2ao")
+theme_override_styles/disabled = SubResource("StyleBoxLine_b1hqr")
+text = "Restart"
+
+[node name="main_menu" type="Button" parent="CanvasLayer/restart/buttons/buttons" unique_id=1194439859]
+light_mask = 0
+layout_mode = 2
+layout_direction = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_kfho1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qjfsy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1b2ao")
+theme_override_styles/disabled = SubResource("StyleBoxLine_b1hqr")
+text = "Main Menu"
+
 [node name="pause_button" type="Button" parent="CanvasLayer" unique_id=1965858828]
 offset_left = 61.0
 offset_top = 102.0
@@ -5019,4 +5089,6 @@ parameters/looping = true
 [connection signal="pressed" from="CanvasLayer/pause/settings/ar2" to="." method="_on_ar_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/settings/eg2" to="." method="_on_eg_pressed"]
 [connection signal="toggled" from="CanvasLayer/pause/settings/touch_check" to="." method="_on_touch_check_toggled"]
+[connection signal="pressed" from="CanvasLayer/restart/buttons/buttons/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/restart/buttons/buttons/main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause_button" to="." method="_on_pause_button_pressed"]

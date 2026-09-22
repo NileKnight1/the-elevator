@@ -840,60 +840,73 @@ var spawned = 0
 var dead = 0
 func _on_him_kill_body_entered(body: Node2D) -> void:
 	if body == $player && !$player.hide && $him.awake:
-		play_sound(sound_bite)
-		dead = 1
-		spawned = 0
-		print("dead")
-		$him.move = 0
-		$him.position = Vector2(-1157.0, -417.0)
-		$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 1)
-		
-		modulate = Color(0.0, 0.0, 0.0, 1.0)
-		disable_move()
-		$player.position = Vector2(0, -13)
-		
-		await get_tree().create_timer(1.0).timeout
-		
-		var tween = create_tween()
-		tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
-		allow_move()
-		$him.move = 1
-		play_sound(sound_spawn)
-		$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
+		if global.story_checkpoints:
+			play_sound(sound_bite)
+			dead = 1
+			spawned = 0
+			print("dead")
+			$him.move = 0
+			$him.position = Vector2(-1157.0, -417.0)
+			$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 1)
 			
-		if !can_kill:
-			$map/elevator_items/tire1.visible = 0
-			$map/elevator_items/tire2.visible = 0
-			$map/elevator_items/tire3.visible = 0
-			$map/elevator_items/battery.visible = 0
-			$map/elevator_items/keys.visible = 0
+			modulate = Color(0.0, 0.0, 0.0, 1.0)
+			disable_move()
+			$player.position = Vector2(0, -13)
 			
-			$garage/elevator_items/tire1.visible = 0
-			$garage/elevator_items/tire2.visible = 0
-			$garage/elevator_items/tire3.visible = 0
-			$garage/elevator_items/battery.visible = 0
-			$garage/elevator_items/keys.visible = 0
+			await get_tree().create_timer(1.0).timeout
 			
-			if !car_battery_exist:
-				$map/collectables/part1_battery.visible = 1
-			#print(equipped_tires, " equipped_tires")
-			if equipped_tires:
-				$map/collectables/part4_tire.visible = 1
-				equipped_tires -= 1
-			if equipped_tires:
-				$map/collectables/part3_tire.visible = 1
-				equipped_tires -= 1
-			if equipped_tires:
-				$map/collectables/part1_tire.visible = 1
-				equipped_tires -= 1
+			var tween = create_tween()
+			tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+			allow_move()
+			$him.move = 1
+			play_sound(sound_spawn)
+			$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
 				
-			equipped_tires = 0
-			car_battery_taken = 0
-		if can_kill: 
-			$map/collectables2/part1_crawbar.visible = 1
-			$player/crowbad.visible = 0
-			crowbar_equipped = 0
-	dead = 0
+			if !can_kill:
+				$map/elevator_items/tire1.visible = 0
+				$map/elevator_items/tire2.visible = 0
+				$map/elevator_items/tire3.visible = 0
+				$map/elevator_items/battery.visible = 0
+				$map/elevator_items/keys.visible = 0
+				
+				$garage/elevator_items/tire1.visible = 0
+				$garage/elevator_items/tire2.visible = 0
+				$garage/elevator_items/tire3.visible = 0
+				$garage/elevator_items/battery.visible = 0
+				$garage/elevator_items/keys.visible = 0
+				
+				if !car_battery_exist:
+					$map/collectables/part1_battery.visible = 1
+				#print(equipped_tires, " equipped_tires")
+				if equipped_tires:
+					$map/collectables/part4_tire.visible = 1
+					equipped_tires -= 1
+				if equipped_tires:
+					$map/collectables/part3_tire.visible = 1
+					equipped_tires -= 1
+				if equipped_tires:
+					$map/collectables/part1_tire.visible = 1
+					equipped_tires -= 1
+					
+				equipped_tires = 0
+				car_battery_taken = 0
+			if can_kill: 
+				$map/collectables2/part1_crawbar.visible = 1
+				$player/crowbad.visible = 0
+				crowbar_equipped = 0
+			dead = 0
+		else:
+			print("kill")
+			global.floor = 0
+			global.mistakes = 0
+			$CanvasLayer/red.visible = 1
+			disable_move()
+			$player.rotation = 90
+			$him.move = 0
+			$CanvasLayer/pause_button.visible = 0
+			$CanvasLayer/restart.visible = 1
+			
+
 
 var crowbar_equipped = 0
 
@@ -967,3 +980,7 @@ func _on_touch_check_toggled(toggled_on: bool) -> void:
 	global.touch = toggled_on
 	touch = toggled_on
 	$CanvasLayer/mobile.visible = toggled_on
+
+
+func _on_restart_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/story.tscn")
