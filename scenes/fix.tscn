@@ -1,22 +1,22 @@
-[gd_scene format=3 uid="uid://bulteshkhc6xv"]
+[gd_scene format=3 uid="uid://b3idncaswajme"]
 
-[ext_resource type="Script" uid="uid://db1ghek2wpr4u" path="res://scripts/floors.gd" id="1_ao1wi"]
-[ext_resource type="Texture2D" uid="uid://ba34ukm6xop0s" path="res://assets/rect.png" id="1_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://cidxmrrgsula0" path="res://scenes/temp_player.tscn" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bvfnhg4sbuojw" path="res://scenes/mobile.tscn" id="2_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://dk7huthrytou3" path="res://assets/blue-cartoon-pillow-soft-comfortable-cushion-with-simple-design-vector-removebg-preview.png" id="3_iywne"]
-[ext_resource type="Texture2D" uid="uid://det4y0g3g3wfv" path="res://assets/hand-crowbar-icon-cartoon-design-metal-vector-removebg-preview.png" id="3_kvpfn"]
-[ext_resource type="Texture2D" uid="uid://ttd1w5yseklv" path="res://assets/minimal-windows-xp-wallpaper-throughout-a-day-v0-u8eezfv5nshf1.png" id="3_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://cj8qm4ugj6u55" path="res://assets/26791-48x48x32.png" id="4_gee14"]
-[ext_resource type="Texture2D" uid="uid://dcsko86n167r5" path="res://assets/tall-houseplant-pot-nature-icon_18591-82627-removebg-preview.png" id="4_p57ef"]
-[ext_resource type="Texture2D" uid="uid://dpnqsk1jp5hak" path="res://assets/sticky_note-removebg-preview.png" id="5_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://br1rj58wbo5fn" path="res://scenes/him.tscn" id="11_ir15t"]
-[ext_resource type="AudioStream" uid="uid://blo05k1tmsvus" path="res://audio/soundreality-footsteps-walking-boots-parquet-1-420135.mp3" id="16_egvoa"]
-[ext_resource type="AudioStream" uid="uid://dobkacg1eaak0" path="res://audio/PM_FSSF_AMBIENCE_SOUNDSCAPE_LOOP_3.mp3" id="17_berd1"]
-[ext_resource type="FontFile" uid="uid://byodsk2s4dhng" path="res://assets/HoldMoney-Regular.ttf" id="17_rysoc"]
-[ext_resource type="Texture2D" uid="uid://c35ibvlwccoqt" path="res://assets/Flag_of_the_United_Kingdom_(3-5).svg.webp" id="19_37s47"]
-[ext_resource type="Texture2D" uid="uid://j115spebn42o" path="res://assets/Flag_of_the_Arab_League.svg" id="20_bt5mj"]
-[ext_resource type="Texture2D" uid="uid://cryfsjhvqsolb" path="res://assets/images.png" id="21_e1j6l"]
+[ext_resource type="Script" uid="uid://8kfqk7htcmas" path="res://scripts/fix.gd" id="1_2rxwa"]
+[ext_resource type="FontFile" uid="uid://byodsk2s4dhng" path="res://assets/HoldMoney-Regular.ttf" id="2_lqxid"]
+[ext_resource type="Texture2D" uid="uid://ba34ukm6xop0s" path="res://assets/rect.png" id="3_poivq"]
+[ext_resource type="Texture2D" uid="uid://ttd1w5yseklv" path="res://assets/minimal-windows-xp-wallpaper-throughout-a-day-v0-u8eezfv5nshf1.png" id="4_qtnq1"]
+[ext_resource type="Texture2D" uid="uid://cj8qm4ugj6u55" path="res://assets/26791-48x48x32.png" id="5_l8xmd"]
+[ext_resource type="Texture2D" uid="uid://dpnqsk1jp5hak" path="res://assets/sticky_note-removebg-preview.png" id="6_d3qia"]
+[ext_resource type="Texture2D" uid="uid://dk7huthrytou3" path="res://assets/blue-cartoon-pillow-soft-comfortable-cushion-with-simple-design-vector-removebg-preview.png" id="7_bvaki"]
+[ext_resource type="Texture2D" uid="uid://dcsko86n167r5" path="res://assets/tall-houseplant-pot-nature-icon_18591-82627-removebg-preview.png" id="8_ifcsg"]
+[ext_resource type="PackedScene" uid="uid://cidxmrrgsula0" path="res://scenes/temp_player.tscn" id="9_a8icl"]
+[ext_resource type="Texture2D" uid="uid://det4y0g3g3wfv" path="res://assets/hand-crowbar-icon-cartoon-design-metal-vector-removebg-preview.png" id="10_2kla5"]
+[ext_resource type="PackedScene" uid="uid://br1rj58wbo5fn" path="res://scenes/him.tscn" id="11_08f3y"]
+[ext_resource type="PackedScene" uid="uid://bvfnhg4sbuojw" path="res://scenes/mobile.tscn" id="12_xp0oj"]
+[ext_resource type="Texture2D" uid="uid://c35ibvlwccoqt" path="res://assets/Flag_of_the_United_Kingdom_(3-5).svg.webp" id="13_5ndfa"]
+[ext_resource type="Texture2D" uid="uid://j115spebn42o" path="res://assets/Flag_of_the_Arab_League.svg" id="14_cl1gk"]
+[ext_resource type="Texture2D" uid="uid://cryfsjhvqsolb" path="res://assets/images.png" id="15_yepse"]
+[ext_resource type="AudioStream" uid="uid://blo05k1tmsvus" path="res://audio/soundreality-footsteps-walking-boots-parquet-1-420135.mp3" id="16_d2b0t"]
+[ext_resource type="AudioStream" uid="uid://dobkacg1eaak0" path="res://audio/PM_FSSF_AMBIENCE_SOUNDSCAPE_LOOP_3.mp3" id="17_nwbjj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twgab"]
 bg_color = Color(0, 0, 0, 1)
@@ -466,6 +466,9 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
 size = Vector2(1437.5, 577)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt5mj"]
+size = Vector2(407, 168)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ool0"]
 bg_color = Color(0.07992554, 0.3508768, 0.37890625, 1)
 skew = Vector2(0.805, 0)
@@ -536,11 +539,8 @@ colors = PackedColorArray(0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vtaks"]
 gradient = SubResource("Gradient_0tnpc")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_264po"]
-size = Vector2(314, 178)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt5mj"]
-size = Vector2(407, 168)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vlew8"]
+radius = 179.60175
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05nbr"]
 bg_color = Color(0.20703125, 0.0921936, 0, 1)
@@ -760,7 +760,7 @@ border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ssvqc"]
-font = ExtResource("17_rysoc")
+font = ExtResource("2_lqxid")
 font_size = 24
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
@@ -784,7 +784,7 @@ draw_center = false
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_fkywm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dku7i"]
-font = ExtResource("17_rysoc")
+font = ExtResource("2_lqxid")
 font_size = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_veaf0"]
@@ -795,6 +795,26 @@ bg_color = Color(0, 0, 0, 0.675)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84hbc"]
 bg_color = Color(0, 0, 0, 0.84705883)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rxwa"]
+bg_color = Color(0, 0.35046387, 0.38671875, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqxid"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_poivq"]
+draw_center = false
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qtnq1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15b3c"]
 bg_color = Color(0.10980392, 0.05490196, 0.02745098, 1)
@@ -818,12 +838,12 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_37s47"]
-font = ExtResource("17_rysoc")
+font = ExtResource("2_lqxid")
 font_size = 98
 
 [node name="game" type="Node2D" unique_id=1974179384]
 position = Vector2(-3, 0)
-script = ExtResource("1_ao1wi")
+script = ExtResource("1_2rxwa")
 
 [node name="map" type="Node2D" parent="." unique_id=1248484278]
 
@@ -960,18 +980,6 @@ scale = Vector2(0.97881144, 0.88261527)
 color = Color(0.1953125, 0.1953125, 0.1953125, 1)
 polygon = PackedVector2Array(-102.16472, -253.7912, -103.18637, 50.984848, -70, 6, -71, -208)
 
-[node name="floor" type="Label" parent="map/hallway/elevator" unique_id=401395555]
-offset_left = -47.0
-offset_top = -189.0
-offset_right = 91.0
-offset_bottom = 9.0
-theme_override_colors/font_color = Color(0.65882355, 0.65882355, 0.65882355, 0.4627451)
-theme_override_fonts/font = ExtResource("17_rysoc")
-theme_override_font_sizes/font_size = 126
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="close1" type="Panel" parent="map/hallway/elevator" unique_id=1018981276]
 z_index = 1
 offset_left = -78.0
@@ -1018,7 +1026,7 @@ position = Vector2(23.505157, -65.25)
 scale = Vector2(0.78670186, 1.1382353)
 energy = 0.98
 blend_mode = 1
-texture = ExtResource("1_lbhrr")
+texture = ExtResource("3_poivq")
 
 [node name="dark" type="Panel" parent="map/hallway" unique_id=2067292760]
 visible = false
@@ -1680,14 +1688,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
 [node name="bg" type="Sprite2D" parent="map/part3/pc/desktop" unique_id=289882621]
 position = Vector2(29, 9)
 scale = Vector2(0.019499997, 0.01777778)
-texture = ExtResource("3_u5sy4")
+texture = ExtResource("4_qtnq1")
 
 [node name="mypc" type="TextureButton" parent="map/part3/pc/desktop" unique_id=1959625693]
 offset_left = -7.0
 offset_top = -9.0
 offset_right = -2.0
 offset_bottom = -3.2424245
-texture_normal = ExtResource("4_gee14")
+texture_normal = ExtResource("5_l8xmd")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -1696,7 +1704,7 @@ offset_left = -7.0
 offset_top = -2.0
 offset_right = -2.0
 offset_bottom = 3.7575755
-texture_normal = ExtResource("5_0tnpc")
+texture_normal = ExtResource("6_d3qia")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -1893,7 +1901,7 @@ position = Vector2(-41.499878, -65.25)
 scale = Vector2(5.0262513, 1.1382353)
 energy = 0.9
 blend_mode = 1
-texture = ExtResource("1_lbhrr")
+texture = ExtResource("3_poivq")
 
 [node name="dark" type="Panel" parent="map/part3" unique_id=979717919]
 visible = false
@@ -2276,7 +2284,7 @@ position = Vector2(2260.4673, -65.25)
 scale = Vector2(1.0115386, 1.1382353)
 energy = 0.98
 blend_mode = 1
-texture = ExtResource("1_lbhrr")
+texture = ExtResource("3_poivq")
 
 [node name="dark" type="Panel" parent="map/part4" unique_id=808715295]
 visible = false
@@ -2330,7 +2338,7 @@ position = Vector2(-2376.625, -65.25)
 scale = Vector2(1.1413044, 1.1382353)
 energy = 0.98
 blend_mode = 1
-texture = ExtResource("1_lbhrr")
+texture = ExtResource("3_poivq")
 
 [node name="shelf" type="Node2D" parent="map/part1" unique_id=206924238]
 z_index = 1
@@ -3140,6 +3148,14 @@ shape = SubResource("RectangleShape2D_p57ef")
 [node name="sofa" type="Node2D" parent="map/part2" unique_id=1869477951]
 position = Vector2(-781, -31)
 
+[node name="sofa_area" type="Area2D" parent="map/part2/sofa" unique_id=1665947916]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/sofa_area" unique_id=1358388773]
+position = Vector2(-76.5, 12)
+shape = SubResource("RectangleShape2D_bt5mj")
+
 [node name="Panel13" type="Panel" parent="map/part2/sofa" unique_id=393712288]
 offset_left = -263.0
 offset_top = 3.0
@@ -3273,7 +3289,7 @@ one_way_collision = true
 clip_children = 2
 position = Vector2(-231, 20)
 scale = Vector2(0.15550011, 0.15550011)
-texture = ExtResource("3_iywne")
+texture = ExtResource("7_bvaki")
 
 [node name="black" type="Sprite2D" parent="map/part2/sofa/pillow" unique_id=253232465]
 modulate = Color(1, 1, 1, 0.47058824)
@@ -3281,12 +3297,17 @@ position = Vector2(25.723452, -45.016037)
 scale = Vector2(1.6579552, 515.50397)
 texture = SubResource("GradientTexture1D_vtaks")
 
+[node name="pillow_area" type="Area2D" parent="map/part2/sofa/pillow" unique_id=1301512440]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/pillow/pillow_area" unique_id=153828053]
+shape = SubResource("CircleShape2D_vlew8")
+
 [node name="pillow2" type="Sprite2D" parent="map/part2/sofa" unique_id=228082760]
 clip_children = 2
 position = Vector2(78, 18)
 rotation = 3.1415927
 scale = Vector2(0.156, -0.156)
-texture = ExtResource("3_iywne")
+texture = ExtResource("7_bvaki")
 
 [node name="black" type="Sprite2D" parent="map/part2/sofa/pillow2" unique_id=1227205470]
 modulate = Color(1, 1, 1, 0.47058824)
@@ -3294,13 +3315,18 @@ position = Vector2(25.723452, -45.016037)
 scale = Vector2(1.6579552, 515.50397)
 texture = SubResource("GradientTexture1D_vtaks")
 
+[node name="pillow2_area" type="Area2D" parent="map/part2/sofa/pillow2" unique_id=2097991064]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/pillow2/pillow2_area" unique_id=384703793]
+shape = SubResource("CircleShape2D_vlew8")
+
 [node name="pillow3" type="Sprite2D" parent="map/part2/sofa" unique_id=1152726691]
 visible = false
 clip_children = 2
 position = Vector2(-79, 18)
 rotation = 3.1415927
 scale = Vector2(0.156, -0.156)
-texture = ExtResource("3_iywne")
+texture = ExtResource("7_bvaki")
 
 [node name="black" type="Sprite2D" parent="map/part2/sofa/pillow3" unique_id=36318151]
 modulate = Color(1, 1, 1, 0.47058824)
@@ -3314,21 +3340,6 @@ position = Vector2(-184.00003, 19.999996)
 rotation = -0.4100507
 scale = Vector2(0.26388907, 0.26388907)
 skew = -0.43109632
-
-[node name="sofa_blood_area" type="Area2D" parent="map/part2/sofa" unique_id=1437584210]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/sofa_blood_area" unique_id=884469186]
-position = Vector2(-184, 4)
-shape = SubResource("RectangleShape2D_264po")
-
-[node name="sofa_area" type="Area2D" parent="map/part2/sofa" unique_id=1665947916]
-visible = false
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/sofa_area" unique_id=1358388773]
-position = Vector2(-76.5, 12)
-shape = SubResource("RectangleShape2D_bt5mj")
 
 [node name="tv" type="Node2D" parent="map/part2" unique_id=526527308]
 z_index = 1
@@ -3589,7 +3600,7 @@ one_way_collision = true
 clip_children = 2
 position = Vector2(-1442.0001, -24.064623)
 scale = Vector2(0.26118553, 0.2793383)
-texture = ExtResource("4_p57ef")
+texture = ExtResource("8_ifcsg")
 
 [node name="black" type="Sprite2D" parent="map/part2/plant" unique_id=1016151810]
 modulate = Color(1, 1, 1, 0.47058824)
@@ -3601,7 +3612,7 @@ texture = SubResource("GradientTexture1D_vtaks")
 clip_children = 2
 position = Vector2(-1227.0001, -24.064623)
 scale = Vector2(0.26118553, 0.2793383)
-texture = ExtResource("4_p57ef")
+texture = ExtResource("8_ifcsg")
 
 [node name="black" type="Sprite2D" parent="map/part2/plant2" unique_id=699192203]
 modulate = Color(1, 1, 1, 0.47058824)
@@ -3615,7 +3626,7 @@ position = Vector2(-1072.3125, -65.25)
 scale = Vector2(1.0111773, 1.1382353)
 energy = 0.98
 blend_mode = 1
-texture = ExtResource("1_lbhrr")
+texture = ExtResource("3_poivq")
 
 [node name="dark" type="Panel" parent="map/part2" unique_id=1545309189]
 visible = false
@@ -4020,7 +4031,7 @@ position = Vector2(23.505157, -65.25)
 scale = Vector2(0.78670186, 1.1382353)
 energy = 0.98
 blend_mode = 1
-texture = ExtResource("1_lbhrr")
+texture = ExtResource("3_poivq")
 
 [node name="car" type="Node2D" parent="garage/garage" unique_id=160379240]
 
@@ -4326,17 +4337,17 @@ position = Vector2(2115.5, 1481.0001)
 scale = Vector2(1.3560295, 1.2196076)
 energy = 0.98
 blend_mode = 1
-texture = ExtResource("1_lbhrr")
+texture = ExtResource("3_poivq")
 
-[node name="player" parent="." unique_id=312059141 instance=ExtResource("1_yqjtg")]
-position = Vector2(-565, -52)
+[node name="player" parent="." unique_id=312059141 instance=ExtResource("9_a8icl")]
+position = Vector2(-607, -73)
 
 [node name="crowbad" type="Sprite2D" parent="player" unique_id=1896290467]
 visible = false
 position = Vector2(34, -62.999996)
 rotation = 0.3093108
 scale = Vector2(0.10700005, 0.13699993)
-texture = ExtResource("3_kvpfn")
+texture = ExtResource("10_2kla5")
 
 [node name="flash" type="PointLight2D" parent="player" unique_id=1827854566]
 visible = false
@@ -4349,7 +4360,7 @@ texture = SubResource("GradientTexture2D_lbhrr")
 position = Vector2(0, -17)
 zoom = Vector2(2, 2)
 
-[node name="him" parent="." unique_id=784523633 instance=ExtResource("11_ir15t")]
+[node name="him" parent="." unique_id=784523633 instance=ExtResource("11_08f3y")]
 visible = false
 position = Vector2(-241, 21)
 
@@ -4361,7 +4372,7 @@ shape = SubResource("RectangleShape2D_vlew8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1460517878]
 
-[node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("2_lnu2h")]
+[node name="mobile" parent="CanvasLayer" unique_id=2043303018 instance=ExtResource("12_xp0oj")]
 visible = false
 
 [node name="red" type="Panel" parent="CanvasLayer" unique_id=960971587]
@@ -4379,7 +4390,7 @@ offset_top = 333.0
 offset_right = 806.0
 offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
-theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
@@ -4394,7 +4405,7 @@ offset_right = 877.0
 offset_bottom = 419.0
 rotation = 1.5707964
 theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
-theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 53
 theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
@@ -4409,7 +4420,7 @@ offset_right = 789.0
 offset_bottom = 534.0
 rotation = 4.712389
 theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
-theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 53
 theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
@@ -4423,7 +4434,7 @@ offset_top = 333.0
 offset_right = 806.0
 offset_bottom = 370.0
 theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
-theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
@@ -4490,7 +4501,7 @@ light_mask = 0
 layout_mode = 2
 layout_direction = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
-theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_2gnni")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vgxg3")
@@ -4503,7 +4514,7 @@ light_mask = 0
 layout_mode = 2
 layout_direction = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
-theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_2gnni")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vgxg3")
@@ -4516,7 +4527,7 @@ light_mask = 0
 layout_mode = 2
 layout_direction = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
-theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_2gnni")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vgxg3")
@@ -4564,7 +4575,7 @@ offset_top = 223.0
 offset_right = 576.6667
 offset_bottom = 257.0
 layout_direction = 2
-texture_normal = ExtResource("19_37s47")
+texture_normal = ExtResource("13_5ndfa")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4575,7 +4586,7 @@ offset_top = 223.0
 offset_right = 668.6667
 offset_bottom = 257.0
 layout_direction = 2
-texture_normal = ExtResource("20_bt5mj")
+texture_normal = ExtResource("14_cl1gk")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4586,7 +4597,7 @@ offset_top = 223.0
 offset_right = 759.6667
 offset_bottom = 257.0
 layout_direction = 2
-texture_normal = ExtResource("21_e1j6l")
+texture_normal = ExtResource("15_yepse")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -4659,7 +4670,7 @@ light_mask = 0
 layout_mode = 2
 layout_direction = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
-theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_2gnni")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vgxg3")
@@ -4672,13 +4683,96 @@ light_mask = 0
 layout_mode = 2
 layout_direction = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
-theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_2gnni")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vgxg3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4nbsr")
 theme_override_styles/disabled = SubResource("StyleBoxLine_fkywm")
 text = "Main Menu"
+
+[node name="fix" type="Node2D" parent="CanvasLayer" unique_id=1723987845]
+
+[node name="buttons" type="Node2D" parent="CanvasLayer/fix" unique_id=498885314]
+light_mask = 0
+position = Vector2(510, 0)
+
+[node name="bg2" type="Panel" parent="CanvasLayer/fix/buttons" unique_id=1105423973]
+light_mask = 0
+offset_left = 22.0
+offset_top = 178.0
+offset_right = 231.0
+offset_bottom = 384.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s0g06")
+
+[node name="buttons" type="HFlowContainer" parent="CanvasLayer/fix/buttons" unique_id=1143064909]
+light_mask = 0
+offset_left = 24.0
+offset_top = 197.0
+offset_right = 226.0
+offset_bottom = 379.0
+layout_direction = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+alignment = 1
+
+[node name="show" type="Button" parent="CanvasLayer/fix/buttons/buttons" unique_id=1850215098]
+light_mask = 0
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+layout_direction = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("2_lqxid")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_2rxwa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lqxid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_poivq")
+theme_override_styles/disabled = SubResource("StyleBoxLine_qtnq1")
+text = "Show"
+
+[node name="hide" type="Button" parent="CanvasLayer/fix/buttons/buttons" unique_id=2002334943]
+light_mask = 0
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+layout_direction = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("2_lqxid")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_2rxwa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lqxid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_poivq")
+theme_override_styles/disabled = SubResource("StyleBoxLine_qtnq1")
+text = "Hide"
+
+[node name="position" type="Button" parent="CanvasLayer/fix/buttons/buttons" unique_id=715328022]
+light_mask = 0
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+layout_direction = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("2_lqxid")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_2rxwa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lqxid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_poivq")
+theme_override_styles/disabled = SubResource("StyleBoxLine_qtnq1")
+text = "Position"
+
+[node name="cancel" type="Button" parent="CanvasLayer/fix/buttons/buttons" unique_id=392958588]
+light_mask = 0
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+layout_direction = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("2_lqxid")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_2rxwa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lqxid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_poivq")
+theme_override_styles/disabled = SubResource("StyleBoxLine_qtnq1")
+text = "Cancel"
 
 [node name="pause_button" type="Button" parent="CanvasLayer" unique_id=1965858828]
 offset_left = 61.0
@@ -4687,7 +4781,7 @@ offset_right = 125.0
 offset_bottom = 166.0
 rotation = -1.5707964
 layout_direction = 2
-theme_override_fonts/font = ExtResource("17_rysoc")
+theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 98
 theme_override_styles/normal = SubResource("StyleBoxFlat_15b3c")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fkywm")
@@ -4708,10 +4802,10 @@ vertical_alignment = 1
 [node name="sfx" type="Node" parent="." unique_id=1704511315]
 
 [node name="walking_sound" type="AudioStreamPlayer" parent="sfx" unique_id=380903614]
-stream = ExtResource("16_egvoa")
+stream = ExtResource("16_d2b0t")
 
 [node name="bg" type="AudioStreamPlayer" parent="sfx" unique_id=1964108206]
-stream = ExtResource("17_berd1")
+stream = ExtResource("17_nwbjj")
 volume_db = -25.0
 autoplay = true
 parameters/looping = true
@@ -4735,10 +4829,11 @@ parameters/looping = true
 [connection signal="body_exited" from="map/part4/Area2D" to="." method="_on_area_part4_body_exited"]
 [connection signal="body_entered" from="map/part1/Area2D" to="." method="_on_area_part1_body_entered"]
 [connection signal="body_exited" from="map/part1/Area2D" to="." method="_on_area_part1_body_exited"]
-[connection signal="body_entered" from="map/part2/sofa/sofa_blood_area" to="." method="_on_sofa_blood_area_body_entered"]
-[connection signal="body_exited" from="map/part2/sofa/sofa_blood_area" to="." method="_on_sofa_blood_area_body_exited"]
-[connection signal="body_entered" from="map/part2/sofa/sofa_area" to="." method="_on_sofa_area_body_entered"]
-[connection signal="body_exited" from="map/part2/sofa/sofa_area" to="." method="_on_sofa_area_body_exited"]
+[connection signal="input_event" from="map/part2/sofa/pillow/pillow_area" to="." method="_on_pillow_area_input_event"]
+[connection signal="mouse_entered" from="map/part2/sofa/pillow/pillow_area" to="." method="_on_pillow_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part2/sofa/pillow/pillow_area" to="." method="_on_pillow_area_mouse_exited"]
+[connection signal="mouse_entered" from="map/part2/sofa/pillow2/pillow2_area" to="." method="_on_pillow_2_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part2/sofa/pillow2/pillow2_area" to="." method="_on_pillow_2_area_mouse_exited"]
 [connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
 [connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
 [connection signal="body_entered" from="garage/garage/car/front_tires/front_tires_area" to="." method="_on_front_tires_area_body_entered"]
@@ -4765,4 +4860,8 @@ parameters/looping = true
 [connection signal="toggled" from="CanvasLayer/pause/settings/touch_check" to="." method="_on_touch_check_toggled"]
 [connection signal="pressed" from="CanvasLayer/restart/buttons/buttons/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/restart/buttons/buttons/main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/fix/buttons/buttons/show" to="." method="_on_fix_show_pressed"]
+[connection signal="pressed" from="CanvasLayer/fix/buttons/buttons/hide" to="." method="_on_fix_hide_pressed"]
+[connection signal="pressed" from="CanvasLayer/fix/buttons/buttons/position" to="." method="_on_fix_position_pressed"]
+[connection signal="pressed" from="CanvasLayer/fix/buttons/buttons/cancel" to="." method="_on_fix_cancel_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause_button" to="." method="_on_pause_button_pressed"]

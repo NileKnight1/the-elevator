@@ -271,6 +271,19 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/disabled = SubResource("StyleBoxLine_8ln24")
 text = "Floors Mode"
 
+[node name="fix" type="Button" parent="buttons/buttons" unique_id=2139146011]
+light_mask = 0
+layout_mode = 2
+layout_direction = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/disabled = SubResource("StyleBoxLine_8ln24")
+text = "Fix Mode"
+
 [node name="settings" type="Button" parent="buttons/buttons" unique_id=1776063244]
 light_mask = 0
 layout_mode = 2
@@ -397,6 +410,7 @@ offset_bottom = 301.0
 layout_direction = 2
 
 [node name="tutorial_story" type="Node2D" parent="." unique_id=1462619576]
+visible = false
 
 [node name="bg" type="Panel" parent="tutorial_story" unique_id=237824677]
 offset_left = -4.0
@@ -1052,6 +1066,7 @@ autowrap_mode = 2
 
 [connection signal="pressed" from="buttons/buttons/story" to="." method="_on_story_pressed"]
 [connection signal="pressed" from="buttons/buttons/floors" to="." method="_on_floors_pressed"]
+[connection signal="pressed" from="buttons/buttons/fix" to="." method="_on_floors_pressed"]
 [connection signal="pressed" from="buttons/buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="settings/en2" to="." method="_on_en_pressed"]
 [connection signal="pressed" from="settings/ar2" to="." method="_on_ar_pressed"]

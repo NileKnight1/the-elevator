@@ -112,6 +112,7 @@ var active_boxes = [
 ]
 func _on_left_tutorial_story_pressed() -> void:
 	if active_boxes[0] == 0: return
+	play_sound(sound_click)
 	active_boxes[0] -= 1
 	active_boxes[1] -= 1
 	active_boxes[2] -= 1
@@ -119,6 +120,7 @@ func _on_left_tutorial_story_pressed() -> void:
 
 func _on_right_tutorial_story_pressed() -> void:
 	if active_boxes[2] == 4: return
+	play_sound(sound_click)
 	active_boxes[0] += 1
 	active_boxes[1] += 1
 	active_boxes[2] += 1
