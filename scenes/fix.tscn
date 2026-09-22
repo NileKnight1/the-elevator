@@ -615,6 +615,18 @@ border_color = Color(0, 0, 0, 1)
 a = Vector2(-2, 2)
 b = Vector2(153, 2)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c02t"]
+size = Vector2(141, 196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bekt7"]
+size = Vector2(79, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncv88"]
+size = Vector2(20, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdxto"]
+size = Vector2(202.92078, 494.0247)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
 size = Vector2(1103, 577)
 
@@ -3530,6 +3542,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0sl42")
 position = Vector2(-926, -28)
 shape = SubResource("SegmentShape2D_dinhu")
 
+[node name="bookshelf" type="Area2D" parent="map/part2/bookshelf" unique_id=690891783]
+position = Vector2(-890, 146)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/bookshelf/bookshelf" unique_id=999445291]
+position = Vector2(38.5, -74)
+shape = SubResource("RectangleShape2D_3c02t")
+
 [node name="box5" type="Node2D" parent="map/part2" unique_id=2044850329]
 position = Vector2(-1169, 29)
 
@@ -3570,6 +3589,17 @@ position = Vector2(-299, 89)
 position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_ssvqc")
 one_way_collision = true
+
+[node name="part2_box1" type="Area2D" parent="map/part2/box5" unique_id=1360283107]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/box5/part2_box1" unique_id=1939382095]
+position = Vector2(596.5, 98)
+shape = SubResource("RectangleShape2D_bekt7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/part2/box5/part2_box1" unique_id=79737402]
+position = Vector2(599.5, 57)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_ncv88")
 
 [node name="box4" type="Node2D" parent="map/part2" unique_id=2112120492]
 position = Vector2(-1085, 29)
@@ -3612,6 +3642,17 @@ position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_ssvqc")
 one_way_collision = true
 
+[node name="part2_box2" type="Area2D" parent="map/part2/box4" unique_id=1312411204]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/box4/part2_box2" unique_id=1955856101]
+position = Vector2(596.5, 98)
+shape = SubResource("RectangleShape2D_bekt7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/part2/box4/part2_box2" unique_id=1364404703]
+position = Vector2(599.5, 57)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_ncv88")
+
 [node name="plant" type="Sprite2D" parent="map/part2" unique_id=512255724]
 clip_children = 2
 position = Vector2(-1442.0001, -24.064623)
@@ -3624,6 +3665,12 @@ position = Vector2(0, 3.8112183)
 scale = Vector2(1, 515.50397)
 texture = SubResource("GradientTexture1D_vtaks")
 
+[node name="plant_area" type="Area2D" parent="map/part2/plant" unique_id=555623533]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/plant/plant_area" unique_id=468771247]
+position = Vector2(1.9150391, 0.23134613)
+shape = SubResource("RectangleShape2D_hdxto")
+
 [node name="plant2" type="Sprite2D" parent="map/part2" unique_id=199641806]
 clip_children = 2
 position = Vector2(-1227.0001, -24.064623)
@@ -3635,6 +3682,12 @@ modulate = Color(1, 1, 1, 0.47058824)
 position = Vector2(0, 3.8112183)
 scale = Vector2(1, 515.50397)
 texture = SubResource("GradientTexture1D_vtaks")
+
+[node name="plant2_area" type="Area2D" parent="map/part2/plant2" unique_id=1484977718]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/plant2/plant2_area" unique_id=1689828791]
+position = Vector2(1.9150391, 0.23134613)
+shape = SubResource("RectangleShape2D_hdxto")
 
 [node name="black" type="PointLight2D" parent="map/part2" unique_id=1429338716]
 visible = false
@@ -4730,6 +4783,7 @@ offset_top = 197.0
 offset_right = 226.0
 offset_bottom = 379.0
 layout_direction = 2
+mouse_filter = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 alignment = 1
@@ -4858,6 +4912,21 @@ parameters/looping = true
 [connection signal="input_event" from="map/part2/tv/tv/tv_area" to="." method="_on_tv_area_input_event"]
 [connection signal="mouse_entered" from="map/part2/tv/tv/tv_area" to="." method="_on_tv_area_mouse_entered"]
 [connection signal="mouse_exited" from="map/part2/tv/tv/tv_area" to="." method="_on_tv_area_mouse_exited"]
+[connection signal="input_event" from="map/part2/bookshelf/bookshelf" to="." method="_on_bookshelf_input_event"]
+[connection signal="mouse_entered" from="map/part2/bookshelf/bookshelf" to="." method="_on_bookshelf_mouse_entered"]
+[connection signal="mouse_exited" from="map/part2/bookshelf/bookshelf" to="." method="_on_bookshelf_mouse_exited"]
+[connection signal="input_event" from="map/part2/box5/part2_box1" to="." method="_on_part_2_box_1_input_event"]
+[connection signal="mouse_entered" from="map/part2/box5/part2_box1" to="." method="_on_part_2_box_1_mouse_entered"]
+[connection signal="mouse_exited" from="map/part2/box5/part2_box1" to="." method="_on_part_2_box_1_mouse_exited"]
+[connection signal="input_event" from="map/part2/box4/part2_box2" to="." method="_on_part_2_box_2_input_event"]
+[connection signal="mouse_entered" from="map/part2/box4/part2_box2" to="." method="_on_part_2_box_2_mouse_entered"]
+[connection signal="mouse_exited" from="map/part2/box4/part2_box2" to="." method="_on_part_2_box_2_mouse_exited"]
+[connection signal="input_event" from="map/part2/plant/plant_area" to="." method="_on_plant_area_input_event"]
+[connection signal="mouse_entered" from="map/part2/plant/plant_area" to="." method="_on_plant_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part2/plant/plant_area" to="." method="_on_plant_area_mouse_exited"]
+[connection signal="input_event" from="map/part2/plant2/plant2_area" to="." method="_on_plant2_area_input_event"]
+[connection signal="mouse_entered" from="map/part2/plant2/plant2_area" to="." method="_on_plant2_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part2/plant2/plant2_area" to="." method="_on_plant2_area_mouse_exited"]
 [connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
 [connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
 [connection signal="body_entered" from="garage/garage/car/front_tires/front_tires_area" to="." method="_on_front_tires_area_body_entered"]

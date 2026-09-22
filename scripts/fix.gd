@@ -678,7 +678,7 @@ func _on_restart_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/floors.tscn")
 
 func hover_on(node):
-	print(node.modulate)
+	#print(node.modulate)
 	if node.modulate == Color(1.0, 1.0, 1.0, 0.0): return
 	var tween = create_tween()
 	tween.set_parallel(1)
@@ -762,6 +762,48 @@ func _on_tv_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		item_node = $map/part2/tv/tv
 	
 
+func _on_part_2_box_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		$CanvasLayer/fix.visible = 1
+		item_node = $map/part2/box5
+func _on_part_2_box_1_mouse_entered() -> void:
+	hover_on($map/part2/box5)
+func _on_part_2_box_1_mouse_exited() -> void:
+	hover_off($map/part2/box5)
+func _on_part_2_box_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		$CanvasLayer/fix.visible = 1
+		item_node = $map/part2/box4
+func _on_part_2_box_2_mouse_entered() -> void:
+	hover_on($map/part2/box4)
+func _on_part_2_box_2_mouse_exited() -> void:
+	hover_off($map/part2/box4)
+
+func _on_plant2_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		$CanvasLayer/fix.visible = 1
+		item_node = $map/part2/plant2
+func _on_plant2_area_mouse_entered() -> void:
+	hover_on($map/part2/plant2)
+func _on_plant2_area_mouse_exited() -> void:
+	hover_off($map/part2/plant2)
 
 
-#
+func _on_plant_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		$CanvasLayer/fix.visible = 1
+		item_node = $map/part2/plant
+func _on_plant_area_mouse_entered() -> void:
+	hover_on($map/part2/plant)
+func _on_plant_area_mouse_exited() -> void:
+	hover_off($map/part2/plant)
+
+
+func _on_bookshelf_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		$CanvasLayer/fix.visible = 1
+		item_node = $map/part2/bookshelf
+func _on_bookshelf_mouse_entered() -> void:
+	hover_on($map/part2/bookshelf)
+func _on_bookshelf_mouse_exited() -> void:
+	hover_off($map/part2/bookshelf)
