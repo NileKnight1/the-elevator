@@ -575,6 +575,7 @@ var anomaly = 0
 func anomaly_apply():
 	#get_node_or_null(anomalies[0]["hide"]).visible = 0
 	var temp = randi_range(0,2)
+	if floor == 1: return
 	if temp == 0:
 		print("anomaly skipped")
 		anomaly = 0

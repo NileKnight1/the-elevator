@@ -12,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://cr3h6o8b4fd3h" path="res://assets/image (4).png" id="10_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://ctd6kjh11bv8n" path="res://assets/image (5).png" id="11_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://ucvsg2kk0f6o" path="res://assets/image (8).png" id="12_flqon"]
+[ext_resource type="Texture2D" uid="uid://52adho50ria3" path="res://assets/image (9).png" id="13_rcqid"]
+[ext_resource type="Texture2D" uid="uid://c1ya3kn4c57na" path="res://assets/image (10).png" id="14_1ajci"]
+[ext_resource type="Texture2D" uid="uid://yo60ac04g483" path="res://assets/image (11).png" id="15_5pajh"]
+[ext_resource type="FontFile" uid="uid://t5siwi6gw5ix" path="res://assets/Ruwudu-Medium.ttf" id="16_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://c0ernm2cn53nq" path="res://assets/image (12).png" id="17_j7ex8"]
 
 [sub_resource type="Gradient" id="Gradient_wu84c"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
@@ -680,6 +685,331 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="tutorial_floors" type="Node2D" parent="." unique_id=1401806524]
+
+[node name="bg" type="Panel" parent="tutorial_floors" unique_id=1420525944]
+offset_left = -4.0
+offset_top = 1.0
+offset_right = 1276.0
+offset_bottom = 721.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vlew8")
+
+[node name="title" type="Label" parent="tutorial_floors" unique_id=590681572]
+offset_left = -4.0
+offset_top = 44.0
+offset_right = 1276.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 55
+text = "Story Mode Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="left" type="Button" parent="tutorial_floors" unique_id=751143881]
+offset_left = 31.0
+offset_top = 333.0
+offset_right = 85.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1yg85")
+disabled = true
+text = "<"
+
+[node name="right" type="Button" parent="tutorial_floors" unique_id=226724233]
+offset_left = 1188.0
+offset_top = 333.0
+offset_right = 1242.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1yg85")
+text = ">"
+
+[node name="start" type="Button" parent="tutorial_floors" unique_id=1376759854]
+offset_left = 576.0
+offset_top = 651.0
+offset_right = 692.0
+offset_bottom = 690.0
+theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "Start"
+
+[node name="boxes" type="HBoxContainer" parent="tutorial_floors" unique_id=1407413108]
+offset_top = 180.0
+offset_right = 1276.0
+offset_bottom = 629.0
+mouse_filter = 2
+theme_override_constants/separation = 43
+alignment = 1
+
+[node name="box1" type="Control" parent="tutorial_floors/boxes" unique_id=331742903]
+custom_minimum_size = Vector2(313, 0)
+layout_mode = 2
+layout_direction = 2
+mouse_filter = 2
+
+[node name="box1" type="Panel" parent="tutorial_floors/boxes/box1" unique_id=1346839099]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 314.0
+offset_bottom = 362.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="frame" type="Panel" parent="tutorial_floors/boxes/box1" unique_id=199160345]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 305.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_floors/boxes/box1/frame" unique_id=1101814978]
+position = Vector2(148, 168)
+scale = Vector2(0.42017415, 0.42017415)
+texture = ExtResource("9_jk1qb")
+
+[node name="exp" type="Label" parent="tutorial_floors/boxes/box1" unique_id=1407401388]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 369.0
+offset_right = 314.0
+offset_bottom = 458.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "You're locked in an apartment."
+horizontal_alignment = 1
+
+[node name="box2" type="Control" parent="tutorial_floors/boxes" unique_id=555150236]
+custom_minimum_size = Vector2(313, 0)
+layout_mode = 2
+layout_direction = 2
+mouse_filter = 2
+
+[node name="box1" type="Panel" parent="tutorial_floors/boxes/box2" unique_id=556435515]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 314.0
+offset_bottom = 362.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="frame" type="Panel" parent="tutorial_floors/boxes/box2" unique_id=1171915301]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 305.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_floors/boxes/box2/frame" unique_id=245256992]
+position = Vector2(123.99997, 147.99998)
+scale = Vector2(0.6216837, 0.62168366)
+texture = ExtResource("13_rcqid")
+
+[node name="exp" type="Label" parent="tutorial_floors/boxes/box2" unique_id=1693759115]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 369.0
+offset_right = 314.0
+offset_bottom = 458.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "You have two options, whether you go up or go down."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="box3" type="Control" parent="tutorial_floors/boxes" unique_id=2081866114]
+custom_minimum_size = Vector2(313, 0)
+layout_mode = 2
+layout_direction = 2
+mouse_filter = 2
+
+[node name="box1" type="Panel" parent="tutorial_floors/boxes/box3" unique_id=71523307]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 314.0
+offset_bottom = 362.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="frame" type="Panel" parent="tutorial_floors/boxes/box3" unique_id=1433165408]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 305.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_floors/boxes/box3/frame" unique_id=503356180]
+position = Vector2(214.73592, 140.00006)
+scale = Vector2(0.46994317, 0.46994317)
+texture = ExtResource("14_1ajci")
+offset = Vector2(-128.51807, 57.11914)
+
+[node name="Sprite2D2" type="Sprite2D" parent="tutorial_floors/boxes/box3/frame" unique_id=730264379]
+position = Vector2(214.73592, -60)
+scale = Vector2(0.46994317, 0.46994317)
+texture = ExtResource("15_5pajh")
+offset = Vector2(-128.51807, 57.11914)
+
+[node name="exp" type="Label" parent="tutorial_floors/boxes/box3" unique_id=1821850566]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 369.0
+offset_right = 314.0
+offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "You should check whether the apartment looks as usual or something has happened sdas"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="tutorial_floors/boxes/box3" unique_id=378657158]
+visible = false
+layout_mode = 0
+offset_left = 171.0
+offset_top = 290.0
+offset_right = 242.0
+offset_bottom = 362.0
+rotation = -1.5707964
+theme_override_colors/font_color = Color(1, 0, 0, 0)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.24609375, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 37
+theme_override_constants/shadow_outline_size = 55
+theme_override_fonts/font = ExtResource("16_j7ex8")
+theme_override_font_sizes/font_size = 44
+text = "<=="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="tutorial_floors/boxes/box3" unique_id=484838304]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 77.0
+offset_right = 252.0
+offset_bottom = 183.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bekt7")
+
+[node name="Panel2" type="Panel" parent="tutorial_floors/boxes/box3" unique_id=1736431024]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 203.0
+offset_right = 236.0
+offset_bottom = 339.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bekt7")
+
+[node name="box4" type="Control" parent="tutorial_floors/boxes" unique_id=759943017]
+custom_minimum_size = Vector2(313, 0)
+layout_mode = 2
+layout_direction = 2
+mouse_filter = 2
+
+[node name="box1" type="Panel" parent="tutorial_floors/boxes/box4" unique_id=1635968635]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 314.0
+offset_bottom = 362.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="frame" type="Panel" parent="tutorial_floors/boxes/box4" unique_id=1627988555]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 305.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_floors/boxes/box4/frame" unique_id=317239062]
+position = Vector2(181.09717, 153.30951)
+scale = Vector2(0.39262402, 0.39262405)
+texture = ExtResource("17_j7ex8")
+offset = Vector2(-128.51807, 57.11914)
+
+[node name="exp" type="Label" parent="tutorial_floors/boxes/box4" unique_id=75234726]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 369.0
+offset_right = 314.0
+offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "If something has been changed, you shouldn't go down."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="box5" type="Control" parent="tutorial_floors/boxes" unique_id=624410011]
+custom_minimum_size = Vector2(313, 0)
+layout_mode = 2
+layout_direction = 2
+mouse_filter = 2
+
+[node name="box1" type="Panel" parent="tutorial_floors/boxes/box5" unique_id=626816646]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 314.0
+offset_bottom = 362.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="frame" type="Panel" parent="tutorial_floors/boxes/box5" unique_id=432792655]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 305.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_floors/boxes/box5/frame" unique_id=1259758167]
+visible = false
+position = Vector2(181.09717, 153.30951)
+scale = Vector2(0.39262402, 0.39262405)
+texture = ExtResource("17_j7ex8")
+offset = Vector2(-128.51807, 57.11914)
+
+[node name="exp" type="Label" parent="tutorial_floors/boxes/box5" unique_id=1559015126]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 369.0
+offset_right = 314.0
+offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "Don't make mistakes."
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [connection signal="pressed" from="buttons/buttons/play" to="." method="_on_story_pressed"]
 [connection signal="pressed" from="buttons/buttons/floors" to="." method="_on_floors_pressed"]
 [connection signal="pressed" from="buttons/buttons/settings" to="." method="_on_settings_pressed"]
@@ -690,3 +1020,6 @@ autowrap_mode = 2
 [connection signal="pressed" from="tutorial_story/left" to="." method="_on_left_tutorial_story_pressed"]
 [connection signal="pressed" from="tutorial_story/right" to="." method="_on_right_tutorial_story_pressed"]
 [connection signal="pressed" from="tutorial_story/start" to="." method="run_game"]
+[connection signal="pressed" from="tutorial_floors/left" to="." method="_on_left_tutorial_story_pressed"]
+[connection signal="pressed" from="tutorial_floors/right" to="." method="_on_right_tutorial_story_pressed"]
+[connection signal="pressed" from="tutorial_floors/start" to="." method="run_game"]

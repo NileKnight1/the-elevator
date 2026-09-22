@@ -4403,10 +4403,10 @@ text = "<"
 
 [node name="down" type="Button" parent="CanvasLayer/elevator" unique_id=2111302969]
 visible = false
-offset_left = 737.0
+offset_left = 735.0
 offset_top = 446.0
-offset_right = 791.0
-offset_bottom = 532.0
+offset_right = 789.0
+offset_bottom = 534.0
 rotation = 4.712389
 theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
 theme_override_fonts/font = ExtResource("17_rysoc")

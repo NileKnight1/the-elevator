@@ -24,27 +24,33 @@ func _ready() -> void:
 		i.energy = 0
 	$lights.visible = 1
 	$black.visible = 1
+	$tutorial_story.modulate = Color(0.0, 0.0, 0.0, 1.0)
+	$tutorial_floors.modulate = Color(0.0, 0.0, 0.0, 1.0)
+	$tutorial_story.visible = 0
+	$tutorial_floors.visible = 0
+	
 	rand_light(0)
 
 func _process(delta: float) -> void:
 	pass
 
 var game_scene = "res://scenes/story.tscn"
+var tutorial: Node2D
 
 func start():
 	play_sound(sound_click)
 	var tween = create_tween()
-	tween.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
-	await get_tree().create_timer(1).timeout
-	$tutorial_story.visible = 1
+	tween.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 0.5)
+	await get_tree().create_timer(0.5).timeout
+	tutorial.visible = 1
 	$black.visible = 0
 	$lights.visible = 0
-	#$tutorial_story.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	
+	switch_boxes()
 	var tween3 = create_tween()
 	tween3.set_parallel(true)
-	tween3.tween_property($tutorial_story, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
-	tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+	tween3.tween_property(tutorial, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
+	tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.5)
 	print("tut on")
 	
 	var tween2 = create_tween()
@@ -52,16 +58,18 @@ func start():
 
 func _on_story_pressed() -> void:
 	game_scene = "res://scenes/story.tscn"
+	tutorial = $tutorial_story
 	start()
 func _on_floors_pressed() -> void:
 	game_scene = "res://scenes/floors.tscn"
+	tutorial = $tutorial_floors
 	start()
 
 func run_game():
 	play_sound(sound_click)
 	var tween = create_tween()
-	tween.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
-	await get_tree().create_timer(1).timeout
+	tween.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 0.5)
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file(game_scene)
 
 
@@ -116,14 +124,14 @@ func _on_right_tutorial_story_pressed() -> void:
 	switch_boxes()
 
 func switch_boxes():
-	for i in $tutorial_story/boxes.get_children():
+	for i in tutorial.get_node("boxes").get_children():
 		i.visible = 0
 	
 	for i in active_boxes:
-		$tutorial_story/boxes.get_child(i).visible = 1
+		tutorial.get_node("boxes").get_child(i).visible = 1
 	if active_boxes[0] == 0:
-		$tutorial_story/left.disabled = 1
-	else: $tutorial_story/left.disabled = 0
+		tutorial.get_node("left").disabled = 1
+	else: tutorial.get_node("left").disabled = 0
 	if active_boxes[2] == 4:
-		$tutorial_story/right.disabled = 1
-	else: $tutorial_story/right.disabled = 0
+		tutorial.get_node("right").disabled = 1
+	else: tutorial.get_node("right").disabled = 0
