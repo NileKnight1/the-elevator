@@ -13,7 +13,6 @@
 [ext_resource type="FontFile" uid="uid://bh1b7j3xgpota" path="res://assets/windows-bold[1].ttf" id="6_vtaks"]
 [ext_resource type="Texture2D" uid="uid://b6e6ij63kwgtu" path="res://assets/pngtree-halloween-horror-red-bloodstain-png-image_6174065.png" id="10_ca42v"]
 [ext_resource type="Texture2D" uid="uid://c42rqq7uclg7v" path="res://assets/key_PNG1177.png" id="10_trtic"]
-[ext_resource type="Script" uid="uid://crja2kdww5kxa" path="res://scripts/him.gd" id="11_dinhu"]
 [ext_resource type="PackedScene" uid="uid://br1rj58wbo5fn" path="res://scenes/him.tscn" id="11_kvuet"]
 [ext_resource type="Texture2D" uid="uid://dmdarp3agtoxf" path="res://assets/hand-drawn-muscle-car-illustration_23-2149432255-removebg-preview.png" id="15_ir15t"]
 [ext_resource type="FontFile" uid="uid://byodsk2s4dhng" path="res://assets/HoldMoney-Regular.ttf" id="17_rysoc"]
@@ -4687,7 +4686,6 @@ zoom = Vector2(2, 2)
 
 [node name="him" parent="." unique_id=1160840441 instance=ExtResource("11_kvuet")]
 position = Vector2(-648, -123)
-script = ExtResource("11_dinhu")
 
 [node name="walking_sound_him" type="AudioStreamPlayer2D" parent="him" unique_id=1337664947]
 position = Vector2(21, 28)

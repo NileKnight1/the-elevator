@@ -29,22 +29,40 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func start(loc):
+var game_scene = "res://scenes/story.tscn"
+
+func start():
 	play_sound(sound_click)
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+	await get_tree().create_timer(1).timeout
+	$tutorial_story.visible = 1
+	$black.visible = 0
+	$lights.visible = 0
+	#$tutorial_story.modulate = Color(1.0, 1.0, 1.0, 1.0)
+	
+	var tween3 = create_tween()
+	tween3.set_parallel(true)
+	tween3.tween_property($tutorial_story, "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+	tween3.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
+	print("tut on")
+	
 	var tween2 = create_tween()
 	tween2.tween_property($bg_sound, "volume_db", -15, 3.0)
-	await get_tree().create_timer(3).timeout
-	
-	get_tree().change_scene_to_file(loc)
-
 
 func _on_story_pressed() -> void:
-	start("res://scenes/story.tscn")
+	game_scene = "res://scenes/story.tscn"
+	start()
 func _on_floors_pressed() -> void:
-	start("res://scenes/floors.tscn")
+	game_scene = "res://scenes/floors.tscn"
+	start()
 
+func run_game():
+	play_sound(sound_click)
+	var tween = create_tween()
+	tween.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file(game_scene)
 
 
 func rand_light(n):
@@ -79,3 +97,33 @@ func _on_settings_pressed() -> void:
 
 func _on_touch_check_toggled(toggled_on: bool) -> void:
 	global.touch = toggled_on
+
+var active_boxes = [
+	0, 1, 2
+]
+func _on_left_tutorial_story_pressed() -> void:
+	if active_boxes[0] == 0: return
+	active_boxes[0] -= 1
+	active_boxes[1] -= 1
+	active_boxes[2] -= 1
+	switch_boxes()
+
+func _on_right_tutorial_story_pressed() -> void:
+	if active_boxes[2] == 4: return
+	active_boxes[0] += 1
+	active_boxes[1] += 1
+	active_boxes[2] += 1
+	switch_boxes()
+
+func switch_boxes():
+	for i in $tutorial_story/boxes.get_children():
+		i.visible = 0
+	
+	for i in active_boxes:
+		$tutorial_story/boxes.get_child(i).visible = 1
+	if active_boxes[0] == 0:
+		$tutorial_story/left.disabled = 1
+	else: $tutorial_story/left.disabled = 0
+	if active_boxes[2] == 4:
+		$tutorial_story/right.disabled = 1
+	else: $tutorial_story/right.disabled = 0

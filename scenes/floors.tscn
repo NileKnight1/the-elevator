@@ -1,20 +1,22 @@
 [gd_scene format=3 uid="uid://bulteshkhc6xv"]
 
-[ext_resource type="Script" uid="uid://5ccesjvauby" path="res://scripts/game.gd" id="1_iywne"]
-[ext_resource type="Texture2D" uid="uid://b4yhxllfcst7e" path="res://assets/rect.png" id="1_lbhrr"]
+[ext_resource type="Script" uid="uid://db1ghek2wpr4u" path="res://scripts/floors.gd" id="1_ao1wi"]
+[ext_resource type="Texture2D" uid="uid://ba34ukm6xop0s" path="res://assets/rect.png" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cidxmrrgsula0" path="res://scenes/temp_player.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bvfnhg4sbuojw" path="res://scenes/mobile.tscn" id="2_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://xng3n6g6u42x" path="res://assets/blue-cartoon-pillow-soft-comfortable-cushion-with-simple-design-vector-removebg-preview.png" id="3_iywne"]
-[ext_resource type="Texture2D" uid="uid://ensgb07cpohj" path="res://assets/hand-crowbar-icon-cartoon-design-metal-vector-removebg-preview.png" id="3_kvpfn"]
-[ext_resource type="Texture2D" uid="uid://2bvl5isx6f4v" path="res://assets/minimal-windows-xp-wallpaper-throughout-a-day-v0-u8eezfv5nshf1.png" id="3_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://dhfkcm6yuujuj" path="res://assets/26791-48x48x32.png" id="4_gee14"]
-[ext_resource type="Texture2D" uid="uid://crc0yeyorw5b0" path="res://assets/tall-houseplant-pot-nature-icon_18591-82627-removebg-preview.png" id="4_p57ef"]
-[ext_resource type="Texture2D" uid="uid://csy2brkuasknu" path="res://assets/sticky_note-removebg-preview.png" id="5_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://dk7huthrytou3" path="res://assets/blue-cartoon-pillow-soft-comfortable-cushion-with-simple-design-vector-removebg-preview.png" id="3_iywne"]
+[ext_resource type="Texture2D" uid="uid://det4y0g3g3wfv" path="res://assets/hand-crowbar-icon-cartoon-design-metal-vector-removebg-preview.png" id="3_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://ttd1w5yseklv" path="res://assets/minimal-windows-xp-wallpaper-throughout-a-day-v0-u8eezfv5nshf1.png" id="3_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://cj8qm4ugj6u55" path="res://assets/26791-48x48x32.png" id="4_gee14"]
+[ext_resource type="Texture2D" uid="uid://dcsko86n167r5" path="res://assets/tall-houseplant-pot-nature-icon_18591-82627-removebg-preview.png" id="4_p57ef"]
+[ext_resource type="Texture2D" uid="uid://dpnqsk1jp5hak" path="res://assets/sticky_note-removebg-preview.png" id="5_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://br1rj58wbo5fn" path="res://scenes/him.tscn" id="11_ir15t"]
-[ext_resource type="FontFile" uid="uid://5se7axt3meof" path="res://assets/HoldMoney-Regular.ttf" id="17_rysoc"]
-[ext_resource type="Texture2D" uid="uid://c0embyygxbuxk" path="res://assets/Flag_of_the_United_Kingdom_(3-5).svg.webp" id="19_37s47"]
-[ext_resource type="Texture2D" uid="uid://ceedyb7u16bo6" path="res://assets/Flag_of_the_Arab_League.svg" id="20_bt5mj"]
-[ext_resource type="Texture2D" uid="uid://bwbc7v4lkjvtl" path="res://assets/images.png" id="21_e1j6l"]
+[ext_resource type="AudioStream" uid="uid://blo05k1tmsvus" path="res://audio/soundreality-footsteps-walking-boots-parquet-1-420135.mp3" id="16_egvoa"]
+[ext_resource type="AudioStream" uid="uid://dobkacg1eaak0" path="res://audio/PM_FSSF_AMBIENCE_SOUNDSCAPE_LOOP_3.mp3" id="17_berd1"]
+[ext_resource type="FontFile" uid="uid://byodsk2s4dhng" path="res://assets/HoldMoney-Regular.ttf" id="17_rysoc"]
+[ext_resource type="Texture2D" uid="uid://c35ibvlwccoqt" path="res://assets/Flag_of_the_United_Kingdom_(3-5).svg.webp" id="19_37s47"]
+[ext_resource type="Texture2D" uid="uid://j115spebn42o" path="res://assets/Flag_of_the_Arab_League.svg" id="20_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://cryfsjhvqsolb" path="res://assets/images.png" id="21_e1j6l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twgab"]
 bg_color = Color(0, 0, 0, 1)
@@ -821,7 +823,7 @@ font_size = 98
 
 [node name="game" type="Node2D" unique_id=1974179384]
 position = Vector2(-3, 0)
-script = ExtResource("1_iywne")
+script = ExtResource("1_ao1wi")
 
 [node name="map" type="Node2D" parent="." unique_id=1248484278]
 
@@ -4706,10 +4708,13 @@ vertical_alignment = 1
 [node name="sfx" type="Node" parent="." unique_id=1704511315]
 
 [node name="walking_sound" type="AudioStreamPlayer" parent="sfx" unique_id=380903614]
+stream = ExtResource("16_egvoa")
 
 [node name="bg" type="AudioStreamPlayer" parent="sfx" unique_id=1964108206]
+stream = ExtResource("17_berd1")
 volume_db = -25.0
 autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_entered"]
 [connection signal="body_exited" from="map/hallway/Area2D" to="." method="_on_area_hallway_body_exited"]

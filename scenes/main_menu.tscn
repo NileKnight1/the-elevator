@@ -3,12 +3,15 @@
 [ext_resource type="Script" uid="uid://c6nryrysik2gm" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://ba34ukm6xop0s" path="res://assets/rect.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://1k4410dvk381" path="res://assets/image.png" id="2_ekxnf"]
-[ext_resource type="PackedScene" uid="uid://bvfnhg4sbuojw" path="res://scenes/mobile.tscn" id="2_jk1qb"]
 [ext_resource type="FontFile" uid="uid://byodsk2s4dhng" path="res://assets/HoldMoney-Regular.ttf" id="4_wu84c"]
 [ext_resource type="AudioStream" uid="uid://ddalq4i6cl1sq" path="res://audio/freesound_community-wind-ambience-14720.mp3" id="5_8ln24"]
 [ext_resource type="Texture2D" uid="uid://c35ibvlwccoqt" path="res://assets/Flag_of_the_United_Kingdom_(3-5).svg.webp" id="6_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://j115spebn42o" path="res://assets/Flag_of_the_Arab_League.svg" id="7_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://cryfsjhvqsolb" path="res://assets/images.png" id="8_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://d3hpujr48l4hn" path="res://assets/image (3).png" id="9_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://cr3h6o8b4fd3h" path="res://assets/image (4).png" id="10_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://ctd6kjh11bv8n" path="res://assets/image (5).png" id="11_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://ucvsg2kk0f6o" path="res://assets/image (8).png" id="12_flqon"]
 
 [sub_resource type="Gradient" id="Gradient_wu84c"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
@@ -50,12 +53,100 @@ bg_color = Color(0, 0, 0, 0.675)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
 bg_color = Color(0, 0, 0, 0.84705883)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlew8"]
+bg_color = Color(0.10980392, 0.05490196, 0.02745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_753oq"]
+bg_color = Color(0.20703125, 0.05256653, 0.05256653, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x338"]
+bg_color = Color(0.11328125, 0.024337769, 0.024337769, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yg85"]
+bg_color = Color(0.44140625, 0.106903076, 0.106903076, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flqon"]
+bg_color = Color(0.20703125, 0.05256653, 0.05256653, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcqid"]
+bg_color = Color(0.11328125, 0.024337769, 0.024337769, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ajci"]
+bg_color = Color(0.44140625, 0.106903076, 0.106903076, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgwnu"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bekt7"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6204995, 0, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+
 [node name="main_menu" type="Node2D" unique_id=298264226]
 position = Vector2(1846, 305)
 script = ExtResource("1_l6cm7")
-
-[node name="mobile" parent="." unique_id=2043303018 instance=ExtResource("2_jk1qb")]
-visible = false
 
 [node name="black" type="PointLight2D" parent="." unique_id=1860733546]
 visible = false
@@ -66,7 +157,6 @@ blend_mode = 1
 texture = ExtResource("2_bqqt6")
 
 [node name="lights" type="Node2D" parent="." unique_id=1082679547]
-visible = false
 
 [node name="light" type="PointLight2D" parent="lights" unique_id=9550275]
 position = Vector2(366.00003, 551.99994)
@@ -291,6 +381,305 @@ offset_right = 606.0
 offset_bottom = 301.0
 layout_direction = 2
 
+[node name="tutorial_story" type="Node2D" parent="." unique_id=1462619576]
+visible = false
+modulate = Color(0, 0, 0, 1)
+
+[node name="bg" type="Panel" parent="tutorial_story" unique_id=237824677]
+offset_left = -4.0
+offset_top = 1.0
+offset_right = 1276.0
+offset_bottom = 721.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vlew8")
+
+[node name="title" type="Label" parent="tutorial_story" unique_id=739623551]
+offset_left = -4.0
+offset_top = 44.0
+offset_right = 1276.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 55
+text = "Story Mode Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="left" type="Button" parent="tutorial_story" unique_id=1057328525]
+offset_left = 31.0
+offset_top = 333.0
+offset_right = 85.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1yg85")
+disabled = true
+text = "<"
+
+[node name="right" type="Button" parent="tutorial_story" unique_id=1264862270]
+offset_left = 1188.0
+offset_top = 333.0
+offset_right = 1242.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1yg85")
+text = ">"
+
+[node name="start" type="Button" parent="tutorial_story" unique_id=248035288]
+offset_left = 576.0
+offset_top = 651.0
+offset_right = 692.0
+offset_bottom = 690.0
+theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rcqid")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ajci")
+text = "Start"
+
+[node name="boxes" type="HBoxContainer" parent="tutorial_story" unique_id=2043408391]
+offset_top = 180.0
+offset_right = 1276.0
+offset_bottom = 629.0
+mouse_filter = 2
+theme_override_constants/separation = 43
+alignment = 1
+
+[node name="box1" type="Control" parent="tutorial_story/boxes" unique_id=1869330078]
+custom_minimum_size = Vector2(313, 0)
+layout_mode = 2
+layout_direction = 2
+mouse_filter = 2
+
+[node name="box1" type="Panel" parent="tutorial_story/boxes/box1" unique_id=1185717443]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 314.0
+offset_bottom = 362.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="frame" type="Panel" parent="tutorial_story/boxes/box1" unique_id=1542580500]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 305.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_story/boxes/box1/frame" unique_id=94424021]
+position = Vector2(148, 168)
+scale = Vector2(0.42017415, 0.42017415)
+texture = ExtResource("9_jk1qb")
+
+[node name="exp" type="Label" parent="tutorial_story/boxes/box1" unique_id=2107997785]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 355.0
+offset_right = 314.0
+offset_bottom = 444.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "You're locked in an apartment."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="box2" type="Control" parent="tutorial_story/boxes" unique_id=724105322]
+custom_minimum_size = Vector2(313, 0)
+layout_mode = 2
+layout_direction = 2
+mouse_filter = 2
+
+[node name="box1" type="Panel" parent="tutorial_story/boxes/box2" unique_id=1061252775]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 314.0
+offset_bottom = 362.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="frame" type="Panel" parent="tutorial_story/boxes/box2" unique_id=1152725962]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 305.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_story/boxes/box2/frame" unique_id=1147948362]
+position = Vector2(158.87776, 177.00005)
+scale = Vector2(0.84998715, 0.8499871)
+texture = ExtResource("10_5dd4i")
+
+[node name="exp" type="Label" parent="tutorial_story/boxes/box2" unique_id=672078103]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 355.0
+offset_right = 314.0
+offset_bottom = 444.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "You have to collect the car parts scattered through the apartment."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="tutorial_story/boxes/box2" unique_id=23443634]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 154.0
+offset_right = 300.0
+offset_bottom = 304.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bekt7")
+
+[node name="box3" type="Control" parent="tutorial_story/boxes" unique_id=1609484001]
+custom_minimum_size = Vector2(313, 0)
+layout_mode = 2
+layout_direction = 2
+mouse_filter = 2
+
+[node name="box1" type="Panel" parent="tutorial_story/boxes/box3" unique_id=414120589]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 314.0
+offset_bottom = 362.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="frame" type="Panel" parent="tutorial_story/boxes/box3" unique_id=305258491]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 305.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_story/boxes/box3/frame" unique_id=717071273]
+position = Vector2(91.99992, 130.2624)
+scale = Vector2(0.6606821, 0.6606821)
+texture = ExtResource("11_lgwnu")
+offset = Vector2(-128.51807, 57.11914)
+
+[node name="exp" type="Label" parent="tutorial_story/boxes/box3" unique_id=1634112747]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 355.0
+offset_right = 314.0
+offset_bottom = 444.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "When you complete the car parts, you take the car and escape. "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="box4" type="Control" parent="tutorial_story/boxes" unique_id=674807928]
+visible = false
+custom_minimum_size = Vector2(313, 0)
+layout_mode = 2
+layout_direction = 2
+mouse_filter = 2
+
+[node name="box1" type="Panel" parent="tutorial_story/boxes/box4" unique_id=1410007818]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 314.0
+offset_bottom = 362.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="frame" type="Panel" parent="tutorial_story/boxes/box4" unique_id=1913964500]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 305.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_story/boxes/box4/frame" unique_id=480542270]
+position = Vector2(211.99994, 164.99997)
+scale = Vector2(0.43785405, 0.437854)
+texture = ExtResource("12_flqon")
+offset = Vector2(-128.51807, 57.11914)
+
+[node name="exp" type="Label" parent="tutorial_story/boxes/box4" unique_id=2001507268]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 355.0
+offset_right = 314.0
+offset_bottom = 444.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "You can hide in the wardrobe or behind the sofa."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="box5" type="Control" parent="tutorial_story/boxes" unique_id=934995411]
+visible = false
+custom_minimum_size = Vector2(313, 0)
+layout_mode = 2
+layout_direction = 2
+mouse_filter = 2
+
+[node name="box1" type="Panel" parent="tutorial_story/boxes/box5" unique_id=120514840]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 314.0
+offset_bottom = 362.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="frame" type="Panel" parent="tutorial_story/boxes/box5" unique_id=2136196708]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 305.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="tutorial_story/boxes/box5/frame" unique_id=1180036494]
+visible = false
+position = Vector2(211.99994, 164.99997)
+scale = Vector2(0.43785405, 0.437854)
+texture = ExtResource("12_flqon")
+offset = Vector2(-128.51807, 57.11914)
+
+[node name="exp" type="Label" parent="tutorial_story/boxes/box5" unique_id=1512007305]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 355.0
+offset_right = 314.0
+offset_bottom = 444.0
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "Some weird things happen"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [connection signal="pressed" from="buttons/buttons/play" to="." method="_on_story_pressed"]
 [connection signal="pressed" from="buttons/buttons/floors" to="." method="_on_floors_pressed"]
 [connection signal="pressed" from="buttons/buttons/settings" to="." method="_on_settings_pressed"]
@@ -298,3 +687,6 @@ layout_direction = 2
 [connection signal="pressed" from="settings/ar2" to="." method="_on_ar_pressed"]
 [connection signal="pressed" from="settings/eg2" to="." method="_on_eg_pressed"]
 [connection signal="toggled" from="settings/touch_check" to="." method="_on_touch_check_toggled"]
+[connection signal="pressed" from="tutorial_story/left" to="." method="_on_left_tutorial_story_pressed"]
+[connection signal="pressed" from="tutorial_story/right" to="." method="_on_right_tutorial_story_pressed"]
+[connection signal="pressed" from="tutorial_story/start" to="." method="run_game"]

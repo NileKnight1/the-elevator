@@ -85,7 +85,6 @@ func guide3(msg):
 
 func _ready() -> void:
 	$player.position = Vector2(0, -52)
-	
 	$map/hallway/elevator/floor.text = str(floor)
 	match_floor()
 	anomaly_apply()
@@ -255,7 +254,7 @@ func elevator_taken(dir):
 	await get_tree().create_timer(1.0).timeout
 	
 	if global.floor != 10:
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		get_tree().change_scene_to_file("res://scenes/floors.tscn")
 	else:
 		elevator_in = 0
 		$map/hallway/elevator/close1.size.x = 0
@@ -675,7 +674,7 @@ func _on_kill_entered(body: Node2D) -> void:
 
 
 func _on_restart_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/floors.tscn")
 
 
 

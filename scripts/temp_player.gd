@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		walk = 1
 	
-	if sprint:
+	if sprint && walk:
 		$sprite.play("sprint")
 	elif walk:
 		$sprite.play("walk")
