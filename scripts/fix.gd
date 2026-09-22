@@ -678,12 +678,14 @@ func _on_restart_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/floors.tscn")
 
 func hover_on(node):
+	print(node.modulate)
 	if node.modulate == Color(1.0, 1.0, 1.0, 0.0): return
 	var tween = create_tween()
 	tween.set_parallel(1)
 	tween.tween_property(node, "modulate", Color(1.9, 1.9, 1.9), 0.15)
 	tween.tween_property(node, "scale", node.scale * Vector2(1.01,1.01) , 0.15)
 func hover_off(node):
+	#print(node.modulate)
 	if node.modulate == Color(1.0, 1.0, 1.0, 0.0): return
 	var tween = create_tween()
 	tween.set_parallel(1)
@@ -695,6 +697,11 @@ func _on_pillow_2_area_mouse_entered() -> void:
 	hover_on($map/part2/sofa/pillow2)
 func _on_pillow_2_area_mouse_exited() -> void:
 	hover_off($map/part2/sofa/pillow2)
+func _on_pillow_2_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		$CanvasLayer/fix.visible = 1
+		item_node = $map/part2/sofa/pillow2
+
 
 
 func _on_pillow_area_mouse_entered() -> void:
@@ -711,9 +718,16 @@ func _on_pillow_area_input_event(viewport: Node, event: InputEvent, shape_idx: i
 func fix_menu_hide():
 	$CanvasLayer/fix.visible = 0
 
-#
-
 var active_anomalies = [
+	
+]
+
+var anomalies_ids = [
+	# 0-> hidden 1-> shown 2->pos
+	{"node": ^"map/part2/sofa/pillow1", "normal_case": 1},
+	{"node": ^"map/part2/sofa/pillow2", "normal_case": 1},
+	{"node": ^"map/part2/sofa/pillow3", "normal_case": 1},
+	
 	
 ]
 
@@ -722,8 +736,32 @@ var item_node
 func _on_fix_cancel_pressed() -> void:
 	fix_menu_hide()
 func _on_fix_position_pressed() -> void:
-	pass # Replace with function body.
+	pass
 func _on_fix_hide_pressed() -> void:
-	item_node.modulate = Color(0.0, 0.0, 0.0, 0.0)
+	item_node.modulate = Color(1.0, 1.0, 1.0, 0.0)
 func _on_fix_show_pressed() -> void:
 	item_node.modulate = Color(1.0, 1.0, 1.0, 1.0)
+
+
+func _on_pillow_3_area_mouse_entered() -> void:
+	hover_on($map/part2/sofa/pillow3)
+func _on_pillow_3_area_mouse_exited() -> void:
+	hover_off($map/part2/sofa/pillow3)
+func _on_pillow_3_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		$CanvasLayer/fix.visible = 1
+		item_node = $map/part2/sofa/pillow3
+
+func _on_tv_area_mouse_entered() -> void:
+	hover_on($map/part2/tv/tv)
+func _on_tv_area_mouse_exited() -> void:
+	hover_off($map/part2/tv/tv)
+func _on_tv_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if check_click(event):
+		$CanvasLayer/fix.visible = 1
+		item_node = $map/part2/tv/tv
+	
+
+
+
+#

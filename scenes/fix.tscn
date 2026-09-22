@@ -583,6 +583,9 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rxwa"]
+size = Vector2(107, 74)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fedci"]
 bg_color = Color(0.26953125, 0.12057976, 0, 1)
 border_width_left = 2
@@ -3321,7 +3324,7 @@ texture = SubResource("GradientTexture1D_vtaks")
 shape = SubResource("CircleShape2D_vlew8")
 
 [node name="pillow3" type="Sprite2D" parent="map/part2/sofa" unique_id=1152726691]
-visible = false
+modulate = Color(1, 1, 1, 0)
 clip_children = 2
 position = Vector2(-79, 18)
 rotation = 3.1415927
@@ -3333,6 +3336,11 @@ modulate = Color(1, 1, 1, 0.47058824)
 position = Vector2(25.723452, -45.016037)
 scale = Vector2(1.6579552, 515.50397)
 texture = SubResource("GradientTexture1D_vtaks")
+
+[node name="pillow3_area" type="Area2D" parent="map/part2/sofa/pillow3" unique_id=630700507]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/pillow3/pillow3_area" unique_id=1107618901]
+shape = SubResource("CircleShape2D_vlew8")
 
 [node name="blood" type="Sprite2D" parent="map/part2/sofa" unique_id=1485032591]
 visible = false
@@ -3375,42 +3383,50 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oaba0")
 
 [node name="tv" type="Node2D" parent="map/part2/tv" unique_id=1327258553]
+position = Vector2(-876, 0)
 
 [node name="Panel7" type="Panel" parent="map/part2/tv/tv" unique_id=1778973081]
-offset_left = -919.0
+offset_left = -43.0
 offset_top = 12.0
-offset_right = -810.0
+offset_right = 66.0
 offset_bottom = 79.0
 layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_458eo")
 
 [node name="Panel8" type="Panel" parent="map/part2/tv/tv" unique_id=222613692]
-offset_left = -904.99994
+offset_left = -28.999939
 offset_top = 25.0
-offset_right = -824.0
+offset_right = 52.0
 offset_bottom = 67.987015
 layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h3rex")
 
 [node name="Panel9" type="Panel" parent="map/part2/tv/tv" unique_id=2073199336]
-offset_left = -914.0
+offset_left = -38.0
 offset_top = 77.0
-offset_right = -908.00006
+offset_right = -32.00006
 offset_bottom = 88.987015
 layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h3rex")
 
 [node name="Panel10" type="Panel" parent="map/part2/tv/tv" unique_id=135428404]
-offset_left = -821.0
+offset_left = 55.0
 offset_top = 77.0
-offset_right = -815.00006
+offset_right = 60.99994
 offset_bottom = 88.987015
 layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h3rex")
+
+[node name="tv_area" type="Area2D" parent="map/part2/tv/tv" unique_id=956985678]
+position = Vector2(34, 61)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/tv/tv/tv_area" unique_id=829827651]
+position = Vector2(-22.5, -11)
+shape = SubResource("RectangleShape2D_2rxwa")
 
 [node name="paint" type="Node2D" parent="map/part2" unique_id=1440948061]
 position = Vector2(-2025, -48)
@@ -4747,6 +4763,7 @@ theme_override_styles/disabled = SubResource("StyleBoxLine_qtnq1")
 text = "Hide"
 
 [node name="position" type="Button" parent="CanvasLayer/fix/buttons/buttons" unique_id=715328022]
+visible = false
 light_mask = 0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -4832,8 +4849,15 @@ parameters/looping = true
 [connection signal="input_event" from="map/part2/sofa/pillow/pillow_area" to="." method="_on_pillow_area_input_event"]
 [connection signal="mouse_entered" from="map/part2/sofa/pillow/pillow_area" to="." method="_on_pillow_area_mouse_entered"]
 [connection signal="mouse_exited" from="map/part2/sofa/pillow/pillow_area" to="." method="_on_pillow_area_mouse_exited"]
+[connection signal="input_event" from="map/part2/sofa/pillow2/pillow2_area" to="." method="_on_pillow_2_area_input_event"]
 [connection signal="mouse_entered" from="map/part2/sofa/pillow2/pillow2_area" to="." method="_on_pillow_2_area_mouse_entered"]
 [connection signal="mouse_exited" from="map/part2/sofa/pillow2/pillow2_area" to="." method="_on_pillow_2_area_mouse_exited"]
+[connection signal="input_event" from="map/part2/sofa/pillow3/pillow3_area" to="." method="_on_pillow_3_area_input_event"]
+[connection signal="mouse_entered" from="map/part2/sofa/pillow3/pillow3_area" to="." method="_on_pillow_3_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part2/sofa/pillow3/pillow3_area" to="." method="_on_pillow_3_area_mouse_exited"]
+[connection signal="input_event" from="map/part2/tv/tv/tv_area" to="." method="_on_tv_area_input_event"]
+[connection signal="mouse_entered" from="map/part2/tv/tv/tv_area" to="." method="_on_tv_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part2/tv/tv/tv_area" to="." method="_on_tv_area_mouse_exited"]
 [connection signal="body_entered" from="map/part2/Area2D" to="." method="_on_area_part2_body_entered"]
 [connection signal="body_exited" from="map/part2/Area2D" to="." method="_on_area_part2_body_exited"]
 [connection signal="body_entered" from="garage/garage/car/front_tires/front_tires_area" to="." method="_on_front_tires_area_body_entered"]
