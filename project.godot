@@ -16,7 +16,7 @@ translations_plugin/last_edited_file_path="res://translation.csv"
 
 config/name="The Elevator"
 run/main_scene="uid://u6d0mwo3d8bi"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -70,7 +70,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translation.ar.translation", "res://translation.eg.translation", "res://translation.en.translation")
+locale/translations=PackedStringArray("res://translation.eg.translation", "res://translation.en.translation", "res://translation.ar.translation")
 
 [physics]
 

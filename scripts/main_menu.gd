@@ -29,7 +29,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_start_pressed() -> void:
+func start(loc):
 	play_sound(sound_click)
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 1.0)
@@ -37,7 +37,15 @@ func _on_start_pressed() -> void:
 	tween2.tween_property($bg_sound, "volume_db", -15, 3.0)
 	await get_tree().create_timer(3).timeout
 	
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file(loc)
+
+
+func _on_story_pressed() -> void:
+	start("res://scenes/story.tscn")
+func _on_floors_pressed() -> void:
+	start("res://scenes/floors.tscn")
+
+
 
 func rand_light(n):
 	var temp = randi_range(0,4)
@@ -68,7 +76,6 @@ func lang(ln):
 
 func _on_settings_pressed() -> void:
 	$settings.visible = !$settings.visible
-
 
 func _on_touch_check_toggled(toggled_on: bool) -> void:
 	global.touch = toggled_on

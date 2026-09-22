@@ -133,17 +133,17 @@ light_mask = 0
 
 [node name="buttons" type="VBoxContainer" parent="buttons" unique_id=339270696]
 light_mask = 0
-layout_direction = 2
 offset_left = 54.0
 offset_top = 162.0
 offset_right = 131.0
 offset_bottom = 306.0
+layout_direction = 2
 alignment = 1
 
 [node name="play" type="Button" parent="buttons/buttons" unique_id=39714774]
 light_mask = 0
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
 theme_override_fonts/font = ExtResource("4_wu84c")
 theme_override_font_sizes/font_size = 25
@@ -151,12 +151,25 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/disabled = SubResource("StyleBoxLine_8ln24")
-text = "Play"
+text = "Story Mode"
+
+[node name="floors" type="Button" parent="buttons/buttons" unique_id=422403682]
+light_mask = 0
+layout_mode = 2
+layout_direction = 2
+theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/disabled = SubResource("StyleBoxLine_8ln24")
+text = "Floors Mode"
 
 [node name="settings" type="Button" parent="buttons/buttons" unique_id=1776063244]
 light_mask = 0
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
 theme_override_fonts/font = ExtResource("4_wu84c")
 theme_override_font_sizes/font_size = 25
@@ -179,106 +192,107 @@ visible = false
 
 [node name="bg" type="Panel" parent="settings" unique_id=1678193934]
 light_mask = 0
-layout_direction = 2
 offset_left = 490.0
 offset_top = 166.0
 offset_right = 787.0
 offset_bottom = 396.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ln24")
 
 [node name="language" type="Label" parent="settings" unique_id=863439465]
 light_mask = 0
-layout_direction = 2
 offset_left = 507.0
 offset_top = 183.0
 offset_right = 575.0
 offset_bottom = 215.0
+layout_direction = 2
 text = "Language"
 label_settings = SubResource("LabelSettings_8ln24")
 
 [node name="mobile" type="Label" parent="settings" unique_id=1388441951]
 light_mask = 0
-layout_direction = 2
 offset_left = 507.0
 offset_top = 273.0
 offset_right = 575.0
 offset_bottom = 305.0
+layout_direction = 2
 text = "Touch?"
 label_settings = SubResource("LabelSettings_8ln24")
 
 [node name="en" type="TextureButton" parent="settings" unique_id=2142044095]
 light_mask = 0
-layout_direction = 2
 offset_left = 520.0
 offset_top = 223.0
 offset_right = 576.6667
 offset_bottom = 257.0
+layout_direction = 2
 texture_normal = ExtResource("6_tbmy8")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ar" type="TextureButton" parent="settings" unique_id=1306906626]
 light_mask = 0
-layout_direction = 2
 offset_left = 612.0
 offset_top = 223.0
 offset_right = 668.6667
 offset_bottom = 257.0
+layout_direction = 2
 texture_normal = ExtResource("7_jk1qb")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="eg" type="TextureButton" parent="settings" unique_id=1778582388]
 light_mask = 0
-layout_direction = 2
 offset_left = 703.0
 offset_top = 223.0
 offset_right = 759.6667
 offset_bottom = 257.0
+layout_direction = 2
 texture_normal = ExtResource("8_5dd4i")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="en2" type="Button" parent="settings" unique_id=649623419]
-layout_direction = 2
 offset_left = 520.0
 offset_top = 223.0
 offset_right = 577.0
 offset_bottom = 257.0
+layout_direction = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jk1qb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5dd4i")
 
 [node name="ar2" type="Button" parent="settings" unique_id=687389956]
-layout_direction = 2
 offset_left = 612.0
 offset_top = 223.0
 offset_right = 669.0
 offset_bottom = 257.0
+layout_direction = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jk1qb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5dd4i")
 
 [node name="eg2" type="Button" parent="settings" unique_id=493503579]
-layout_direction = 2
 offset_left = 703.0
 offset_top = 223.0
 offset_right = 760.0
 offset_bottom = 257.0
+layout_direction = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jk1qb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5dd4i")
 
 [node name="touch_check" type="CheckButton" parent="settings" unique_id=1620368740]
 light_mask = 0
-layout_direction = 2
 offset_left = 562.0
 offset_top = 277.0
 offset_right = 606.0
 offset_bottom = 301.0
+layout_direction = 2
 
-[connection signal="pressed" from="buttons/buttons/play" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="buttons/buttons/play" to="." method="_on_story_pressed"]
+[connection signal="pressed" from="buttons/buttons/floors" to="." method="_on_floors_pressed"]
 [connection signal="pressed" from="buttons/buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="settings/en2" to="." method="_on_en_pressed"]
 [connection signal="pressed" from="settings/ar2" to="." method="_on_ar_pressed"]

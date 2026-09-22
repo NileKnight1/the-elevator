@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bulteshkhc6xv"]
 
-[ext_resource type="Script" uid="uid://cwfwxa0gra1kx" path="res://scripts/game.gd" id="1_iywne"]
+[ext_resource type="Script" uid="uid://cwfwxa0gra1kx" path="res://scripts/story.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://ba34ukm6xop0s" path="res://assets/rect.png" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cidxmrrgsula0" path="res://scenes/temp_player.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bvfnhg4sbuojw" path="res://scenes/mobile.tscn" id="2_lnu2h"]
@@ -913,30 +913,30 @@ script = ExtResource("1_iywne")
 
 [node name="Panel4" type="Panel" parent="map/hallway" unique_id=1452539178]
 z_index = 2
-layout_direction = 2
 offset_left = -3246.0
 offset_top = -887.0
 offset_right = 3433.0
 offset_bottom = -354.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
 
 [node name="Panel" type="Panel" parent="map/hallway" unique_id=1837583803]
-layout_direction = 2
 offset_left = -2893.0
 offset_top = -354.0
 offset_right = 2715.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 metadata/_edit_lock_ = true
 
 [node name="Panel2" type="Panel" parent="map/hallway" unique_id=59788556]
-layout_direction = 2
 offset_left = -3105.0
 offset_top = 43.0
 offset_right = 2877.0
 offset_bottom = 225.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gee14")
 metadata/_edit_lock_ = true
@@ -944,40 +944,40 @@ metadata/_edit_lock_ = true
 [node name="elevator" type="Node2D" parent="map/hallway" unique_id=890801445]
 
 [node name="Panel2" type="Panel" parent="map/hallway/elevator" unique_id=606417622]
-layout_direction = 2
 offset_left = -111.0
 offset_top = -270.0
 offset_right = 155.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
 
 [node name="Panel" type="Panel" parent="map/hallway/elevator" unique_id=693369947]
-layout_direction = 2
 offset_left = -48.0
 offset_top = -188.0
 offset_right = 89.0
 offset_bottom = -13.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8cj0n")
 
 [node name="Panel4" type="Panel" parent="map/hallway/elevator" unique_id=1346166491]
 visible = false
-layout_direction = 2
 offset_left = -244.0
 offset_top = 10.0
 offset_right = 22.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lbhrr")
 
 [node name="Panel3" type="Panel" parent="map/hallway/elevator" unique_id=761842865]
 visible = false
-layout_direction = 2
 offset_left = -51.0
 offset_top = -135.0
 offset_right = -15.0
 offset_bottom = -56.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
 
@@ -1027,10 +1027,10 @@ color = Color(0.14916992, 0.17107597, 0.18359375, 1)
 polygon = PackedVector2Array(-95.66786, -192.09883, -96.678955, 19.602467, -52.187897, -5.5146523, -52.187943, -168.1778)
 
 [node name="Panel5" type="Panel" parent="map/hallway/elevator" unique_id=865851049]
-layout_direction = 2
 offset_top = -214.0
 offset_right = 39.0
 offset_bottom = -203.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
 
@@ -1044,22 +1044,22 @@ polygon = PackedVector2Array(-102.16472, -253.7912, -103.18637, 50.984848, -70, 
 
 [node name="close1" type="Panel" parent="map/hallway/elevator" unique_id=1018981276]
 z_index = 1
-layout_direction = 2
 offset_left = -78.0
 offset_top = -230.0
 offset_right = -78.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
 
 [node name="close2" type="Panel" parent="map/hallway/elevator" unique_id=1925000049]
 z_index = 1
-layout_direction = 2
 offset_left = 119.0
 offset_top = 43.0
 offset_right = 119.0
 offset_bottom = 316.0
 rotation = -3.1415927
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
 
@@ -1093,12 +1093,12 @@ texture = ExtResource("1_lbhrr")
 [node name="dark" type="Panel" parent="map/hallway" unique_id=2067292760]
 visible = false
 z_index = 2
-layout_direction = 2
 offset_left = -457.78415
 offset_top = 224.97491
 offset_right = 124.20706
 offset_bottom = 1187.8105
 rotation = 4.712389
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
 
@@ -1123,29 +1123,29 @@ visible = false
 position = Vector2(925, 4)
 
 [node name="Panel6" type="Panel" parent="map/collectables/part4_tire" unique_id=387814457]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="map/collectables/part4_tire" unique_id=2145643550]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="map/collectables/part4_tire" unique_id=1839988879]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sww3w")
 
@@ -1160,29 +1160,29 @@ visible = false
 position = Vector2(-748, 4)
 
 [node name="Panel6" type="Panel" parent="map/collectables/part3_tire" unique_id=527298467]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="map/collectables/part3_tire" unique_id=652867695]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="map/collectables/part3_tire" unique_id=1513451269]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sww3w")
 
@@ -1197,29 +1197,29 @@ visible = false
 position = Vector2(-4251, 97)
 
 [node name="Panel6" type="Panel" parent="map/collectables/part1_tire" unique_id=1460370509]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="map/collectables/part1_tire" unique_id=711860858]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="map/collectables/part1_tire" unique_id=1046539084]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sww3w")
 
@@ -1233,29 +1233,29 @@ shape = SubResource("RectangleShape2D_kvuet")
 visible = false
 
 [node name="Panel6" type="Panel" parent="map/collectables/part1_fuel" unique_id=1455580122]
-layout_direction = 2
 offset_left = -2759.0
 offset_top = 14.0
 offset_right = -2724.0
 offset_bottom = 51.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3x28f")
 
 [node name="Panel8" type="Panel" parent="map/collectables/part1_fuel" unique_id=1055892911]
-layout_direction = 2
 offset_left = -2755.0
 offset_top = 17.0
 offset_right = -2724.0
 offset_bottom = 51.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_l6q63")
 
 [node name="Panel7" type="Panel" parent="map/collectables/part1_fuel" unique_id=1285189211]
-layout_direction = 2
 offset_left = -2756.0
 offset_top = 17.0
 offset_right = -2752.0
 offset_bottom = 21.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mmvbu")
 
@@ -1265,31 +1265,31 @@ z_index = 2
 position = Vector2(579, 41)
 
 [node name="Panel8" type="Panel" parent="map/collectables/part1_battery" unique_id=1786646700]
-layout_direction = 2
 offset_left = -2772.0
 offset_top = 55.0
 offset_right = -2735.0
 offset_bottom = 77.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_weeiq")
 
 [node name="Panel9" type="Panel" parent="map/collectables/part1_battery" unique_id=1974017341]
-layout_direction = 2
 offset_left = -2772.0
 offset_top = 74.0
 offset_right = -2698.0
 offset_bottom = 80.0
 scale = Vector2(0.5, 0.5)
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uxocx")
 
 [node name="Panel10" type="Panel" parent="map/collectables/part1_battery" unique_id=454645739]
-layout_direction = 2
 offset_left = -2772.0
 offset_top = 55.0
 offset_right = -2698.0
 offset_bottom = 61.0
 scale = Vector2(0.5, 0.5)
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uxocx")
 
@@ -1318,29 +1318,29 @@ position = Vector2(-1180, -36)
 scale = Vector2(0.8, 0.8)
 
 [node name="Panel6" type="Panel" parent="map/elevator_items/tire1" unique_id=432257674]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="map/elevator_items/tire1" unique_id=1192270591]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="map/elevator_items/tire1" unique_id=954436077]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
 
@@ -1350,29 +1350,29 @@ position = Vector2(-1117, -37)
 scale = Vector2(0.8, 0.8)
 
 [node name="Panel6" type="Panel" parent="map/elevator_items/tire2" unique_id=297815363]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="map/elevator_items/tire2" unique_id=338991842]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="map/elevator_items/tire2" unique_id=1263942164]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
 
@@ -1382,29 +1382,29 @@ position = Vector2(-1159, -30.000004)
 scale = Vector2(0.8, 0.8)
 
 [node name="Panel6" type="Panel" parent="map/elevator_items/tire3" unique_id=314668396]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="map/elevator_items/tire3" unique_id=1869292938]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="map/elevator_items/tire3" unique_id=2122716574]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
 
@@ -1414,29 +1414,29 @@ position = Vector2(-1096, -30.999998)
 scale = Vector2(0.8, 0.8)
 
 [node name="Panel6" type="Panel" parent="map/elevator_items/tire4" unique_id=1384011545]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="map/elevator_items/tire4" unique_id=2011484859]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="map/elevator_items/tire4" unique_id=1177023403]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
 
@@ -1445,31 +1445,31 @@ visible = false
 position = Vector2(2713, -60)
 
 [node name="Panel8" type="Panel" parent="map/elevator_items/battery" unique_id=1501070054]
-layout_direction = 2
 offset_left = -2772.0
 offset_top = 55.0
 offset_right = -2735.0
 offset_bottom = 77.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_weeiq")
 
 [node name="Panel9" type="Panel" parent="map/elevator_items/battery" unique_id=1241547127]
-layout_direction = 2
 offset_left = -2772.0
 offset_top = 74.0
 offset_right = -2698.0
 offset_bottom = 80.0
 scale = Vector2(0.5, 0.5)
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uxocx")
 
 [node name="Panel10" type="Panel" parent="map/elevator_items/battery" unique_id=690366914]
-layout_direction = 2
 offset_left = -2772.0
 offset_top = 55.0
 offset_right = -2698.0
 offset_bottom = 61.0
 scale = Vector2(0.5, 0.5)
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uxocx")
 
@@ -1499,66 +1499,66 @@ texture = ExtResource("10_trtic")
 position = Vector2(-291, 15)
 
 [node name="Panel" type="Panel" parent="map/part3/table" unique_id=325636681]
-layout_direction = 2
 offset_left = 893.0
 offset_top = -21.0
 offset_right = 1128.0
 offset_bottom = -8.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvuet")
 
 [node name="Panel4" type="Panel" parent="map/part3/table" unique_id=1625819449]
-layout_direction = 2
 offset_left = 867.0
 offset_top = -28.0
 offset_right = 1152.0
 offset_bottom = -6.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvuet")
 
 [node name="Panel8" type="Panel" parent="map/part3/table" unique_id=630864023]
 visible = false
-layout_direction = 2
 offset_left = 875.0
 offset_top = -61.0
 offset_right = 1144.0
 offset_bottom = -26.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvuet")
 
 [node name="Panel2" type="Panel" parent="map/part3/table" unique_id=427543772]
-layout_direction = 2
 offset_left = 885.0
 offset_top = -6.0
 offset_right = 898.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel3" type="Panel" parent="map/part3/table" unique_id=1185280143]
-layout_direction = 2
 offset_left = 1114.0
 offset_top = -6.0
 offset_right = 1127.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel5" type="Panel" parent="map/part3/table" unique_id=2074285561]
-layout_direction = 2
 offset_left = 867.0
 offset_top = -8.0
 offset_right = 880.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel6" type="Panel" parent="map/part3/table" unique_id=233419941]
-layout_direction = 2
 offset_left = 1139.0
 offset_top = -8.0
 offset_right = 1152.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
@@ -1603,31 +1603,31 @@ position = Vector2(-15, 15)
 
 [node name="Panel4" type="Panel" parent="map/part3/box" unique_id=542784933]
 z_index = 1
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part3/box" unique_id=128016101]
 z_index = 1
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part3/box" unique_id=63753264]
 z_index = 1
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -1644,31 +1644,31 @@ position = Vector2(73, 15)
 
 [node name="Panel4" type="Panel" parent="map/part3/box2" unique_id=725562866]
 z_index = 1
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part3/box2" unique_id=1108591449]
 z_index = 1
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part3/box2" unique_id=1445971455]
 z_index = 1
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -1685,31 +1685,31 @@ position = Vector2(28, -49)
 
 [node name="Panel4" type="Panel" parent="map/part3/box3" unique_id=1212990578]
 z_index = 1
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part3/box3" unique_id=1983958793]
 z_index = 1
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part3/box3" unique_id=1514628378]
 z_index = 1
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -1718,31 +1718,31 @@ position = Vector2(503, 15)
 
 [node name="Panel4" type="Panel" parent="map/part3/box4" unique_id=2004365182]
 z_index = 1
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part3/box4" unique_id=2004135420]
 z_index = 1
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part3/box4" unique_id=1697343695]
 z_index = 1
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -1759,31 +1759,31 @@ position = Vector2(589, 15)
 
 [node name="Panel4" type="Panel" parent="map/part3/box5" unique_id=27297662]
 z_index = 1
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part3/box5" unique_id=1385115091]
 z_index = 1
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part3/box5" unique_id=1733963660]
 z_index = 1
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -1799,31 +1799,31 @@ one_way_collision = true
 position = Vector2(-411, 0)
 
 [node name="Panel4" type="Panel" parent="map/part3/clock" unique_id=1989843651]
-layout_direction = 2
 offset_left = 1102.0
 offset_top = -230.0
 offset_right = 1182.0
 offset_bottom = -150.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ssvqc")
 
 [node name="Panel6" type="Panel" parent="map/part3/clock" unique_id=48754211]
-layout_direction = 2
 offset_left = 1141.0
 offset_top = -191.0
 offset_right = 1162.873
 offset_bottom = -190.0
 rotation = 3.6651917
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_lbhrr")
 
 [node name="Panel7" type="Panel" parent="map/part3/clock" unique_id=1809213237]
-layout_direction = 2
 offset_left = 1141.0
 offset_top = -190.99997
 offset_right = 1148.2373
 offset_bottom = -189.99997
 rotation = 3.926991
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxLine_iywne")
 
@@ -1870,19 +1870,19 @@ vertical_alignment = 1
 [node name="bin" type="Node2D" parent="map/part3" unique_id=558540886]
 
 [node name="Panel5" type="Panel" parent="map/part3/bin" unique_id=982823710]
-layout_direction = 2
 offset_left = 1086.0
 offset_right = 1119.0
 offset_bottom = 51.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_264po")
 
 [node name="Panel4" type="Panel" parent="map/part3/bin" unique_id=789586992]
-layout_direction = 2
 offset_left = 1086.0
 offset_top = -6.0
 offset_right = 1119.0
 offset_bottom = 8.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1kice")
 
@@ -1890,57 +1890,57 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1kice")
 position = Vector2(382, 15)
 
 [node name="Panel4" type="Panel" parent="map/part3/table2" unique_id=513405802]
-layout_direction = 2
 offset_left = 867.0
 offset_top = -28.0
 offset_right = 983.0
 offset_bottom = -6.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvuet")
 
 [node name="Panel8" type="Panel" parent="map/part3/table2" unique_id=157492683]
 visible = false
-layout_direction = 2
 offset_left = 875.0
 offset_top = -61.0
 offset_right = 1144.0
 offset_bottom = -26.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvuet")
 
 [node name="Panel2" type="Panel" parent="map/part3/table2" unique_id=835460871]
-layout_direction = 2
 offset_left = 885.0
 offset_top = -6.0
 offset_right = 898.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel3" type="Panel" parent="map/part3/table2" unique_id=685241712]
-layout_direction = 2
 offset_left = 945.0
 offset_top = -6.0
 offset_right = 958.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel5" type="Panel" parent="map/part3/table2" unique_id=709090674]
-layout_direction = 2
 offset_left = 867.0
 offset_top = -8.0
 offset_right = 880.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel6" type="Panel" parent="map/part3/table2" unique_id=366740985]
-layout_direction = 2
 offset_left = 970.0
 offset_top = -8.0
 offset_right = 983.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
@@ -1968,21 +1968,21 @@ one_way_collision = true
 position = Vector2(0, 4)
 
 [node name="Panel4" type="Panel" parent="map/part3/pc" unique_id=564712127]
-layout_direction = 2
 offset_left = 1266.0
 offset_top = -85.0
 offset_right = 1352.3
 offset_bottom = -34.865
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5newe")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel5" type="Panel" parent="map/part3/pc" unique_id=584126418]
-layout_direction = 2
 offset_left = 1303.0
 offset_top = -36.0
 offset_right = 1313.0
 offset_bottom = -19.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_37s47")
 metadata/_edit_use_anchors_ = true
@@ -1998,11 +1998,11 @@ shape = SubResource("RectangleShape2D_dinhu")
 position = Vector2(1280, -69)
 
 [node name="Panel6" type="Panel" parent="map/part3/pc/desktop" unique_id=1572308830]
-layout_direction = 2
 offset_left = -10.0
 offset_top = -11.0
 offset_right = 68.0
 offset_bottom = 29.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
 
@@ -2031,20 +2031,20 @@ stretch_mode = 5
 
 [node name="pc_panel" type="Panel" parent="map/part3/pc/desktop" unique_id=938227010]
 visible = false
-layout_direction = 2
 offset_left = 6.0
 offset_top = -6.0
 offset_right = 50.0
 offset_bottom = 21.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
 
 [node name="note_panel2" type="Panel" parent="map/part3/pc/desktop" unique_id=1126567007]
-layout_direction = 2
 offset_left = 9.094971
 offset_top = -1.4800034
 offset_right = 47.0
 offset_bottom = 20.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0rmfi")
 
@@ -2065,11 +2065,11 @@ zoom = Vector2(6.905, 6.905)
 [node name="paint" type="Node2D" parent="map/part3" unique_id=222961494]
 
 [node name="Panel4" type="Panel" parent="map/part3/paint" unique_id=2003180303]
-layout_direction = 2
 offset_left = 1119.0
 offset_top = -230.0
 offset_right = 1215.0
 offset_bottom = -122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pl11u")
 
@@ -2081,66 +2081,66 @@ visible = false
 
 [node name="Panel4" type="Panel" parent="map/part3/wardrobe/hide" unique_id=574523953]
 z_index = 1
-layout_direction = 2
 offset_left = 1004.0
 offset_top = -117.0
 offset_right = 1084.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
 
 [node name="Panel5" type="Panel" parent="map/part3/wardrobe/hide" unique_id=324922480]
 z_index = 1
-layout_direction = 2
 offset_left = 1004.0
 offset_top = -177.0
 offset_right = 1084.0
 offset_bottom = -129.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
 
 [node name="Panel" type="Panel" parent="map/part3/wardrobe" unique_id=1027395689]
-layout_direction = 2
 offset_left = 1004.0
 offset_top = -177.0
 offset_right = 1084.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dinhu")
 
 [node name="Panel3" type="Panel" parent="map/part3/wardrobe" unique_id=68228321]
-layout_direction = 2
 offset_left = 1084.0
 offset_top = -185.0
 offset_right = 1104.0
 offset_bottom = 36.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vtaks")
 
 [node name="Panel2" type="Panel" parent="map/part3/wardrobe" unique_id=693826202]
-layout_direction = 2
 offset_left = 1014.0
 offset_top = -193.0
 offset_right = 1094.0
 offset_bottom = -176.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvpfn")
 
 [node name="Panel4" type="Panel" parent="map/part3/wardrobe" unique_id=2056372765]
-layout_direction = 2
 offset_left = 1004.0
 offset_top = -117.0
 offset_right = 1084.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
 
 [node name="Panel5" type="Panel" parent="map/part3/wardrobe" unique_id=2012497185]
-layout_direction = 2
 offset_left = 1004.0
 offset_top = -177.0
 offset_right = 1084.0
 offset_bottom = -129.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
 
@@ -2163,56 +2163,56 @@ disabled = true
 position = Vector2(-41, 0)
 
 [node name="Panel8" type="Panel" parent="map/part3/chair" unique_id=2134160493]
-layout_direction = 2
 offset_left = 927.0
 offset_top = -41.0
 offset_right = 945.0
 offset_bottom = 15.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bt5mj")
 
 [node name="Panel7" type="Panel" parent="map/part3/chair" unique_id=21021696]
-layout_direction = 2
 offset_left = 916.0
 offset_top = 4.0
 offset_right = 930.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel3" type="Panel" parent="map/part3/chair" unique_id=756383782]
-layout_direction = 2
 offset_left = 908.0
 offset_top = 22.0
 offset_right = 921.0
 offset_bottom = 56.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel5" type="Panel" parent="map/part3/chair" unique_id=746689063]
-layout_direction = 2
 offset_left = 891.0
 offset_top = 4.0
 offset_right = 905.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel6" type="Panel" parent="map/part3/chair" unique_id=1410778042]
-layout_direction = 2
 offset_left = 932.0
 offset_top = 22.0
 offset_right = 945.0
 offset_bottom = 56.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel4" type="Panel" parent="map/part3/chair" unique_id=2105035656]
-layout_direction = 2
 offset_left = 899.0
 offset_top = 4.0
 offset_right = 937.0
 offset_bottom = 24.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e1j6l")
 
@@ -2227,12 +2227,12 @@ texture = ExtResource("1_lbhrr")
 [node name="dark" type="Panel" parent="map/part3" unique_id=979717919]
 visible = false
 z_index = 2
-layout_direction = 2
 offset_left = 503.00003
 offset_top = 224.97491
 offset_right = 1084.9912
 offset_bottom = 1368.9749
 rotation = 4.712389
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
 
@@ -2250,29 +2250,29 @@ shape = SubResource("RectangleShape2D_0tnpc")
 position = Vector2(1374, 40)
 
 [node name="Panel4" type="Panel" parent="map/part4/fridge" unique_id=733484840]
-layout_direction = 2
 offset_left = 1119.0
 offset_top = -162.0
 offset_right = 1247.0
 offset_bottom = 30.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_suyxu")
 
 [node name="Panel5" type="Panel" parent="map/part4/fridge" unique_id=522632155]
-layout_direction = 2
 offset_left = 1136.0
 offset_top = -187.0
 offset_right = 1264.0
 offset_bottom = -162.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sgl2t")
 
 [node name="Panel6" type="Panel" parent="map/part4/fridge" unique_id=1384471098]
-layout_direction = 2
 offset_left = 1247.0
 offset_top = -174.0
 offset_right = 1280.0
 offset_bottom = 17.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qouja")
 
@@ -2288,38 +2288,38 @@ one_way_collision = true
 position = Vector2(1102, 29)
 
 [node name="Panel7" type="Panel" parent="map/part4/sink" unique_id=287682323]
-layout_direction = 2
 offset_left = 1264.0
 offset_top = -119.0
 offset_right = 1283.0
 offset_bottom = -112.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_js0lu")
 
 [node name="Panel6" type="Panel" parent="map/part4/sink" unique_id=403571568]
-layout_direction = 2
 offset_left = 1264.0
 offset_top = -114.0
 offset_right = 1271.0
 offset_bottom = -77.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gxtfn")
 
 [node name="Panel5" type="Panel" parent="map/part4/sink" unique_id=1869565972]
-layout_direction = 2
 offset_left = 1198.0
 offset_top = -88.0
 offset_right = 1337.0
 offset_bottom = -53.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_v2yb1")
 
 [node name="Panel4" type="Panel" parent="map/part4/sink" unique_id=301066952]
-layout_direction = 2
 offset_left = 1255.0
 offset_top = -56.0
 offset_right = 1280.0
 offset_bottom = 26.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wljb1")
 
@@ -2335,57 +2335,57 @@ one_way_collision = true
 position = Vector2(836, 36)
 
 [node name="Panel4" type="Panel" parent="map/part4/table3" unique_id=915298447]
-layout_direction = 2
 offset_left = 867.0
 offset_top = -66.0
 offset_right = 1152.0
 offset_bottom = -41.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvuet")
 
 [node name="Panel8" type="Panel" parent="map/part4/table3" unique_id=1983534078]
 visible = false
-layout_direction = 2
 offset_left = 875.0
 offset_top = -61.0
 offset_right = 1144.0
 offset_bottom = -26.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvuet")
 
 [node name="Panel2" type="Panel" parent="map/part4/table3" unique_id=1593700706]
-layout_direction = 2
 offset_left = 885.0
 offset_top = -43.0
 offset_right = 898.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel3" type="Panel" parent="map/part4/table3" unique_id=367978285]
-layout_direction = 2
 offset_left = 1114.0
 offset_top = -43.0
 offset_right = 1127.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel5" type="Panel" parent="map/part4/table3" unique_id=1666801591]
-layout_direction = 2
 offset_left = 867.0
 offset_top = -43.0
 offset_right = 880.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel6" type="Panel" parent="map/part4/table3" unique_id=2037988407]
-layout_direction = 2
 offset_left = 1139.0
 offset_top = -43.0
 offset_right = 1152.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
@@ -2411,29 +2411,29 @@ one_way_collision = true
 position = Vector2(1471, -66)
 
 [node name="Panel4" type="Panel" parent="map/part4/box6" unique_id=1665639479]
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part4/box6" unique_id=1303557748]
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part4/box6" unique_id=731725481]
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -2449,29 +2449,29 @@ one_way_collision = true
 position = Vector2(1559, -66)
 
 [node name="Panel4" type="Panel" parent="map/part4/box7" unique_id=2114556516]
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part4/box7" unique_id=823970963]
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part4/box7" unique_id=910244547]
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -2487,29 +2487,29 @@ one_way_collision = true
 position = Vector2(1643, -66)
 
 [node name="Panel4" type="Panel" parent="map/part4/box9" unique_id=975515376]
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part4/box9" unique_id=234811941]
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part4/box9" unique_id=1345999693]
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -2525,29 +2525,29 @@ one_way_collision = true
 position = Vector2(1514, -130)
 
 [node name="Panel4" type="Panel" parent="map/part4/box8" unique_id=889908888]
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part4/box8" unique_id=1552933397]
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part4/box8" unique_id=509344349]
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -2570,12 +2570,12 @@ texture = ExtResource("1_lbhrr")
 [node name="dark" type="Panel" parent="map/part4" unique_id=808715295]
 visible = false
 z_index = 2
-layout_direction = 2
 offset_left = 1647.0
 offset_top = 224.97491
 offset_right = 2228.9912
 offset_bottom = 1458.112
 rotation = 4.712389
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
 
@@ -2603,11 +2603,11 @@ position = Vector2(2387, -95)
 shape = SubResource("SegmentShape2D_p57ef")
 
 [node name="Panel4" type="Panel" parent="map/doorway_right4" unique_id=933811463]
-layout_direction = 2
 offset_left = 1735.0
 offset_top = -490.0
 offset_right = 2200.0
 offset_bottom = 227.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
 
@@ -2626,92 +2626,92 @@ z_index = 1
 position = Vector2(-1129, -36)
 
 [node name="Panel12" type="Panel" parent="map/part1/shelf" unique_id=235211563]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 145.0
 offset_right = -658.0
 offset_bottom = 180.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel13" type="Panel" parent="map/part1/shelf" unique_id=2029741704]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 77.0
 offset_right = -658.0
 offset_bottom = 112.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel14" type="Panel" parent="map/part1/shelf" unique_id=1026044820]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 13.0
 offset_right = -658.0
 offset_bottom = 48.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o8ni1")
 
 [node name="Panel15" type="Panel" parent="map/part1/shelf" unique_id=362816649]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -52.0
 offset_right = -658.0
 offset_bottom = -17.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel6" type="Panel" parent="map/part1/shelf" unique_id=683489183]
-layout_direction = 2
 offset_left = -674.0
 offset_top = -73.0
 offset_right = -658.0
 offset_bottom = 178.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
 
 [node name="Panel7" type="Panel" parent="map/part1/shelf" unique_id=1789411876]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -73.0
 offset_right = -942.0
 offset_bottom = 178.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
 
 [node name="Panel8" type="Panel" parent="map/part1/shelf" unique_id=848592984]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -32.0
 offset_right = -658.0
 offset_bottom = -16.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3hbvx")
 
 [node name="Panel9" type="Panel" parent="map/part1/shelf" unique_id=115510469]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 34.0
 offset_right = -658.0
 offset_bottom = 50.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q8j3a")
 
 [node name="Panel10" type="Panel" parent="map/part1/shelf" unique_id=1739669187]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 98.0
 offset_right = -658.0
 offset_bottom = 114.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ms3bu")
 
 [node name="Panel11" type="Panel" parent="map/part1/shelf" unique_id=80142961]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 164.0
 offset_right = -658.0
 offset_bottom = 180.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 
@@ -2719,92 +2719,92 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 position = Vector2(-1084, -129)
 
 [node name="Panel12" type="Panel" parent="map/part1/shelf2" unique_id=1993934588]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 145.0
 offset_right = -658.0
 offset_bottom = 180.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel13" type="Panel" parent="map/part1/shelf2" unique_id=836992468]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 77.0
 offset_right = -658.0
 offset_bottom = 112.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel14" type="Panel" parent="map/part1/shelf2" unique_id=1114186056]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 13.0
 offset_right = -658.0
 offset_bottom = 48.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o8ni1")
 
 [node name="Panel15" type="Panel" parent="map/part1/shelf2" unique_id=1738837040]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -52.0
 offset_right = -658.0
 offset_bottom = -17.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel6" type="Panel" parent="map/part1/shelf2" unique_id=732823472]
-layout_direction = 2
 offset_left = -674.0
 offset_top = -73.0
 offset_right = -658.0
 offset_bottom = 178.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
 
 [node name="Panel7" type="Panel" parent="map/part1/shelf2" unique_id=58333310]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -73.0
 offset_right = -942.0
 offset_bottom = 178.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
 
 [node name="Panel8" type="Panel" parent="map/part1/shelf2" unique_id=1248999446]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -32.0
 offset_right = -658.0
 offset_bottom = -16.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3hbvx")
 
 [node name="Panel9" type="Panel" parent="map/part1/shelf2" unique_id=837493043]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 34.0
 offset_right = -658.0
 offset_bottom = 50.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q8j3a")
 
 [node name="Panel10" type="Panel" parent="map/part1/shelf2" unique_id=107725951]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 98.0
 offset_right = -658.0
 offset_bottom = 114.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ms3bu")
 
 [node name="Panel11" type="Panel" parent="map/part1/shelf2" unique_id=1975951488]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 164.0
 offset_right = -658.0
 offset_bottom = 180.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 
@@ -2813,92 +2813,92 @@ z_index = 1
 position = Vector2(-1479, -36)
 
 [node name="Panel12" type="Panel" parent="map/part1/shelf3" unique_id=2146272757]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 145.0
 offset_right = -658.0
 offset_bottom = 180.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel13" type="Panel" parent="map/part1/shelf3" unique_id=2023179227]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 77.0
 offset_right = -658.0
 offset_bottom = 112.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel14" type="Panel" parent="map/part1/shelf3" unique_id=414609582]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 13.0
 offset_right = -658.0
 offset_bottom = 48.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o8ni1")
 
 [node name="Panel15" type="Panel" parent="map/part1/shelf3" unique_id=284657022]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -52.0
 offset_right = -658.0
 offset_bottom = -17.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel6" type="Panel" parent="map/part1/shelf3" unique_id=766728403]
-layout_direction = 2
 offset_left = -674.0
 offset_top = -73.0
 offset_right = -658.0
 offset_bottom = 178.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
 
 [node name="Panel7" type="Panel" parent="map/part1/shelf3" unique_id=1149032259]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -73.0
 offset_right = -942.0
 offset_bottom = 178.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
 
 [node name="Panel8" type="Panel" parent="map/part1/shelf3" unique_id=1112665923]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -32.0
 offset_right = -658.0
 offset_bottom = -16.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3hbvx")
 
 [node name="Panel9" type="Panel" parent="map/part1/shelf3" unique_id=1820904835]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 34.0
 offset_right = -658.0
 offset_bottom = 50.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q8j3a")
 
 [node name="Panel10" type="Panel" parent="map/part1/shelf3" unique_id=263959404]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 98.0
 offset_right = -658.0
 offset_bottom = 114.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ms3bu")
 
 [node name="Panel11" type="Panel" parent="map/part1/shelf3" unique_id=617446632]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 164.0
 offset_right = -658.0
 offset_bottom = 180.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 
@@ -2906,92 +2906,92 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 position = Vector2(-1434, -129)
 
 [node name="Panel12" type="Panel" parent="map/part1/shelf4" unique_id=967603105]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 145.0
 offset_right = -658.0
 offset_bottom = 180.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel13" type="Panel" parent="map/part1/shelf4" unique_id=21190906]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 77.0
 offset_right = -658.0
 offset_bottom = 112.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel14" type="Panel" parent="map/part1/shelf4" unique_id=1988058459]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 13.0
 offset_right = -658.0
 offset_bottom = 48.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o8ni1")
 
 [node name="Panel15" type="Panel" parent="map/part1/shelf4" unique_id=1020608459]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -52.0
 offset_right = -658.0
 offset_bottom = -17.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pf7vy")
 
 [node name="Panel6" type="Panel" parent="map/part1/shelf4" unique_id=852732176]
-layout_direction = 2
 offset_left = -674.0
 offset_top = -73.0
 offset_right = -658.0
 offset_bottom = 178.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
 
 [node name="Panel7" type="Panel" parent="map/part1/shelf4" unique_id=969046226]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -73.0
 offset_right = -942.0
 offset_bottom = 178.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4re6")
 
 [node name="Panel8" type="Panel" parent="map/part1/shelf4" unique_id=155754607]
-layout_direction = 2
 offset_left = -958.0
 offset_top = -32.0
 offset_right = -658.0
 offset_bottom = -16.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3hbvx")
 
 [node name="Panel9" type="Panel" parent="map/part1/shelf4" unique_id=460284482]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 34.0
 offset_right = -658.0
 offset_bottom = 50.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q8j3a")
 
 [node name="Panel10" type="Panel" parent="map/part1/shelf4" unique_id=1149067896]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 98.0
 offset_right = -658.0
 offset_bottom = 114.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ms3bu")
 
 [node name="Panel11" type="Panel" parent="map/part1/shelf4" unique_id=234154445]
-layout_direction = 2
 offset_left = -958.0
 offset_top = 164.0
 offset_right = -658.0
 offset_bottom = 180.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 
@@ -3001,19 +3001,19 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7ixpq")
 position = Vector2(-3578, 0)
 
 [node name="Panel5" type="Panel" parent="map/part1/bin" unique_id=775734250]
-layout_direction = 2
 offset_left = 1086.0
 offset_right = 1119.0
 offset_bottom = 51.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_264po")
 
 [node name="Panel4" type="Panel" parent="map/part1/bin" unique_id=1652172081]
-layout_direction = 2
 offset_left = 1086.0
 offset_top = -6.0
 offset_right = 1119.0
 offset_bottom = 8.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1kice")
 
@@ -3021,57 +3021,57 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1kice")
 position = Vector2(-3529, 15)
 
 [node name="Panel4" type="Panel" parent="map/part1/table2" unique_id=1205370958]
-layout_direction = 2
 offset_left = 867.0
 offset_top = -28.0
 offset_right = 983.0
 offset_bottom = -6.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvuet")
 
 [node name="Panel8" type="Panel" parent="map/part1/table2" unique_id=913105780]
 visible = false
-layout_direction = 2
 offset_left = 875.0
 offset_top = -61.0
 offset_right = 1144.0
 offset_bottom = -26.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvuet")
 
 [node name="Panel2" type="Panel" parent="map/part1/table2" unique_id=1011433659]
-layout_direction = 2
 offset_left = 885.0
 offset_top = -6.0
 offset_right = 898.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel3" type="Panel" parent="map/part1/table2" unique_id=924632755]
-layout_direction = 2
 offset_left = 945.0
 offset_top = -6.0
 offset_right = 958.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel5" type="Panel" parent="map/part1/table2" unique_id=1989421698]
-layout_direction = 2
 offset_left = 867.0
 offset_top = -8.0
 offset_right = 880.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
 [node name="Panel6" type="Panel" parent="map/part1/table2" unique_id=764054221]
-layout_direction = 2
 offset_left = 970.0
 offset_top = -8.0
 offset_right = 983.0
 offset_bottom = 40.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
 
@@ -3111,21 +3111,21 @@ texture = SubResource("GradientTexture2D_gee14")
 position = Vector2(-111, 25)
 
 [node name="Panel8" type="Panel" parent="map/part1/pipe2" unique_id=1897686475]
-layout_direction = 2
 offset_left = -2808.1482
 offset_top = -128.0
 offset_right = -2793.4907
 offset_bottom = -94.75513
 rotation = 4.712389
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bk1p3")
 
 [node name="Panel7" type="Panel" parent="map/part1/pipe2" unique_id=39101509]
-layout_direction = 2
 offset_left = -2791.0
 offset_top = -130.0
 offset_right = -2775.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_n8ral")
 
@@ -3133,21 +3133,21 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_n8ral")
 position = Vector2(-128, 40)
 
 [node name="Panel8" type="Panel" parent="map/part1/pipe" unique_id=261434839]
-layout_direction = 2
 offset_left = -2810.711
 offset_top = -128.0
 offset_right = -2796.0535
 offset_bottom = -92.28906
 rotation = 4.712389
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bk1p3")
 
 [node name="Panel7" type="Panel" parent="map/part1/pipe" unique_id=1965653686]
-layout_direction = 2
 offset_left = -2791.0
 offset_top = -130.0
 offset_right = -2775.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_n8ral")
 
@@ -3156,31 +3156,31 @@ position = Vector2(-3499, 36)
 
 [node name="Panel4" type="Panel" parent="map/part1/box" unique_id=1400380138]
 z_index = 1
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part1/box" unique_id=1323977212]
 z_index = 1
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part1/box" unique_id=1981980894]
 z_index = 1
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -3197,31 +3197,31 @@ position = Vector2(-3411, 36)
 
 [node name="Panel4" type="Panel" parent="map/part1/box2" unique_id=947804182]
 z_index = 1
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part1/box2" unique_id=2087286285]
 z_index = 1
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part1/box2" unique_id=1274589196]
 z_index = 1
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -3238,43 +3238,43 @@ position = Vector2(-3456, -28)
 
 [node name="Panel4" type="Panel" parent="map/part1/box3" unique_id=1573403969]
 z_index = 1
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part1/box3" unique_id=2085382808]
 z_index = 1
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part1/box3" unique_id=250655867]
 z_index = 1
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
 [node name="dark" type="Panel" parent="map/part1" unique_id=2132444594]
 visible = false
 z_index = 1
-layout_direction = 2
 offset_left = -3073.1738
 offset_top = 224.97491
 offset_right = -2491.1826
 offset_bottom = 1613.2471
 rotation = 4.712389
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
 
@@ -3291,110 +3291,110 @@ shape = SubResource("RectangleShape2D_p57ef")
 position = Vector2(-781, -31)
 
 [node name="Panel13" type="Panel" parent="map/part2/sofa" unique_id=393712288]
-layout_direction = 2
 offset_left = -263.0
 offset_top = 3.0
 offset_right = -240.0
 offset_bottom = 29.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ool0")
 
 [node name="Panel4" type="Panel" parent="map/part2/sofa" unique_id=1179092149]
-layout_direction = 2
 offset_left = -240.0
 offset_top = -59.0
 offset_right = -75.0
 offset_bottom = 27.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
 
 [node name="Panel6" type="Panel" parent="map/part2/sofa" unique_id=407525145]
-layout_direction = 2
 offset_left = -251.0
 offset_top = 36.0
 offset_right = -75.0
 offset_bottom = 62.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
 
 [node name="Panel11" type="Panel" parent="map/part2/sofa" unique_id=1832877305]
-layout_direction = 2
 offset_left = -251.0
 offset_top = 60.0
 offset_right = 98.0
 offset_bottom = 86.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
 
 [node name="Panel7" type="Panel" parent="map/part2/sofa" unique_id=675701113]
-layout_direction = 2
 offset_left = -77.0
 offset_top = 36.0
 offset_right = 98.0
 offset_bottom = 62.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
 
 [node name="Panel8" type="Panel" parent="map/part2/sofa" unique_id=1413560491]
-layout_direction = 2
 offset_left = -246.0
 offset_top = 25.0
 offset_right = 59.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nepv3")
 
 [node name="Panel9" type="Panel" parent="map/part2/sofa" unique_id=1722511364]
-layout_direction = 2
 offset_left = -23.0
 offset_top = 25.0
 offset_right = 94.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7025r")
 
 [node name="Panel5" type="Panel" parent="map/part2/sofa" unique_id=1349646372]
-layout_direction = 2
 offset_left = -77.0
 offset_top = -59.0
 offset_right = 90.0
 offset_bottom = 27.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
 
 [node name="Panel10" type="Panel" parent="map/part2/sofa" unique_id=842776867]
-layout_direction = 2
 offset_left = -77.0
 offset_top = 25.0
 offset_right = 26.0
 offset_bottom = 39.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_m4url")
 
 [node name="Panel12" type="Panel" parent="map/part2/sofa" unique_id=1604015669]
-layout_direction = 2
 offset_left = -273.0
 offset_top = 27.0
 offset_right = -249.0
 offset_bottom = 86.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
 
 [node name="Panel14" type="Panel" parent="map/part2/sofa" unique_id=370794765]
-layout_direction = 2
 offset_left = 88.0
 offset_top = 3.0
 offset_right = 111.0
 offset_bottom = 29.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pr1ej")
 
 [node name="Panel15" type="Panel" parent="map/part2/sofa" unique_id=626866977]
-layout_direction = 2
 offset_left = 97.0
 offset_top = 27.0
 offset_right = 121.0
 offset_bottom = 86.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
 
@@ -3471,65 +3471,65 @@ z_index = 1
 position = Vector2(0, -25)
 
 [node name="Panel4" type="Panel" parent="map/part2/tv" unique_id=960620751]
-layout_direction = 2
 offset_left = -1008.0
 offset_top = 70.0
 offset_right = -843.0
 offset_bottom = 104.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_05nbr")
 
 [node name="Panel6" type="Panel" parent="map/part2/tv" unique_id=1369213482]
-layout_direction = 2
 offset_left = -1021.0
 offset_top = 103.0
 offset_right = -708.0
 offset_bottom = 184.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0sl42")
 
 [node name="Panel5" type="Panel" parent="map/part2/tv" unique_id=1710560921]
-layout_direction = 2
 offset_left = -886.0
 offset_top = 70.0
 offset_right = -721.0
 offset_bottom = 104.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oaba0")
 
 [node name="Panel7" type="Panel" parent="map/part2/tv" unique_id=1778973081]
-layout_direction = 2
 offset_left = -919.0
 offset_top = 12.0
 offset_right = -810.0
 offset_bottom = 79.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_458eo")
 
 [node name="Panel8" type="Panel" parent="map/part2/tv" unique_id=222613692]
-layout_direction = 2
 offset_left = -904.99994
 offset_top = 25.0
 offset_right = -824.0
 offset_bottom = 67.987015
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h3rex")
 
 [node name="Panel9" type="Panel" parent="map/part2/tv" unique_id=2073199336]
-layout_direction = 2
 offset_left = -914.0
 offset_top = 77.0
 offset_right = -908.00006
 offset_bottom = 88.987015
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h3rex")
 
 [node name="Panel10" type="Panel" parent="map/part2/tv" unique_id=135428404]
-layout_direction = 2
 offset_left = -821.0
 offset_top = 77.0
 offset_right = -815.00006
 offset_bottom = 88.987015
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h3rex")
 
@@ -3537,11 +3537,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_h3rex")
 position = Vector2(-2025, -48)
 
 [node name="Panel4" type="Panel" parent="map/part2/paint" unique_id=223437252]
-layout_direction = 2
 offset_left = 1119.0
 offset_top = -230.0
 offset_right = 1215.0
 offset_bottom = -122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pl11u")
 
@@ -3549,83 +3549,83 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pl11u")
 position = Vector2(-480, -122)
 
 [node name="Panel6" type="Panel" parent="map/part2/bookshelf" unique_id=1768046170]
-layout_direction = 2
 offset_left = -923.0
 offset_top = 144.0
 offset_right = -779.0
 offset_bottom = 170.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0sl42")
 
 [node name="Panel7" type="Panel" parent="map/part2/bookshelf" unique_id=1623713152]
-layout_direction = 2
 offset_left = -919.0
 offset_top = -21.0
 offset_right = -783.0
 offset_bottom = 146.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0sl42")
 
 [node name="Panel9" type="Panel" parent="map/part2/bookshelf" unique_id=1222848856]
-layout_direction = 2
 offset_left = -914.0
 offset_top = -13.0
 offset_right = -789.0
 offset_bottom = 138.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fedci")
 
 [node name="Panel4" type="Panel" parent="map/part2/bookshelf" unique_id=1531020505]
-layout_direction = 2
 offset_left = -926.0
 offset_top = -28.0
 offset_right = -786.0
 offset_bottom = -16.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8qswn")
 
 [node name="Panel5" type="Panel" parent="map/part2/bookshelf" unique_id=79624592]
-layout_direction = 2
 offset_left = -826.0
 offset_top = -28.0
 offset_right = -775.0
 offset_bottom = -16.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rm0al")
 
 [node name="Panel8" type="Panel" parent="map/part2/bookshelf" unique_id=1638753816]
-layout_direction = 2
 offset_left = -919.0
 offset_top = 106.0
 offset_right = -783.0
 offset_bottom = 113.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0sl42")
 
 [node name="Panel10" type="Panel" parent="map/part2/bookshelf" unique_id=1165020351]
-layout_direction = 2
 offset_left = -919.0
 offset_top = 73.0
 offset_right = -783.0
 offset_bottom = 80.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0sl42")
 
 [node name="Panel11" type="Panel" parent="map/part2/bookshelf" unique_id=123901019]
-layout_direction = 2
 offset_left = -919.0
 offset_top = 39.0
 offset_right = -783.0
 offset_bottom = 46.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0sl42")
 
 [node name="Panel12" type="Panel" parent="map/part2/bookshelf" unique_id=1997254601]
-layout_direction = 2
 offset_left = -919.0
 offset_top = 9.0
 offset_right = -783.0
 offset_bottom = 16.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0sl42")
 
@@ -3640,31 +3640,31 @@ position = Vector2(-1169, 29)
 
 [node name="Panel4" type="Panel" parent="map/part2/box5" unique_id=845317815]
 z_index = 1
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part2/box5" unique_id=1488047767]
 z_index = 1
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part2/box5" unique_id=2109673025]
 z_index = 1
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -3681,31 +3681,31 @@ position = Vector2(-1085, 29)
 
 [node name="Panel4" type="Panel" parent="map/part2/box4" unique_id=64997785]
 z_index = 1
-layout_direction = 2
 offset_left = 555.0
 offset_top = 73.0
 offset_right = 636.0
 offset_bottom = 137.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
 
 [node name="Panel5" type="Panel" parent="map/part2/box4" unique_id=1266635462]
 z_index = 1
-layout_direction = 2
 offset_left = 566.0
 offset_top = 45.0
 offset_right = 648.0
 offset_bottom = 74.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
 
 [node name="Panel6" type="Panel" parent="map/part2/box4" unique_id=1642185591]
 z_index = 1
-layout_direction = 2
 offset_left = 635.0
 offset_top = 60.0
 offset_right = 659.0
 offset_bottom = 122.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
 
@@ -3752,12 +3752,12 @@ texture = ExtResource("1_lbhrr")
 [node name="dark" type="Panel" parent="map/part2" unique_id=1545309189]
 visible = false
 z_index = 2
-layout_direction = 2
 offset_left = -1684.9016
 offset_top = 224.97491
 offset_right = -1102.9104
 offset_bottom = 1452.0923
 rotation = 4.712389
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
 
@@ -3851,11 +3851,11 @@ position = Vector2(1603, -170)
 shape = SubResource("SegmentShape2D_p57ef")
 
 [node name="Panel4" type="Panel" parent="map/doorway_right3" unique_id=1434528480]
-layout_direction = 2
 offset_left = 1735.0
 offset_top = -490.0
 offset_right = 2291.0
 offset_bottom = 227.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
 
@@ -3971,29 +3971,29 @@ position = Vector2(0, 1569)
 
 [node name="Panel4" type="Panel" parent="garage/garage" unique_id=1111274275]
 z_index = 2
-layout_direction = 2
 offset_left = 827.0
 offset_top = -887.0
 offset_right = 3433.0
 offset_bottom = -354.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
 
 [node name="Panel" type="Panel" parent="garage/garage" unique_id=363999398]
-layout_direction = 2
 offset_left = 1496.0
 offset_top = -354.0
 offset_right = 2715.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u5sy4")
 
 [node name="Panel2" type="Panel" parent="garage/garage" unique_id=1478876312]
-layout_direction = 2
 offset_left = 1157.0
 offset_top = 43.0
 offset_right = 2877.0
 offset_bottom = 225.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o8oq8")
 
@@ -4001,42 +4001,42 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_o8oq8")
 position = Vector2(1668, 0)
 
 [node name="Panel2" type="Panel" parent="garage/garage/elevator" unique_id=1330172071]
-layout_direction = 2
 offset_left = -111.0
 offset_top = -270.0
 offset_right = 155.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_iywne")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="garage/garage/elevator" unique_id=1736438053]
-layout_direction = 2
 offset_left = -48.0
 offset_top = -188.0
 offset_right = 89.0
 offset_bottom = -13.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8cj0n")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel4" type="Panel" parent="garage/garage/elevator" unique_id=1611497559]
 visible = false
-layout_direction = 2
 offset_left = -244.0
 offset_top = 10.0
 offset_right = 22.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lbhrr")
 
 [node name="Panel3" type="Panel" parent="garage/garage/elevator" unique_id=1021094485]
 visible = false
-layout_direction = 2
 offset_left = -51.0
 offset_top = -135.0
 offset_right = -15.0
 offset_bottom = -56.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
 
@@ -4086,10 +4086,10 @@ color = Color(0.14916992, 0.17107597, 0.18359375, 1)
 polygon = PackedVector2Array(-95.66786, -192.09883, -96.678955, 19.602467, -52.187897, -5.5146523, -52.187943, -168.1778)
 
 [node name="Panel5" type="Panel" parent="garage/garage/elevator" unique_id=725255094]
-layout_direction = 2
 offset_top = -214.0
 offset_right = 39.0
 offset_bottom = -203.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
 metadata/_edit_use_anchors_ = true
@@ -4104,23 +4104,23 @@ polygon = PackedVector2Array(-102.16472, -253.7912, -103.18637, 50.984848, -70, 
 
 [node name="close1" type="Panel" parent="garage/garage/elevator" unique_id=682725347]
 z_index = 1
-layout_direction = 2
 offset_left = -78.0
 offset_top = -230.0
 offset_right = -78.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
 metadata/_edit_use_anchors_ = true
 
 [node name="close2" type="Panel" parent="garage/garage/elevator" unique_id=1287108385]
 z_index = 1
-layout_direction = 2
 offset_left = 119.0
 offset_top = 43.0
 offset_right = 119.0
 offset_bottom = 316.0
 rotation = -3.1415927
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_66xif")
 metadata/_edit_use_anchors_ = true
@@ -4158,29 +4158,29 @@ texture = ExtResource("1_lbhrr")
 position = Vector2(1135, 9)
 
 [node name="Panel6" type="Panel" parent="garage/garage/car/front_tires/tire1" unique_id=222894472]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="garage/garage/car/front_tires/tire1" unique_id=654705965]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="garage/garage/car/front_tires/tire1" unique_id=1449668770]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
 
@@ -4189,29 +4189,29 @@ visible = false
 position = Vector2(1115, 17)
 
 [node name="Panel6" type="Panel" parent="garage/garage/car/front_tires/tire2" unique_id=1643409544]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="garage/garage/car/front_tires/tire2" unique_id=1768362090]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="garage/garage/car/front_tires/tire2" unique_id=186195478]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2iuns")
 
@@ -4230,29 +4230,29 @@ visible = false
 position = Vector2(808, 6)
 
 [node name="Panel6" type="Panel" parent="garage/garage/car/back_tires/tire1" unique_id=556809015]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="garage/garage/car/back_tires/tire1" unique_id=1244976937]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="garage/garage/car/back_tires/tire1" unique_id=1379672441]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sww3w")
 
@@ -4261,29 +4261,29 @@ visible = false
 position = Vector2(764, 17)
 
 [node name="Panel6" type="Panel" parent="garage/garage/car/back_tires/tire2" unique_id=1334648677]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="garage/garage/car/back_tires/tire2" unique_id=1645789116]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="garage/garage/car/back_tires/tire2" unique_id=1678318108]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sxt1d")
 
@@ -4380,12 +4380,12 @@ texture = SubResource("GradientTexture2D_lbhrr")
 [node name="dark" type="Panel" parent="garage/garage" unique_id=1329959056]
 visible = false
 z_index = 2
-layout_direction = 2
 offset_left = -457.78415
 offset_top = 224.97491
 offset_right = 124.20706
 offset_bottom = 1187.8105
 rotation = 4.712389
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yd4ix")
 
@@ -4399,20 +4399,20 @@ shape = SubResource("RectangleShape2D_kvpfn")
 [node name="mob" type="Node2D" parent="garage/garage" unique_id=732078621]
 
 [node name="Panel8" type="Panel" parent="garage/garage/mob" unique_id=656342005]
-layout_direction = 2
 offset_left = 1498.0
 offset_top = 47.0
 offset_right = 1559.0
 offset_bottom = 62.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7gkqi")
 
 [node name="Panel9" type="Panel" parent="garage/garage/mob" unique_id=1156088920]
-layout_direction = 2
 offset_left = 1521.0
 offset_top = -109.0
 offset_right = 1536.0
 offset_bottom = 50.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7gkqi")
 
@@ -4439,11 +4439,11 @@ position = Vector2(2387, -95)
 shape = SubResource("SegmentShape2D_p57ef")
 
 [node name="Panel4" type="Panel" parent="garage/doorway_right4" unique_id=943420811]
-layout_direction = 2
 offset_left = 1735.0
 offset_top = -490.0
 offset_right = 2200.0
 offset_bottom = 227.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
 
@@ -4464,11 +4464,11 @@ position = Vector2(1603, -170)
 shape = SubResource("SegmentShape2D_p57ef")
 
 [node name="Panel4" type="Panel" parent="garage/doorway_right3" unique_id=108011965]
-layout_direction = 2
 offset_left = 1735.0
 offset_top = -490.0
 offset_right = 2291.0
 offset_bottom = 227.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
 
@@ -4486,29 +4486,29 @@ position = Vector2(-1180, -36)
 scale = Vector2(0.8, 0.8)
 
 [node name="Panel6" type="Panel" parent="garage/elevator_items/tire1" unique_id=740293031]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="garage/elevator_items/tire1" unique_id=1047521714]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="garage/elevator_items/tire1" unique_id=8082519]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
 
@@ -4517,29 +4517,29 @@ position = Vector2(-1117, -37)
 scale = Vector2(0.8, 0.8)
 
 [node name="Panel6" type="Panel" parent="garage/elevator_items/tire2" unique_id=1203298383]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="garage/elevator_items/tire2" unique_id=2142423979]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="garage/elevator_items/tire2" unique_id=1938110406]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
 
@@ -4548,29 +4548,29 @@ position = Vector2(-1159, -30.000004)
 scale = Vector2(0.8, 0.8)
 
 [node name="Panel6" type="Panel" parent="garage/elevator_items/tire3" unique_id=984764607]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="garage/elevator_items/tire3" unique_id=1796741625]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="garage/elevator_items/tire3" unique_id=1912262323]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
 
@@ -4579,29 +4579,29 @@ position = Vector2(-1096, -30.999998)
 scale = Vector2(0.8, 0.8)
 
 [node name="Panel6" type="Panel" parent="garage/elevator_items/tire4" unique_id=542261475]
-layout_direction = 2
 offset_left = 1412.0
 offset_top = -32.0
 offset_right = 1487.0
 offset_bottom = 43.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bhx41")
 
 [node name="Panel7" type="Panel" parent="garage/elevator_items/tire4" unique_id=391772954]
-layout_direction = 2
 offset_left = 1406.0
 offset_top = -31.0
 offset_right = 1481.0
 offset_bottom = 44.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qnb83")
 
 [node name="Panel4" type="Panel" parent="garage/elevator_items/tire4" unique_id=365573923]
-layout_direction = 2
 offset_left = 1422.0
 offset_top = -15.0
 offset_right = 1465.0
 offset_bottom = 28.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
 
@@ -4609,31 +4609,31 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xbak0")
 position = Vector2(2713, -60)
 
 [node name="Panel8" type="Panel" parent="garage/elevator_items/battery" unique_id=453550741]
-layout_direction = 2
 offset_left = -2772.0
 offset_top = 55.0
 offset_right = -2735.0
 offset_bottom = 77.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_weeiq")
 
 [node name="Panel9" type="Panel" parent="garage/elevator_items/battery" unique_id=809884530]
-layout_direction = 2
 offset_left = -2772.0
 offset_top = 74.0
 offset_right = -2698.0
 offset_bottom = 80.0
 scale = Vector2(0.5, 0.5)
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uxocx")
 
 [node name="Panel10" type="Panel" parent="garage/elevator_items/battery" unique_id=1153706781]
-layout_direction = 2
 offset_left = -2772.0
 offset_top = 55.0
 offset_right = -2698.0
 offset_bottom = 61.0
 scale = Vector2(0.5, 0.5)
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uxocx")
 
@@ -4738,29 +4738,29 @@ text = "Garage"
 visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer/note" unique_id=363142699]
-layout_direction = 2
 offset_left = 487.0
 offset_top = 196.0
 offset_right = 764.0
 offset_bottom = 535.47235
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7nv0b")
 
 [node name="subtitles" type="Label" parent="CanvasLayer" unique_id=1006783097]
-layout_direction = 2
 offset_left = 8.0
 offset_top = 621.0
 offset_right = 1275.0
 offset_bottom = 708.0
+layout_direction = 2
 label_settings = SubResource("LabelSettings_ssvqc")
 horizontal_alignment = 1
 
 [node name="press_e" type="Label" parent="CanvasLayer" unique_id=383386170]
-layout_direction = 2
 offset_left = 485.0
 offset_top = 184.0
 offset_right = 798.0
 offset_bottom = 240.0
+layout_direction = 2
 label_settings = SubResource("LabelSettings_ssvqc")
 horizontal_alignment = 1
 
@@ -4772,27 +4772,27 @@ light_mask = 0
 
 [node name="bg2" type="Panel" parent="CanvasLayer/pause/buttons" unique_id=467001571]
 light_mask = 0
-layout_direction = 2
 offset_left = 22.0
 offset_top = 166.0
 offset_right = 231.0
 offset_bottom = 396.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_s0g06")
 
 [node name="buttons" type="VBoxContainer" parent="CanvasLayer/pause/buttons" unique_id=1044266537]
 light_mask = 0
-layout_direction = 2
 offset_left = 54.0
 offset_top = 198.0
 offset_right = 203.0
 offset_bottom = 342.0
+layout_direction = 2
 alignment = 1
 
 [node name="continue" type="Button" parent="CanvasLayer/pause/buttons/buttons" unique_id=1291050488]
 light_mask = 0
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
 theme_override_fonts/font = ExtResource("17_rysoc")
 theme_override_font_sizes/font_size = 25
@@ -4804,8 +4804,8 @@ text = "Continue"
 
 [node name="settings" type="Button" parent="CanvasLayer/pause/buttons/buttons" unique_id=1141980558]
 light_mask = 0
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
 theme_override_fonts/font = ExtResource("17_rysoc")
 theme_override_font_sizes/font_size = 25
@@ -4817,8 +4817,8 @@ text = "Settings"
 
 [node name="main_menu" type="Button" parent="CanvasLayer/pause/buttons/buttons" unique_id=1152853913]
 light_mask = 0
-layout_direction = 2
 layout_mode = 2
+layout_direction = 2
 theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
 theme_override_fonts/font = ExtResource("17_rysoc")
 theme_override_font_sizes/font_size = 25
@@ -4833,112 +4833,112 @@ visible = false
 
 [node name="bg" type="Panel" parent="CanvasLayer/pause/settings" unique_id=1784253889]
 light_mask = 0
-layout_direction = 2
 offset_left = 490.0
 offset_top = 166.0
 offset_right = 787.0
 offset_bottom = 396.0
+layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_s0g06")
 
 [node name="language" type="Label" parent="CanvasLayer/pause/settings" unique_id=282242203]
 light_mask = 0
-layout_direction = 2
 offset_left = 507.0
 offset_top = 183.0
 offset_right = 575.0
 offset_bottom = 215.0
+layout_direction = 2
 text = "Language"
 label_settings = SubResource("LabelSettings_dku7i")
 
 [node name="mobile" type="Label" parent="CanvasLayer/pause/settings" unique_id=1049624904]
 light_mask = 0
-layout_direction = 2
 offset_left = 507.0
 offset_top = 273.0
 offset_right = 575.0
 offset_bottom = 305.0
+layout_direction = 2
 text = "Touch?"
 label_settings = SubResource("LabelSettings_dku7i")
 
 [node name="en" type="TextureButton" parent="CanvasLayer/pause/settings" unique_id=950812535]
 light_mask = 0
-layout_direction = 2
 offset_left = 520.0
 offset_top = 223.0
 offset_right = 576.6667
 offset_bottom = 257.0
+layout_direction = 2
 texture_normal = ExtResource("19_37s47")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ar" type="TextureButton" parent="CanvasLayer/pause/settings" unique_id=232138896]
 light_mask = 0
-layout_direction = 2
 offset_left = 612.0
 offset_top = 223.0
 offset_right = 668.6667
 offset_bottom = 257.0
+layout_direction = 2
 texture_normal = ExtResource("20_bt5mj")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="eg" type="TextureButton" parent="CanvasLayer/pause/settings" unique_id=715581435]
 light_mask = 0
-layout_direction = 2
 offset_left = 703.0
 offset_top = 223.0
 offset_right = 759.6667
 offset_bottom = 257.0
+layout_direction = 2
 texture_normal = ExtResource("21_e1j6l")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="en2" type="Button" parent="CanvasLayer/pause/settings" unique_id=1702749081]
-layout_direction = 2
 offset_left = 520.0
 offset_top = 223.0
 offset_right = 577.0
 offset_bottom = 257.0
+layout_direction = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_veaf0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_flw08")
 theme_override_styles/hover = SubResource("StyleBoxFlat_84hbc")
 
 [node name="ar2" type="Button" parent="CanvasLayer/pause/settings" unique_id=696767134]
-layout_direction = 2
 offset_left = 612.0
 offset_top = 223.0
 offset_right = 669.0
 offset_bottom = 257.0
+layout_direction = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_veaf0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_flw08")
 theme_override_styles/hover = SubResource("StyleBoxFlat_84hbc")
 
 [node name="eg2" type="Button" parent="CanvasLayer/pause/settings" unique_id=1957854458]
-layout_direction = 2
 offset_left = 703.0
 offset_top = 223.0
 offset_right = 760.0
 offset_bottom = 257.0
+layout_direction = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_veaf0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_flw08")
 theme_override_styles/hover = SubResource("StyleBoxFlat_84hbc")
 
 [node name="touch_check" type="CheckButton" parent="CanvasLayer/pause/settings" unique_id=1230252721]
 light_mask = 0
-layout_direction = 2
 offset_left = 562.0
 offset_top = 277.0
 offset_right = 606.0
 offset_bottom = 301.0
+layout_direction = 2
 
 [node name="pause_button" type="Button" parent="CanvasLayer" unique_id=1965858828]
-layout_direction = 2
 offset_left = 61.0
 offset_top = 102.0
 offset_right = 125.0
 offset_bottom = 166.0
 rotation = -1.5707964
+layout_direction = 2
 theme_override_fonts/font = ExtResource("17_rysoc")
 theme_override_font_sizes/font_size = 98
 theme_override_styles/normal = SubResource("StyleBoxFlat_15b3c")
@@ -4946,12 +4946,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fkywm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dku7i")
 
 [node name="Label" type="Label" parent="CanvasLayer/pause_button" unique_id=1487586054]
-layout_direction = 2
 layout_mode = 0
 offset_left = 14.000002
 offset_top = -45.0
 offset_right = 49.0
 offset_bottom = 109.0
+layout_direction = 2
 text = "="
 label_settings = SubResource("LabelSettings_37s47")
 horizontal_alignment = 1
