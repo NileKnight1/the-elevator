@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cj8qm4ugj6u55" path="res://assets/26791-48x48x32.png" id="5_l8xmd"]
 [ext_resource type="Texture2D" uid="uid://dpnqsk1jp5hak" path="res://assets/sticky_note-removebg-preview.png" id="6_d3qia"]
 [ext_resource type="Texture2D" uid="uid://dk7huthrytou3" path="res://assets/blue-cartoon-pillow-soft-comfortable-cushion-with-simple-design-vector-removebg-preview.png" id="7_bvaki"]
+[ext_resource type="Script" uid="uid://c6os7a7cuj6se" path="res://scripts/fix_menu_object.gd" id="7_lqxid"]
 [ext_resource type="Texture2D" uid="uid://dcsko86n167r5" path="res://assets/tall-houseplant-pot-nature-icon_18591-82627-removebg-preview.png" id="8_ifcsg"]
 [ext_resource type="PackedScene" uid="uid://cidxmrrgsula0" path="res://scenes/temp_player.tscn" id="9_a8icl"]
 [ext_resource type="Texture2D" uid="uid://det4y0g3g3wfv" path="res://assets/hand-crowbar-icon-cartoon-design-metal-vector-removebg-preview.png" id="10_2kla5"]
@@ -151,6 +152,9 @@ corner_detail = 20
 color = Color(0.05392456, 0.22265625, 0, 1)
 
 [sub_resource type="FontFile" id="FontFile_lbhrr"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -3305,6 +3309,7 @@ clip_children = 2
 position = Vector2(-231, 20)
 scale = Vector2(0.15550011, 0.15550011)
 texture = ExtResource("7_bvaki")
+script = ExtResource("7_lqxid")
 
 [node name="black" type="Sprite2D" parent="map/part2/sofa/pillow" unique_id=253232465]
 modulate = Color(1, 1, 1, 0.47058824)
@@ -3323,6 +3328,7 @@ position = Vector2(78, 18)
 rotation = 3.1415927
 scale = Vector2(0.156, -0.156)
 texture = ExtResource("7_bvaki")
+script = ExtResource("7_lqxid")
 
 [node name="black" type="Sprite2D" parent="map/part2/sofa/pillow2" unique_id=1227205470]
 modulate = Color(1, 1, 1, 0.47058824)
@@ -3342,6 +3348,7 @@ position = Vector2(-79, 18)
 rotation = 3.1415927
 scale = Vector2(0.156, -0.156)
 texture = ExtResource("7_bvaki")
+script = ExtResource("7_lqxid")
 
 [node name="black" type="Sprite2D" parent="map/part2/sofa/pillow3" unique_id=36318151]
 modulate = Color(1, 1, 1, 0.47058824)
@@ -3353,13 +3360,6 @@ texture = SubResource("GradientTexture1D_vtaks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/pillow3/pillow3_area" unique_id=1107618901]
 shape = SubResource("CircleShape2D_vlew8")
-
-[node name="blood" type="Sprite2D" parent="map/part2/sofa" unique_id=1485032591]
-visible = false
-position = Vector2(-184.00003, 19.999996)
-rotation = -0.4100507
-scale = Vector2(0.26388907, 0.26388907)
-skew = -0.43109632
 
 [node name="tv" type="Node2D" parent="map/part2" unique_id=526527308]
 z_index = 1
@@ -3454,6 +3454,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pl11u")
 
 [node name="bookshelf" type="Node2D" parent="map/part2" unique_id=1534479238]
 position = Vector2(-480, -122)
+script = ExtResource("7_lqxid")
 
 [node name="Panel6" type="Panel" parent="map/part2/bookshelf" unique_id=1768046170]
 offset_left = -923.0
@@ -3551,6 +3552,7 @@ shape = SubResource("RectangleShape2D_3c02t")
 
 [node name="box5" type="Node2D" parent="map/part2" unique_id=2044850329]
 position = Vector2(-1169, 29)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part2/box5" unique_id=845317815]
 z_index = 1
@@ -3603,6 +3605,7 @@ shape = SubResource("RectangleShape2D_ncv88")
 
 [node name="box4" type="Node2D" parent="map/part2" unique_id=2112120492]
 position = Vector2(-1085, 29)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part2/box4" unique_id=64997785]
 z_index = 1
@@ -3658,6 +3661,7 @@ clip_children = 2
 position = Vector2(-1442.0001, -24.064623)
 scale = Vector2(0.26118553, 0.2793383)
 texture = ExtResource("8_ifcsg")
+script = ExtResource("7_lqxid")
 
 [node name="black" type="Sprite2D" parent="map/part2/plant" unique_id=1016151810]
 modulate = Color(1, 1, 1, 0.47058824)
@@ -3676,6 +3680,7 @@ clip_children = 2
 position = Vector2(-1227.0001, -24.064623)
 scale = Vector2(0.26118553, 0.2793383)
 texture = ExtResource("8_ifcsg")
+script = ExtResource("7_lqxid")
 
 [node name="black" type="Sprite2D" parent="map/part2/plant2" unique_id=699192203]
 modulate = Color(1, 1, 1, 0.47058824)

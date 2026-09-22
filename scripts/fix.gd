@@ -677,40 +677,24 @@ func _on_kill_entered(body: Node2D) -> void:
 func _on_restart_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/floors.tscn")
 
-func hover_on(node):
-	#print(node.modulate)
-	if node.modulate == Color(1.0, 1.0, 1.0, 0.0): return
-	var tween = create_tween()
-	tween.set_parallel(1)
-	tween.tween_property(node, "modulate", Color(1.9, 1.9, 1.9), 0.15)
-	tween.tween_property(node, "scale", node.scale * Vector2(1.01,1.01) , 0.15)
-func hover_off(node):
-	#print(node.modulate)
-	if node.modulate == Color(1.0, 1.0, 1.0, 0.0): return
-	var tween = create_tween()
-	tween.set_parallel(1)
-	tween.tween_property(node, "modulate", Color(1, 1, 1), 0.15)
-	tween.tween_property(node, "scale", node.scale / Vector2(1.01,1.01) , 0.15)
-
 
 func _on_pillow_2_area_mouse_entered() -> void:
-	hover_on($map/part2/sofa/pillow2)
+	#hover_on($map/part2/sofa/pillow2)
+	$map/part2/sofa/pillow2.hover_on()
+	
 func _on_pillow_2_area_mouse_exited() -> void:
-	hover_off($map/part2/sofa/pillow2)
+	$map/part2/sofa/pillow2.hover_off()
 func _on_pillow_2_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		$CanvasLayer/fix.visible = 1
 		item_node = $map/part2/sofa/pillow2
 
-
-
 func _on_pillow_area_mouse_entered() -> void:
-	hover_on($map/part2/sofa/pillow)
+	$map/part2/sofa/pillow.hover_on()
 func _on_pillow_area_mouse_exited() -> void:
-	hover_off($map/part2/sofa/pillow)
+	$map/part2/sofa/pillow.hover_off()
 func _on_pillow_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
-		print("fix menu")
 		$CanvasLayer/fix.visible = 1
 		item_node = $map/part2/sofa/pillow
 
@@ -744,49 +728,49 @@ func _on_fix_show_pressed() -> void:
 
 
 func _on_pillow_3_area_mouse_entered() -> void:
-	hover_on($map/part2/sofa/pillow3)
+	$map/part2/sofa/pillow3.hover_on()
 func _on_pillow_3_area_mouse_exited() -> void:
-	hover_off($map/part2/sofa/pillow3)
+	$map/part2/sofa/pillow3.hover_off()
 func _on_pillow_3_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		$CanvasLayer/fix.visible = 1
 		item_node = $map/part2/sofa/pillow3
 
 func _on_tv_area_mouse_entered() -> void:
-	hover_on($map/part2/tv/tv)
+	$map/part2/tv/tv.hover_on()
 func _on_tv_area_mouse_exited() -> void:
-	hover_off($map/part2/tv/tv)
+	$map/part2/tv/tv.hover_off()
 func _on_tv_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		$CanvasLayer/fix.visible = 1
 		item_node = $map/part2/tv/tv
 	
-
 func _on_part_2_box_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		$CanvasLayer/fix.visible = 1
 		item_node = $map/part2/box5
 func _on_part_2_box_1_mouse_entered() -> void:
-	hover_on($map/part2/box5)
+	$map/part2/box5.hover_on()
 func _on_part_2_box_1_mouse_exited() -> void:
-	hover_off($map/part2/box5)
+	$map/part2/box5.hover_off()
+
 func _on_part_2_box_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		$CanvasLayer/fix.visible = 1
 		item_node = $map/part2/box4
 func _on_part_2_box_2_mouse_entered() -> void:
-	hover_on($map/part2/box4)
+	$map/part2/box4.hover_on()
 func _on_part_2_box_2_mouse_exited() -> void:
-	hover_off($map/part2/box4)
+	$map/part2/box4.hover_off()
 
 func _on_plant2_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if check_click(event):
 		$CanvasLayer/fix.visible = 1
 		item_node = $map/part2/plant2
 func _on_plant2_area_mouse_entered() -> void:
-	hover_on($map/part2/plant2)
+	$map/part2/plant2.hover_on()
 func _on_plant2_area_mouse_exited() -> void:
-	hover_off($map/part2/plant2)
+	$map/part2/plant2.hover_off()
 
 
 func _on_plant_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -794,9 +778,9 @@ func _on_plant_area_input_event(viewport: Node, event: InputEvent, shape_idx: in
 		$CanvasLayer/fix.visible = 1
 		item_node = $map/part2/plant
 func _on_plant_area_mouse_entered() -> void:
-	hover_on($map/part2/plant)
+	$map/part2/plant.hover_on()
 func _on_plant_area_mouse_exited() -> void:
-	hover_off($map/part2/plant)
+	$map/part2/plant.hover_off()
 
 
 func _on_bookshelf_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -804,6 +788,6 @@ func _on_bookshelf_input_event(viewport: Node, event: InputEvent, shape_idx: int
 		$CanvasLayer/fix.visible = 1
 		item_node = $map/part2/bookshelf
 func _on_bookshelf_mouse_entered() -> void:
-	hover_on($map/part2/bookshelf)
+	$map/part2/bookshelf.hover_on()
 func _on_bookshelf_mouse_exited() -> void:
-	hover_off($map/part2/bookshelf)
+	$map/part2/bookshelf.hover_off()
