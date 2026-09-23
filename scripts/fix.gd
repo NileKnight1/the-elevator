@@ -705,19 +705,14 @@ func _on_pillow_2_area_mouse_entered() -> void:
 func _on_pillow_2_area_mouse_exited() -> void:
 	$map/part2/sofa/pillow2.hover_off()
 func _on_pillow_2_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if check_click(event):
-		$CanvasLayer/fix.visible = 1
-		change_selection($map/part2/sofa/pillow2)
+	object_click(event, $map/part2/sofa/pillow2)
 
 func _on_pillow_area_mouse_entered() -> void:
 	$map/part2/sofa/pillow.hover_on()
 func _on_pillow_area_mouse_exited() -> void:
 	$map/part2/sofa/pillow.hover_off()
 func _on_pillow_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if check_click(event):
-		$CanvasLayer/fix.visible = 1
-		change_selection($map/part2/sofa/pillow)
-
+	object_click(event, $map/part2/sofa/pillow)
 
 func fix_menu_hide():
 	global.fix_menu_shown = 0
@@ -774,9 +769,25 @@ var anomalies_data = [
 	{"node": "map/part2/box4", "normal_case": 1, "second_position": Vector2(-1051.0, 5.0)},
 	{"node": "map/part2/box6", "normal_case": 0, "second_position": Vector2(-1084.0, -34.0)},
 	
+	{"node": "map/part1/shelf", "normal_case": 1, "second_position": Vector2(-1001.0, -36.0)},
+	{"node": "map/part1/shelf2", "normal_case": 1, "second_position": Vector2(-936.0, -129.0)},
+	{"node": "map/part1/shelf3", "normal_case": 1, "second_position": Vector2(-1479.0, 12)},
+	{"node": "map/part1/shelf4", "normal_case": 1, "second_position": Vector2(-1434.0, -178.0)},
+	{"node": "map/part1/shelf5", "normal_case": 0, "second_position": Vector2(-1866.0, -36.0)},
+	
+	{"node": "map/part1/pipe", "normal_case": 1, "second_position": Vector2(-128.0, 69.0)},
+	{"node": "map/part1/pipe2", "normal_case": 1, "second_position": Vector2(-103.0, 21.0)},
+	{"node": "map/part1/pipe3", "normal_case": 0, "second_position": Vector2(-147.0, 16.0)},
+	
+	
 	
 ]
 
+
+func object_click(event, object):
+	if check_click(event):
+		$CanvasLayer/fix.visible = 1
+		change_selection(object)
 
 
 func _on_fix_cancel_pressed() -> void:
@@ -793,70 +804,109 @@ func _on_pillow_3_area_mouse_entered() -> void:
 func _on_pillow_3_area_mouse_exited() -> void:
 	$map/part2/sofa/pillow3.hover_off()
 func _on_pillow_3_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if check_click(event):
-		$CanvasLayer/fix.visible = 1
-		change_selection($map/part2/sofa/pillow3)
+	object_click(event, $map/part2/sofa/pillow3)
 
+func _on_tv_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part2/tv/tv)
 func _on_tv_area_mouse_entered() -> void:
 	$map/part2/tv/tv.hover_on()
 func _on_tv_area_mouse_exited() -> void:
 	$map/part2/tv/tv.hover_off()
-func _on_tv_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if check_click(event):
-		$CanvasLayer/fix.visible = 1
-		change_selection($map/part2/tv/tv)
+
 	
 func _on_part_2_box_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if check_click(event):
-		$CanvasLayer/fix.visible = 1
-		change_selection($map/part2/box5)
+	object_click(event, $map/part2/box5)
 func _on_part_2_box_1_mouse_entered() -> void:
 	$map/part2/box5.hover_on()
 func _on_part_2_box_1_mouse_exited() -> void:
 	$map/part2/box5.hover_off()
 
 func _on_part_2_box_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if check_click(event):
-		$CanvasLayer/fix.visible = 1
-		change_selection($map/part2/box4)
+	object_click(event, $map/part2/box4)
 func _on_part_2_box_2_mouse_entered() -> void:
 	$map/part2/box4.hover_on()
 func _on_part_2_box_2_mouse_exited() -> void:
 	$map/part2/box4.hover_off()
 
 func _on_plant2_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if check_click(event):
-		$CanvasLayer/fix.visible = 1
-		change_selection($map/part2/plant2)
+	object_click(event, $map/part2/plant2)
 func _on_plant2_area_mouse_entered() -> void:
 	$map/part2/plant2.hover_on()
 func _on_plant2_area_mouse_exited() -> void:
 	$map/part2/plant2.hover_off()
 
 func _on_plant_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if check_click(event):
-		$CanvasLayer/fix.visible = 1
-		change_selection($map/part2/plant)
+	object_click(event, $map/part2/plant)
 func _on_plant_area_mouse_entered() -> void:
 	$map/part2/plant.hover_on()
 func _on_plant_area_mouse_exited() -> void:
 	$map/part2/plant.hover_off()
 
 func _on_bookshelf_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if check_click(event):
-		$CanvasLayer/fix.visible = 1
-		change_selection($map/part2/bookshelf)
+	object_click(event, $map/part2/bookshelf)
 func _on_bookshelf_mouse_entered() -> void:
 	$map/part2/bookshelf.hover_on()
 func _on_bookshelf_mouse_exited() -> void:
 	$map/part2/bookshelf.hover_off()
 
-
 func _on_part_2_box_3_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if check_click(event):
-		$CanvasLayer/fix.visible = 1
-		change_selection($map/part2/box6)
+	object_click(event, $map/part2/box6)
 func _on_part_2_box_3_mouse_entered() -> void:
 	$map/part2/box6.hover_on()
 func _on_part_2_box_3_mouse_exited() -> void:
 	$map/part2/box6.hover_off()
+
+func _on_pipe_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/pipe)
+func _on_pipe_area_mouse_exited() -> void:
+	$map/part1/pipe.hover_off()
+func _on_pipe_area_mouse_entered() -> void:
+	$map/part1/pipe.hover_on()
+func _on_pipe_2_area_mouse_exited() -> void:
+	$map/part1/pipe2.hover_off()
+func _on_pipe_2_area_mouse_entered() -> void:
+	$map/part1/pipe2.hover_on()
+func _on_pipe_2_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/pipe2)
+func _on_pipe_3_area_mouse_exited() -> void:
+	$map/part1/pipe3.hover_off()
+func _on_pipe_3_area_mouse_entered() -> void:
+	$map/part1/pipe3.hover_on()
+func _on_pipe_3_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/pipe3)
+
+
+func _on_shelf_mouse_exited() -> void:
+	$map/part1/shelf.hover_off()
+func _on_shelf_mouse_entered() -> void:
+	$map/part1/shelf.hover_on()
+func _on_shelf_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/shelf)
+
+func _on_shelf_3_mouse_exited() -> void:
+	$map/part1/shelf3.hover_off()
+func _on_shelf_3_mouse_entered() -> void:
+	$map/part1/shelf3.hover_on()
+func _on_shelf_3_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/shelf3)
+
+func _on_shelf5_mouse_exited() -> void:
+	$map/part1/shelf5.hover_off()
+func _on_shelf5_mouse_entered() -> void:
+	$map/part1/shelf5.hover_on()
+func _on_shelf5_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/shelf5)
+
+func _on_shelf_2_mouse_exited() -> void:
+	$map/part1/shelf2.hover_off()
+func _on_shelf_2_mouse_entered() -> void:
+	$map/part1/shelf2.hover_on()
+func _on_shelf_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/shelf2)
+
+func _on_shelf_4_mouse_exited() -> void:
+	$map/part1/shelf4.hover_off()
+func _on_shelf_4_mouse_entered() -> void:
+	$map/part1/shelf4.hover_on()
+func _on_shelf_4_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/shelf4)
