@@ -779,6 +779,16 @@ var anomalies_data = [
 	{"node": "map/part1/pipe2", "normal_case": 1, "second_position": Vector2(-103.0, 21.0)},
 	{"node": "map/part1/pipe3", "normal_case": 0, "second_position": Vector2(-147.0, 16.0)},
 	
+	{"node": "map/part1/bin", "normal_case": 1, "second_position": Vector2(-3540.0, 0)},
+	{"node": "map/part1/bin2", "normal_case": 0, "second_position": Vector2(-3850.0, 16.0)},
+	
+	{"node": "map/part1/table2", "normal_case": 1, "second_position": Vector2(-3529.0, -64.0)},
+	
+	
+	{"node": "map/part1/box", "normal_case": 1, "second_position": Vector2(-3559.0, 36.0)},
+	{"node": "map/part1/box2", "normal_case": 1, "second_position": Vector2(-3361.0, 36.0)},
+	{"node": "map/part1/box3", "normal_case": 1, "second_position": Vector2(-3410.0, -28)},
+	
 	
 	
 ]
@@ -910,3 +920,48 @@ func _on_shelf_4_mouse_entered() -> void:
 	$map/part1/shelf4.hover_on()
 func _on_shelf_4_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	object_click(event, $map/part1/shelf4)
+
+
+func _on_part_1_table_mouse_exited() -> void:
+	$map/part1/table2.hover_off()
+func _on_part_1_table_mouse_entered() -> void:
+	$map/part1/table2.hover_off()
+func _on_part_1_table_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/table2)
+
+func _on_part_1_bin_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/bin)
+func _on_part_1_bin_mouse_entered() -> void:
+	$map/part1/bin.hover_on()
+func _on_part_1_bin_mouse_exited() -> void:
+	$map/part1/bin.hover_off()
+
+func _on_part_1_bin_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/bin2)
+func _on_part_1_bin_2_mouse_entered() -> void:
+	$map/part1/bin2.hover_on()
+func _on_part_1_bin_2_mouse_exited() -> void:
+	$map/part1/bin2.hover_off()
+
+
+	
+func _on_part_1_box_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/box)
+func _on_part_1_box_1_mouse_entered() -> void:
+	$map/part1/box.hover_on()
+func _on_part_1_box_1_mouse_exited() -> void:
+	$map/part1/box.hover_off()
+
+func _on_part_1_box_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/box2)
+func _on_part_1_box_2_mouse_entered() -> void:
+	$map/part1/box2.hover_on()
+func _on_part_1_box_2_mouse_exited() -> void:
+	$map/part1/box2.hover_off()
+
+func _on_part_1_box_3_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part1/box3)
+func _on_part_1_box_3_mouse_entered() -> void:
+	$map/part1/box3.hover_on()
+func _on_part_1_box_3_mouse_exited() -> void:
+	$map/part1/box3.hover_off()

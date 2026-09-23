@@ -9,7 +9,6 @@ func _ready() -> void:
 	#print(self)
 	def_scale = self.scale
 	def_position = self.position
-	
 
 func _process(delta: float) -> void:
 	pass
