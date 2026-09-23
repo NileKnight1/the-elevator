@@ -39,6 +39,8 @@ func play_sound(sound, vol = 0.0):
 	
 func init_game():
 	init_lights()
+	init_objects()
+	
 
 func init_lights():
 	
@@ -88,8 +90,18 @@ func _ready() -> void:
 	print("floor ",floor)
 	$CanvasLayer/mobile.visible = touch
 	translation()
+	#anomaly_apply()
+	init_game()
+	anomaly2_apply()
+	anomaly2_apply()
+	anomaly2_apply()
+	anomaly2_apply()
+	anomaly2_apply()
+	anomaly2_apply()
+	anomaly2_apply()
+	anomaly2_apply()
 	
-	anomaly_apply()
+	
 	
 	global.anomalies_data = anomalies_data
 	$CanvasLayer/fix.visible = 0
@@ -101,7 +113,6 @@ func _ready() -> void:
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
 	$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
-	init_game()
 	if global.mistakes == 3:
 		game_lose()
 	
@@ -135,6 +146,7 @@ func _process(delta: float) -> void:
 		
 		if elevator_area:
 			if !elevator_in:
+				check_anomalies()
 				elevator_in = 1 
 				$player.hide = 1
 				disable_move()
@@ -142,7 +154,7 @@ func _process(delta: float) -> void:
 				$player.scale = Vector2(0.8, 0.8)
 				$player.position = Vector2(0, -66)
 				
-				$CanvasLayer/elevator/up.visible = 1
+				#$CanvasLayer/elevator/up.visible = 1
 				$CanvasLayer/elevator/down.visible = 1
 				
 			else:
@@ -152,7 +164,6 @@ func _process(delta: float) -> void:
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 1)
 				$player.scale = Vector2(1, 1)
 				$player.position = Vector2(0, -52)
-				$CanvasLayer/elevator/up.visible = 0
 				$CanvasLayer/elevator/down.visible = 0
 				
 		
@@ -224,14 +235,14 @@ func _process(delta: float) -> void:
 				disable_move()
 				
 
-func elevator_taken(dir):
-	if anomaly == dir:
-		global.floor += 1
-	else:
-		global.mistakes +=1
+func elevator_taken():
+	#if anomaly == dir:
+		#global.floor += 1
+	#else:
+		#global.mistakes +=1
+
 	
 	no_interact = 1
-	$CanvasLayer/elevator/up.visible = 0
 	$CanvasLayer/elevator/down.visible = 0
 	guide("")
 	play_sound(sound_elevator)
@@ -247,8 +258,8 @@ func elevator_taken(dir):
 	
 	await get_tree().create_timer(1.0).timeout
 	
-	if global.floor != 10:
-		get_tree().change_scene_to_file("res://scenes/floors.tscn")
+	if wrong_data > 3:
+		get_tree().change_scene_to_file("res://scenes/fix.tscn")
 	else:
 		elevator_in = 0
 		$map/hallway/elevator/close1.size.x = 0
@@ -268,10 +279,8 @@ func elevator_taken(dir):
 	
 		no_interact = 0
 
-func _on_up_pressed() -> void:
-	elevator_taken(1)
 func _on_down_pressed() -> void:
-	elevator_taken(0)
+	elevator_taken()
 
 
 var sofa_hide = 0
@@ -719,14 +728,53 @@ var active_anomalies = [
 	
 ]
 
+func anomaly2_apply():
+	var temp = randi_range(0, 1)
+	if temp:
+		temp = randi_range(0, anomalies_data.size()-1)
+		if anomalies_data[temp]["normal_case"] == 1:
+			get_node_or_null(anomalies_data[temp]["node"]).hide()
+		elif anomalies_data[temp]["normal_case"] == 0:
+			get_node_or_null(anomalies_data[temp]["node"]).show()
+		else: anomaly2_apply()
+	else:
+		temp = randi_range(0, anomalies_data.size()-1)
+		if get_node_or_null(anomalies_data[temp]["node"]).position == get_node_or_null(anomalies_data[temp]["node"]).def_position &&  anomalies_data[temp]["normal_case"] == 1:
+			get_node_or_null(anomalies_data[temp]["node"]).change_position()
+		else: anomaly2_apply()
+
+
+func init_objects():
+	for i in anomalies_data:
+		if i["normal_case"] == 0:
+			get_node_or_null(i["node"]).hide()
+
+var wrong_data = 0
+func check_anomalies():
+	wrong_data = 0
+	for i in anomalies_data:
+		if i["normal_case"] != get_node_or_null(i["node"]).case:
+			wrong_data += 1
+			print(i)
+		if get_node_or_null(i["node"]).position != get_node_or_null(i["node"]).def_position &&  i["normal_case"] == 1:
+			wrong_data += 1 
+			print(i)
+			
+	print(wrong_data)
+
 var anomalies_data = [
 	{"node": "map/part2/sofa/pillow", "normal_case": 1, "second_position": Vector2(-185.0, 18),},
 	{"node": "map/part2/sofa/pillow2", "normal_case": 1, "second_position": Vector2(23.0, 18),},
 	{"node": "map/part2/sofa/pillow3", "normal_case": 0, "second_position": Vector2(-31,18)},
-	{"node": "map/part2/tv/tv", "normal_case": 0, "second_position": Vector2(-842,0)},
-	{"node": "map/part2/plant", "normal_case": 0, "second_position": Vector2(-1442.0,-63)},
+	{"node": "map/part2/tv/tv", "normal_case": 1, "second_position": Vector2(-842,0)},
+	{"node": "map/part2/plant", "normal_case": 1, "second_position": Vector2(-1442.0,-63)},
+	{"node": "map/part2/plant2", "normal_case": 1, "second_position": Vector2(-1178.0, -24.065)},
+	{"node": "map/part2/bookshelf", "normal_case": 1, "second_position": Vector2(-480.0, -147.0)},
+	{"node": "map/part2/box5", "normal_case": 1, "second_position": Vector2(-1226.0, 29.0)},
+	{"node": "map/part2/box4", "normal_case": 1, "second_position": Vector2(-1051.0, 5.0)},
+	{"node": "map/part2/box6", "normal_case": 0, "second_position": Vector2(-1084.0, -34.0)},
 	
-
+	
 ]
 
 
@@ -736,7 +784,7 @@ func _on_fix_cancel_pressed() -> void:
 func _on_fix_position_pressed() -> void:
 	global.fix_selected_node.change_position()
 func _on_fix_hide_pressed() -> void:
-	global.fix_selected_node.modulate = Color(1.0, 1.0, 1.0, 0.0)
+	global.fix_selected_node.hide()
 func _on_fix_show_pressed() -> void:
 	global.fix_selected_node.show()
 

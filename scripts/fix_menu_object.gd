@@ -2,6 +2,8 @@ extends Node
 
 var def_scale
 var def_position
+var case = 1
+
 
 func _ready() -> void:
 	#print(self)
@@ -11,7 +13,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	pass
-	
+
 func hover_on():
 	if self.modulate == Color(1.0, 1.0, 1.0, 0.0): return
 	global.fix_menu_shown = 1
@@ -33,10 +35,23 @@ func force_hover_off():
 	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.15)
 	tween.tween_property(self, "scale", def_scale , 0.15)
 func show():
+	case = 1
 	var tween = create_tween()
 	tween.set_parallel(1)
-	tween.tween_property(self, "modulate", Color(1.9, 1.9, 1.9), 0.15)
-	tween.tween_property(self, "scale", def_scale * Vector2(1.01,1.01) , 0.15)
+	if self == global.fix_selected_node:
+		tween.tween_property(self, "modulate", Color(1.9, 1.9, 1.9), 0.15)
+		tween.tween_property(self, "scale", def_scale * Vector2(1.01,1.01) , 0.15)
+	else:
+		tween.tween_property(self, "modulate", Color(1, 1, 1), 0.15)
+		tween.tween_property(self, "scale", def_scale * Vector2(1,1) , 0.15)
+
+func hide():
+	case = 0
+	var tween = create_tween()
+	tween.set_parallel(1)
+	tween.tween_property(self, "modulate", Color(1, 1, 1, 0.0), 0.15)
+	tween.tween_property(self, "scale", def_scale , 0.15)
+
 func change_position():
 	#print(self)
 	#print(self.get_path())

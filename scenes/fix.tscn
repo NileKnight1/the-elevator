@@ -632,7 +632,7 @@ size = Vector2(42.5, 27)
 size = Vector2(79, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8xmd"]
-size = Vector2(16, 24)
+size = Vector2(16, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bekt7"]
 size = Vector2(79, 76)
@@ -3316,7 +3316,7 @@ position = Vector2(-335, -12)
 shape = SubResource("SegmentShape2D_kvpfn")
 one_way_collision = true
 
-[node name="pillow" type="Sprite2D" parent="map/part2/sofa" unique_id=788602899]
+[node name="pillow" type="Sprite2D" parent="map/part2/sofa" unique_id=788602899 groups=["objects"]]
 clip_children = 2
 position = Vector2(-231, 20)
 scale = Vector2(0.15550011, 0.15550011)
@@ -3334,7 +3334,7 @@ texture = SubResource("GradientTexture1D_vtaks")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/pillow/pillow_area" unique_id=153828053]
 shape = SubResource("CircleShape2D_vlew8")
 
-[node name="pillow2" type="Sprite2D" parent="map/part2/sofa" unique_id=228082760]
+[node name="pillow2" type="Sprite2D" parent="map/part2/sofa" unique_id=228082760 groups=["objects"]]
 clip_children = 2
 position = Vector2(80, 18)
 rotation = 3.1415927
@@ -3353,8 +3353,7 @@ texture = SubResource("GradientTexture1D_vtaks")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="map/part2/sofa/pillow2/pillow2_area" unique_id=384703793]
 shape = SubResource("CircleShape2D_vlew8")
 
-[node name="pillow3" type="Sprite2D" parent="map/part2/sofa" unique_id=1152726691]
-modulate = Color(1, 1, 1, 0)
+[node name="pillow3" type="Sprite2D" parent="map/part2/sofa" unique_id=1152726691 groups=["objects"]]
 clip_children = 2
 position = Vector2(-75, 18)
 rotation = 3.1415927
@@ -3406,7 +3405,7 @@ layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oaba0")
 
-[node name="tv" type="Node2D" parent="map/part2/tv" unique_id=1327258553]
+[node name="tv" type="Node2D" parent="map/part2/tv" unique_id=1327258553 groups=["objects"]]
 position = Vector2(-876, 0)
 script = ExtResource("7_lqxid")
 
@@ -3465,7 +3464,7 @@ layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pl11u")
 
-[node name="bookshelf" type="Node2D" parent="map/part2" unique_id=1534479238]
+[node name="bookshelf" type="Node2D" parent="map/part2" unique_id=1534479238 groups=["objects"]]
 position = Vector2(-480, -122)
 script = ExtResource("7_lqxid")
 
@@ -3563,7 +3562,7 @@ position = Vector2(-890, 146)
 position = Vector2(38.5, -74)
 shape = SubResource("RectangleShape2D_3c02t")
 
-[node name="box5" type="Node2D" parent="map/part2" unique_id=2044850329]
+[node name="box5" type="Node2D" parent="map/part2" unique_id=2044850329 groups=["objects"]]
 position = Vector2(-1177, 29)
 script = ExtResource("7_lqxid")
 
@@ -3607,7 +3606,7 @@ shape = SubResource("RectangleShape2D_lqxid")
 position = Vector2(578.25, 60.5)
 shape = SubResource("RectangleShape2D_qtnq1")
 
-[node name="box4" type="Node2D" parent="map/part2" unique_id=2112120492]
+[node name="box4" type="Node2D" parent="map/part2" unique_id=2112120492 groups=["objects"]]
 position = Vector2(-1085, 29)
 script = ExtResource("7_lqxid")
 
@@ -3648,10 +3647,10 @@ position = Vector2(596.5, 105)
 shape = SubResource("RectangleShape2D_poivq")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="map/part2/box4/part2_box2" unique_id=1627174603]
-position = Vector2(619, 59)
+position = Vector2(619, 62.5)
 shape = SubResource("RectangleShape2D_l8xmd")
 
-[node name="box6" type="Node2D" parent="map/part2" unique_id=1855778551]
+[node name="box6" type="Node2D" parent="map/part2" unique_id=1855778551 groups=["objects"]]
 position = Vector2(-1131, -34)
 script = ExtResource("7_lqxid")
 
@@ -3695,9 +3694,9 @@ shape = SubResource("RectangleShape2D_bekt7")
 position = Vector2(607.5, 76.5)
 shape = SubResource("RectangleShape2D_d3qia")
 
-[node name="plant" type="Sprite2D" parent="map/part2" unique_id=512255724]
+[node name="plant" type="Sprite2D" parent="map/part2" unique_id=512255724 groups=["objects"]]
 clip_children = 2
-position = Vector2(-1442.0001, -63)
+position = Vector2(-1442.0001, -24.064623)
 scale = Vector2(0.26118553, 0.2793383)
 texture = ExtResource("8_ifcsg")
 script = ExtResource("7_lqxid")
@@ -3714,7 +3713,7 @@ texture = SubResource("GradientTexture1D_vtaks")
 position = Vector2(1.9150391, 0.23134613)
 shape = SubResource("RectangleShape2D_hdxto")
 
-[node name="plant2" type="Sprite2D" parent="map/part2" unique_id=199641806]
+[node name="plant2" type="Sprite2D" parent="map/part2" unique_id=199641806 groups=["objects"]]
 clip_children = 2
 position = Vector2(-1227.0001, -24.064623)
 scale = Vector2(0.26118553, 0.2793383)
@@ -4511,21 +4510,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1yg85")
 text = "Garage"
 
-[node name="up" type="Button" parent="CanvasLayer/elevator" unique_id=1411231059]
-visible = false
-offset_left = 823.0
-offset_top = 333.0
-offset_right = 877.0
-offset_bottom = 419.0
-rotation = 1.5707964
-theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
-theme_override_fonts/font = ExtResource("2_lqxid")
-theme_override_font_sizes/font_size = 53
-theme_override_styles/normal = SubResource("StyleBoxFlat_753oq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3x338")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1yg85")
-text = "<"
-
 [node name="down" type="Button" parent="CanvasLayer/elevator" unique_id=2111302969]
 visible = false
 offset_left = 735.0
@@ -4988,7 +4972,6 @@ parameters/looping = true
 [connection signal="body_exited" from="garage/garage/elevator_area" to="." method="_on_garage_elevator_area_body_exited"]
 [connection signal="body_entered" from="him/Area2D" to="." method="_on_kill_entered"]
 [connection signal="pressed" from="CanvasLayer/elevator/garage" to="." method="_on_garage_pressed"]
-[connection signal="pressed" from="CanvasLayer/elevator/up" to="." method="_on_up_pressed"]
 [connection signal="pressed" from="CanvasLayer/elevator/down" to="." method="_on_down_pressed"]
 [connection signal="pressed" from="CanvasLayer/elevator/apartment" to="." method="_on_apartment_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/buttons/buttons/continue" to="." method="_on_continue_pressed"]
