@@ -876,23 +876,48 @@ bg_color = Color(0, 0, 0, 0.675)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84hbc"]
 bg_color = Color(0, 0, 0, 0.84705883)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtnq1"]
+bg_color = Color(0.11, 0.05512833, 0.029699998, 0.7882353)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rxwa"]
-bg_color = Color(0, 0.35046387, 0.38671875, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+bg_color = Color(0.16862746, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqxid"]
-draw_center = false
+bg_color = Color(0.1015625, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_poivq"]
-draw_center = false
+bg_color = Color(0.33984375, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_qtnq1"]
 
@@ -5173,7 +5198,7 @@ offset_right = 231.0
 offset_bottom = 384.0
 layout_direction = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_s0g06")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtnq1")
 
 [node name="buttons" type="HFlowContainer" parent="CanvasLayer/fix/buttons" unique_id=1143064909]
 light_mask = 0
@@ -5192,7 +5217,6 @@ light_mask = 0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 layout_direction = 2
-theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
 theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_2rxwa")
@@ -5206,7 +5230,6 @@ light_mask = 0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 layout_direction = 2
-theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
 theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_2rxwa")
@@ -5220,7 +5243,6 @@ light_mask = 0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 layout_direction = 2
-theme_override_colors/font_hover_color = Color(0.54296875, 0.30926418, 0.1951294, 1)
 theme_override_fonts/font = ExtResource("2_lqxid")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_2rxwa")

@@ -72,7 +72,7 @@ func subtitles(msg, time = 3):
 		$CanvasLayer/subtitles.text = ""
 
 func guide(msg):
-	print(tr(msg))
+	#print(tr(msg))
 	$CanvasLayer/press_e.text = tr("press") + tr(str(msg))
 	if msg == "": $CanvasLayer/press_e.text = ""
 	
@@ -86,9 +86,10 @@ func guide3(msg):
 
 
 func _ready() -> void:
-	#$player.position = Vector2(0, -52)
+	$player.position = Vector2(0, -52)
 	print("floor ",floor)
 	global.fix_game = self
+	global.anomalies_data = anomalies_data
 	$CanvasLayer/mobile.visible = touch
 	translation()
 	#anomaly_apply()
@@ -101,10 +102,11 @@ func _ready() -> void:
 	anomaly2_apply()
 	anomaly2_apply()
 	anomaly2_apply()
+	anomaly2_apply()
+	anomaly2_apply()
 	
 	
 	
-	global.anomalies_data = anomalies_data
 	$CanvasLayer/fix.visible = 0
 	no_interact = 0
 	modulate = Color(0.0, 0.0, 0.0, 1.0)
@@ -728,15 +730,22 @@ func anomaly2_apply():
 	var temp = randi_range(0, 1)
 	if temp:
 		temp = randi_range(0, anomalies_data.size()-1)
-		if anomalies_data[temp]["normal_case"] == 1:
+		if anomalies_data[temp]["normal_case"] && get_node_or_null(anomalies_data[temp]["node"]).case:
 			get_node_or_null(anomalies_data[temp]["node"]).hide()
-		elif anomalies_data[temp]["normal_case"] == 0:
+			print(anomalies_data[temp]["node"], 0)
+		elif !anomalies_data[temp]["normal_case"] && !get_node_or_null(anomalies_data[temp]["node"]).case:
 			get_node_or_null(anomalies_data[temp]["node"]).show()
+			print(anomalies_data[temp]["node"], 1)
 		else: anomaly2_apply()
 	else:
 		temp = randi_range(0, anomalies_data.size()-1)
-		if get_node_or_null(anomalies_data[temp]["node"]).position == get_node_or_null(anomalies_data[temp]["node"]).def_position &&  anomalies_data[temp]["normal_case"] == 1:
+		if get_node_or_null(anomalies_data[temp]["node"]).position == get_node_or_null(anomalies_data[temp]["node"]).def_position &&  anomalies_data[temp]["normal_case"]:
+			#print('change_position')
+			print(get_node_or_null(anomalies_data[temp]["node"]).position)
+			print(get_node_or_null(anomalies_data[temp]["node"]).def_position)
+			
 			get_node_or_null(anomalies_data[temp]["node"]).change_position()
+			print(anomalies_data[temp]["node"], 2)
 		else: anomaly2_apply()
 
 
@@ -751,10 +760,13 @@ func check_anomalies():
 	for i in anomalies_data:
 		if i["normal_case"] != get_node_or_null(i["node"]).case:
 			wrong_data += 1
-			print(i)
+			print(i, 'x')
+		#print(i["normal_case"])
+		#print(get_node_or_null(i["node"]).position)
+		#print(get_node_or_null(i["node"]).def_position)
 		if get_node_or_null(i["node"]).position != get_node_or_null(i["node"]).def_position &&  i["normal_case"] == 1:
 			wrong_data += 1 
-			print(i)
+			print(i, 'y')
 			
 	print(wrong_data)
 

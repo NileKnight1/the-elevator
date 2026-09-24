@@ -1,14 +1,14 @@
 extends Node
 
 var def_scale
-var def_position
+var def_position = self.position
 var case = 1
 
 
 func _ready() -> void:
 	#print(self)
 	def_scale = self.scale
-	def_position = self.position
+	#def_position = self.position
 
 func _process(delta: float) -> void:
 	pass
@@ -58,6 +58,7 @@ func change_position():
 	for i in global.anomalies_data:
 		#print("/root/game/"+str(i["node"]))
 		#print(get_node_or_null(i["node"]))
+		#print("changin ", i)
 		if str(self.get_path()) == "/root/game/"+str(i["node"]):
 			if self.position == def_position:
 				var tween = create_tween()
