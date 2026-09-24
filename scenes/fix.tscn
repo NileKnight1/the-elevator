@@ -365,6 +365,9 @@ border_color = Color(0, 0, 0, 1)
 a = Vector2(-16, -22)
 b = Vector2(103, -22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r82v"]
+size = Vector2(156, 212)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
 bg_color = Color(0.5, 0.5, 0.5, 1)
 border_width_left = 2
@@ -404,12 +407,24 @@ border_color = Color(0, 0, 0, 1)
 a = Vector2(-16, -22)
 b = Vector2(118, -21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tf5e"]
+size = Vector2(136, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yepse"]
+size = Vector2(26, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqmd8"]
+size = Vector2(303, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2b0t"]
+size = Vector2(46, 87)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtaks"]
 size = Vector2(1298, 577)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_p57ef"]
 a = Vector2(-22, -319)
-b = Vector2(-18, 396)
+b = Vector2(-22, 396)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf7vy"]
 bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
@@ -1085,6 +1100,12 @@ position = Vector2(16, 40)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 one_way_collision = true
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/hallway/boundaries/StaticBody2D2" unique_id=602204499]
+position = Vector2(16, -388)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_lnu2h")
+one_way_collision = true
+
 [node name="black" type="PointLight2D" parent="map/hallway" unique_id=1605875113]
 visible = false
 position = Vector2(23.505157, -65.25)
@@ -1668,6 +1689,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="bin" type="Node2D" parent="map/part3" unique_id=558540886]
+position = Vector2(-24, 0)
 script = ExtResource("7_lqxid")
 
 [node name="Panel5" type="Panel" parent="map/part3/bin" unique_id=982823710]
@@ -2012,6 +2034,7 @@ shape = SubResource("RectangleShape2D_0tnpc")
 
 [node name="fridge" type="Node2D" parent="map/part4" unique_id=2062208405]
 position = Vector2(1374, 40)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part4/fridge" unique_id=733484840]
 offset_left = 1119.0
@@ -2048,8 +2071,15 @@ position = Vector2(1443, -231)
 shape = SubResource("SegmentShape2D_u5sy4")
 one_way_collision = true
 
+[node name="area" type="Area2D" parent="map/part4/fridge" unique_id=2122475073]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/fridge/area" unique_id=1276366674]
+position = Vector2(1198, -79)
+shape = SubResource("RectangleShape2D_1r82v")
+
 [node name="sink" type="Node2D" parent="map/part4" unique_id=1768935199]
 position = Vector2(1102, 29)
+script = ExtResource("7_lqxid")
 
 [node name="han" type="Node2D" parent="map/part4/sink" unique_id=39869331]
 
@@ -2097,8 +2127,113 @@ position = Vector2(1516, -154)
 shape = SubResource("SegmentShape2D_gee14")
 one_way_collision = true
 
+[node name="area" type="Area2D" parent="map/part4/sink" unique_id=335173739]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/sink/area" unique_id=671909199]
+position = Vector2(1268, -69.5)
+shape = SubResource("RectangleShape2D_5tf5e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/part4/sink/area" unique_id=850788331]
+position = Vector2(1267, -46)
+shape = SubResource("RectangleShape2D_yepse")
+
+[node name="box6" type="Node2D" parent="map/part4" unique_id=369166756]
+position = Vector2(1471, -66)
+script = ExtResource("7_lqxid")
+
+[node name="Panel4" type="Panel" parent="map/part4/box6" unique_id=1665639479]
+offset_left = 555.0
+offset_top = 73.0
+offset_right = 636.0
+offset_bottom = 137.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
+
+[node name="Panel5" type="Panel" parent="map/part4/box6" unique_id=1303557748]
+offset_left = 566.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 74.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
+
+[node name="Panel6" type="Panel" parent="map/part4/box6" unique_id=731725481]
+offset_left = 635.0
+offset_top = 60.0
+offset_right = 659.0
+offset_bottom = 122.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="map/part4/box6" unique_id=915791293]
+position = Vector2(-299, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/box6/StaticBody2D" unique_id=483580016]
+position = Vector2(885, -10)
+shape = SubResource("SegmentShape2D_ssvqc")
+one_way_collision = true
+
+[node name="area" type="Area2D" parent="map/part4/box6" unique_id=1972446215]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/box6/area" unique_id=1376079045]
+position = Vector2(600.5, 106)
+shape = SubResource("RectangleShape2D_lqxid")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/part4/box6/area" unique_id=1439026481]
+position = Vector2(578.25, 60.5)
+shape = SubResource("RectangleShape2D_qtnq1")
+
+[node name="box7" type="Node2D" parent="map/part4" unique_id=427638651]
+position = Vector2(1559, -66)
+script = ExtResource("7_lqxid")
+
+[node name="Panel4" type="Panel" parent="map/part4/box7" unique_id=2114556516]
+offset_left = 555.0
+offset_top = 73.0
+offset_right = 636.0
+offset_bottom = 137.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
+
+[node name="Panel5" type="Panel" parent="map/part4/box7" unique_id=823970963]
+offset_left = 566.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 74.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
+
+[node name="Panel6" type="Panel" parent="map/part4/box7" unique_id=910244547]
+offset_left = 635.0
+offset_top = 60.0
+offset_right = 659.0
+offset_bottom = 122.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="map/part4/box7" unique_id=779965218]
+position = Vector2(-299, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/box7/StaticBody2D" unique_id=1908433881]
+position = Vector2(885, -10)
+shape = SubResource("SegmentShape2D_ssvqc")
+one_way_collision = true
+
+[node name="area" type="Area2D" parent="map/part4/box7" unique_id=1186625274]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/box7/area" unique_id=1119532270]
+position = Vector2(596.5, 105)
+shape = SubResource("RectangleShape2D_poivq")
+
 [node name="table3" type="Node2D" parent="map/part4" unique_id=1190183284]
 position = Vector2(836, 36)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part4/table3" unique_id=915298447]
 offset_left = 867.0
@@ -2173,84 +2308,15 @@ position = Vector2(885, -55)
 shape = SubResource("SegmentShape2D_lbhrr")
 one_way_collision = true
 
-[node name="box6" type="Node2D" parent="map/part4" unique_id=369166756]
-position = Vector2(1471, -66)
+[node name="area" type="Area2D" parent="map/part4/table3" unique_id=1032346163]
 
-[node name="Panel4" type="Panel" parent="map/part4/box6" unique_id=1665639479]
-offset_left = 555.0
-offset_top = 73.0
-offset_right = 636.0
-offset_bottom = 137.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
-
-[node name="Panel5" type="Panel" parent="map/part4/box6" unique_id=1303557748]
-offset_left = 566.0
-offset_top = 45.0
-offset_right = 648.0
-offset_bottom = 74.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
-
-[node name="Panel6" type="Panel" parent="map/part4/box6" unique_id=731725481]
-offset_left = 635.0
-offset_top = 60.0
-offset_right = 659.0
-offset_bottom = 122.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="map/part4/box6" unique_id=915791293]
-position = Vector2(-299, 89)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/box6/StaticBody2D" unique_id=483580016]
-position = Vector2(885, -10)
-shape = SubResource("SegmentShape2D_ssvqc")
-one_way_collision = true
-
-[node name="box7" type="Node2D" parent="map/part4" unique_id=427638651]
-position = Vector2(1559, -66)
-
-[node name="Panel4" type="Panel" parent="map/part4/box7" unique_id=2114556516]
-offset_left = 555.0
-offset_top = 73.0
-offset_right = 636.0
-offset_bottom = 137.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ir15t")
-
-[node name="Panel5" type="Panel" parent="map/part4/box7" unique_id=823970963]
-offset_left = 566.0
-offset_top = 45.0
-offset_right = 648.0
-offset_bottom = 74.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ca42v")
-
-[node name="Panel6" type="Panel" parent="map/part4/box7" unique_id=910244547]
-offset_left = 635.0
-offset_top = 60.0
-offset_right = 659.0
-offset_bottom = 122.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rysoc")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="map/part4/box7" unique_id=779965218]
-position = Vector2(-299, 89)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/box7/StaticBody2D" unique_id=1908433881]
-position = Vector2(885, -10)
-shape = SubResource("SegmentShape2D_ssvqc")
-one_way_collision = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/table3/area" unique_id=2090088776]
+position = Vector2(1006.5, -70)
+shape = SubResource("RectangleShape2D_yqmd8")
 
 [node name="box9" type="Node2D" parent="map/part4" unique_id=2085006193]
 position = Vector2(1643, -66)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part4/box9" unique_id=975515376]
 offset_left = 555.0
@@ -2287,8 +2353,19 @@ position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_ssvqc")
 one_way_collision = true
 
+[node name="area" type="Area2D" parent="map/part4/box9" unique_id=399145778]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/box9/area" unique_id=1561840812]
+position = Vector2(596.5, 105)
+shape = SubResource("RectangleShape2D_poivq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/part4/box9/area" unique_id=1132841164]
+position = Vector2(634, 90.5)
+shape = SubResource("RectangleShape2D_d2b0t")
+
 [node name="box8" type="Node2D" parent="map/part4" unique_id=924352516]
 position = Vector2(1514, -130)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part4/box8" unique_id=889908888]
 offset_left = 555.0
@@ -2325,8 +2402,19 @@ position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_ssvqc")
 one_way_collision = true
 
+[node name="area" type="Area2D" parent="map/part4/box8" unique_id=1928887542]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/box8/area" unique_id=1206298812]
+position = Vector2(596.5, 98)
+shape = SubResource("RectangleShape2D_bekt7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/part4/box8/area" unique_id=156751733]
+position = Vector2(607.5, 76.5)
+shape = SubResource("RectangleShape2D_d3qia")
+
 [node name="box10" type="Node2D" parent="map/part4" unique_id=1543327027]
 position = Vector2(1605, -130)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part4/box10" unique_id=1833503425]
 offset_left = 555.0
@@ -2362,6 +2450,16 @@ position = Vector2(-299, 89)
 position = Vector2(885, -10)
 shape = SubResource("SegmentShape2D_ssvqc")
 one_way_collision = true
+
+[node name="area" type="Area2D" parent="map/part4/box10" unique_id=1934740456]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part4/box10/area" unique_id=721773359]
+position = Vector2(596.5, 98)
+shape = SubResource("RectangleShape2D_bekt7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/part4/box10/area" unique_id=630107426]
+position = Vector2(607.5, 76.5)
+shape = SubResource("RectangleShape2D_d3qia")
 
 [node name="black" type="PointLight2D" parent="map/part4" unique_id=1175106793]
 visible = false
@@ -5225,6 +5323,30 @@ parameters/looping = true
 [connection signal="mouse_exited" from="map/part3/wardrobe/area" to="map/part3/wardrobe" method="_on_area_mouse_exited"]
 [connection signal="body_entered" from="map/part3/Area2D" to="." method="_on_area_part3_body_entered"]
 [connection signal="body_exited" from="map/part3/Area2D" to="." method="_on_area_part3_body_exited"]
+[connection signal="input_event" from="map/part4/fridge/area" to="map/part4/fridge" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="map/part4/fridge/area" to="map/part4/fridge" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part4/fridge/area" to="map/part4/fridge" method="_on_area_mouse_exited"]
+[connection signal="input_event" from="map/part4/sink/area" to="map/part4/sink" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="map/part4/sink/area" to="map/part4/sink" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part4/sink/area" to="map/part4/sink" method="_on_area_mouse_exited"]
+[connection signal="input_event" from="map/part4/box6/area" to="map/part4/box6" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="map/part4/box6/area" to="map/part4/box6" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part4/box6/area" to="map/part4/box6" method="_on_area_mouse_exited"]
+[connection signal="input_event" from="map/part4/box7/area" to="map/part4/box7" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="map/part4/box7/area" to="map/part4/box7" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part4/box7/area" to="map/part4/box7" method="_on_area_mouse_exited"]
+[connection signal="input_event" from="map/part4/table3/area" to="map/part4/table3" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="map/part4/table3/area" to="map/part4/table3" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part4/table3/area" to="map/part4/table3" method="_on_area_mouse_exited"]
+[connection signal="input_event" from="map/part4/box9/area" to="map/part4/box9" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="map/part4/box9/area" to="map/part4/box9" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part4/box9/area" to="map/part4/box9" method="_on_area_mouse_exited"]
+[connection signal="input_event" from="map/part4/box8/area" to="map/part4/box8" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="map/part4/box8/area" to="map/part4/box8" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part4/box8/area" to="map/part4/box8" method="_on_area_mouse_exited"]
+[connection signal="input_event" from="map/part4/box10/area" to="map/part4/box10" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="map/part4/box10/area" to="map/part4/box10" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="map/part4/box10/area" to="map/part4/box10" method="_on_area_mouse_exited"]
 [connection signal="body_entered" from="map/part4/Area2D" to="." method="_on_area_part4_body_entered"]
 [connection signal="body_exited" from="map/part4/Area2D" to="." method="_on_area_part4_body_exited"]
 [connection signal="input_event" from="map/part1/shelf/area" to="map/part1/shelf" method="_on_area_input_event"]

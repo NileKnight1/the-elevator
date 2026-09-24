@@ -785,7 +785,6 @@ var anomalies_data = [
 	
 	{"node": "map/part1/table2", "normal_case": 1, "second_position": Vector2(-3529.0, -64.0)},
 	
-	
 	{"node": "map/part1/box", "normal_case": 1, "second_position": Vector2(-3559.0, 36.0)},
 	{"node": "map/part1/box2", "normal_case": 1, "second_position": Vector2(-3361.0, 36.0)},
 	{"node": "map/part1/box3", "normal_case": 1, "second_position": Vector2(-3410.0, -28)},
@@ -793,8 +792,26 @@ var anomalies_data = [
 	{"node": "map/part3/box", "normal_case": 1, "second_position": Vector2(-78.0, 15)},
 	{"node": "map/part3/box2", "normal_case": 1, "second_position": Vector2(266.0, 15.0)},
 	{"node": "map/part3/box3", "normal_case": 1, "second_position": Vector2(28.0, -248.0)},
+	{"node": "map/part3/box4", "normal_case": 1, "second_position": Vector2(353.0, 15)},
+	{"node": "map/part3/box5", "normal_case": 1, "second_position": Vector2(1094.0, 15.0)},
+	{"node": "map/part3/box6", "normal_case": 1, "second_position": Vector2(160.0, 15.0)},
 	
-	{"node": "map/part3/box3", "normal_case": 1, "second_position": Vector2(28.0, -248.0)},
+	{"node": "map/part3/bin", "normal_case": 1, "second_position": Vector2(120.0, 0)},
+	{"node": "map/part3/bin2", "normal_case": 1, "second_position": Vector2(564.0, 57.0)},
+	{"node": "map/part3/table2", "normal_case": 1, "second_position": Vector2(-198.0, -56.0)},
+	{"node": "map/part3/table", "normal_case": 1, "second_position": Vector2(-291.0, 57.0)},
+	{"node": "map/part3/chair", "normal_case": 1, "second_position": Vector2(-1.0, 0)},
+	{"node": "map/part3/wardrobe", "normal_case": 1, "second_position": Vector2(-822.0, 16)},
+	
+	
+	{"node": "map/part4/fridge", "normal_case": 1, "second_position": Vector2(-1385.0, 36)},
+	{"node": "map/part4/sink", "normal_case": 1, "second_position": Vector2(1289.0, 49.0)},
+	{"node": "map/part4/table3", "normal_case": 1, "second_position": Vector2(836.0, -227.0)},
+	{"node": "map/part4/box6", "normal_case": 1, "second_position": Vector2(1186.0, -66.0)},
+	{"node": "map/part4/box7", "normal_case": 1, "second_position": Vector2(1271.0, -66.0)},
+	{"node": "map/part4/box9", "normal_case": 1, "second_position": Vector2(-2320.0, 7.0)},
+	{"node": "map/part4/box8", "normal_case": 1, "second_position": Vector2(1514.0, -261.0)},
+	{"node": "map/part4/box10", "normal_case": 1, "second_position": Vector2(1966.0, -256.0)},
 	
 	
 ]
