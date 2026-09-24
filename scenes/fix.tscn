@@ -250,16 +250,6 @@ corner_detail = 20
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qarp1"]
 size = Vector2(29, 55)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_iywne"]
-a = Vector2(-21, -16)
-b = Vector2(103, -16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xtsk"]
-size = Vector2(12, 55)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl1gk"]
-size = Vector2(121, 89.25)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5newe"]
 bg_color = Color(0.05859375, 0.05859375, 0.05859375, 1)
 border_width_left = 1
@@ -286,6 +276,16 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_xbak0"]
 font_size = 4
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_iywne"]
+a = Vector2(-21, -16)
+b = Vector2(103, -16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xtsk"]
+size = Vector2(12, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cl1gk"]
+size = Vector2(121, 89.25)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pl11u"]
 bg_color = Color(0.453125, 0.28342438, 0.08496094, 1)
@@ -1123,6 +1123,7 @@ shape = SubResource("RectangleShape2D_kvpfn")
 
 [node name="chair" type="Node2D" parent="map/part3" unique_id=1930310476]
 position = Vector2(-41, 0)
+script = ExtResource("7_lqxid")
 
 [node name="Panel8" type="Panel" parent="map/part3/chair" unique_id=2134160493]
 offset_left = 927.0
@@ -1190,6 +1191,7 @@ shape = SubResource("RectangleShape2D_5ndfa")
 
 [node name="table" type="Node2D" parent="map/part3" unique_id=1614125924]
 position = Vector2(-291, 15)
+script = ExtResource("7_lqxid")
 
 [node name="Panel" type="Panel" parent="map/part3/table" unique_id=325636681]
 offset_left = 893.0
@@ -1437,6 +1439,7 @@ one_way_collision = true
 
 [node name="box4" type="Node2D" parent="map/part3" unique_id=884858013]
 position = Vector2(503, 15)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part3/box4" unique_id=2004365182]
 z_index = 1
@@ -1488,6 +1491,7 @@ shape = SubResource("RectangleShape2D_qtnq1")
 
 [node name="box5" type="Node2D" parent="map/part3" unique_id=1386917096]
 position = Vector2(589, 15)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part3/box5" unique_id=27297662]
 z_index = 1
@@ -1539,6 +1543,7 @@ shape = SubResource("RectangleShape2D_l8xmd")
 
 [node name="box6" type="Node2D" parent="map/part3" unique_id=791861437]
 position = Vector2(543, -48)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part3/box6" unique_id=764725962]
 z_index = 1
@@ -1663,6 +1668,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="bin" type="Node2D" parent="map/part3" unique_id=558540886]
+script = ExtResource("7_lqxid")
 
 [node name="Panel5" type="Panel" parent="map/part3/bin" unique_id=982823710]
 offset_left = 1086.0
@@ -1690,6 +1696,7 @@ shape = SubResource("RectangleShape2D_qarp1")
 [node name="bin2" type="Node2D" parent="map/part3" unique_id=389396145]
 z_index = 2
 position = Vector2(419, 57)
+script = ExtResource("7_lqxid")
 
 [node name="Panel5" type="Panel" parent="map/part3/bin2" unique_id=281562634]
 offset_left = 1086.0
@@ -1716,6 +1723,7 @@ shape = SubResource("RectangleShape2D_qarp1")
 
 [node name="table2" type="Node2D" parent="map/part3" unique_id=148839361]
 position = Vector2(382, 15)
+script = ExtResource("7_lqxid")
 
 [node name="Panel4" type="Panel" parent="map/part3/table2" unique_id=513405802]
 offset_left = 867.0
@@ -1784,6 +1792,98 @@ scale = Vector2(0.40490797, 0.5)
 color = Color(0.07421875, 0.029687503, 0, 1)
 polygon = PackedVector2Array(846, -27, 876, -59, 1143, -59, 1172, -28)
 
+[node name="pc" type="Node2D" parent="map/part3/table2" unique_id=570803498]
+position = Vector2(-382, -11)
+
+[node name="Panel4" type="Panel" parent="map/part3/table2/pc" unique_id=564712127]
+offset_left = 1266.0
+offset_top = -85.0
+offset_right = 1352.3
+offset_bottom = -34.865
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5newe")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel5" type="Panel" parent="map/part3/table2/pc" unique_id=584126418]
+offset_left = 1303.0
+offset_top = -36.0
+offset_right = 1313.0
+offset_bottom = -19.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_37s47")
+metadata/_edit_use_anchors_ = true
+
+[node name="desktop" type="Node2D" parent="map/part3/table2/pc" unique_id=1010309209]
+visible = false
+position = Vector2(1280, -69)
+
+[node name="Panel6" type="Panel" parent="map/part3/table2/pc/desktop" unique_id=1572308830]
+offset_left = -10.0
+offset_top = -11.0
+offset_right = 68.0
+offset_bottom = 29.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
+
+[node name="bg" type="Sprite2D" parent="map/part3/table2/pc/desktop" unique_id=289882621]
+position = Vector2(29, 9)
+scale = Vector2(0.019499997, 0.01777778)
+texture = ExtResource("4_qtnq1")
+
+[node name="mypc" type="TextureButton" parent="map/part3/table2/pc/desktop" unique_id=1959625693]
+offset_left = -7.0
+offset_top = -9.0
+offset_right = -2.0
+offset_bottom = -3.2424245
+texture_normal = ExtResource("5_l8xmd")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="mypc2" type="TextureButton" parent="map/part3/table2/pc/desktop" unique_id=263569685]
+offset_left = -7.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = 3.7575755
+texture_normal = ExtResource("6_d3qia")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="pc_panel" type="Panel" parent="map/part3/table2/pc/desktop" unique_id=938227010]
+visible = false
+offset_left = 6.0
+offset_top = -6.0
+offset_right = 50.0
+offset_bottom = 21.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
+
+[node name="note_panel2" type="Panel" parent="map/part3/table2/pc/desktop" unique_id=1126567007]
+offset_left = 9.094971
+offset_top = -1.4800034
+offset_right = 47.0
+offset_bottom = 20.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0rmfi")
+
+[node name="Label" type="Label" parent="map/part3/table2/pc/desktop/note_panel2" unique_id=251730994]
+layout_mode = 0
+offset_left = 0.9050293
+offset_top = 0.48000336
+offset_right = 13.905029
+offset_bottom = 7.4800034
+text = "He's watching."
+label_settings = SubResource("LabelSettings_xbak0")
+
+[node name="cam" type="Camera2D" parent="map/part3/table2/pc" unique_id=18536405]
+position = Vector2(1307, -57)
+enabled = false
+zoom = Vector2(6.905, 6.905)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="map/part3/table2" unique_id=899608789]
 position = Vector2(0, 7)
 
@@ -1814,98 +1914,6 @@ shape = SubResource("RectangleShape2D_5xtsk")
 position = Vector2(925.5, -51.375)
 shape = SubResource("RectangleShape2D_cl1gk")
 
-[node name="pc" type="Node2D" parent="map/part3" unique_id=570803498]
-position = Vector2(0, 4)
-
-[node name="Panel4" type="Panel" parent="map/part3/pc" unique_id=564712127]
-offset_left = 1266.0
-offset_top = -85.0
-offset_right = 1352.3
-offset_bottom = -34.865
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5newe")
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel5" type="Panel" parent="map/part3/pc" unique_id=584126418]
-offset_left = 1303.0
-offset_top = -36.0
-offset_right = 1313.0
-offset_bottom = -19.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_37s47")
-metadata/_edit_use_anchors_ = true
-
-[node name="desktop" type="Node2D" parent="map/part3/pc" unique_id=1010309209]
-visible = false
-position = Vector2(1280, -69)
-
-[node name="Panel6" type="Panel" parent="map/part3/pc/desktop" unique_id=1572308830]
-offset_left = -10.0
-offset_top = -11.0
-offset_right = 68.0
-offset_bottom = 29.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
-
-[node name="bg" type="Sprite2D" parent="map/part3/pc/desktop" unique_id=289882621]
-position = Vector2(29, 9)
-scale = Vector2(0.019499997, 0.01777778)
-texture = ExtResource("4_qtnq1")
-
-[node name="mypc" type="TextureButton" parent="map/part3/pc/desktop" unique_id=1959625693]
-offset_left = -7.0
-offset_top = -9.0
-offset_right = -2.0
-offset_bottom = -3.2424245
-texture_normal = ExtResource("5_l8xmd")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="mypc2" type="TextureButton" parent="map/part3/pc/desktop" unique_id=263569685]
-offset_left = -7.0
-offset_top = -2.0
-offset_right = -2.0
-offset_bottom = 3.7575755
-texture_normal = ExtResource("6_d3qia")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="pc_panel" type="Panel" parent="map/part3/pc/desktop" unique_id=938227010]
-visible = false
-offset_left = 6.0
-offset_top = -6.0
-offset_right = 50.0
-offset_bottom = 21.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bnuda")
-
-[node name="note_panel2" type="Panel" parent="map/part3/pc/desktop" unique_id=1126567007]
-offset_left = 9.094971
-offset_top = -1.4800034
-offset_right = 47.0
-offset_bottom = 20.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0rmfi")
-
-[node name="Label" type="Label" parent="map/part3/pc/desktop/note_panel2" unique_id=251730994]
-layout_mode = 0
-offset_left = 0.9050293
-offset_top = 0.48000336
-offset_right = 13.905029
-offset_bottom = 7.4800034
-text = "He's watching."
-label_settings = SubResource("LabelSettings_xbak0")
-
-[node name="cam" type="Camera2D" parent="map/part3/pc" unique_id=18536405]
-position = Vector2(1307, -57)
-enabled = false
-zoom = Vector2(6.905, 6.905)
-
 [node name="paint" type="Node2D" parent="map/part3" unique_id=222961494]
 
 [node name="Panel4" type="Panel" parent="map/part3/paint" unique_id=2003180303]
@@ -1919,6 +1927,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pl11u")
 
 [node name="wardrobe" type="Node2D" parent="map/part3" unique_id=338952384]
 position = Vector2(-46, 15)
+script = ExtResource("7_lqxid")
 
 [node name="Panel" type="Panel" parent="map/part3/wardrobe" unique_id=1027395689]
 offset_left = 1004.0
@@ -1965,9 +1974,9 @@ layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
 
-[node name="wardrobe_area" type="Area2D" parent="map/part3/wardrobe" unique_id=1152481106]
+[node name="object_area" type="Area2D" parent="map/part3/wardrobe" unique_id=1152481106]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part3/wardrobe/wardrobe_area" unique_id=857375814]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/part3/wardrobe/object_area" unique_id=857375814]
 position = Vector2(1050, -74.5)
 shape = SubResource("RectangleShape2D_me7ko")
 
@@ -4717,7 +4726,7 @@ blend_mode = 1
 texture = ExtResource("3_poivq")
 
 [node name="player" parent="." unique_id=312059141 instance=ExtResource("9_a8icl")]
-position = Vector2(276, -73)
+position = Vector2(509, -73)
 
 [node name="crowbad" type="Sprite2D" parent="player" unique_id=1896290467]
 visible = false
@@ -5208,14 +5217,14 @@ parameters/looping = true
 [connection signal="input_event" from="map/part3/bin2/part3_bin2" to="." method="_on_part_3_bin_2_input_event"]
 [connection signal="mouse_entered" from="map/part3/bin2/part3_bin2" to="." method="_on_part_3_bin_2_mouse_entered"]
 [connection signal="mouse_exited" from="map/part3/bin2/part3_bin2" to="." method="_on_part_3_bin_2_mouse_exited"]
+[connection signal="pressed" from="map/part3/table2/pc/desktop/mypc" to="." method="_on_mypc_pressed"]
+[connection signal="pressed" from="map/part3/table2/pc/desktop/mypc2" to="." method="_on_note_pressed"]
 [connection signal="input_event" from="map/part3/table2/part3_table2" to="." method="_on_part_3_table_2_input_event"]
 [connection signal="mouse_entered" from="map/part3/table2/part3_table2" to="." method="_on_part_3_table_2_mouse_entered"]
 [connection signal="mouse_exited" from="map/part3/table2/part3_table2" to="." method="_on_part_3_table_2_mouse_exited"]
-[connection signal="pressed" from="map/part3/pc/desktop/mypc" to="." method="_on_mypc_pressed"]
-[connection signal="pressed" from="map/part3/pc/desktop/mypc2" to="." method="_on_note_pressed"]
-[connection signal="input_event" from="map/part3/wardrobe/wardrobe_area" to="." method="_on_wardrobe_area_input_event"]
-[connection signal="mouse_entered" from="map/part3/wardrobe/wardrobe_area" to="." method="_on_wardrobe_area_mouse_entered"]
-[connection signal="mouse_exited" from="map/part3/wardrobe/wardrobe_area" to="." method="_on_wardrobe_area_mouse_exited"]
+[connection signal="input_event" from="map/part3/wardrobe/object_area" to="map/part3/wardrobe" method="_on__input_event"]
+[connection signal="mouse_entered" from="map/part3/wardrobe/object_area" to="map/part3/wardrobe" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="map/part3/wardrobe/object_area" to="map/part3/wardrobe" method="_on_mouse_exited"]
 [connection signal="body_entered" from="map/part3/Area2D" to="." method="_on_area_part3_body_entered"]
 [connection signal="body_exited" from="map/part3/Area2D" to="." method="_on_area_part3_body_exited"]
 [connection signal="body_entered" from="map/part4/Area2D" to="." method="_on_area_part4_body_entered"]

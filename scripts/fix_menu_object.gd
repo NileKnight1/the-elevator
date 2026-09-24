@@ -68,3 +68,24 @@ func change_position():
 				tween.tween_property(self, "position", def_position, 0.15)
 				#self.position = def_position
 			
+
+
+		#$CanvasLayer/fix.visible = 1
+
+
+func _on__input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if self == global.fix_selected_node: return
+		global.show_fix_menu()
+		if global.fix_selected_node != null:
+			print(global.fix_selected_node)
+			global.fix_selected_node.force_hover_off()
+		global.fix_selected_node = self
+
+
+
+func _on_mouse_entered() -> void:
+	hover_on()
+
+func _on_mouse_exited() -> void:
+	hover_off()

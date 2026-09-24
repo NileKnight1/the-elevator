@@ -88,6 +88,7 @@ func guide3(msg):
 func _ready() -> void:
 	#$player.position = Vector2(0, -52)
 	print("floor ",floor)
+	global.fix_game = self
 	$CanvasLayer/mobile.visible = touch
 	translation()
 	#anomaly_apply()
@@ -793,9 +794,10 @@ var anomalies_data = [
 	{"node": "map/part3/box2", "normal_case": 1, "second_position": Vector2(266.0, 15.0)},
 	{"node": "map/part3/box3", "normal_case": 1, "second_position": Vector2(28.0, -248.0)},
 	
+	{"node": "map/part3/box3", "normal_case": 1, "second_position": Vector2(28.0, -248.0)},
+	
 	
 ]
-
 
 func object_click(event, object):
 	if check_click(event):
@@ -1012,52 +1014,44 @@ func _on_part_3_box_6_mouse_entered() -> void:
 func _on_part_3_box_6_mouse_exited() -> void:
 	$map/part3/box6.hover_off()
 
-
-func _on_wardrobe_area_mouse_exited() -> void:
-	pass # Replace with function body.
-func _on_wardrobe_area_mouse_entered() -> void:
-	pass # Replace with function body.
 func _on_wardrobe_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
-func _on_part_3_table_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
-func _on_part_3_table_1_mouse_entered() -> void:
-	pass # Replace with function body.
-func _on_part_3_table_1_mouse_exited() -> void:
-	pass # Replace with function body.
-func _on_part_3_chair_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
-func _on_part_3_chair_mouse_entered() -> void:
-	pass # Replace with function body.
-func _on_part_3_chair_mouse_exited() -> void:
-	pass # Replace with function body.
-func _on_part_3_table_2_mouse_exited() -> void:
-	pass # Replace with function body.
-func _on_part_3_table_2_mouse_entered() -> void:
-	pass # Replace with function body.
-func _on_part_3_table_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
+	object_click(event, $map/part3/wardrobe)
+func _on_wardrobe_area_mouse_entered() -> void:
+	$map/part3/wardrobe.hover_on()
+func _on_wardrobe_area_mouse_exited() -> void:
+	$map/part3/wardrobe.hover_off()
 
+func _on_part_3_table_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part3/table)
+func _on_part_3_table_1_mouse_entered() -> void:
+	$map/part3/table.hover_on()
+func _on_part_3_table_1_mouse_exited() -> void:
+	$map/part3/table.hover_off()
+
+func _on_part_3_chair_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part3/chair)
+func _on_part_3_chair_mouse_entered() -> void:
+	$map/part3/chair.hover_on()
+func _on_part_3_chair_mouse_exited() -> void:
+	$map/part3/chair.hover_off()
+
+func _on_part_3_table_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	object_click(event, $map/part3/table2)
+func _on_part_3_table_2_mouse_entered() -> void:
+	$map/part3/table2.hover_on()
+func _on_part_3_table_2_mouse_exited() -> void:
+	$map/part3/table2.hover_off()
 
 func _on_part_3_bin_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
-
-
+	object_click(event, $map/part3/bin2)
 func _on_part_3_bin_2_mouse_entered() -> void:
-	pass # Replace with function body.
-
-
+	$map/part3/bin2.hover_on()
 func _on_part_3_bin_2_mouse_exited() -> void:
-	pass # Replace with function body.
-
+	$map/part3/bin2.hover_off()
 
 func _on_part_3_bin_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
-
-
+	object_click(event, $map/part3/bin)
 func _on_part_3_bin_mouse_entered() -> void:
-	pass # Replace with function body.
-
-
+	$map/part3/bin.hover_on()
 func _on_part_3_bin_mouse_exited() -> void:
-	pass # Replace with function body.
+	$map/part3/bin.hover_off()
