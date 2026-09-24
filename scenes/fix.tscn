@@ -416,6 +416,12 @@ size = Vector2(26, 144)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqmd8"]
 size = Vector2(303, 56)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmxyb"]
+size = Vector2(13, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwbjj"]
+size = Vector2(13, 106)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2b0t"]
 size = Vector2(46, 87)
 
@@ -549,6 +555,15 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr1ej"]
+bg_color = Color(0.07992554, 0.3508768, 0.37890625, 1)
+skew = Vector2(-0.805, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02fa5"]
 bg_color = Color(0.07992554, 0.3508768, 0.37890625, 1)
 border_width_left = 2
@@ -579,15 +594,6 @@ border_color = Color(0, 0, 0, 1)
 bg_color = Color(0.07992554, 0.3508768, 0.37890625, 1)
 border_width_left = 2
 border_width_top = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr1ej"]
-bg_color = Color(0.07992554, 0.3508768, 0.37890625, 1)
-skew = Vector2(-0.805, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
@@ -2339,6 +2345,22 @@ one_way_collision = true
 position = Vector2(1006.5, -70)
 shape = SubResource("RectangleShape2D_yqmd8")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="map/part4/table3/area" unique_id=1399963326]
+position = Vector2(873.5, -13)
+shape = SubResource("RectangleShape2D_wmxyb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="map/part4/table3/area" unique_id=554214256]
+position = Vector2(891, -26)
+shape = SubResource("RectangleShape2D_nwbjj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="map/part4/table3/area" unique_id=400834127]
+position = Vector2(1121, -25)
+shape = SubResource("RectangleShape2D_nwbjj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="map/part4/table3/area" unique_id=514919883]
+position = Vector2(1145, -13)
+shape = SubResource("RectangleShape2D_nwbjj")
+
 [node name="box9" type="Node2D" parent="map/part4" unique_id=2085006193]
 position = Vector2(1643, -66)
 script = ExtResource("7_lqxid")
@@ -3582,6 +3604,24 @@ collision_mask = 3
 position = Vector2(-76.5, 12)
 shape = SubResource("RectangleShape2D_bt5mj")
 
+[node name="Panel16" type="Panel" parent="map/part2/sofa" unique_id=304173821]
+offset_left = -258.0
+offset_top = 12.0
+offset_right = -235.0
+offset_bottom = 38.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ool0")
+
+[node name="Panel17" type="Panel" parent="map/part2/sofa" unique_id=1632391834]
+offset_left = 81.0
+offset_top = 14.0
+offset_right = 104.0
+offset_bottom = 40.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pr1ej")
+
 [node name="Panel13" type="Panel" parent="map/part2/sofa" unique_id=393712288]
 offset_left = -263.0
 offset_top = 3.0
@@ -3645,6 +3685,15 @@ layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7025r")
 
+[node name="Panel14" type="Panel" parent="map/part2/sofa" unique_id=370794765]
+offset_left = 88.0
+offset_top = 3.0
+offset_right = 111.0
+offset_bottom = 29.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pr1ej")
+
 [node name="Panel5" type="Panel" parent="map/part2/sofa" unique_id=1349646372]
 offset_left = -77.0
 offset_top = -59.0
@@ -3671,15 +3720,6 @@ offset_bottom = 86.0
 layout_direction = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_02fa5")
-
-[node name="Panel14" type="Panel" parent="map/part2/sofa" unique_id=370794765]
-offset_left = 88.0
-offset_top = 3.0
-offset_right = 111.0
-offset_bottom = 29.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pr1ej")
 
 [node name="Panel15" type="Panel" parent="map/part2/sofa" unique_id=626866977]
 offset_left = 97.0
@@ -4907,10 +4947,10 @@ text = "Garage"
 
 [node name="down" type="Button" parent="CanvasLayer/elevator" unique_id=2111302969]
 visible = false
-offset_left = 735.0
-offset_top = 446.0
-offset_right = 789.0
-offset_bottom = 534.0
+offset_left = 723.0
+offset_top = 416.0
+offset_right = 777.0
+offset_bottom = 504.0
 rotation = 4.712389
 theme_override_colors/font_color = Color(0.67578125, 0.67578125, 0.67578125, 1)
 theme_override_fonts/font = ExtResource("2_lqxid")

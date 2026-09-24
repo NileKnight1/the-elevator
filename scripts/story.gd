@@ -181,6 +181,7 @@ func _process(delta: float) -> void:
 		if elevator_area && abs($him.position.x-$player.position.x) > 350:
 			if !elevator_in:
 				elevator_in = 1 
+				guide("")
 				$player.hide = 1
 				disable_move()
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
@@ -201,6 +202,7 @@ func _process(delta: float) -> void:
 		if garage_elevator_area:
 			if !elevator_in:
 				elevator_in = 1 
+				guide("")
 				$player.hide = 1
 				disable_move()
 				$garage/garage/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)

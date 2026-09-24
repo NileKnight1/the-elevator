@@ -24,11 +24,17 @@ func _ready() -> void:
 		i.visible = 1
 		i.energy = 0
 	$lights.visible = 1
+	$light.visible = 0
 	$black.visible = 1
+	
 	$tutorial_story.modulate = Color(0.0, 0.0, 0.0, 1.0)
 	$tutorial_floors.modulate = Color(0.0, 0.0, 0.0, 1.0)
+	$tutorial_fix.modulate = Color(0.0, 0.0, 0.0, 1.0)
+	
 	$tutorial_story.visible = 0
 	$tutorial_floors.visible = 0
+	$tutorial_fix.visible = 0
+	
 	
 	rand_light(0)
 
@@ -44,8 +50,9 @@ func start():
 	tween.tween_property($".", "modulate", Color(0.0, 0.0, 0.0, 1.0), 0.5)
 	await get_tree().create_timer(0.5).timeout
 	tutorial.visible = 1
-	$black.visible = 0
+	#$black.visible = 0
 	$lights.visible = 0
+	$light.visible = 1
 	
 	switch_boxes()
 	var tween3 = create_tween()
@@ -60,10 +67,17 @@ func start():
 func _on_story_pressed() -> void:
 	game_scene = "res://scenes/story.tscn"
 	tutorial = $tutorial_story
+	boxes_count = 4
 	start()
 func _on_floors_pressed() -> void:
 	game_scene = "res://scenes/floors.tscn"
 	tutorial = $tutorial_floors
+	boxes_count = 4
+	start()
+func _on_fix_pressed() -> void:
+	game_scene = "res://scenes/fix.tscn"
+	tutorial = $tutorial_fix
+	boxes_count = 9
 	start()
 
 func run_game():
@@ -119,13 +133,14 @@ func _on_left_tutorial_story_pressed() -> void:
 	switch_boxes()
 
 func _on_right_tutorial_story_pressed() -> void:
-	if active_boxes[2] == 4: return
+	if active_boxes[2] == boxes_count-1: return
 	play_sound(sound_click)
 	active_boxes[0] += 1
 	active_boxes[1] += 1
 	active_boxes[2] += 1
 	switch_boxes()
 
+var boxes_count = 4
 func switch_boxes():
 	for i in tutorial.get_node("boxes").get_children():
 		i.visible = 0
@@ -135,7 +150,7 @@ func switch_boxes():
 	if active_boxes[0] == 0:
 		tutorial.get_node("left").disabled = 1
 	else: tutorial.get_node("left").disabled = 0
-	if active_boxes[2] == 4:
+	if active_boxes[2] == boxes_count-1:
 		tutorial.get_node("right").disabled = 1
 	else: tutorial.get_node("right").disabled = 0
 

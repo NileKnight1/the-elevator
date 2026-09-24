@@ -94,17 +94,18 @@ func _ready() -> void:
 	translation()
 	#anomaly_apply()
 	init_game()
-	anomaly2_apply()
-	anomaly2_apply()
-	anomaly2_apply()
-	anomaly2_apply()
-	anomaly2_apply()
-	anomaly2_apply()
-	anomaly2_apply()
-	anomaly2_apply()
-	anomaly2_apply()
-	anomaly2_apply()
-	
+	if global.fix_wrong_attempts < 3:
+		anomaly2_apply()
+		anomaly2_apply()
+		anomaly2_apply()
+		anomaly2_apply()
+		anomaly2_apply()
+		anomaly2_apply()
+		anomaly2_apply()
+		anomaly2_apply()
+		anomaly2_apply()
+		anomaly2_apply()
+		
 	
 	
 	$CanvasLayer/fix.visible = 0
@@ -116,7 +117,7 @@ func _ready() -> void:
 	var tween = create_tween()
 	tween.tween_property($".", "modulate", Color(1.0, 1.0, 1.0, 1.0), 1.0)
 	$map/part2/him_spawn_col/CollisionShape2D.set_deferred("disabled", 0)
-	if global.mistakes == 3:
+	if global.fix_wrong_attempts == 3:
 		game_lose()
 	
 
@@ -151,6 +152,7 @@ func _process(delta: float) -> void:
 			if !elevator_in:
 				check_anomalies()
 				elevator_in = 1 
+				guide("")
 				$player.hide = 1
 				disable_move()
 				$map/hallway/boundaries/StaticBody2D/elevator.set_deferred("disabled", 0)
@@ -262,6 +264,7 @@ func elevator_taken():
 	await get_tree().create_timer(1.0).timeout
 	
 	if wrong_data > 3:
+		global.fix_wrong_attempts += 1
 		get_tree().change_scene_to_file("res://scenes/fix.tscn")
 	else:
 		elevator_in = 0
@@ -689,7 +692,8 @@ func _on_kill_entered(body: Node2D) -> void:
 		
 
 func _on_restart_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/floors.tscn")
+	global.fix_wrong_attempts = 0
+	get_tree().change_scene_to_file("res://scenes/fix.tscn")
 
 
 
@@ -809,7 +813,7 @@ var anomalies_data = [
 	{"node": "map/part3/box6", "normal_case": 1, "second_position": Vector2(160.0, 15.0)},
 	
 	{"node": "map/part3/bin", "normal_case": 1, "second_position": Vector2(120.0, 0)},
-	{"node": "map/part3/bin2", "normal_case": 1, "second_position": Vector2(564.0, 57.0)},
+	{"node": "map/part3/bin2", "normal_case": 0, "second_position": Vector2(564.0, 57.0)},
 	{"node": "map/part3/table2", "normal_case": 1, "second_position": Vector2(-198.0, -56.0)},
 	{"node": "map/part3/table", "normal_case": 1, "second_position": Vector2(-291.0, 57.0)},
 	{"node": "map/part3/chair", "normal_case": 1, "second_position": Vector2(-1.0, 0)},
