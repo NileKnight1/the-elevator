@@ -1011,3 +1011,53 @@ func _on_part_3_box_6_mouse_entered() -> void:
 	$map/part3/box6.hover_on()
 func _on_part_3_box_6_mouse_exited() -> void:
 	$map/part3/box6.hover_off()
+
+
+func _on_wardrobe_area_mouse_exited() -> void:
+	pass # Replace with function body.
+func _on_wardrobe_area_mouse_entered() -> void:
+	pass # Replace with function body.
+func _on_wardrobe_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
+func _on_part_3_table_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
+func _on_part_3_table_1_mouse_entered() -> void:
+	pass # Replace with function body.
+func _on_part_3_table_1_mouse_exited() -> void:
+	pass # Replace with function body.
+func _on_part_3_chair_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
+func _on_part_3_chair_mouse_entered() -> void:
+	pass # Replace with function body.
+func _on_part_3_chair_mouse_exited() -> void:
+	pass # Replace with function body.
+func _on_part_3_table_2_mouse_exited() -> void:
+	pass # Replace with function body.
+func _on_part_3_table_2_mouse_entered() -> void:
+	pass # Replace with function body.
+func _on_part_3_table_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
+
+
+func _on_part_3_bin_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
+
+
+func _on_part_3_bin_2_mouse_entered() -> void:
+	pass # Replace with function body.
+
+
+func _on_part_3_bin_2_mouse_exited() -> void:
+	pass # Replace with function body.
+
+
+func _on_part_3_bin_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.
+
+
+func _on_part_3_bin_mouse_entered() -> void:
+	pass # Replace with function body.
+
+
+func _on_part_3_bin_mouse_exited() -> void:
+	pass # Replace with function body.

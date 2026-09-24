@@ -172,8 +172,9 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvuet"]
-bg_color = Color(0.09803922, 0.039215688, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt5mj"]
+bg_color = Color(0.09765625, 0.037802413, 0, 1)
+skew = Vector2(0, -1.215)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -183,6 +184,23 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trtic"]
 bg_color = Color(0.09803922, 0.039215688, 0, 1)
 border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1j6l"]
+bg_color = Color(0.09765625, 0.037802413, 0, 1)
+skew = Vector2(-0.88, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvuet"]
+bg_color = Color(0.09803922, 0.039215688, 0, 1)
+border_width_left = 2
+border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
@@ -377,24 +395,6 @@ size = Vector2(131, 243)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rysoc"]
 b = Vector2(77, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt5mj"]
-bg_color = Color(0.09765625, 0.037802413, 0, 1)
-skew = Vector2(0, -1.215)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1j6l"]
-bg_color = Color(0.09765625, 0.037802413, 0, 1)
-skew = Vector2(-0.88, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tnpc"]
 size = Vector2(1120, 577)
@@ -1512,6 +1512,63 @@ texture = ExtResource("10_trtic")
 
 [node name="part3" type="Node2D" parent="map" unique_id=1120939309]
 
+[node name="chair" type="Node2D" parent="map/part3" unique_id=1930310476]
+position = Vector2(-41, 0)
+
+[node name="Panel8" type="Panel" parent="map/part3/chair" unique_id=2134160493]
+offset_left = 927.0
+offset_top = -41.0
+offset_right = 945.0
+offset_bottom = 15.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bt5mj")
+
+[node name="Panel7" type="Panel" parent="map/part3/chair" unique_id=21021696]
+offset_left = 916.0
+offset_top = 4.0
+offset_right = 930.0
+offset_bottom = 43.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
+
+[node name="Panel3" type="Panel" parent="map/part3/chair" unique_id=756383782]
+offset_left = 908.0
+offset_top = 22.0
+offset_right = 921.0
+offset_bottom = 56.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
+
+[node name="Panel5" type="Panel" parent="map/part3/chair" unique_id=746689063]
+offset_left = 891.0
+offset_top = 4.0
+offset_right = 905.0
+offset_bottom = 43.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
+
+[node name="Panel6" type="Panel" parent="map/part3/chair" unique_id=1410778042]
+offset_left = 932.0
+offset_top = 22.0
+offset_right = 945.0
+offset_bottom = 56.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
+
+[node name="Panel4" type="Panel" parent="map/part3/chair" unique_id=2105035656]
+offset_left = 899.0
+offset_top = 4.0
+offset_right = 937.0
+offset_bottom = 24.0
+layout_direction = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e1j6l")
+
 [node name="table" type="Node2D" parent="map/part3" unique_id=1614125924]
 position = Vector2(-291, 15)
 
@@ -2175,63 +2232,6 @@ shape = SubResource("RectangleShape2D_37s47")
 position = Vector2(1006, 35)
 shape = SubResource("SegmentShape2D_rysoc")
 disabled = true
-
-[node name="chair" type="Node2D" parent="map/part3" unique_id=1930310476]
-position = Vector2(-41, 0)
-
-[node name="Panel8" type="Panel" parent="map/part3/chair" unique_id=2134160493]
-offset_left = 927.0
-offset_top = -41.0
-offset_right = 945.0
-offset_bottom = 15.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bt5mj")
-
-[node name="Panel7" type="Panel" parent="map/part3/chair" unique_id=21021696]
-offset_left = 916.0
-offset_top = 4.0
-offset_right = 930.0
-offset_bottom = 43.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
-
-[node name="Panel3" type="Panel" parent="map/part3/chair" unique_id=756383782]
-offset_left = 908.0
-offset_top = 22.0
-offset_right = 921.0
-offset_bottom = 56.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
-
-[node name="Panel5" type="Panel" parent="map/part3/chair" unique_id=746689063]
-offset_left = 891.0
-offset_top = 4.0
-offset_right = 905.0
-offset_bottom = 43.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
-
-[node name="Panel6" type="Panel" parent="map/part3/chair" unique_id=1410778042]
-offset_left = 932.0
-offset_top = 22.0
-offset_right = 945.0
-offset_bottom = 56.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_trtic")
-
-[node name="Panel4" type="Panel" parent="map/part3/chair" unique_id=2105035656]
-offset_left = 899.0
-offset_top = 4.0
-offset_right = 937.0
-offset_bottom = 24.0
-layout_direction = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_e1j6l")
 
 [node name="black" type="PointLight2D" parent="map/part3" unique_id=1864580284]
 visible = false
