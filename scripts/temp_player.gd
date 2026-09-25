@@ -33,6 +33,8 @@ func _physics_process(delta: float) -> void:
 		$sprite.play("idle")
 		velocity.x = 0
 		move_and_slide()
+		if !is_on_floor():
+			$sprite.play("walk")
 		return
 	
 	if velocity.y != 0 || velocity.x == 0:

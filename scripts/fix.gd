@@ -86,6 +86,7 @@ func guide3(msg):
 
 
 func _ready() -> void:
+	#force update yo
 	$player.position = Vector2(0, -52)
 	print("floor ",floor)
 	global.fix_game = self
