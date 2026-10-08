@@ -8,6 +8,8 @@
  
  - Fix Mode: You're locked in the same apartment. In this mode you observce anomalies events, like object's position isn't as usual. Click on it and choose 'Position' to change its position. And now it's in its place. You might find something is missing. Click on its place thne choose 'Show'. And if something is new to place. Click then hide it. You have to finish before the time, then take the elevator to the garage. You must leave at maximum 3 anomalies to be able to go to the garage, unless that you'll restart.
 
+*See the tutorial in the game for better explaining!
+
 # Controls
 - A-D moving
 - Space - Jump
@@ -18,3 +20,6 @@
 
 # Credits
 - All sounds rights go to their original owners.
+
+#Play Now
+- https://nileknight.itch.io/the-elevator
